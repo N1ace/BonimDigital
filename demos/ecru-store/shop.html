@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shop — ÉCRU</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,700;1,6..96,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div id="header"></div>
+
+<div class="wrap">
+  <div class="shop-head">
+    <h1 id="shop-title">All Products</h1>
+    <p id="shop-sub">The full collection — essentials and statement pieces.</p>
+  </div>
+  <div class="filters" id="filters"></div>
+  <div class="count" id="count"></div>
+  <div class="grid" id="shop-grid"></div>
+</div>
+
+<div id="footer"></div>
+<script src="assets/app.js"></script>
+<script>
+mountChrome('shop');
+const params=new URLSearchParams(location.search);
+let active=params.get('c')||'All';
+const cats=['All',...Array.from(new Set(CATALOG.map(p=>p.cat)))];
+
+function render(){
+  document.getElementById('filters').innerHTML=cats.map(c=>
+    `<button class="${c===active?'on':''}" onclick="setCat('${c}')">${c}</button>`).join('');
+  const items = active==='All'?CATALOG:CATALOG.filter(p=>p.cat===active);
+  document.getElementById('shop-title').textContent = active==='All'?'All Products':active;
+  document.getElementById('count').textContent = items.length+(items.length===1?' item':' items');
+  const g=document.getElementById('shop-grid');
+  g.innerHTML=items.map(p=>card(p)).join('');
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.1});
+  g.querySelectorAll('.rv').forEach(el=>io.observe(el));
+}
+function setCat(c){ active=c; history.replaceState(null,'',c==='All'?'shop.html':'shop.html?c='+encodeURIComponent(c)); render(); }
+render();
+</script>
+</body>
+</html>

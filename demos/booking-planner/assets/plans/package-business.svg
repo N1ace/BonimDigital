@@ -1,0 +1,44 @@
+<svg width="480" height="480" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" font-family="'Rubik','Heebo',sans-serif">
+  <defs>
+    <linearGradient id="bgBiz" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#262322"/>
+      <stop offset="1" stop-color="#1C1A18"/>
+    </linearGradient>
+  </defs>
+  <rect width="240" height="240" rx="32" fill="url(#bgBiz)"/>
+  <rect x="3" y="3" width="234" height="234" rx="29" fill="none" stroke="#3A3230" stroke-width="2"/>
+
+  <!-- crown -->
+  <path d="M78 108 L70 66 L92 84 L120 52 L148 84 L170 66 L162 108 Z"
+        fill="#E28140" stroke="#E28140" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="78" y="110" width="84" height="12" rx="6" fill="#E9AB78"/>
+  <!-- crown jewels -->
+  <circle cx="120" cy="88" r="5" fill="#1C1A18"/>
+  <circle cx="99" cy="94" r="3.5" fill="#1C1A18"/>
+  <circle cx="141" cy="94" r="3.5" fill="#1C1A18"/>
+  <!-- point tips -->
+  <circle cx="70" cy="64" r="4.5" fill="#F0C8A6"/>
+  <circle cx="120" cy="50" r="4.5" fill="#F0C8A6"/>
+  <circle cx="170" cy="64" r="4.5" fill="#F0C8A6"/>
+
+  <!-- multi-staff avatars -->
+  <g transform="translate(0 4)">
+    <circle cx="82" cy="162" r="14" fill="#3A3230"/>
+    <circle cx="82" cy="157" r="5" fill="#E9AB78"/>
+    <path d="M74 170 q8 -9 16 0 Z" fill="#E9AB78"/>
+    <circle cx="120" cy="166" r="16" fill="#E28140"/>
+    <circle cx="120" cy="160" r="5.5" fill="#FFFFFF"/>
+    <path d="M111 175 q9 -10 18 0 Z" fill="#FFFFFF"/>
+    <circle cx="158" cy="162" r="14" fill="#3A3230"/>
+    <circle cx="158" cy="157" r="5" fill="#E9AB78"/>
+    <path d="M150 170 q8 -9 16 0 Z" fill="#E9AB78"/>
+  </g>
+
+  <!-- mini bar chart (advanced reports) -->
+  <g transform="translate(0 2)">
+    <rect x="98" y="196" width="7" height="10" rx="2" fill="#8FB98F"/>
+    <rect x="108" y="190" width="7" height="16" rx="2" fill="#E28140"/>
+    <rect x="118" y="184" width="7" height="22" rx="2" fill="#E9AB78"/>
+    <rect x="128" y="192" width="7" height="14" rx="2" fill="#D6453F"/>
+  </g>
+</svg>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Product — ÉCRU</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,700;1,6..96,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div id="header"></div>
+
+<div class="wrap">
+  <div class="crumbs"><a href="index.html">Home</a> / <a href="shop.html">Shop</a> / <span id="crumb-cat"></span></div>
+  <div class="pdp" id="pdp"></div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><h2 class="rv">You may also like</h2><a href="shop.html" class="rv">View all</a></div>
+    <div class="grid" id="related"></div>
+  </div>
+</section>
+
+<div id="footer"></div>
+<script src="assets/app.js"></script>
+<script>
+mountChrome('shop');
+const id=new URLSearchParams(location.search).get('id');
+const p=byId(id);
+if(!p){ document.getElementById('pdp').innerHTML='<p style="padding:60px 0">Product not found. <a href="shop.html" style="border-bottom:1px solid">Back to shop</a></p>'; }
+else{
+  document.getElementById('crumb-cat').textContent=p.name;
+  const sizes=sizesFor(p);
+  const thumbs=p.imgs.map((im,i)=>`<button class="${i===0?'on':''}" onclick="setMain(${i})"><img src="${IMG(im)}" alt=""></button>`).join('');
+  document.getElementById('pdp').innerHTML=`
+    <div class="gallery">
+      <div class="gal-main"><img id="main-img" src="${IMG(p.imgs[0])}" alt="${p.name}"></div>
+      ${p.imgs.length>1?`<div class="gal-thumbs">${thumbs}</div>`:''}
+    </div>
+    <div class="pinfo">
+      <div class="cat">${p.cat}</div>
+      <h1>${p.name}</h1>
+      <div class="price">${money(p.price)}</div>
+      <div class="rating">★★★★☆ &nbsp; <b>4.8</b> · 126 reviews</div>
+      <p class="desc">${p.desc}</p>
+      <div class="opt-label"><span>Size</span><a href="#" onclick="return false">Size guide</a></div>
+      <div class="sizes" id="sizes">${sizes.map(s=>`<button onclick="pickSize(this,'${s}')">${s}</button>`).join('')}</div>
+      <div class="size-warn" id="warn"></div>
+      <div class="buyrow">
+        <div class="qty"><button onclick="bump(-1)">−</button><span id="qty">1</span><button onclick="bump(1)">+</button></div>
+        <button class="btn accent block" onclick="doAdd()">Add to bag — ${money(p.price)}</button>
+      </div>
+      <div class="pdp-acc">
+        <details open><summary>Details</summary><div class="body">${p.desc}</div></details>
+        <details><summary>Materials & Care</summary><div class="body">${p.materials}</div></details>
+        <details><summary>Size & Fit</summary><div class="body">${p.fit}</div></details>
+        <details><summary>Shipping & Returns</summary><div class="body">Complimentary shipping over $150. Free returns within 30 days.</div></details>
+      </div>
+    </div>`;
+
+  let qty=1, size=null;
+  window.setMain=i=>{ document.getElementById('main-img').src=IMG(p.imgs[i]);
+    document.querySelectorAll('.gal-thumbs button').forEach((b,j)=>b.classList.toggle('on',j===i)); };
+  window.pickSize=(el,s)=>{ size=s; document.querySelectorAll('#sizes button').forEach(b=>b.classList.remove('on'));
+    el.classList.add('on'); document.getElementById('warn').textContent=''; };
+  window.bump=d=>{ qty=Math.max(1,qty+d); document.getElementById('qty').textContent=qty; };
+  window.doAdd=()=>{ if(!size){ document.getElementById('warn').textContent='Please select a size'; return; }
+    addToCart(p.id,size,qty); };
+
+  // related: same category first, then fill
+  const rel=[...CATALOG.filter(x=>x.cat===p.cat&&x.id!==p.id),
+             ...CATALOG.filter(x=>x.cat!==p.cat)].slice(0,4);
+  document.getElementById('related').innerHTML=rel.map(x=>card(x)).join('');
+  mountChrome('shop');
+}
+</script>
+</body>
+</html>

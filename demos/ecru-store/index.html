@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ÉCRU — Considered Essentials & Statement Pieces</title>
+<meta name="description" content="ÉCRU — a neutral-palette fashion studio. Considered essentials and statement pieces, made in small runs.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,700;1,6..96,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div id="header"></div>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <div class="hero-ey">Autumn Collection — 2026</div>
+      <h1>Dressed in<br><em>the in-between.</em></h1>
+      <p>A neutral palette with room for one bold note. Considered essentials and statement pieces, made in small runs.</p>
+      <div><a class="btn solid" href="shop.html">Shop the collection</a></div>
+    </div>
+    <div class="hero-media">
+      <img src="assets/img/green.jpg" alt="Lime satin column dress">
+      <span class="hero-tag">Look 01 — Lime Satin Dress</span>
+    </div>
+  </div>
+</header>
+
+<div class="trust"><div class="wrap trust-in">
+  <div class="c"><b>Free Shipping</b><span>On orders over $150</span></div>
+  <div class="c"><b>Small Runs</b><span>Made to last, not to pile up</span></div>
+  <div class="c"><b>Easy Returns</b><span>30 days, no questions</span></div>
+  <div class="c"><b>Client Care</b><span>Styling help, any time</span></div>
+</div></div>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow rv">Contents</div>
+    <div class="index" id="cat-index"></div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2 class="rv">New this week</h2><a href="shop.html" class="rv">View all</a></div>
+    <div class="grid" id="new-grid"></div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap banners">
+    <a class="banner rv" href="shop.html?c=Outerwear"><img src="assets/img/fur.jpg" alt="">
+      <div class="bx"><div class="k">The Outerwear Edit</div><h3>Coats with a point of view</h3><span class="lnk">Explore</span></div></a>
+    <a class="banner rv" href="shop.html?c=Loungewear"><img src="assets/img/lounge-set.jpg" alt="">
+      <div class="bx"><div class="k">Off Duty</div><h3>Loungewear, elevated</h3><span class="lnk">Explore</span></div></a>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2 class="rv">Most wanted</h2><a href="shop.html" class="rv">View all</a></div>
+    <div class="grid" id="trend-grid"></div>
+  </div>
+</section>
+
+<div id="footer"></div>
+<script src="assets/app.js"></script>
+<script>
+mountChrome('home');
+// category index (signature magazine contents)
+const cats=[['New In','shop.html'],['Dresses','shop.html?c=Dresses'],['Tops','shop.html?c=Tops'],
+  ['Outerwear','shop.html?c=Outerwear'],['Knitwear','shop.html?c=Knitwear'],['Accessories','shop.html?c=Bags']];
+document.getElementById('cat-index').innerHTML = cats.map((c,i)=>
+  `<a href="${c[1]}"><span class="n">${String(i+1).padStart(2,'0')}</span>
+   <span class="t">${c[0].replace(/(In|Dresses|Outerwear)$/,'<em>$1</em>')}</span>
+   <span class="go">Shop →</span></a>`).join('');
+// grids
+document.getElementById('new-grid').innerHTML = CATALOG.slice(0,4).map((p,i)=>card(p,i===0?'New':'')).join('');
+document.getElementById('trend-grid').innerHTML = CATALOG.slice(4,12).map(p=>card(p)).join('');
+mountChrome('home');
+</script>
+</body>
+</html>

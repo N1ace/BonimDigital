@@ -1,0 +1,205 @@
+:root {
+  --terra-500: #e28140;
+  --terra-700: #a85724;
+  --terra-50: #fcf4ed;
+  --ink-900: #1c1a18;
+  --ink-700: #4a4641;
+  --ink-600: #6b6660;
+  --neutral-50: #f6f4f2;
+  --neutral-100: #efedea;
+  --neutral-200: #e4e1dd;
+  --white: #ffffff;
+  --success: #2fa56a;
+  --warning: #e2a23a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Rubik, system-ui, sans-serif;
+  background: var(--neutral-50);
+  color: var(--ink-900);
+  line-height: 1.8;
+}
+
+header {
+  background: var(--white);
+  border-bottom: 1px solid var(--neutral-200);
+}
+
+.bar {
+  max-width: 820px;
+  margin-inline: auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bar img {
+  width: 30px;
+  height: 30px;
+}
+
+.bar strong {
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.bar a {
+  margin-inline-start: auto;
+  color: var(--terra-700);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+main {
+  max-width: 820px;
+  margin-inline: auto;
+  padding: 48px 24px 96px;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 900;
+  margin: 0 0 6px;
+}
+
+.updated {
+  color: var(--ink-600);
+  font-size: 14px;
+  margin: 0 0 24px;
+}
+
+.legal-notice {
+  background: var(--terra-50);
+  border: 1px solid var(--neutral-200);
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-bottom: 32px;
+  font-size: 14px;
+  color: var(--ink-700);
+}
+
+h2 {
+  font-size: 20px;
+  margin: 32px 0 8px;
+  color: var(--ink-900);
+}
+
+h3 {
+  font-size: 17px;
+  margin: 20px 0 6px;
+  color: var(--ink-900);
+}
+
+p,
+li {
+  color: var(--ink-600);
+  font-size: 15.5px;
+}
+
+p {
+  margin: 0 0 12px;
+}
+
+ul,
+ol {
+  margin: 0 0 16px;
+  padding-inline-start: 22px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+a {
+  color: var(--terra-700);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--terra-500);
+  outline-offset: 2px;
+}
+
+.legal-nav {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--neutral-200);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  font-size: 14px;
+}
+
+.legal-nav a {
+  text-decoration: none;
+}
+
+.legal-nav a:hover {
+  text-decoration: underline;
+}
+
+.deletion-form {
+  background: var(--white);
+  border: 1px solid var(--neutral-200);
+  border-radius: 16px;
+  padding: 24px;
+  margin: 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.deletion-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-700);
+}
+
+.deletion-form input,
+.deletion-form textarea,
+.deletion-form select {
+  border: 1px solid var(--neutral-200);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 15px;
+  background: var(--neutral-50);
+  color: var(--ink-900);
+}
+
+.deletion-form input[dir="ltr"] {
+  text-align: end;
+}
+
+.deletion-form button {
+  background: var(--terra-500);
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 14px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  align-self: start;
+}
+
+.deletion-form button:hover {
+  background: #cc6e30;
+}
+
+.form-note {
+  font-size: 13.5px;
+  color: var(--ink-600);
+  margin: 0;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bag — ÉCRU</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,700;1,6..96,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div id="header"></div>
+
+<div class="wrap cart-wrap">
+  <h1>Your bag</h1>
+  <div id="cart-body"></div>
+</div>
+
+<div id="footer"></div>
+<script src="assets/app.js"></script>
+<script>
+mountChrome('cart');
+const SHIP_FREE=150;
+
+function render(){
+  const cart=getCart();
+  const body=document.getElementById('cart-body');
+  if(!cart.length){
+    body.innerHTML=`<div class="empty"><p>Your bag is empty.</p><a class="btn solid" href="shop.html">Start shopping</a></div>`;
+    return;
+  }
+  let sub=0;
+  const rows=cart.map((it,idx)=>{
+    const p=byId(it.id); if(!p) return '';
+    const line=p.price*it.qty; sub+=line;
+    return `<div class="citem">
+      <a class="th" href="product.html?id=${p.id}"><img src="${IMG(p.imgs[0])}" alt="${p.name}"></a>
+      <div>
+        <div class="nm">${p.name}</div>
+        <div class="sub">${p.cat} · Size ${it.size}</div>
+        <div class="qty" style="display:inline-flex">
+          <button onclick="setQty(${idx},-1)">−</button><span>${it.qty}</span><button onclick="setQty(${idx},1)">+</button>
+        </div>
+        <div style="margin-top:12px"><button class="rm" onclick="removeItem(${idx})">Remove</button></div>
+      </div>
+      <div class="pr">${money(line)}</div>
+    </div>`;
+  }).join('');
+  const ship = sub>=SHIP_FREE?0:12;
+  const away = Math.max(0,SHIP_FREE-sub);
+  body.innerHTML=`<div class="cart-grid">
+    <div>${rows}
+      <div style="padding-top:20px"><a href="shop.html" style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid">← Continue shopping</a></div>
+    </div>
+    <aside class="summary">
+      <h3>Order Summary</h3>
+      <div class="line"><span>Subtotal</span><span>${money(sub)}</span></div>
+      <div class="line"><span>Shipping</span><span>${ship?money(ship):'Free'}</span></div>
+      ${away>0?`<div class="line" style="color:var(--accent)"><span>Spend ${money(away)} more</span><span>for free shipping</span></div>`:''}
+      <div class="total"><span>Total</span><span>${money(sub+ship)}</span></div>
+      <button class="btn accent block" style="margin-top:22px" onclick="checkout()">Checkout</button>
+      <p style="font-size:11.5px;color:var(--muted);margin-top:14px;text-align:center;letter-spacing:.04em">Secure checkout · Demo store</p>
+    </aside>
+  </div>`;
+}
+window.setQty=(i,d)=>{ const c=getCart(); c[i].qty=Math.max(1,c[i].qty+d); saveCart(c); render(); };
+window.removeItem=i=>{ const c=getCart(); c.splice(i,1); saveCart(c); render(); };
+window.checkout=()=>toast('This is a portfolio demo — no real payment');
+render();
+</script>
+</body>
+</html>
