@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Andrey Toriyanik</title>
+<meta name="description" content="Selected client sites and demos — WordPress, custom-coded landings, e-commerce, and local business websites.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Manrope:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0D0E10;
+  --card:#16181B;
+  --line:#24262A;
+  --text:#EDEDEA;
+  --muted:#96999E;
+  --accent:#E5A93D;
+  --nav-h:64px;
+  --display:'Archivo',sans-serif;
+  --body:'Manrope',sans-serif;
+  --mono:'IBM Plex Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:clip;padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px))}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%;height:auto}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(clamp(16px,4vw,24px),env(safe-area-inset-left,0px));padding-right:max(clamp(16px,4vw,24px),env(safe-area-inset-right,0px));width:100%}
+
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;width:100%;
+  background:rgba(13,14,16,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);
+  padding-top:env(safe-area-inset-top,0px)
+}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:12px;height:var(--nav-h);position:relative}
+.logo{font-family:var(--mono);font-weight:500;font-size:14px;letter-spacing:.06em;width:38px;height:38px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--accent);flex-shrink:0}
+.menu{display:flex;gap:28px;font-size:14px;color:var(--muted)}
+.menu a{transition:color .2s}
+.menu a:hover,.menu a:focus-visible,.menu a[aria-current="page"]{color:var(--text)}
+.menu a[aria-current="page"]{color:var(--accent)}
+.nav-toggle{
+  display:none;width:40px;height:40px;border:1px solid var(--line);border-radius:8px;
+  background:var(--card);color:var(--text);cursor:pointer;align-items:center;justify-content:center;
+  font-size:20px;line-height:1;flex-shrink:0;padding:0
+}
+.nav-actions{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.menu-talk{display:none}
+.btn{display:inline-block;font-family:var(--body);font-weight:600;font-size:14px;padding:10px 20px;border-radius:8px;border:1px solid var(--line);background:var(--card);transition:border-color .2s,transform .2s}
+.btn:hover{border-color:var(--accent)}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.btn.solid{background:var(--accent);border-color:var(--accent);color:#151004}
+.btn.solid:hover{transform:translateY(-1px)}
+
+.page-head{padding:72px 0 0}
+.sec-eyebrow{font-family:var(--mono);font-size:13px;color:var(--accent);letter-spacing:.08em;margin-bottom:10px}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,4.8vw,52px);line-height:1.06;letter-spacing:-.02em}
+.sec-sub{color:var(--muted);margin-top:12px;max-width:560px;font-size:17px}
+
+.proj-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:18px;
+  margin-top:42px;padding-bottom:24px
+}
+.proj{
+  display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);
+  border-radius:14px;overflow:hidden;min-width:0;
+  transition:border-color .25s,transform .25s
+}
+.proj:hover{border-color:#3a3d42;transform:translateY(-2px)}
+.proj-preview{
+  position:relative;aspect-ratio:16/10;background:#0A0B0D;border-bottom:1px solid var(--line);
+  overflow:hidden
+}
+.proj-preview iframe{
+  position:absolute;inset:0;width:200%;height:200%;transform:scale(.5);transform-origin:0 0;
+  border:0;pointer-events:none;opacity:0;transition:opacity .4s
+}
+.proj-preview.is-loaded iframe{opacity:1}
+.proj-preview::after{
+  content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(to top,rgba(13,14,16,.55),transparent 42%);
+  pointer-events:none
+}
+.proj-body{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1;gap:10px}
+.proj-tick{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.06em}
+.proj-body h2{font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:-.01em}
+.proj-body p{color:var(--muted);font-size:14.5px;flex:1}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.chip{font-family:var(--mono);font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:7px;padding:6px 11px;background:var(--bg)}
+.proj:hover .chip{color:var(--text)}
+.proj-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.proj-actions .btn{font-size:13px;padding:9px 16px}
+
+.page-cta{
+  margin:48px 0 0;padding:36px 0;border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px
+}
+.page-cta p{color:var(--muted);max-width:420px}
+
+footer{margin-top:56px;border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+.foot-in{display:flex;justify-content:space-between;align-items:center;padding:22px 0;font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.foot-in a{color:var(--accent);transition:opacity .2s}
+.foot-in a:hover,.foot-in a:focus-visible{opacity:.85}
+
+.rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.rv.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .proj:hover,.btn.solid:hover{transform:none}
+}
+
+@media(max-width:900px){
+  .page-head{padding-top:56px}
+  .proj-grid{grid-template-columns:1fr;gap:16px;margin-top:32px}
+  .menu{
+    display:none;position:fixed;top:calc(var(--nav-h) + env(safe-area-inset-top,0px));left:0;right:0;flex-direction:column;gap:0;
+    padding:8px 0 max(14px,env(safe-area-inset-bottom,0px));background:rgba(13,14,16,.97);backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);z-index:40;max-height:calc(100dvh - var(--nav-h));overflow-y:auto
+  }
+  .menu.is-open{display:flex}
+  .menu a{padding:12px clamp(16px,4vw,24px);width:100%}
+  .menu-talk{display:block;margin-top:6px;border-top:1px solid var(--line);padding-top:14px!important;color:var(--accent);font-weight:600}
+  .nav-toggle{display:inline-flex}
+  .nav-actions .btn.solid{display:none}
+}
+@media(max-width:560px){
+  .page-head{padding-top:40px}
+  .proj-body{padding:18px 18px 20px}
+  .proj-body h2{font-size:20px}
+  .foot-in{flex-direction:column;gap:8px;text-align:center;padding:20px 0}
+  footer{margin-top:40px}
+  .nav-in{height:58px}
+  :root{--nav-h:58px}
+  .btn{font-size:13px;padding:9px 16px}
+  .page-cta{flex-direction:column;align-items:flex-start;padding:28px 0}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-in">
+    <a class="logo" href="index.html#home" aria-label="Home">AT</a>
+    <div class="menu" id="site-menu">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="projects.html" aria-current="page">Projects</a>
+      <a href="index.html#results">Results</a>
+      <a href="index.html#tetris">Play</a>
+      <a class="menu-talk" href="index.html#contact">Let's Talk</a>
+    </div>
+    <div class="nav-actions">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">☰</button>
+      <a class="btn solid" href="index.html#contact">Let's Talk</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <header class="page-head">
+    <div class="wrap">
+      <div class="sec-eyebrow rv">// projects</div>
+      <h1 class="rv">All projects</h1>
+      <p class="sec-sub rv">Client sites and demos — landings, e-commerce, clinics, logistics, real estate, and more. Open any card to view the live build.</p>
+
+      <div class="proj-grid">
+
+        <article class="proj rv">
+          <div class="proj-preview" data-src="https://n1ace.github.io/bookingapp/">
+            <iframe title="Torio preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+          </div>
+          <div class="proj-body">
+            <span class="proj-tick">// 01</span>
+            <h2>Torio</h2>
+            <p>Booking and planning experience for appointments — clean UI, clear flow, built as a custom front-end demo.</p>
+            <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span></div>
+            <div class="proj-actions">
+              <a class="btn solid" href="https://n1ace.github.io/bookingapp/" target="_blank" rel="noopener noreferrer">Open live</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj rv">
+          <div class="proj-preview" data-src="https://n1ace.github.io/ecommerce/">
+            <iframe title="ÉCRU Store preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+          </div>
+          <div class="proj-body">
+            <span class="proj-tick">// 02</span>
+            <h2>ÉCRU Store</h2>
+            <p>Multi-page e-commerce demo — shop, product, and cart screens with a refined retail look.</p>
+            <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span></div>
+            <div class="proj-actions">
+              <a class="btn solid" href="https://n1ace.github.io/ecommerce/" target="_blank" rel="noopener noreferrer">Open live</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj rv">
+          <div class="proj-preview" data-src="https://retailavr.co.il/">
+            <iframe title="Retail AVR preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+          </div>
+          <div class="proj-body">
+            <span class="proj-tick">// 03</span>
+            <h2>Retail AVR</h2>
+            <p>Live WordPress client site — local SEO, performance work, and measurable Search Console growth.</p>
+            <div class="chips"><span class="chip">WordPress</span><span class="chip">Local SEO</span><span class="chip">Performance</span></div>
+            <div class="proj-actions">
+              <a class="btn solid" href="https://retailavr.co.il/" target="_blank" rel="noopener noreferrer">Open live</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj rv">
+          <div class="proj-preview" data-src="https://n1ace.github.io/clinicdemo/">
+            <iframe title="AVELA Clinic preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+          </div>
+          <div class="proj-body">
+            <span class="proj-tick">// 04</span>
+            <h2>AVELA Clinic</h2>
+            <p>Clinic landing demo — services, trust signals, and a focused booking-oriented layout.</p>
+            <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span></div>
+            <div class="proj-actions">
+              <a class="btn solid" href="https://n1ace.github.io/clinicdemo/" target="_blank" rel="noopener noreferrer">Open live</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj rv">
+          <div class="proj-preview" data-src="https://n1ace.github.io/autoshop/">
+            <iframe title="APEX Auto preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+          </div>
+          <div class="proj-body">
+            <span class="proj-tick">// 05</span>
+            <h2>APEX Auto</h2>
+            <p>Full-service garage site — booking widget, pricing tools, before/after slider, and EN/HE market switch.</p>
+            <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">i18n</span></div>
+            <div class="proj-actions">
+              <a class="btn solid" href="https://n1ace.github.io/autoshop/" target="_blank" rel="noopener noreferrer">Open live</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj rv">
+          <div class="proj-preview" data-src="https://n1ace.github.io/realestate/">
+            <iframe title="HAVEN Realty preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+          </div>
+          <div class="proj-body">
+            <span class="proj-tick">// 06</span>
+            <h2>HAVEN Realty</h2>
+            <p>Real-estate landing — full-bleed hero, property search, and a clean buyer-first flow.</p>
+            <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span></div>
+            <div class="proj-actions">
+              <a class="btn solid" href="https://n1ace.github.io/realestate/" target="_blank" rel="noopener noreferrer">Open live</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj rv">
+          <div class="proj-preview" data-src="https://n1ace.github.io/logistic/">
+            <iframe title="NEXUS Logistics preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+          </div>
+          <div class="proj-body">
+            <span class="proj-tick">// 07</span>
+            <h2>NEXUS Logistics</h2>
+            <p>Freight and delivery site — tracking demo, fleet tiles, city autocomplete, and bilingual EN/HE UI.</p>
+            <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">i18n</span></div>
+            <div class="proj-actions">
+              <a class="btn solid" href="https://n1ace.github.io/logistic/" target="_blank" rel="noopener noreferrer">Open live</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj rv">
+          <div class="proj-preview" data-src="https://n1ace.github.io/construction/">
+            <iframe title="STRATA Construction preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+          </div>
+          <div class="proj-body">
+            <span class="proj-tick">// 08</span>
+            <h2>STRATA Construction</h2>
+            <p>Residential and commercial builder site — project storytelling, EN/HE switch, and a strong brand-first hero.</p>
+            <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">i18n</span></div>
+            <div class="proj-actions">
+              <a class="btn solid" href="https://n1ace.github.io/construction/" target="_blank" rel="noopener noreferrer">Open live</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="page-cta rv">
+        <p>Have a site to build, fix, or speed up? Tell me what you need.</p>
+        <a class="btn solid" href="index.html#contact">Let's Talk</a>
+      </div>
+    </div>
+  </header>
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <span>© <span id="yr"></span> Andrey Toriyanik · <a href="https://github.com/N1ace" target="_blank" rel="noopener noreferrer">GitHub</a></span>
+    <span>built fast · loads fast</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+(function(){
+  const toggle = document.querySelector('.nav-toggle');
+  const menu = document.getElementById('site-menu');
+  if(!toggle || !menu) return;
+  function closeMenu(){
+    menu.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded','false');
+    toggle.setAttribute('aria-label','Open menu');
+    toggle.textContent = '☰';
+    document.body.style.overflow = '';
+  }
+  toggle.addEventListener('click',()=>{
+    const open = menu.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', open);
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    toggle.textContent = open ? '×' : '☰';
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click', closeMenu));
+  window.addEventListener('resize',()=>{ if(window.innerWidth > 900) closeMenu(); });
+})();
+
+const io = new IntersectionObserver(es=>{
+  es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target);} });
+},{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+(function(){
+  const previews = document.querySelectorAll('.proj-preview[data-src]');
+  if(!previews.length) return;
+  const load = el=>{
+    const iframe = el.querySelector('iframe');
+    const src = el.getAttribute('data-src');
+    if(!iframe || !src || iframe.src) return;
+    iframe.src = src;
+    iframe.addEventListener('load',()=>el.classList.add('is-loaded'),{once:true});
+  };
+  if(!('IntersectionObserver' in window)){
+    previews.forEach(load);
+    return;
+  }
+  const previewIo = new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        load(e.target);
+        previewIo.unobserve(e.target);
+      }
+    });
+  },{rootMargin:'200px 0px',threshold:.01});
+  previews.forEach(el=>previewIo.observe(el));
+})();
+</script>
+</body>
+</html>

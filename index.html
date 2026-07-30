@@ -72,15 +72,16 @@ h1{font-family:var(--display);font-weight:800;font-size:clamp(38px,5.6vw,64px);l
 /* signature: diagnostic status strip */
 .status{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:56px;overflow:hidden}
 .status-in{
-  display:flex;flex-direction:column;align-items:center;gap:0;width:100%;
+  display:flex;flex-direction:row;flex-wrap:wrap;align-items:stretch;gap:0;width:100%;
   font-family:var(--mono);font-size:12.5px;color:var(--muted)
 }
 .status-in > span{
-  display:flex;align-items:center;justify-content:center;width:100%;
-  padding:14px clamp(20px,5vw,28px);border-right:0;border-bottom:1px solid var(--line);
-  line-height:1.5;text-align:center;gap:10px
+  display:inline-flex;align-items:center;justify-content:flex-start;flex:1 1 auto;
+  padding:13px 22px;border-right:1px solid var(--line);border-bottom:0;
+  line-height:1.4;gap:10px;white-space:nowrap
 }
-.status-in > span:last-child{border-bottom:0}
+.status-in > span:first-child{padding-left:0}
+.status-in > span:last-child{border-right:0}
 .status-in b{color:var(--text);font-weight:500}
 .dot{
   display:inline-block;flex:none;width:8px;height:8px;border-radius:50%;background:#59C97B;
@@ -92,6 +93,8 @@ section{padding:88px 0 0}
 .sec-eyebrow{font-family:var(--mono);font-size:13px;color:var(--accent);letter-spacing:.08em;margin-bottom:10px}
 h2{font-family:var(--display);font-weight:700;font-size:clamp(28px,3.4vw,38px);letter-spacing:-.01em}
 .sec-sub{color:var(--muted);margin-top:8px;max-width:560px}
+.sec-sub a{color:var(--accent);font-weight:600}
+.sec-sub a:hover{text-decoration:underline}
 
 /* cards */
 .grid{display:grid;gap:16px;margin-top:38px}
@@ -364,6 +367,14 @@ footer{margin-top:72px;border-top:1px solid var(--line);padding-bottom:env(safe-
   .hero-in{grid-template-columns:1fr;padding-top:48px;gap:28px;padding-inline:clamp(20px,6vw,32px)}
   .hero-photo{order:-1;justify-self:center;width:min(300px,calc(100% - 16px))}
   .hero-text{order:1}
+  .status-in{flex-direction:column;align-items:center}
+  .status-in > span{
+    width:100%;justify-content:center;text-align:center;
+    padding:14px clamp(16px,4vw,24px);border-right:0;border-bottom:1px solid var(--line);
+    white-space:normal
+  }
+  .status-in > span:first-child{padding-left:clamp(16px,4vw,24px)}
+  .status-in > span:last-child{border-bottom:0;border-right:0}
   .menu{
     display:none;position:fixed;top:calc(var(--nav-h) + env(safe-area-inset-top,0px));left:0;right:0;flex-direction:column;gap:0;
     padding:8px 0 max(14px,env(safe-area-inset-bottom,0px));background:rgba(13,14,16,.97);backdrop-filter:blur(12px);
@@ -444,7 +455,7 @@ footer{margin-top:72px;border-top:1px solid var(--line);padding-bottom:env(safe-
       <a href="#services">Services</a>
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
+      <a href="projects.html">Projects</a>
       <a href="#results">Results</a>
       <a href="#tetris">Play</a>
       <a class="menu-talk" href="#contact">Let's Talk</a>
@@ -528,7 +539,7 @@ footer{margin-top:72px;border-top:1px solid var(--line);padding-bottom:env(safe-
   <div class="wrap">
     <div class="sec-eyebrow rv">// projects</div>
     <h2 class="rv">Selected Work</h2>
-    <p class="sec-sub rv">A few things I've built — hover to pause, click a face to open.</p>
+    <p class="sec-sub rv">A few things I've built — hover to pause, click a face to open. <a href="projects.html">View all projects →</a></p>
     <div class="projects-cube-wrap rv">
       <div class="proj-cube-stage" id="proj-cube-stage">
         <div class="proj-cube-shadow" aria-hidden="true"></div>
