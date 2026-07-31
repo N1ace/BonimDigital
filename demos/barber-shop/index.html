@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>השדרה ברברשופ — מספרה לגברים | תספורת, זקן וגילוח תער</title><!-- DEMO: shop name -->
+<meta name="description" content="ברברשופ שכונתי בשדרה: תספורות מדויקות, עיצוב זקן וגילוח תער עם מגבת חמה. קובעים תור אונליין, מגיעים בשעה — הכיסא מחכה.">
+<meta name="format-detection" content="telephone=no">
+<link rel="canonical" href="https://n1ace.github.io/portfolio/demos/barber-shop/">
+<link rel="icon" href="assets/barber-pole.png" type="image/png">
+<meta property="og:title" content="השדרה ברברשופ — נכנסת. התיישבת. יצאת מלך.">
+<meta property="og:description" content="תספורת מדויקת בלי לחכות, אצל אותו ספר שכבר מכיר את הראש שלך. קביעת תור אונליין.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://n1ace.github.io/portfolio/demos/barber-shop/assets/hero-interior.jpg">
+<meta property="og:locale" content="he_IL">
+<link rel="preload" as="image" href="assets/hero-interior.jpg" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Hebrew-first pairing: Karantina (display) + Assistant (body) -->
+<link href="https://fonts.googleapis.com/css2?family=Karantina:wght@400;700&family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  "name": "השדרה ברברשופ",
+  "image": "https://n1ace.github.io/portfolio/demos/barber-shop/assets/hero-interior.jpg",
+  "telephone": "+972-3-555-1234",
+  "priceRange": "₪40–₪110",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "אחד העם 12",
+    "addressLocality": "תל אביב",
+    "addressCountry": "IL"
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday","Monday","Tuesday","Wednesday","Thursday"], "opens": "09:00", "closes": "20:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "08:00", "closes": "14:30" }
+  ]
+}
+</script><!-- DEMO: JSON-LD uses demo address/phone -->
+</head>
+<body>
+<div class="pole-strip spin" aria-hidden="true"></div>
+
+<!-- ================= HEADER ================= -->
+<header class="site" id="top">
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="השדרה ברברשופ — לראש העמוד">
+      <span class="icn i-pole" aria-hidden="true"></span>
+      השדרה ברברשופ<!-- DEMO: shop name -->
+    </a>
+    <nav class="main" aria-label="ניווט ראשי">
+      <a href="#services">מחירון</a>
+      <a href="#team">הצוות</a>
+      <a href="#our-shop">המספרה</a>
+      <a href="#gallery">עבודות</a>
+      <a href="#faq">שאלות</a>
+      <a href="#location">איפה אנחנו</a>
+      <a href="booking.html">קביעת תור</a>
+    </nav>
+    <div class="head-actions">
+      <a class="head-phone phone-ltr" href="tel:+97235551234"><bdi>03-555-1234</bdi></a><!-- DEMO: phone -->
+      <a class="btn btn-primary" href="booking.html">קביעת תור</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobile-menu" aria-label="פתיחת תפריט">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+  <div id="mobile-menu">
+    <a href="#services">מחירון</a>
+    <a href="#team">הצוות</a>
+    <a href="#our-shop">המספרה</a>
+    <a href="#gallery">עבודות</a>
+    <a href="#faq">שאלות נפוצות</a>
+    <a href="#location">איפה אנחנו</a>
+    <a href="booking.html">קביעת תור</a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<div class="hero">
+  <video class="bg bg-mobile" muted loop playsinline poster="assets/hero-interior.jpg" aria-hidden="true" preload="none" data-src="assets/hero-bg.mp4" width="720" height="1280"></video>
+  <video class="bg bg-desktop" muted loop playsinline poster="assets/hero-interior.jpg" aria-hidden="true" preload="none" data-src="assets/hero-bg-desktop.mp4" width="1920" height="1080"></video>
+  <div class="wrap">
+    <span class="chip-open" id="openChip"><span class="dot" aria-hidden="true"></span><span id="openChipText">בודק שעות…</span><noscript>שעות הפתיחה למטה בעמוד</noscript></span>
+    <h1 class="words" data-reveal>
+      <span style="--i:0"><i>נכנסת.</i></span>
+      <span style="--i:1"><i>התיישבת.</i></span><br>
+      <span style="--i:2"><i>יצאת מלך.</i></span>
+    </h1>
+    <p class="sub">תספורת מדויקת בלי לחכות, אצל אותו ספר שכבר מכיר את הראש שלך. קבעת ל־<bdi>17:30</bdi>? ב־<bdi>17:30</bdi> אתה בכיסא.</p>
+    <div class="hero-place">
+      <p class="hero-addr">
+        <a href="#location">אחד העם&ensp;<bdi>12</bdi>, תל אביב</a><!-- DEMO: address -->
+        <a class="hero-nav hero-waze" href="https://waze.com/ul?q=%D7%90%D7%97%D7%93%20%D7%94%D7%A2%D7%9D%2012%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91&navigate=yes" target="_blank" rel="noopener" aria-label="נווט בוויז"><img src="assets/icon-waze.png" alt="" width="48" height="48"></a><!-- DEMO: address -->
+        <a class="hero-nav hero-gmaps" href="https://maps.google.com/?q=%D7%90%D7%97%D7%93%20%D7%94%D7%A2%D7%9D%2012%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91" target="_blank" rel="noopener" aria-label="מפות גוגל"><img src="assets/icon-gmaps.png" alt="" width="128" height="128"></a><!-- DEMO: address -->
+      </p>
+      <p class="hero-hours"><!-- DEMO: hours -->
+        <a href="#location"><span>שעות:</span> <span>א׳–ה׳&nbsp;<bdi dir="ltr">09:00–20:00</bdi></span> <span aria-hidden="true">·</span> <span>ו׳&nbsp;<bdi dir="ltr">08:00–14:30</bdi></span> <span aria-hidden="true">·</span> <span>שבת סגור</span></a>
+      </p>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="booking.html">קביעת תור</a>
+      <a class="btn btn-ghost" href="#services">למחירון</a>
+    </div>
+  </div>
+</div>
+
+<!-- ================= TRUST ================= -->
+<div class="trust">
+  <div class="wrap">
+    <div class="cell"><b><bdi>12</bdi></b><span>שנים שמסתפרים אצלנו</span></div><!-- DEMO: years -->
+    <div class="cell"><b><bdi>3</bdi></b><span>ספרים, אפס פשרות</span></div>
+    <div class="cell"><b><bdi>4.9</bdi>★</b><span>דירוג בגוגל</span></div><!-- DEMO: rating -->
+    <div class="cell"><b>ילדים?</b><span>ברור. יש מסך ויש סבלנות</span></div>
+  </div>
+</div>
+
+<!-- ================= SERVICES ================= -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="rail" aria-hidden="true"></span>
+      <div class="blade">
+        <div class="kicker">מחירון</div>
+        <h2>מה עושים ובכמה</h2>
+        <p>המחיר על השולחן, בלי "צרו קשר". בוחר, לוחץ, קובע.</p>
+      </div>
+    </div>
+    <div class="svc-grid"><!-- DEMO: all services & prices -->
+      <article class="svc rise" data-reveal style="--i:0">
+        <div class="top"><span class="icn i-cut" aria-hidden="true"></span><span class="price"><bdi>₪80</bdi></span></div>
+        <h3>תספורת</h3>
+        <p>מכונה, מספריים, או שילוב. יוצאים עם קו נקי ותמונה למעלה בסטורי.</p>
+        <span class="meta"><bdi>30</bdi> דק'</span>
+        <a class="book-link" href="booking.html?service=%D7%AA%D7%A1%D7%A4%D7%95%D7%A8%D7%AA" data-service="תספורת">לקבוע תספורת ←</a>
+      </article>
+      <article class="svc rise" data-reveal style="--i:1">
+        <div class="top"><span class="icn i-stylist" aria-hidden="true"></span><span class="price"><bdi>₪110</bdi></span></div>
+        <h3>תספורת + זקן</h3>
+        <p>הדיל המשתלם. ראש וזקן באותו כיסא, יוצאים בן אדם חדש.</p>
+        <span class="meta"><bdi>45</bdi> דק'</span>
+        <a class="book-link" href="booking.html?service=%D7%AA%D7%A1%D7%A4%D7%95%D7%A8%D7%AA%20%2B%20%D7%96%D7%A7%D7%9F" data-service="תספורת + זקן">לקבוע תספורת וזקן ←</a>
+      </article>
+      <article class="svc rise" data-reveal style="--i:2">
+        <div class="top"><span class="icn i-beard" aria-hidden="true"></span><span class="price"><bdi>₪50</bdi></span></div>
+        <h3>עיצוב זקן</h3>
+        <p>קווים חדים, אורך אחיד, ושמן זקן על הדרך. הזקן שלך, רק מסודר.</p>
+        <span class="meta"><bdi>20</bdi> דק'</span>
+        <a class="book-link" href="booking.html?service=%D7%A2%D7%99%D7%A6%D7%95%D7%91%20%D7%96%D7%A7%D7%9F" data-service="עיצוב זקן">לקבוע עיצוב זקן ←</a>
+      </article>
+      <article class="svc rise" data-reveal style="--i:3">
+        <div class="top"><span class="icn i-razor" aria-hidden="true"></span><span class="price"><bdi>₪70</bdi></span></div>
+        <h3>גילוח תער + מגבת חמה</h3>
+        <p>הקלאסיקה. מגבת חמה, קצף, תער חד־פעמי. חצי שעה שאתה לא בטלפון.</p>
+        <span class="meta"><bdi>30</bdi> דק'</span>
+        <a class="book-link" href="booking.html?service=%D7%92%D7%99%D7%9C%D7%95%D7%97%20%D7%AA%D7%A2%D7%A8%20%2B%20%D7%9E%D7%92%D7%91%D7%AA%20%D7%97%D7%9E%D7%94" data-service="גילוח תער + מגבת חמה">לקבוע גילוח תער ←</a>
+      </article>
+      <article class="svc rise" data-reveal style="--i:4">
+        <div class="top"><span class="icn i-comb" aria-hidden="true"></span><span class="price"><bdi>₪60</bdi></span></div>
+        <h3>תספורת ילדים</h3>
+        <p>עד גיל <bdi>12</bdi>. יש מסך עם סרטים, יש סוכרייה בסוף, ואבא יוצא גיבור.</p>
+        <span class="meta"><bdi>25</bdi> דק'</span>
+        <a class="book-link" href="booking.html?service=%D7%AA%D7%A1%D7%A4%D7%95%D7%A8%D7%AA%20%D7%99%D7%9C%D7%93%D7%99%D7%9D" data-service="תספורת ילדים">לקבוע לילד ←</a>
+      </article>
+      <article class="svc rise" data-reveal style="--i:5">
+        <div class="top"><span class="icn i-brush" aria-hidden="true"></span><span class="price"><bdi>₪40</bdi></span></div>
+        <h3>חפיפה וסטיילינג</h3>
+        <p>לפני אירוע, דייט או צילומים. חפיפה, ייבוש, ומוצר שמחזיק עד הלילה.</p>
+        <span class="meta"><bdi>15</bdi> דק'</span>
+        <a class="book-link" href="booking.html?service=%D7%97%D7%A4%D7%99%D7%A4%D7%94%20%D7%95%D7%A1%D7%98%D7%99%D7%99%D7%9C%D7%99%D7%A0%D7%92" data-service="חפיפה וסטיילינג">לקבוע סטיילינג ←</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY US ================= -->
+<section class="why">
+  <div class="wrap cols">
+    <div>
+      <div class="sec-head" data-reveal>
+        <span class="rail" aria-hidden="true"></span>
+        <div>
+          <div class="kicker">למה אצלנו</div>
+          <h2>הדברים שבאמת משנים</h2>
+        </div>
+      </div>
+      <ul>
+        <li class="rise" data-reveal style="--i:0"><span class="n" aria-hidden="true">א</span><div><b>בלי לחכות</b><span>הכיסא מחכה לך בשעה שקבעת. תור זה תור, לא הערכה.</span></div></li>
+        <li class="rise" data-reveal style="--i:1"><span class="n" aria-hidden="true">ב</span><div><b>תזכורת בוואטסאפ</b><span>יום לפני התור קופצת הודעה. לשכוח כבר לא תירוץ.</span></div></li>
+        <li class="rise" data-reveal style="--i:2"><span class="n" aria-hidden="true">ג</span><div><b>אותו ספר, כל פעם</b><span>מי שסיפר אותך בפעם שעברה זוכר בדיוק איך אתה אוהב.</span></div></li>
+        <li class="rise" data-reveal style="--i:3"><span class="n" aria-hidden="true">ד</span><div><b>כלים נקיים, נקודה</b><span>חיטוי אחרי כל לקוח וסכין חד־פעמי לכל גילוח. לא מתפשרים על זה.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= OUR SHOP ================= -->
+<section class="our-shop" id="our-shop">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="rail" aria-hidden="true"></span>
+      <div class="blade">
+        <div class="kicker">המספרה שלנו</div>
+        <h2>המקום שבו זה קורה</h2>
+        <p>עמדות נקיות, תאורה מדויקת, ואווירה שמזמינה להישאר עוד חמש דקות אחרי שהתספורת מוכנה.</p>
+      </div>
+    </div>
+    <div class="shop-grid">
+      <figure>
+        <img src="assets/shop-interior.jpg" alt="פנים המספרה — שלוש עמדות עם מראות קשת וכיסאות עור" width="819" height="1024" loading="lazy">
+      </figure>
+      <figure>
+        <img src="assets/shop-busy.jpg" alt="המספרה בשעת עומס — שלושה ספרים עובדים במקביל" width="819" height="1024" loading="lazy">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section id="gallery">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="rail" aria-hidden="true"></span>
+      <div class="blade">
+        <div class="kicker">עבודות</div>
+        <h2 class="gal-title">
+          שופטים אותנו לפי התוצאה
+          <a class="gal-ig" href="https://instagram.com/hasdera.barbershop" target="_blank" rel="noopener" aria-label="אינסטגרם"><span class="icn i-instagram" aria-hidden="true"></span></a><!-- DEMO: instagram handle -->
+        </h2>
+        <p>עוד מהשבוע האחרון — <a href="https://instagram.com/hasdera.barbershop" target="_blank" rel="noopener">באינסטגרם שלנו</a>.<!-- DEMO: instagram handle --></p>
+      </div>
+    </div>
+    <div class="gal">
+      <a class="tall settle" data-reveal href="https://instagram.com/hasdera.barbershop" target="_blank" rel="noopener" aria-label="לעוד עבודות באינסטגרם">
+        <img src="assets/work-scissors.jpg" alt="פייד חד עם קו שיער נקי — תוצאה מהשבוע" width="576" height="1024" loading="lazy">
+      </a>
+      <a class="settle" data-reveal href="https://instagram.com/hasdera.barbershop" target="_blank" rel="noopener" aria-label="לעוד עבודות באינסטגרם">
+        <img src="assets/work-fade.jpg" alt="תלתלים עם פייד מדויק בצדדים" width="576" height="1024" loading="lazy">
+      </a>
+      <a class="tall settle" data-reveal href="https://instagram.com/hasdera.barbershop" target="_blank" rel="noopener" aria-label="לעוד עבודות באינסטגרם">
+        <img src="assets/work-beard.jpg" alt="קרופ טקסטורה עם פייד נקי בעורף" width="576" height="1024" loading="lazy">
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TEAM ================= -->
+<section id="team">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="rail" aria-hidden="true"></span>
+      <div class="blade">
+        <div class="kicker">הצוות</div>
+        <h2>שלושה ספרים, סגנון אחד: שלך</h2>
+      </div>
+    </div>
+    <!-- DEMO: barber names -->
+    <div class="team-grid">
+      <article class="barber">
+        <img src="assets/team-alon.jpg" alt="אלון בן־חמו, הבעלים" width="970" height="606" loading="lazy">
+        <div class="body">
+          <h3>אלון בן־חמו</h3>
+          <span class="role">הבעלים · ספר ראשי</span>
+          <span class="spec">פיידים ועיצובי תער. <bdi>15</bdi> שנה עם מכונה ביד, והיד עוד לא רעדה.</span>
+          <a class="btn btn-ghost" href="booking.html?barber=%D7%90%D7%9C%D7%95%D7%9F" data-barber="אלון">לקבוע לאלון</a>
+        </div>
+      </article>
+      <article class="barber">
+        <img src="assets/team-daniel.jpg" alt="דניאל מזרחי, מומחה זקנים" width="970" height="606" loading="lazy">
+        <div class="body">
+          <h3>דניאל מזרחי</h3>
+          <span class="role">ספר בכיר</span>
+          <span class="spec">זקנים וגילוחי תער. אם יש לך זקן — הוא כבר יודע מה לעשות איתו.</span>
+          <a class="btn btn-ghost" href="booking.html?barber=%D7%93%D7%A0%D7%99%D7%90%D7%9C" data-barber="דניאל">לקבוע לדניאל</a>
+        </div>
+      </article>
+      <article class="barber">
+        <img src="assets/team-tomer.jpg" alt="תומר קציר, ספר הילדים" width="970" height="606" loading="lazy">
+        <div class="body">
+          <h3>תומר קציר</h3>
+          <span class="role">ספר</span>
+          <span class="spec">קלאסיות ותספורות ילדים. הילד שבכה אצל כולם? אצל תומר הוא צוחק.</span>
+          <a class="btn btn-ghost" href="booking.html?barber=%D7%AA%D7%95%D7%9E%D7%A8" data-barber="תומר">לקבוע לתומר</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!--
+  DEMO REVIEWS BLOCK — every review below is invented for the demo.
+  Replace with real Google reviews (with permission) or delete the block.
+<section id="reviews">
+  <div class="wrap">
+    <h2>מה אומרים עלינו</h2>
+    <blockquote>"קבעתי ל־18:00, ב־18:20 כבר הייתי באוטו מסופר." — עידן, לקוח קבוע</blockquote>
+    <blockquote>"הילד שלי מבקש להסתפר. זה כל מה שצריך לדעת." — מור</blockquote>
+    <blockquote>"גילוח תער ראשון בחיים. מכור." — שחר</blockquote>
+  </div>
+</section>
+-->
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="rail" aria-hidden="true"></span>
+      <div>
+        <div class="kicker">יצירת קשר</div>
+        <h2>שאלה שהיא לא תור?</h2>
+        <p>תשאיר הודעה ונחזור אליך עד סוף היום. לתורים — <a href="booking.html">עמוד קביעת התור</a>, זה מהיר יותר.</p>
+      </div>
+    </div>
+    <form id="contactForm" class="inner" novalidate>
+      <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="field">
+        <label for="cName">שם</label>
+        <input type="text" id="cName" name="cName" autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="cPhone">נייד</label>
+        <input type="tel" id="cPhone" name="cPhone" autocomplete="tel" inputmode="tel" placeholder="050-1234567" dir="ltr">
+      </div>
+      <div class="field">
+        <label for="cMsg">מה רצית לשאול?</label>
+        <textarea id="cMsg" name="cMsg" rows="3"></textarea>
+      </div>
+      <div class="form-msg" id="contactMsg" role="alert" aria-live="assertive"></div>
+      <button type="submit" class="btn btn-primary">שליחת הודעה</button>
+    </form>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="rail" aria-hidden="true"></span>
+      <div class="blade">
+        <div class="kicker">שאלות נפוצות</div>
+        <h2>שואלים אותנו כל יום</h2>
+      </div>
+    </div>
+    <details>
+      <summary>אפשר להגיע בלי תור?</summary>
+      <p>אפשר, ואם יש כיסא פנוי — אתה בפנים. אבל מי שקבע תמיד קודם, אז בערבים ובשישי עדיף לקבוע. זה לוקח שתי דקות ב<a href="booking.html">עמוד קביעת התור</a>.</p>
+    </details>
+    <details>
+      <summary>קבעתי ואני לא מגיע. מה עושים?</summary>
+      <p>מבטלים בוואטסאפ או בטלפון עד <bdi>3</bdi> שעות לפני, בלי שאלות. ביטול ברגע האחרון או הברזה — בפעם השלישית נבקש לשריין את התור הבא בתשלום מראש.<!-- DEMO: cancellation policy --></p>
+    </details>
+    <details>
+      <summary>יש חניה?</summary>
+      <p>חניון הרחוב מאחורי הבניין חינם אחרי <bdi>19:00</bdi>, ויש כחול־לבן לאורך השדרה. בשישי בבוקר תצא <bdi>10</bdi> דקות קודם — צפוף.<!-- DEMO: parking details --></p>
+    </details>
+    <details>
+      <summary>איך משלמים?</summary>
+      <p>ביט, אשראי או מזומן — מה שנוח לך. אין מינימום לאשראי.</p>
+    </details>
+    <details>
+      <summary>מאיזה גיל אתם מספרים ילדים?</summary>
+      <p>מגיל שלוש בערך — מהרגע שהוא מסכים לשבת. יש מסך עם סרטים, תומר סבלני כמו גנן, ותספורת ראשונה מקבלת תעודה הביתה.</p>
+    </details>
+    <details>
+      <summary>כמה זמן לפני התור להגיע?</summary>
+      <p>חמש דקות זה מושלם. יש קפה מהמכונה ומים קרים — אבל אין צורך ביותר מזה, כי בשעה שקבעת אתה כבר בכיסא.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ================= LOCATION ================= -->
+<section class="loc" id="location">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="rail" aria-hidden="true"></span>
+      <div class="blade">
+        <div class="kicker">איפה אנחנו</div>
+        <h2>על השדרה, אי אפשר לפספס</h2>
+      </div>
+    </div>
+    <div class="cols">
+      <div>
+        <address>
+          <span class="icn i-store" aria-hidden="true" style="margin-block-end:.6rem;"></span>
+          <strong>אחד העם <bdi>12</bdi>, תל אביב</strong><!-- DEMO: address --><br>
+          קומת קרקע, החנות עם עמוד הברבר המסתובב.
+        </address>
+        <div class="nav-row">
+          <a class="btn btn-primary" href="https://waze.com/ul?q=אחד העם 12 תל אביב&navigate=yes" target="_blank" rel="noopener">נווט בוויז</a><!-- DEMO: address -->
+          <a class="btn btn-ghost" href="https://maps.google.com/?q=אחד העם 12 תל אביב" target="_blank" rel="noopener">מפות גוגל</a><!-- DEMO: address -->
+        </div>
+        <table class="hours">
+          <caption>שעות פתיחה</caption>
+          <tbody id="hoursTable">
+            <tr data-day="0"><th scope="row">ראשון</th><td><bdi dir="ltr">09:00–20:00</bdi></td></tr>
+            <tr data-day="1"><th scope="row">שני</th><td><bdi dir="ltr">09:00–20:00</bdi></td></tr>
+            <tr data-day="2"><th scope="row">שלישי</th><td><bdi dir="ltr">09:00–20:00</bdi></td></tr>
+            <tr data-day="3"><th scope="row">רביעי</th><td><bdi dir="ltr">09:00–20:00</bdi></td></tr>
+            <tr data-day="4"><th scope="row">חמישי</th><td><bdi dir="ltr">09:00–20:00</bdi></td></tr>
+            <tr data-day="5"><th scope="row">שישי</th><td><bdi dir="ltr">08:00–14:30</bdi></td></tr>
+            <tr data-day="6"><th scope="row">שבת</th><td>סגור</td></tr>
+          </tbody>
+        </table><!-- DEMO: hours -->
+        <p class="park-note">טיפ: בערב חג אנחנו נסגרים מוקדם — עדכון מדויק תמיד בסטורי.</p>
+      </div>
+      <div class="map-box">
+        <iframe title="מפה: השדרה ברברשופ, אחד העם 12 תל אביב" loading="lazy"
+          src="https://maps.google.com/maps?q=%D7%90%D7%97%D7%93%20%D7%94%D7%A2%D7%9D%2012%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91&z=16&output=embed"
+          referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe><!-- DEMO: map address -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="logo" href="#top"><span class="icn i-sign" aria-hidden="true"></span>השדרה ברברשופ</a><!-- DEMO: shop name -->
+        <p style="color:var(--muted); max-inline-size:38ch; margin-block-start:.8rem;">מספרה שכונתית לגברים ולילדים. באים בשביל התספורת, חוזרים בגלל שפה זוכרים אותך.</p>
+      </div>
+      <nav aria-label="ניווט תחתון">
+        <a href="#services">מחירון</a>
+        <a href="#team">הצוות</a>
+        <a href="#our-shop">המספרה</a>
+        <a href="#gallery">עבודות</a>
+        <a href="#faq">שאלות נפוצות</a>
+        <a href="booking.html">קביעת תור</a>
+      </nav>
+      <div class="footer-aside">
+        <a class="phone-ltr footer-phone" href="tel:+97235551234"><bdi>03-555-1234</bdi></a><!-- DEMO: phone -->
+        <div class="footer-social">
+          <h3>רשתות חברתיות</h3>
+          <div class="social-row">
+            <a class="social-btn social-wa" href="https://wa.me/972505551234?text=%D7%94%D7%99%D7%99%2C%20%D7%A8%D7%A6%D7%99%D7%AA%D7%99%20%D7%9C%D7%A9%D7%90%D7%95%D7%9C%20%D7%9C%D7%92%D7%91%D7%99%20%D7%AA%D7%95%D7%A8" target="_blank" rel="noopener" aria-label="וואטסאפ"><span class="icn i-whatsapp" aria-hidden="true"></span></a><!-- DEMO: whatsapp number -->
+            <a class="social-btn social-ig" href="https://instagram.com/hasdera.barbershop" target="_blank" rel="noopener" aria-label="אינסטגרם"><span class="icn i-instagram" aria-hidden="true"></span></a><!-- DEMO: instagram -->
+            <a class="social-btn social-tt" href="https://tiktok.com/@hasdera.barbershop" target="_blank" rel="noopener" aria-label="טיקטוק"><span class="icn i-tiktok" aria-hidden="true"></span></a><!-- DEMO: tiktok -->
+          </div>
+        </div>
+        <nav class="footer-legal" aria-label="מידע משפטי">
+          <a href="#">הצהרת נגישות</a><!-- DEMO: link to accessibility statement page -->
+          <a href="#">מדיניות פרטיות</a><!-- DEMO: link to privacy page -->
+        </nav>
+      </div>
+    </div>
+    <p class="fine">© <bdi>2026</bdi> השדרה ברברשופ. כל הזכויות שמורות.</p>
+  </div>
+</footer>
+
+<!-- ================= MOBILE ACTION BAR ================= -->
+
+<!-- Sticky side: WhatsApp + booking -->
+<div class="side-fabs" aria-label="פעולות מהירות">
+  <a class="fab-wa" href="https://wa.me/972505551234?text=%D7%94%D7%99%D7%99%2C%20%D7%A8%D7%A6%D7%99%D7%AA%D7%99%20%D7%9C%D7%A7%D7%91%D7%95%D7%A2%20%D7%AA%D7%95%D7%A8" target="_blank" rel="noopener" aria-label="וואטסאפ"><span class="icn i-whatsapp" aria-hidden="true"></span></a><!-- DEMO: whatsapp number -->
+  <a class="fab-book" href="booking.html" aria-label="קביעת תור"><span class="icn i-calendar" aria-hidden="true"></span></a>
+</div>
+
+<div class="action-bar" id="actionBar">
+  <a class="phone-ltr" href="tel:+97235551234" aria-label="חיוג למספרה">📞 <bdi>חיוג</bdi></a><!-- DEMO: phone -->
+  <a href="https://wa.me/972505551234?text=%D7%94%D7%99%D7%99%2C%20%D7%A8%D7%A6%D7%99%D7%AA%D7%99%20%D7%9C%D7%A7%D7%91%D7%95%D7%A2%20%D7%AA%D7%95%D7%A8">וואטסאפ</a><!-- DEMO: whatsapp number -->
+  <a class="book" href="booking.html">קביעת תור</a>
+</div>
+
+
+<script defer src="assets/site.js"></script>
+<script defer src="assets/home.js"></script>
+</body>
+</html>

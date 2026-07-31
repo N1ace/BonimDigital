@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>קביעת תור · השדרה ברברשופ</title><!-- DEMO: shop name -->
+<meta name="description" content="קביעת תור אונליין להשדרה ברברשופ — בוחרים שירות, ספר, יום ושעה. אישור בוואטסאפ תוך רגע.">
+<meta name="format-detection" content="telephone=no">
+<link rel="canonical" href="https://n1ace.github.io/portfolio/demos/barber-shop/booking.html">
+<link rel="icon" href="assets/barber-pole.png" type="image/png">
+<meta property="og:title" content="קביעת תור · השדרה ברברשופ">
+<meta property="og:description" content="קביעת תור אונליין להשדרה ברברשופ — בוחרים שירות, ספר, יום ושעה. אישור בוואטסאפ תוך רגע.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://n1ace.github.io/portfolio/demos/barber-shop/assets/hero-interior.jpg">
+<meta property="og:locale" content="he_IL">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Hebrew-first pairing: Karantina (display) + Assistant (body) -->
+<link href="https://fonts.googleapis.com/css2?family=Karantina:wght@400;700&family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  "name": "השדרה ברברשופ",
+  "image": "https://n1ace.github.io/portfolio/demos/barber-shop/assets/hero-interior.jpg",
+  "telephone": "+972-3-555-1234",
+  "priceRange": "₪40–₪110",
+  "url": "https://n1ace.github.io/portfolio/demos/barber-shop/",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "אחד העם 12",
+    "addressLocality": "תל אביב",
+    "addressCountry": "IL"
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday","Monday","Tuesday","Wednesday","Thursday"], "opens": "09:00", "closes": "20:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "08:00", "closes": "14:30" }
+  ],
+  "potentialAction": {
+    "@type": "ReserveAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://n1ace.github.io/portfolio/demos/barber-shop/booking.html",
+      "actionPlatform": [
+        "http://schema.org/DesktopWebPlatform",
+        "http://schema.org/MobileWebPlatform"
+      ]
+    },
+    "result": {
+      "@type": "Reservation",
+      "name": "קביעת תור"
+    }
+  }
+}
+</script><!-- DEMO: JSON-LD uses demo address/phone -->
+</head>
+<body class="page-booking">
+<div class="pole-strip spin" aria-hidden="true"></div>
+
+<header class="site solid" id="top">
+  <div class="wrap bar">
+    <a class="logo" href="index.html" aria-label="השדרה ברברשופ — לדף הבית">
+      <span class="icn i-pole" aria-hidden="true"></span>
+      השדרה ברברשופ<!-- DEMO: shop name -->
+    </a>
+    <nav class="main" aria-label="ניווט ראשי">
+      <a href="index.html#services">מחירון</a>
+      <a href="index.html#team">הצוות</a>
+      <a href="index.html#our-shop">המספרה</a>
+      <a href="index.html#gallery">עבודות</a>
+      <a href="index.html#faq">שאלות</a>
+      <a href="index.html#location">איפה אנחנו</a>
+      <a href="booking.html" aria-current="page">קביעת תור</a>
+    </nav>
+    <div class="head-actions">
+      <a class="head-phone phone-ltr" href="tel:+97235551234"><bdi>03-555-1234</bdi></a><!-- DEMO: phone -->
+      <a class="btn btn-primary" href="booking.html" aria-current="page">קביעת תור</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobile-menu" aria-label="פתיחת תפריט">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+  <div id="mobile-menu">
+    <a href="index.html#services">מחירון</a>
+    <a href="index.html#team">הצוות</a>
+    <a href="index.html#our-shop">המספרה</a>
+    <a href="index.html#gallery">עבודות</a>
+    <a href="index.html#faq">שאלות נפוצות</a>
+    <a href="index.html#location">איפה אנחנו</a>
+    <a href="booking.html">קביעת תור</a>
+  </div>
+</header>
+
+<!-- ================= BOOKING ================= -->
+<section class="booking" id="booking">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="rail" aria-hidden="true"></span>
+      <div>
+        <div class="kicker">קביעת תור</div>
+        <h1>קביעת תור</h1>
+        <p class="lede">שתי דקות וסגרנו</p>
+        <p>בוחרים שירות, ספר, יום ושעה — ומקבלים אישור בוואטסאפ.</p>
+      </div>
+    </div>
+
+    <form id="bookForm" novalidate>
+      <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <div class="step" data-step="service">
+        <div class="lbl"><span class="no" aria-hidden="true">1</span><span id="lblService">מה עושים?</span></div>
+        <div class="chips" role="radiogroup" aria-labelledby="lblService" id="serviceChips"></div>
+      </div>
+
+      <div class="step" data-step="barber"><!-- DEMO: barber names -->
+        <div class="lbl"><span class="no" aria-hidden="true">2</span><span id="lblBarber">אצל מי?</span></div>
+        <div class="chips" role="radiogroup" aria-labelledby="lblBarber" id="barberChips"></div>
+      </div>
+
+      <div class="step" data-step="day">
+        <div class="lbl"><span class="no" aria-hidden="true">3</span><span id="lblDay">מתי?</span></div>
+        <div class="chips" role="radiogroup" aria-labelledby="lblDay" id="dayChips"></div>
+      </div>
+
+      <div class="step" data-step="time">
+        <div class="lbl"><span class="no" aria-hidden="true">4</span><span id="lblTime">באיזו שעה?</span></div>
+        <p class="slot-hint" id="slotHint" aria-live="polite"></p>
+        <div class="slots" id="slotGrid" role="group" aria-labelledby="lblTime"></div>
+        <div class="empty-slots" id="emptySlots" hidden></div>
+      </div>
+
+      <div class="step" data-step="details">
+        <div class="lbl"><span class="no" aria-hidden="true">5</span><span id="lblDetails">פרטים אחרונים</span></div>
+        <div class="field">
+          <label for="fName">שם מלא</label>
+          <input type="text" id="fName" name="name" autocomplete="name" placeholder="כמו שהספר קורא לך">
+        </div>
+        <div class="field">
+          <label for="fPhone">נייד</label>
+          <input type="tel" id="fPhone" name="phone" autocomplete="tel" inputmode="tel" placeholder="050-1234567" dir="ltr">
+        </div>
+        <div class="field">
+          <label for="fNotes">הערות (לא חובה)</label>
+          <textarea id="fNotes" name="notes" rows="2" placeholder="למשל: אני מגיע עם שני ילדים"></textarea>
+        </div>
+        <label class="consent">
+          <input type="checkbox" id="fConsent" name="consent">
+          <span>מאשר קבלת תזכורת ואישור תור ב־SMS או וואטסאפ. אפשר להפסיק בכל רגע במענה "הסר" — ולא נשלח שום דבר שיווקי בלי אישור נפרד. (נדרש לפי חוק התקשורת)</span>
+        </label>
+      </div>
+
+      <div class="form-msg" id="bookMsg" role="alert" aria-live="assertive"></div>
+      <div id="bookSubmitWrap"></div>
+
+      <div class="fallback">
+        מעדיף בן אדם? גם אנחנו.
+        <div class="row">
+          <a class="btn btn-ghost phone-ltr" href="tel:+97235551234"><bdi>03-555-1234</bdi></a><!-- DEMO: phone -->
+          <a class="btn btn-whatsapp" href="https://wa.me/972505551234?text=%D7%94%D7%99%D7%99%2C%20%D7%A8%D7%A6%D7%99%D7%AA%D7%99%20%D7%9C%D7%A7%D7%91%D7%95%D7%A2%20%D7%AA%D7%95%D7%A8"><span class="icn i-whatsapp" aria-hidden="true"></span>וואטסאפ</a><!-- DEMO: whatsapp number -->
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+
+
+
+<div class="sticky-book" id="stickyBook" aria-live="polite">
+  <div class="sticky-cluster">
+    <div class="sticky-top">
+      <span class="line" id="stickyText">בחר שעה כדי להמשיך</span>
+      <span class="price" id="stickyPrice"></span>
+    </div>
+    <button type="button" class="btn btn-primary is-muted" id="stickySubmit">סוגרים את התור</button>
+  </div>
+</div>
+
+<div class="side-fabs" aria-label="פעולות מהירות">
+  <a class="fab-wa" href="https://wa.me/972505551234?text=%D7%94%D7%99%D7%99%2C%20%D7%A8%D7%A6%D7%99%D7%AA%D7%99%20%D7%9C%D7%A7%D7%91%D7%95%D7%A2%20%D7%AA%D7%95%D7%A8" target="_blank" rel="noopener" aria-label="וואטסאפ"><span class="icn i-whatsapp" aria-hidden="true"></span></a><!-- DEMO: whatsapp number -->
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="logo" href="index.html"><span class="icn i-sign" aria-hidden="true"></span>השדרה ברברשופ</a><!-- DEMO: shop name -->
+        <p style="color:var(--muted); max-inline-size:38ch; margin-block-start:.8rem;">מספרה שכונתית לגברים ולילדים.</p>
+      </div>
+      <nav aria-label="ניווט תחתון">
+        <a href="index.html">דף הבית</a>
+        <a href="index.html#services">מחירון</a>
+        <a href="booking.html">קביעת תור</a>
+      </nav>
+      <div class="footer-aside">
+        <a class="phone-ltr footer-phone" href="tel:+97235551234"><bdi>03-555-1234</bdi></a><!-- DEMO: phone -->
+        <div class="footer-social">
+          <h3>רשתות חברתיות</h3>
+          <div class="social-row">
+            <a class="social-btn social-wa" href="https://wa.me/972505551234" target="_blank" rel="noopener" aria-label="וואטסאפ"><span class="icn i-whatsapp" aria-hidden="true"></span></a><!-- DEMO: whatsapp number -->
+            <a class="social-btn social-ig" href="https://instagram.com/hasdera.barbershop" target="_blank" rel="noopener" aria-label="אינסטגרם"><span class="icn i-instagram" aria-hidden="true"></span></a><!-- DEMO: instagram -->
+            <a class="social-btn social-tt" href="https://tiktok.com/@hasdera.barbershop" target="_blank" rel="noopener" aria-label="טיקטוק"><span class="icn i-tiktok" aria-hidden="true"></span></a><!-- DEMO: tiktok -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="fine">© <bdi>2026</bdi> השדרה ברברשופ. כל הזכויות שמורות.</p>
+  </div>
+</footer>
+
+
+<script defer src="assets/site.js"></script>
+<script defer src="assets/booking.js"></script>
+</body>
+</html>
