@@ -9,6 +9,8 @@
     'Play':'משחק',
     "Let's Talk":'דברו איתי',
     'Book a call':'קביעת שיחה',
+    'Chat on WhatsApp':'שיחה ב־WhatsApp',
+    'WhatsApp':'WhatsApp',
     '// I am Andrey':'// אני אנדריי',
     'Full Stack Web Developer':'מפתח Full Stack',
     'I build, fix, and speed up websites — turning slow or broken sites into fast, well-ranked, reliable ones. From full-stack development and custom code to SEO and custom software.':'אני בונה, מתקן ומשפר אתרים — והופך אתרים איטיים או תקולים למהירים, אמינים ומקודמים היטב. מפיתוח Full Stack וקוד מותאם אישית ועד SEO ומערכות תוכנה לעסקים.',
@@ -140,7 +142,6 @@
     'Have a site to build, fix, or speed up? Tell me what you need.':'צריכים לבנות, לתקן או להאיץ אתר? ספרו לי מה אתם צריכים.',
     'Open menu':'פתיחת תפריט',
     'Close menu':'סגירת תפריט',
-    'Chat on WhatsApp':'שיחה ב־WhatsApp',
     'Tetris game board':'לוח משחק טטריס',
     'Google Search Console performance chart for retailavr.co.il — clicks and impressions growth':'גרף ביצועים של Google Search Console עבור retailavr.co.il — צמיחה בקליקים ובחשיפות'
   };
