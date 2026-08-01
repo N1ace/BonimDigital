@@ -13,7 +13,8 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://n1ace.github.io/portfolio/demos/barber-shop/assets/hero-interior.jpg">
 <meta property="og:locale" content="he_IL">
-<link rel="preload" as="image" href="assets/hero-interior.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="assets/hero-poster-mobile.jpg" media="(max-width:899px)" fetchpriority="high">
+<link rel="preload" as="image" href="assets/hero-poster-desktop.jpg" media="(min-width:900px)" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- Hebrew-first pairing: Karantina (display) + Assistant (body) -->
@@ -80,8 +81,8 @@
 
 <!-- ================= HERO ================= -->
 <div class="hero">
-  <video class="bg bg-mobile" muted loop playsinline poster="assets/hero-interior.jpg" aria-hidden="true" preload="none" data-src="assets/hero-bg.mp4" width="720" height="1280"></video>
-  <video class="bg bg-desktop" muted loop playsinline poster="assets/hero-interior.jpg" aria-hidden="true" preload="none" data-src="assets/hero-bg-desktop.mp4" width="1920" height="1080"></video>
+  <video class="bg bg-mobile" muted loop playsinline poster="assets/hero-poster-mobile.jpg" aria-hidden="true" preload="none" data-src="assets/hero-bg.mp4" width="720" height="1280"></video>
+  <video class="bg bg-desktop" muted loop playsinline poster="assets/hero-poster-desktop.jpg" aria-hidden="true" preload="none" data-src="assets/hero-bg-desktop.mp4" width="1920" height="1080"></video>
   <div class="wrap">
     <span class="chip-open" id="openChip"><span class="dot" aria-hidden="true"></span><span id="openChipText">בודק שעות…</span><noscript>שעות הפתיחה למטה בעמוד</noscript></span>
     <h1 class="words" data-reveal>

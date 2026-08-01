@@ -177,7 +177,7 @@ nav.main a:hover{ color:var(--brass-hi); }
   .hero video.bg{ display:none !important; }
   .hero::before{
     content:""; position:absolute; inset:0;
-    background:url('hero-interior.jpg') center 40%/cover no-repeat;
+    background:url('hero-poster-desktop.jpg') center 40%/cover no-repeat;
   }
 }
 .hero::after{ content:""; position:absolute; inset:0; background:linear-gradient(to top, rgba(15,22,19,.96) 8%, rgba(15,22,19,.55) 45%, rgba(15,22,19,.25) 75%); }
