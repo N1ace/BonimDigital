@@ -26,7 +26,7 @@ git push -u origin main
 
 **Settings → Pages → `main` / root**
 
-> Contact form: `save.php` does **not** run on GitHub Pages. Use cPanel for PHP, or switch the form to Formspree/Web3Forms.
+> Contact: Cal.com booking + WhatsApp + email CTAs (works on GitHub Pages).
 
 ---
 

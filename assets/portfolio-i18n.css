@@ -63,6 +63,8 @@ html[dir="rtl"] .results-site{direction:ltr;unicode-bidi:isolate;display:inline-
 html[dir="rtl"] input[type="email"]{direction:ltr;text-align:left}
 html[dir="rtl"] .proj-preview,
 html[dir="rtl"] .proj-cube-preview{direction:ltr}
+html[dir="rtl"] .contact-actions{justify-content:center}
+html[dir="rtl"] .contact-note{direction:ltr}
 
 @media(max-width:900px){
   .lang-switch{min-width:70px;padding-inline:12px}
