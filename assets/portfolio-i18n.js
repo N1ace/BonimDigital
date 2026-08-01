@@ -13,7 +13,7 @@
     'Full Stack Web Developer':'מפתח Full Stack',
     'I build, fix, and speed up websites — turning slow or broken sites into fast, well-ranked, reliable ones. From full-stack development and custom code to SEO and custom software.':'אני בונה, מתקן ומשפר אתרים — והופך אתרים איטיים או תקולים למהירים, אמינים ומקודמים היטב. מפיתוח Full Stack וקוד מותאם אישית ועד SEO ומערכות תוכנה לעסקים.',
     'Download CV':'הורדת קורות חיים',
-    'View projects':'לפרויקטים',
+    'View projects':'צפו בפרויקטים',
     'available for work':'פנוי לפרויקטים',
     'response:':'זמן תגובה:',
     '< 24h':'פחות מ־24 שעות',
@@ -179,6 +179,11 @@
   }
   function translateElement(el,lang){
     if(el.nodeType!==1||el.matches('[data-language-switch]')) return;
+    if(el.hasAttribute('data-i18n')){
+      const key=el.getAttribute('data-i18n');
+      const next=convert(key,lang);
+      if(el.childElementCount===0&&el.textContent.trim()!==next) el.textContent=next;
+    }
     attrs.forEach(attr=>{
       if(!el.hasAttribute(attr)) return;
       const value=el.getAttribute(attr);
