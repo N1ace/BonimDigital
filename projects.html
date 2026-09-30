@@ -1,39 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projects — Andrey Toriyanik</title>
+<title>Projects — Bonim Digital</title>
 <meta name="description" content="Selected client sites and demos — WordPress, custom-coded landings, e-commerce, and local business websites.">
 <!-- Open Graph / social -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://n1ace.github.io/portfolio/projects.html">
-<meta property="og:title" content="Projects — Andrey Toriyanik">
+<meta property="og:title" content="Projects — Bonim Digital">
 <meta property="og:description" content="Selected client sites and demos — WordPress, custom-coded landings, e-commerce, and local business websites.">
-<meta property="og:image" content="https://n1ace.github.io/portfolio/assets/og-preview.jpg">
-<meta property="og:image:type" content="image/jpeg">
-<meta property="og:image:width" content="800">
-<meta property="og:image:height" content="999">
-<meta property="og:image:alt" content="Andrey Toriyanik — Full Stack Web Developer">
+<meta property="og:image" content="https://n1ace.github.io/portfolio/assets/logo/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="בונים דיגיטל">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Projects — Andrey Toriyanik">
+<meta name="twitter:title" content="Projects — Bonim Digital">
 <meta name="twitter:description" content="Selected client sites and demos — WordPress, custom-coded landings, e-commerce, and local business websites.">
-<meta name="twitter:image" content="https://n1ace.github.io/portfolio/assets/og-preview.jpg">
-<link rel="image_src" href="https://n1ace.github.io/portfolio/assets/og-preview.jpg">
-<script>try{if(localStorage.getItem('portfolio-language')==='he'){document.documentElement.lang='he';document.documentElement.dir='rtl'}}catch(e){}</script>
+<meta name="twitter:image" content="https://n1ace.github.io/portfolio/assets/logo/og.png">
+<link rel="icon" href="assets/logo/bonim-mark.svg" type="image/svg+xml">
+<link rel="icon" href="assets/logo/bonim-digital-512.png" type="image/png" sizes="512x512">
+<link rel="apple-touch-icon" href="assets/logo/apple-touch.png">
+<link rel="image_src" href="https://n1ace.github.io/portfolio/assets/logo/og.png">
+<script>try{if(localStorage.getItem('portfolio-language')!=='en'){document.documentElement.lang='he';document.documentElement.dir='rtl'}}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Heebo:wght@400;500;600;700;800&family=Manrope:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/portfolio-i18n.css?v=4">
-<script src="assets/portfolio-i18n.js?v=4" defer></script>
+<link rel="stylesheet" href="assets/portfolio-i18n.css?v=12">
+<script src="assets/portfolio-i18n.js?v=13" defer></script>
 <style>
 :root{
-  --bg:#0D0E10;
-  --card:#16181B;
-  --line:#24262A;
-  --text:#EDEDEA;
-  --muted:#96999E;
-  --accent:#E5A93D;
+  --bg:#1C2127;
+  --card:#252B33;
+  --line:#3A424C;
+  --text:#EEE8DF;
+  --muted:#A39B92;
+  --accent:#E8703F;
+  --accent-2:#4FB3A6;
+  --gold:#E8A33D;
+  --ink:#1C2127;
   --nav-h:64px;
   --display:'Archivo',sans-serif;
   --body:'Manrope',sans-serif;
@@ -46,14 +52,16 @@ a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%;height:auto}
 .wrap{max-width:1120px;margin:0 auto;padding-left:max(clamp(16px,4vw,24px),env(safe-area-inset-left,0px));padding-right:max(clamp(16px,4vw,24px),env(safe-area-inset-right,0px));width:100%}
 
-nav{
+.site-nav{
   position:fixed;top:0;left:0;right:0;z-index:100;width:100%;
-  background:rgba(13,14,16,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);
+  background:rgba(28,33,39,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);
   padding-top:env(safe-area-inset-top,0px)
 }
-.nav-in{display:flex;align-items:center;justify-content:space-between;gap:12px;height:var(--nav-h);position:relative}
-.logo{font-family:var(--mono);font-weight:500;font-size:14px;letter-spacing:.06em;width:38px;height:38px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--accent);flex-shrink:0}
-.menu{display:flex;gap:28px;font-size:14px;color:var(--muted)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;flex-direction:row-reverse;gap:12px;height:var(--nav-h);position:relative}
+.logo{display:flex;align-items:center;flex-direction:row-reverse;gap:10px;flex-shrink:0;line-height:1;color:var(--text)}
+.logo img{display:block;height:40px;width:40px;object-fit:contain}
+.logo-word{font-family:'Heebo',var(--display);font-weight:700;font-size:17px;letter-spacing:0;white-space:nowrap}
+.menu{display:flex;flex-direction:row-reverse;gap:28px;font-size:14px;color:var(--muted)}
 .menu a{transition:color .2s}
 .menu a:hover,.menu a:focus-visible,.menu a[aria-current="page"]{color:var(--text)}
 .menu a[aria-current="page"]{color:var(--accent)}
@@ -67,7 +75,7 @@ nav{
 .btn{display:inline-block;font-family:var(--body);font-weight:600;font-size:14px;padding:10px 20px;border-radius:8px;border:1px solid var(--line);background:var(--card);transition:border-color .2s,transform .2s}
 .btn:hover{border-color:var(--accent)}
 .btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.btn.solid{background:var(--accent);border-color:var(--accent);color:#151004}
+.btn.solid{background:var(--accent);border-color:var(--accent);color:var(--ink)}
 .btn.solid:hover{transform:translateY(-1px)}
 
 .page-head{padding:72px 0 0}
@@ -84,7 +92,7 @@ h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,4.8vw,52px);l
   border-radius:14px;overflow:hidden;min-width:0;
   transition:border-color .25s,transform .25s
 }
-.proj:hover{border-color:#3a3d42;transform:translateY(-2px)}
+.proj:hover{border-color:#4A3A32;transform:translateY(-2px)}
 .proj-preview{
   position:relative;aspect-ratio:16/10;background:#0A0B0D;border-bottom:1px solid var(--line);
   overflow:hidden;direction:ltr
@@ -121,7 +129,7 @@ h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,4.8vw,52px);l
 .page-cta p{color:var(--muted);max-width:420px}
 
 footer{margin-top:56px;border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
-.foot-in{display:flex;justify-content:space-between;align-items:center;padding:22px 0;font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.foot-in{display:flex;justify-content:space-between;align-items:center;padding:22px 0;font-family:var(--mono);font-size:12.5px;color:var(--muted);gap:16px;flex-wrap:wrap}
 .foot-in a{color:var(--accent);transition:opacity .2s}
 .foot-in a:hover,.foot-in a:focus-visible{opacity:.85}
 
@@ -161,23 +169,27 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-bottom:env(safe-
 </head>
 <body>
 
-<nav>
+<nav class="site-nav">
   <div class="wrap nav-in">
-    <a class="logo" href="index.html#home" aria-label="Home">AT</a>
+    <a class="logo" href="index.html#home" aria-label="בונים דיגיטל">
+      <img src="assets/logo/bonim-mark.svg" alt="" width="40" height="40">
+      <span class="logo-word" lang="he" dir="rtl">בונים דיגיטל</span>
+    </a>
     <div class="menu" id="site-menu">
       <a href="index.html#home">Home</a>
       <a href="index.html#services">Services</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#skills">Skills</a>
-      <a href="projects.html" aria-current="page">Projects</a>
+      <a href="index.html#packages">Packages</a>
+      <a href="projects.html" aria-current="page">Work</a>
       <a href="index.html#results">Results</a>
-      <a href="index.html#tetris">Play</a>
-      <a class="menu-talk" href="https://cal.com/andriitorianyk/30min" target="_blank" rel="noopener noreferrer">Book a call</a>
+      <a href="index.html#process">How it works</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="blog/index.html">Blog</a>
+      <a class="menu-talk" href="https://wa.me/972527905122?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%91%D7%95%D7%A0%D7%99%D7%9D%20%D7%93%D7%99%D7%92%D7%99%D7%98%D7%9C%2C%20%D7%99%D7%A9%20%D7%9C%D7%99%20%D7%A2%D7%A1%D7%A7%20%D7%95%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8" target="_blank" rel="noopener noreferrer">Message us on WhatsApp</a>
     </div>
     <div class="nav-actions">
-      <button class="lang-switch" type="button" data-language-switch aria-label="מעבר לעברית" title="מעבר לעברית">עברית</button>
+      <button class="lang-switch" type="button" data-language-switch aria-label="Switch to English" title="Switch to English">EN</button>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">☰</button>
-      <a class="btn solid" href="https://cal.com/andriitorianyk/30min" target="_blank" rel="noopener noreferrer">Book a call</a>
+      <a class="btn solid" href="https://wa.me/972527905122?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%91%D7%95%D7%A0%D7%99%D7%9D%20%D7%93%D7%99%D7%92%D7%99%D7%98%D7%9C%2C%20%D7%99%D7%A9%20%D7%9C%D7%99%20%D7%A2%D7%A1%D7%A7%20%D7%95%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8" target="_blank" rel="noopener noreferrer">WhatsApp</a>
     </div>
   </div>
 </nav>
@@ -187,21 +199,52 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-bottom:env(safe-
     <div class="wrap">
       <div class="sec-eyebrow rv">// projects</div>
       <h1 class="rv">All projects</h1>
-      <p class="sec-sub rv">Client sites and demos — landings, e-commerce, clinics, logistics, real estate, and more. Open any card to view the live build.</p>
+      <p class="sec-sub rv">Client sites and demos — what they asked for, and what went live.</p>
 
       <div class="proj-grid">
+
+        <article class="proj rv">
+          <div class="proj-preview" data-src="https://retailavr.co.il/">
+            <iframe title="Retail AVR preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+          </div>
+          <div class="proj-body">
+            <span class="proj-tick">// 01</span>
+            <h2>Retail AVR</h2>
+            <p>From Google: almost no visits, then 2,870 clicks after local SEO.</p>
+            <div class="chips"><span class="chip">WordPress</span><span class="chip">Local SEO</span><span class="chip">Performance</span></div>
+            <div class="proj-actions">
+              <a class="btn solid" href="https://retailavr.co.il/" target="_blank" rel="noopener noreferrer" data-open-window>Open live</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj rv">
+          <div class="proj-preview is-static">
+            <img src="assets/projects/aryian-studio/gallery-01.jpg" alt="Aryian Studio preview" width="819" height="1024" loading="lazy">
+          </div>
+          <div class="proj-body">
+            <span class="proj-tick">// 02</span>
+            <h2>Aryian Studio</h2>
+            <p>Booking system with automatic reminders. Clients book on their own, 24/7.</p>
+            <div class="chips"><span class="chip">Booking</span><span class="chip">Automation</span><span class="chip">Hebrew / RTL</span><span class="chip">JavaScript</span></div>
+            <div class="proj-actions">
+              <a class="btn solid" href="https://aryianstudio.com/" target="_blank" rel="noopener noreferrer" data-open-window>Open live</a>
+              <a class="btn" href="products/barber-booking.html">Product page</a>
+            </div>
+          </div>
+        </article>
 
         <article class="proj rv">
           <div class="proj-preview" data-src="https://n1ace.github.io/bookingapp/">
             <iframe title="Torio preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
           </div>
           <div class="proj-body">
-            <span class="proj-tick">// 01</span>
+            <span class="proj-tick">// 03</span>
             <h2>Torio</h2>
-            <p>Booking and planning experience for appointments — clean UI, clear flow, built as a custom front-end demo.</p>
+            <p>A booking flow so clients pick a service and a time without calling.</p>
             <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span></div>
             <div class="proj-actions">
-              <a class="btn solid" href="https://n1ace.github.io/bookingapp/" target="_blank" rel="noopener noreferrer">Open live</a>
+              <a class="btn solid" href="https://n1ace.github.io/bookingapp/" target="_blank" rel="noopener noreferrer" data-open-window>Open live</a>
             </div>
           </div>
         </article>
@@ -211,27 +254,12 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-bottom:env(safe-
             <iframe title="ÉCRU Store preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
           </div>
           <div class="proj-body">
-            <span class="proj-tick">// 02</span>
+            <span class="proj-tick">// 04</span>
             <h2>ÉCRU Store</h2>
-            <p>Multi-page e-commerce demo — shop, product, and cart screens with a refined retail look.</p>
+            <p>A shop with catalog, product pages and a cart.</p>
             <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span></div>
             <div class="proj-actions">
-              <a class="btn solid" href="https://n1ace.github.io/ecommerce/" target="_blank" rel="noopener noreferrer">Open live</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="proj rv">
-          <div class="proj-preview" data-src="https://retailavr.co.il/">
-            <iframe title="Retail AVR preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
-          </div>
-          <div class="proj-body">
-            <span class="proj-tick">// 03</span>
-            <h2>Retail AVR</h2>
-            <p>Live WordPress client site — local SEO, performance work, and measurable Search Console growth.</p>
-            <div class="chips"><span class="chip">WordPress</span><span class="chip">Local SEO</span><span class="chip">Performance</span></div>
-            <div class="proj-actions">
-              <a class="btn solid" href="https://retailavr.co.il/" target="_blank" rel="noopener noreferrer">Open live</a>
+              <a class="btn solid" href="https://n1ace.github.io/ecommerce/" target="_blank" rel="noopener noreferrer" data-open-window>Open live</a>
             </div>
           </div>
         </article>
@@ -241,12 +269,12 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-bottom:env(safe-
             <iframe title="AVELA Clinic preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
           </div>
           <div class="proj-body">
-            <span class="proj-tick">// 04</span>
+            <span class="proj-tick">// 05</span>
             <h2>AVELA Clinic</h2>
-            <p>Clinic landing demo — services, trust signals, and a focused booking-oriented layout.</p>
+            <p>A clinic site that makes it obvious how to book.</p>
             <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span></div>
             <div class="proj-actions">
-              <a class="btn solid" href="https://n1ace.github.io/clinicdemo/" target="_blank" rel="noopener noreferrer">Open live</a>
+              <a class="btn solid" href="https://n1ace.github.io/clinicdemo/" target="_blank" rel="noopener noreferrer" data-open-window>Open live</a>
             </div>
           </div>
         </article>
@@ -256,12 +284,12 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-bottom:env(safe-
             <iframe title="APEX Auto preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
           </div>
           <div class="proj-body">
-            <span class="proj-tick">// 05</span>
+            <span class="proj-tick">// 06</span>
             <h2>APEX Auto</h2>
-            <p>Full-service garage site — booking widget, pricing tools, before/after slider, and EN/HE market switch.</p>
+            <p>A garage site with booking, prices, and before/after work.</p>
             <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">i18n</span></div>
             <div class="proj-actions">
-              <a class="btn solid" href="https://n1ace.github.io/autoshop/" target="_blank" rel="noopener noreferrer">Open live</a>
+              <a class="btn solid" href="https://n1ace.github.io/autoshop/" target="_blank" rel="noopener noreferrer" data-open-window>Open live</a>
             </div>
           </div>
         </article>
@@ -271,12 +299,12 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-bottom:env(safe-
             <iframe title="HAVEN Realty preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
           </div>
           <div class="proj-body">
-            <span class="proj-tick">// 06</span>
+            <span class="proj-tick">// 07</span>
             <h2>HAVEN Realty</h2>
-            <p>Real-estate landing — full-bleed hero, property search, and a clean buyer-first flow.</p>
+            <p>A real-estate page so buyers can search listings.</p>
             <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span></div>
             <div class="proj-actions">
-              <a class="btn solid" href="https://n1ace.github.io/realestate/" target="_blank" rel="noopener noreferrer">Open live</a>
+              <a class="btn solid" href="https://n1ace.github.io/realestate/" target="_blank" rel="noopener noreferrer" data-open-window>Open live</a>
             </div>
           </div>
         </article>
@@ -286,12 +314,12 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-bottom:env(safe-
             <iframe title="NEXUS Logistics preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
           </div>
           <div class="proj-body">
-            <span class="proj-tick">// 07</span>
+            <span class="proj-tick">// 08</span>
             <h2>NEXUS Logistics</h2>
-            <p>Freight and delivery site — tracking demo, fleet tiles, city autocomplete, and bilingual EN/HE UI.</p>
+            <p>A freight site with tracking and a clear next step.</p>
             <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">i18n</span></div>
             <div class="proj-actions">
-              <a class="btn solid" href="https://n1ace.github.io/logistic/" target="_blank" rel="noopener noreferrer">Open live</a>
+              <a class="btn solid" href="https://n1ace.github.io/logistic/" target="_blank" rel="noopener noreferrer" data-open-window>Open live</a>
             </div>
           </div>
         </article>
@@ -301,27 +329,12 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-bottom:env(safe-
             <iframe title="STRATA Construction preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
           </div>
           <div class="proj-body">
-            <span class="proj-tick">// 08</span>
+            <span class="proj-tick">// 09</span>
             <h2>STRATA Construction</h2>
-            <p>Residential and commercial builder site — project storytelling, EN/HE switch, and a strong brand-first hero.</p>
+            <p>A builder site that shows the work, not just a phone number.</p>
             <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">i18n</span></div>
             <div class="proj-actions">
-              <a class="btn solid" href="https://n1ace.github.io/construction/" target="_blank" rel="noopener noreferrer">Open live</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="proj rv">
-          <div class="proj-preview is-static">
-            <img src="demos/barber-shop/assets/shop-busy.jpg" alt="השדרה ברברשופ — תצוגה מקדימה" width="819" height="1024" loading="lazy">
-          </div>
-          <div class="proj-body">
-            <span class="proj-tick">// 09</span>
-            <h2>Barber Shop</h2>
-            <p>Hebrew RTL barbershop site — services & pricing, WhatsApp booking, team, gallery, FAQ, and map for a Tel Aviv demo brand.</p>
-            <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">Hebrew / RTL</span></div>
-            <div class="proj-actions">
-              <a class="btn solid" href="demos/barber-shop/" target="_blank" rel="noopener noreferrer">Open live</a>
+              <a class="btn solid" href="https://n1ace.github.io/construction/" target="_blank" rel="noopener noreferrer" data-open-window>Open live</a>
             </div>
           </div>
         </article>
@@ -330,7 +343,7 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-bottom:env(safe-
 
       <div class="page-cta rv">
         <p>Have a site to build, fix, or speed up? Tell me what you need.</p>
-        <a class="btn solid" href="https://cal.com/andriitorianyk/30min" target="_blank" rel="noopener noreferrer">Book a call</a>
+        <a class="btn solid" href="https://wa.me/972527905122?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%91%D7%95%D7%A0%D7%99%D7%9D%20%D7%93%D7%99%D7%92%D7%99%D7%98%D7%9C%2C%20%D7%99%D7%A9%20%D7%9C%D7%99%20%D7%A2%D7%A1%D7%A7%20%D7%95%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8" target="_blank" rel="noopener noreferrer">Message us on WhatsApp</a>
       </div>
     </div>
   </header>
@@ -338,7 +351,15 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-bottom:env(safe-
 
 <footer>
   <div class="wrap foot-in">
-    <span>© <span id="yr"></span> Andrey Toriyanik · <a href="https://github.com/N1ace" target="_blank" rel="noopener noreferrer">GitHub</a></span>
+    <span>© <span id="yr"></span> Bonim Digital · <a href="https://github.com/N1ace" target="_blank" rel="noopener noreferrer">GitHub</a></span>
+    <nav class="social-links" aria-label="Social">
+      <a href="https://www.instagram.com/bonimdigital/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4zm0 2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7zm5 2.6A4.4 4.4 0 1 1 7.6 12 4.4 4.4 0 0 1 12 7.6zm0 2A2.4 2.4 0 1 0 14.4 12 2.4 2.4 0 0 0 12 9.6zm5.25-3.35a1.05 1.05 0 1 1-1.05 1.05 1.05 1.05 0 0 1 1.05-1.05z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61594940790647" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.07A10 10 0 1 0 10.4 21.9v-6.94H7.9v-2.89h2.5V9.8c0-2.47 1.47-3.84 3.72-3.84 1.08 0 2.2.2 2.2.2v2.42h-1.24c-1.22 0-1.6.76-1.6 1.54v1.85h2.72l-.43 2.89h-2.29v6.94A10 10 0 0 0 22 12.07z"/></svg>
+      </a>
+    </nav>
     <span>built fast · loads fast</span>
   </div>
 </footer>
@@ -424,5 +445,6 @@ document.querySelectorAll('.rv').forEach(el=>io.observe(el));
   previews.forEach(el=>previewIo.observe(el));
 })();
 </script>
+<script src="assets/open-project.js?v=1"></script>
 </body>
 </html>
