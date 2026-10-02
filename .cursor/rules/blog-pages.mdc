@@ -1,0 +1,32 @@
+---
+description: Responsive requirements for blog posts. Apply whenever creating, copying or editing a page in blog/ (new articles, blog redesigns, components embedded in posts).
+globs: blog/**
+alwaysApply: false
+---
+
+# Blog pages must be as responsive as the rest of the site
+
+## Start from the reference post
+- Copy the shell of `blog/booking-app-for-barbers.html`: same `<head>` (viewport meta `width=device-width, initial-scale=1, viewport-fit=cover`, the `site-pages.css` / `portfolio-i18n.css` / `cta.css` links with their current `?v=` numbers), the same nav, footer, `.float-actions` and `site-pages.js`.
+- Content lives inside the existing `.wrap` / `.post` / `.post-body` containers. Never set a fixed page width.
+
+## Layout rules for every new block
+- Mobile first. Nothing may be wider than the screen at 360px: use `max-width:100%`, `minmax(0,1fr)` grid columns, `clamp()` for big type, and `overflow-wrap:anywhere` on long numbers and URLs.
+- Multi-column grids collapse to one column on phones, using the site's breakpoints: 900px (nav), 700/620/560px (grids), 480px (small phones), and 1400px+ only for extras like the side table of contents.
+- Tables: on phones either scroll inside a wrapper (`overflow-x:auto`) or turn into stacked cards with `data-l` labels (see `.tbl.cmp`).
+- Wide breakouts (negative `margin-inline`) only inside a `min-width` media query.
+- Images: `width`/`height` attributes plus `max-width:100%;height:auto`.
+- Hebrew is RTL by default: use logical properties (`margin-inline-start`, `inset-inline-end`, `padding-inline`), not left/right.
+- Fixed elements respect `env(safe-area-inset-*)`.
+- Tap targets are at least 40px high; form inputs use a font size of at least 16px so iOS doesn't zoom in.
+- Hover styles go inside `@media (hover:hover) and (pointer:fine)`.
+- Every animation needs a `prefers-reduced-motion` fallback, and content must be visible without JS (gate hide-then-reveal effects behind a class JS adds, like `html.pr-on`; put the final state of demos in the HTML).
+- Prefix component classes (`.bdl`, `.bdr`, `.bdc`, ...) so they can't break shared styles.
+
+## Verify before calling it done
+Test in Edge with playwright-core (in `%TEMP%\pwaudit`, `chromium.launch({channel:'msedge'})`, `file:///` URL) at 360, 390, 768 and 1440px:
+- `document.documentElement.scrollWidth <= innerWidth` at every width (no sideways scroll)
+- no console errors, and calculators and demos still produce their expected values
+- scroll the whole page so every reveal fires, then check nothing is left hidden
+- screenshot the key sections at 390 and 1440 and look at them
+Then delete the screenshots, the test scripts and `%TEMP%\edge-*`.

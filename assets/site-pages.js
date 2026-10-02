@@ -21,6 +21,9 @@
     });
     menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
     window.addEventListener('resize',()=>{ if(window.innerWidth>900) closeMenu(); });
+    document.addEventListener('keydown',e=>{
+      if(e.key==='Escape' && menu.classList.contains('is-open')){ closeMenu(); toggle.focus(); }
+    });
   }
 
   const io=new IntersectionObserver(es=>{

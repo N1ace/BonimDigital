@@ -1,28 +1,26 @@
 .social-links{display:flex;align-items:center;justify-content:center;gap:10px}
 .social-links a{
-  width:40px;height:40px;border:1px solid var(--line,#24262A);border-radius:10px;
+  width:40px;height:40px;border:1px solid var(--line,#E3E8F0);border-radius:10px;
   display:inline-flex;align-items:center;justify-content:center;
-  background:var(--card,#16181B);color:var(--text,#EDEDEA);
+  background:var(--card,#F4F6FA);color:var(--text,#0B1B33);
   transition:border-color .2s,color .2s,transform .2s,background .2s,opacity .2s
 }
-.foot-in .social-links a{color:var(--text,#EDEDEA)}
+.foot-in .social-links a{color:var(--text,#0B1B33)}
 .social-links a:hover,.social-links a:focus-visible{
-  border-color:var(--accent,#E8703F);color:var(--accent,#E8703F);opacity:1;transform:translateY(-1px)
+  border-color:var(--accent,#0038B8);color:var(--accent,#0038B8);opacity:1;transform:translateY(-1px)
 }
-.social-links a:focus-visible{outline:2px solid var(--accent,#E8703F);outline-offset:2px}
+.social-links a:focus-visible{outline:2px solid var(--accent,#0038B8);outline-offset:2px}
 .social-links svg{width:18px;height:18px;fill:currentColor;display:block}
-.contact-social{margin-top:22px}
-
 .lang-switch{
   display:inline-flex;align-items:center;justify-content:center;gap:7px;
-  min-width:76px;height:40px;padding:0 14px;border:1px solid rgba(232,112,63,.65);
-  border-radius:8px;background:rgba(232,112,63,.1);color:var(--accent);
+  min-width:76px;height:40px;padding:0 14px;border:1px solid var(--line-strong,#C9D2DF);
+  border-radius:8px;background:var(--accent-soft,#E6EDFB);color:var(--accent);
   font-family:var(--body);font-size:13px;font-weight:700;letter-spacing:.02em;
   cursor:pointer;transition:background .2s,border-color .2s,color .2s,transform .2s
 }
 .lang-switch::before{content:"文";font-family:var(--mono);font-size:12px}
 .lang-switch:hover,.lang-switch:focus-visible{
-  background:var(--accent);border-color:var(--accent);color:var(--ink,#1C2127);transform:translateY(-1px)
+  background:var(--accent);border-color:var(--accent);color:var(--on-accent,#FFFFFF);transform:translateY(-1px)
 }
 .lang-switch:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
@@ -45,7 +43,7 @@
   min-height:52px;padding:0 18px 0 14px;border:1px solid rgba(255,255,255,.18);
   border-radius:999px;
   font-family:var(--body);font-size:14px;font-weight:800;
-  box-shadow:0 12px 34px rgba(0,0,0,.38);
+  box-shadow:0 12px 30px rgba(11,27,51,.16);
   transition:transform .2s,box-shadow .2s,background .2s,opacity .2s,visibility .2s
 }
 .whatsapp-float{
@@ -53,15 +51,15 @@
 }
 .whatsapp-float svg,
 .booking-float svg{width:26px;height:26px;fill:currentColor;flex:none}
-.whatsapp-float:hover{transform:translateY(-2px);background:#2EE06F;box-shadow:0 16px 38px rgba(0,0,0,.44)}
+.whatsapp-float:hover{transform:translateY(-2px);background:#2EE06F;box-shadow:0 16px 34px rgba(11,27,51,.2)}
 .whatsapp-float:focus-visible,
-.booking-float:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.booking-float:focus-visible{outline:2px solid var(--text,#0B1B33);outline-offset:3px}
 
 .booking-float{
   display:none;
-  background:var(--accent,#E8703F);color:var(--ink,#1C2127);border-color:rgba(28,33,39,.12)
+  background:var(--accent,#0038B8);color:var(--on-accent,#FFFFFF);border-color:rgba(11,27,51,.12)
 }
-.booking-float:hover{transform:translateY(-2px);background:#F27542;box-shadow:0 16px 38px rgba(0,0,0,.44)}
+.booking-float:hover{transform:translateY(-2px);background:var(--accent-hover,#002E96);box-shadow:0 16px 34px rgba(11,27,51,.2)}
 
 body:has(.menu.is-open) .float-actions{
   opacity:0;pointer-events:none;visibility:hidden
@@ -98,23 +96,20 @@ html[dir="rtl"] .status-in > span,
 html[dir="rtl"] .results-card h3,
 html[dir="rtl"] .results-head,
 html[dir="rtl"] .gsc-metric,
-html[dir="rtl"] .lh-shot-block{direction:rtl;text-align:right}
+html[dir="rtl"] .ps{direction:rtl;text-align:right}
 html[dir="rtl"] .results-period{margin-left:0;margin-right:auto}
 html[dir="rtl"] .email,
 html[dir="rtl"] [href^="mailto:"],
 html[dir="rtl"] .results-site{direction:ltr;unicode-bidi:isolate;display:inline-block}
 html[dir="rtl"] input[type="email"]{direction:ltr;text-align:left}
-html[dir="rtl"] .proj-preview,
-html[dir="rtl"] .proj-cube-preview{direction:ltr}
-html[lang="he"] .proj-cube-name,
-html[lang="he"] .proj-cube-tag,
+html[dir="rtl"] .proj-preview{direction:ltr}
 html[lang="he"] .proj-body h2,
 html[lang="he"] .blog-card h2,
 html[lang="he"] .article h2{font-family:'Heebo',var(--display)}
 html[dir="rtl"] .article,
 html[dir="rtl"] .blog-card-body,
 html[dir="rtl"] .crumbs{text-align:right}
-html[dir="rtl"] .contact-actions{justify-content:center}
+html[dir="rtl"] .contact-actions{justify-content:flex-start}
 html[dir="rtl"] .contact-note{direction:ltr}
 
 @media(max-width:900px){
@@ -149,7 +144,23 @@ html[dir="rtl"] .contact-note{direction:ltr}
   .logo img{height:36px;width:36px;max-width:none}
   .logo-word{font-size:14px}
 }
+@media(pointer:coarse){
+  :root .lang-switch{height:44px}
+  :root .nav-toggle{width:44px;height:44px}
+  :root .logo{min-height:44px}
+  :root .social-links a{width:44px;height:44px}
+  :root .foot-in a:not(.social-links a){display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px}
+  :root .crumbs a{display:inline-block;padding:14px 16px;margin:-14px -16px}
+  :root .btn{line-height:20px;padding-block:11px}
+}
+@media(hover:none){
+  .lang-switch:hover,.social-links a:hover,.whatsapp-float:hover,.booking-float:hover{transform:none}
+}
+.float-actions{transition:opacity .25s,visibility .25s}
+.float-actions.is-tucked{opacity:0;visibility:hidden}
+.float-actions.is-tucked > a{pointer-events:none}
 @media(prefers-reduced-motion:reduce){
+  .float-actions,
   .lang-switch,
   .whatsapp-float,
   .booking-float{transition:none}

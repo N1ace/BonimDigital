@@ -1,0 +1,26 @@
+/* ---------- background journey line (assets/scroll-journey.js) ---------- */
+.sj{position:absolute;top:0;left:0;z-index:-1;pointer-events:none;overflow:visible}
+.sj.is-off{display:none}
+.sj path{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.sj-probe{visibility:hidden}
+.sj-track{stroke:rgba(11,27,51,.12);stroke-width:2;stroke-dasharray:1 8}
+.sj-fill{stroke-width:2.5;opacity:.45}
+/* section tags double as the line's progress points */
+.sj-point{transition:background-color .4s,border-color .4s,color .4s,box-shadow .4s}
+.sj-point.rv{transition:opacity .6s ease,transform .6s ease,background-color .4s,border-color .4s,color .4s,box-shadow .4s}
+.sj-point.sj-hit{background:#0038B8;border-color:#0038B8;color:#FFFFFF;box-shadow:0 0 0 5px rgba(0,56,184,.12)}
+.sj-point.sj-goal.sj-hit{background:#C2410C;border-color:#C2410C;box-shadow:0 0 0 5px rgba(194,65,12,.14)}
+.sj-tip{fill:#0038B8;stroke:#FFFFFF;stroke-width:2;filter:drop-shadow(0 0 6px rgba(0,56,184,.6))}
+.sj-halo{fill:#0038B8;opacity:0;transform-box:fill-box;transform-origin:center}
+.sj-tip,.sj-halo{visibility:hidden}
+.sj.is-moving .sj-tip,.sj.is-moving .sj-halo{visibility:visible}
+.sj.is-moving .sj-halo{animation:sj-pulse 1.8s ease-out infinite}
+.sj.is-compact .sj-track{stroke-width:1.5;stroke-dasharray:1 6;stroke:rgba(11,27,51,.12)}
+.sj.is-compact .sj-fill{stroke-width:2;opacity:.4}
+.sj.is-compact .sj-tip{stroke-width:1.5;filter:none}
+@keyframes sj-pulse{0%{opacity:.28;transform:scale(.4)}100%{opacity:0;transform:scale(1.4)}}
+@media (prefers-reduced-motion:reduce){
+  .sj-point,.sj-point.rv{transition:none}
+  .sj.is-moving .sj-halo{animation:none}
+}
+@media print{.sj{display:none}}

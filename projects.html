@@ -2,7 +2,8 @@
 <html lang="he" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#FFFFFF">
 <title>Projects — Bonim Digital</title>
 <meta name="description" content="Selected client sites and demos — WordPress, custom-coded landings, e-commerce, and local business websites.">
 <!-- Open Graph / social -->
@@ -27,19 +28,26 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Heebo:wght@400;500;600;700;800&family=Manrope:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/portfolio-i18n.css?v=12">
-<script src="assets/portfolio-i18n.js?v=13" defer></script>
+<link rel="stylesheet" href="assets/portfolio-i18n.css?v=18">
+<script src="assets/portfolio-i18n.js?v=31" defer></script>
 <style>
 :root{
-  --bg:#1C2127;
-  --card:#252B33;
-  --line:#3A424C;
-  --text:#EEE8DF;
-  --muted:#A39B92;
-  --accent:#E8703F;
-  --accent-2:#4FB3A6;
-  --gold:#E8A33D;
-  --ink:#1C2127;
+  --bg:#FFFFFF;
+  --card:#F4F6FA;
+  --line:#E3E8F0;
+  --line-strong:#C9D2DF;
+  --text:#0B1B33;
+  --muted:#52607A;
+  --accent:#0038B8;
+  --accent-hover:#002E96;
+  --accent-soft:#E6EDFB;
+  --on-accent:#FFFFFF;
+  --accent-2:#C2410C;
+  --gold:#F4B740;
+  --gold-soft:#FFF4DC;
+  --gold-ink:#8A5A00;
+  --danger:#D92D20;
+  --ink:#0B1B33;
   --nav-h:64px;
   --display:'Archivo',sans-serif;
   --body:'Manrope',sans-serif;
@@ -54,13 +62,13 @@ img{display:block;max-width:100%;height:auto}
 
 .site-nav{
   position:fixed;top:0;left:0;right:0;z-index:100;width:100%;
-  background:rgba(28,33,39,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);
+  background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);
   padding-top:env(safe-area-inset-top,0px)
 }
 .nav-in{display:flex;align-items:center;justify-content:space-between;flex-direction:row-reverse;gap:12px;height:var(--nav-h);position:relative}
 .logo{display:flex;align-items:center;flex-direction:row-reverse;gap:10px;flex-shrink:0;line-height:1;color:var(--text)}
 .logo img{display:block;height:40px;width:40px;object-fit:contain}
-.logo-word{font-family:'Heebo',var(--display);font-weight:700;font-size:17px;letter-spacing:0;white-space:nowrap}
+.logo-word{font-family:'Heebo',var(--display);font-weight:700;font-size:17px;letter-spacing:0;white-space:nowrap;color:var(--text)}
 .menu{display:flex;flex-direction:row-reverse;gap:28px;font-size:14px;color:var(--muted)}
 .menu a{transition:color .2s}
 .menu a:hover,.menu a:focus-visible,.menu a[aria-current="page"]{color:var(--text)}
@@ -72,11 +80,13 @@ img{display:block;max-width:100%;height:auto}
 }
 .nav-actions{display:flex;align-items:center;gap:10px;flex-shrink:0}
 .menu-talk{display:none}
-.btn{display:inline-block;font-family:var(--body);font-weight:600;font-size:14px;padding:10px 20px;border-radius:8px;border:1px solid var(--line);background:var(--card);transition:border-color .2s,transform .2s}
+.btn{display:inline-block;font-family:var(--body);font-weight:600;font-size:14px;padding:10px 20px;border-radius:8px;border:1px solid var(--line-strong);background:#FFFFFF;color:var(--text);transition:border-color .2s,background .2s,transform .2s}
 .btn:hover{border-color:var(--accent)}
 .btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.btn.solid{background:var(--accent);border-color:var(--accent);color:var(--ink)}
-.btn.solid:hover{transform:translateY(-1px)}
+.btn.solid{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn.solid:hover{background:var(--accent-hover);border-color:var(--accent-hover);transform:translateY(-1px)}
+.nav-actions .btn.solid{background:#FFFFFF;border-color:var(--line-strong);color:var(--accent)}
+.nav-actions .btn.solid:hover{background:var(--accent-soft);border-color:var(--accent)}
 
 .page-head{padding:72px 0 0}
 .sec-eyebrow{font-family:var(--mono);font-size:13px;color:var(--accent);letter-spacing:.08em;margin-bottom:10px}
@@ -92,7 +102,7 @@ h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,4.8vw,52px);l
   border-radius:14px;overflow:hidden;min-width:0;
   transition:border-color .25s,transform .25s
 }
-.proj:hover{border-color:#4A3A32;transform:translateY(-2px)}
+.proj:hover{border-color:var(--line-strong);transform:translateY(-2px)}
 .proj-preview{
   position:relative;aspect-ratio:16/10;background:#0A0B0D;border-bottom:1px solid var(--line);
   overflow:hidden;direction:ltr
@@ -105,6 +115,7 @@ h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,4.8vw,52px);l
   position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;
   opacity:0;transition:opacity .4s;display:block
 }
+.proj-preview img.proj-poster{object-position:center top}
 .proj-preview.is-loaded iframe,
 .proj-preview.is-loaded img{opacity:1}
 .proj-preview::after{
@@ -117,10 +128,10 @@ h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,4.8vw,52px);l
 .proj-body h2{font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:-.01em}
 .proj-body p{color:var(--muted);font-size:14.5px;flex:1}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
-.chip{font-family:var(--mono);font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:7px;padding:6px 11px;background:var(--bg)}
-.proj:hover .chip{color:var(--text)}
+.chip{font-family:var(--mono);font-size:12px;color:var(--accent);border:1px solid transparent;border-radius:7px;padding:6px 11px;background:var(--accent-soft)}
 .proj-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
 .proj-actions .btn{font-size:13px;padding:9px 16px}
+@media(pointer:coarse){.proj-actions .btn{line-height:20px;padding-block:11px}}
 
 .page-cta{
   margin:48px 0 0;padding:36px 0;border-top:1px solid var(--line);
@@ -132,6 +143,9 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-bottom:env(safe-
 .foot-in{display:flex;justify-content:space-between;align-items:center;padding:22px 0;font-family:var(--mono);font-size:12.5px;color:var(--muted);gap:16px;flex-wrap:wrap}
 .foot-in a{color:var(--accent);transition:opacity .2s}
 .foot-in a:hover,.foot-in a:focus-visible{opacity:.85}
+.foot-links{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 16px}
+.foot-in .foot-admin{color:var(--muted);font-size:11.5px;opacity:.7;padding-inline-start:14px;border-inline-start:1px solid var(--line)}
+.foot-in .foot-admin:hover,.foot-in .foot-admin:focus-visible{opacity:1;color:var(--accent)}
 
 .rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
 .rv.on{opacity:1;transform:none}
@@ -145,7 +159,7 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-bottom:env(safe-
   .proj-grid{grid-template-columns:1fr;gap:16px;margin-top:32px}
   .menu{
     display:none;position:fixed;top:calc(var(--nav-h) + env(safe-area-inset-top,0px));left:0;right:0;flex-direction:column;gap:0;
-    padding:8px 0 max(14px,env(safe-area-inset-bottom,0px));background:rgba(13,14,16,.97);backdrop-filter:blur(12px);
+    padding:8px 0 max(14px,env(safe-area-inset-bottom,0px));background:rgba(255,255,255,.98);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
     border-bottom:1px solid var(--line);z-index:40;max-height:calc(100dvh - var(--nav-h));overflow-y:auto
   }
   .menu.is-open{display:flex}
@@ -178,7 +192,7 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-bottom:env(safe-
     <div class="menu" id="site-menu">
       <a href="index.html#home">Home</a>
       <a href="index.html#services">Services</a>
-      <a href="index.html#packages">Packages</a>
+      <a href="index.html#testimonials">Testimonials</a>
       <a href="projects.html" aria-current="page">Work</a>
       <a href="index.html#results">Results</a>
       <a href="index.html#process">How it works</a>
@@ -204,7 +218,7 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-bottom:env(safe-
       <div class="proj-grid">
 
         <article class="proj rv">
-          <div class="proj-preview" data-src="https://retailavr.co.il/">
+          <div class="proj-preview" data-src="https://retailavr.co.il/" data-poster="assets/projects/retailavr/preview.jpg?v=2">
             <iframe title="Retail AVR preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
           </div>
           <div class="proj-body">
@@ -230,12 +244,13 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-bottom:env(safe-
             <div class="proj-actions">
               <a class="btn solid" href="https://aryianstudio.com/" target="_blank" rel="noopener noreferrer" data-open-window>Open live</a>
               <a class="btn" href="products/barber-booking.html">Product page</a>
+              <a class="btn" href="index.html#testimonials">Client review</a>
             </div>
           </div>
         </article>
 
         <article class="proj rv">
-          <div class="proj-preview" data-src="https://n1ace.github.io/bookingapp/">
+          <div class="proj-preview" data-src="https://n1ace.github.io/bookingapp/" data-poster="assets/projects/bookingapp/preview.jpg?v=2">
             <iframe title="Torio preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
           </div>
           <div class="proj-body">
@@ -250,7 +265,7 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-bottom:env(safe-
         </article>
 
         <article class="proj rv">
-          <div class="proj-preview" data-src="https://n1ace.github.io/ecommerce/">
+          <div class="proj-preview" data-src="https://n1ace.github.io/ecommerce/" data-poster="assets/projects/ecommerce/preview.jpg?v=2">
             <iframe title="ÉCRU Store preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
           </div>
           <div class="proj-body">
@@ -265,7 +280,7 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-bottom:env(safe-
         </article>
 
         <article class="proj rv">
-          <div class="proj-preview" data-src="https://n1ace.github.io/clinicdemo/">
+          <div class="proj-preview" data-src="https://n1ace.github.io/clinicdemo/" data-poster="assets/projects/clinicdemo/preview.jpg?v=2">
             <iframe title="AVELA Clinic preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
           </div>
           <div class="proj-body">
@@ -280,7 +295,7 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-bottom:env(safe-
         </article>
 
         <article class="proj rv">
-          <div class="proj-preview" data-src="https://n1ace.github.io/autoshop/">
+          <div class="proj-preview" data-src="https://n1ace.github.io/autoshop/" data-poster="assets/projects/autoshop/preview.jpg?v=2">
             <iframe title="APEX Auto preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
           </div>
           <div class="proj-body">
@@ -295,7 +310,7 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-bottom:env(safe-
         </article>
 
         <article class="proj rv">
-          <div class="proj-preview" data-src="https://n1ace.github.io/realestate/">
+          <div class="proj-preview" data-src="https://n1ace.github.io/realestate/" data-poster="assets/projects/realestate/preview.jpg?v=2">
             <iframe title="HAVEN Realty preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
           </div>
           <div class="proj-body">
@@ -310,7 +325,7 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-bottom:env(safe-
         </article>
 
         <article class="proj rv">
-          <div class="proj-preview" data-src="https://n1ace.github.io/logistic/">
+          <div class="proj-preview" data-src="https://n1ace.github.io/logistic/" data-poster="assets/projects/logistic/preview.jpg?v=2">
             <iframe title="NEXUS Logistics preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
           </div>
           <div class="proj-body">
@@ -325,7 +340,7 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-bottom:env(safe-
         </article>
 
         <article class="proj rv">
-          <div class="proj-preview" data-src="https://n1ace.github.io/construction/">
+          <div class="proj-preview" data-src="https://n1ace.github.io/construction/" data-poster="assets/projects/construction/preview.jpg?v=2">
             <iframe title="STRATA Construction preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
           </div>
           <div class="proj-body">
@@ -361,6 +376,10 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-bottom:env(safe-
       </a>
     </nav>
     <span>built fast · loads fast</span>
+    <span class="foot-links">
+      <a href="track.html">Track your project</a>
+      <a class="foot-admin" href="admin/index.html" rel="nofollow">Admin</a>
+    </span>
   </div>
 </footer>
 
@@ -369,7 +388,7 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-bottom:env(safe-
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.55L2.3 21.7l5.28-1.38A9.7 9.7 0 1 0 12 2Zm0 17.65a7.94 7.94 0 0 1-4.05-1.1l-.29-.17-3.13.82.84-3.05-.19-.31A7.94 7.94 0 1 1 12 19.65Zm4.36-5.95c-.24-.12-1.41-.7-1.63-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18a7.2 7.2 0 0 1-1.33-1.66c-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>
   <span>WhatsApp</span>
 </a>
-  <a class="booking-float" href="https://cal.com/andriitorianyk/30min" target="_blank" rel="noopener noreferrer" aria-label="Book a call" title="Book a call">
+  <a class="booking-float" href="booking.html" aria-label="Book a call" title="Book a call">
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 16H5V10h14v10Zm0-12H5V6h14v2Z"/></svg>
   <span>Book a call</span>
 </a>
@@ -398,6 +417,9 @@ document.getElementById('yr').textContent = new Date().getFullYear();
   });
   menu.querySelectorAll('a').forEach(a=>a.addEventListener('click', closeMenu));
   window.addEventListener('resize',()=>{ if(window.innerWidth > 900) closeMenu(); });
+  document.addEventListener('keydown',e=>{
+    if(e.key === 'Escape' && menu.classList.contains('is-open')){ closeMenu(); toggle.focus(); }
+  });
 })();
 
 const io = new IntersectionObserver(es=>{
@@ -408,10 +430,22 @@ document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 (function(){
   const previews = document.querySelectorAll('.proj-preview');
   if(!previews.length) return;
+  const lite = matchMedia('(hover: none), (pointer: coarse), (max-width: 1023px)').matches;
   const loadIframe = el=>{
     const iframe = el.querySelector('iframe');
     const src = el.getAttribute('data-src');
     if(!iframe || !src || iframe.getAttribute('src')) return;
+    const poster = el.getAttribute('data-poster');
+    if(lite && poster){
+      const img = new Image();
+      img.alt = iframe.title || '';
+      img.decoding = 'async';
+      img.className = 'proj-poster';
+      img.src = poster;
+      iframe.replaceWith(img);
+      loadStatic(el);
+      return;
+    }
     const mark = ()=>el.classList.add('is-loaded');
     iframe.addEventListener('load', mark, {once:true});
     iframe.addEventListener('error', mark, {once:true});

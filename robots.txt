@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /admin/
+
+Sitemap: https://n1ace.github.io/portfolio/sitemap.xml

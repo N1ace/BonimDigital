@@ -1,0 +1,38 @@
+/* ---------- call-to-action button: blur-in entrance, cursor glow, underline, arrow ---------- */
+.cta,.btn.cta{
+  position:relative;isolation:isolate;overflow:hidden;
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  box-shadow:0 8px 22px -10px rgba(0,56,184,.6);
+  transition:transform .25s,box-shadow .3s,background .2s,border-color .2s,opacity .7s ease,filter .7s ease,translate .7s cubic-bezier(.22,1,.36,1)
+}
+.cta::before{
+  content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;
+  background:radial-gradient(150px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.36),rgba(255,255,255,0) 65%);
+  opacity:0;transition:opacity .3s
+}
+.cta:hover::before{opacity:1}
+.cta:hover,.btn.cta:hover{box-shadow:0 16px 34px -12px rgba(0,56,184,.7),0 0 0 4px rgba(0,56,184,.12)}
+.cta:active,.btn.cta:active{transform:scale(.97)}
+.cta:focus-visible{outline:2px solid var(--accent,#0038B8);outline-offset:3px}
+
+.cta-txt{position:relative;white-space:nowrap}
+.cta-txt::after{
+  content:"";position:absolute;inset-inline:0;bottom:-3px;height:1.5px;border-radius:2px;background:currentColor;
+  transform:scaleX(0);transform-origin:left center;transition:transform .35s cubic-bezier(.22,1,.36,1)
+}
+html[dir="rtl"] .cta-txt::after{transform-origin:right center}
+.cta:hover .cta-txt::after,.cta:focus-visible .cta-txt::after{transform:scaleX(1)}
+
+.cta-arrow{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s cubic-bezier(.22,1,.36,1)}
+.cta:hover .cta-arrow,.cta:focus-visible .cta-arrow{transform:translateX(4px)}
+html[dir="rtl"] .cta-arrow{transform:scaleX(-1)}
+html[dir="rtl"] .cta:hover .cta-arrow,html[dir="rtl"] .cta:focus-visible .cta-arrow{transform:translateX(-4px) scaleX(-1)}
+
+html.cta-js .cta{opacity:0;filter:blur(8px);translate:-18px 0}
+html.cta-js[dir="rtl"] .cta{translate:18px 0}
+html.cta-js .cta.cta-in{opacity:1;filter:none;translate:0 0}
+
+@media (hover:none){.cta::before{display:none}}
+@media (prefers-reduced-motion:reduce){
+  .cta,.cta-txt::after,.cta-arrow{transition:none}
+}
