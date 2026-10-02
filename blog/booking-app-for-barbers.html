@@ -24,14 +24,15 @@
 <link rel="icon" href="../assets/logo/bonim-mark.svg" type="image/svg+xml">
 <link rel="icon" href="../assets/logo/bonim-digital-512.png" type="image/png" sizes="512x512">
 <link rel="apple-touch-icon" href="../assets/logo/apple-touch.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Heebo:wght@400;500;700;800&family=Manrope:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/fonts/fonts.css?v=1">
 <link rel="stylesheet" href="../assets/site-pages.css?v=14">
 <link rel="stylesheet" href="../assets/portfolio-i18n.css?v=19">
+<link rel="stylesheet" href="../assets/a11y.css?v=1">
+<link rel="stylesheet" href="../assets/consent.css?v=1">
+<script src="../assets/consent.js?v=1"></script>
 <link rel="stylesheet" href="../assets/cta.css?v=1">
 <script src="../assets/cta.js?v=1"></script>
-<script src="../assets/portfolio-i18n.js?v=32" defer></script>
+<script src="../assets/portfolio-i18n.js?v=34" defer></script>
 <style>
 /* ---------- article ---------- */
 .post{padding:40px 0 8px}
@@ -69,7 +70,7 @@
 .fq-h{margin:0;font:inherit}
 .fq-q{all:unset;box-sizing:border-box;width:100%;display:flex;align-items:center;gap:14px;padding:18px 20px;cursor:pointer;border-radius:14px}
 .fq-q:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
-.fq-n{flex:none;min-width:24px;font-family:var(--display);font-weight:800;font-size:14px;color:#A3ADBE;transition:color .25s}
+.fq-n{flex:none;min-width:24px;font-family:var(--display);font-weight:800;font-size:14px;color:#657189;transition:color .25s}
 .fq-it.open .fq-n{color:var(--accent)}
 .fq-t{flex:1;font-family:'Heebo',var(--display);font-weight:700;font-size:17px;line-height:1.4;color:var(--text)}
 .fq-pl{flex:none;width:34px;height:34px;border-radius:50%;background:#FFFFFF;border:1px solid var(--line);color:var(--text);display:grid;place-items:center;transition:transform .3s,background .25s,color .25s,border-color .25s}
@@ -116,7 +117,7 @@
 .bdl-tb th,.bdl-tb td{border-radius:10px;padding:10px 8px;text-align:center}
 .bdl-tb thead th{color:#C9D6EA;font-size:13px;font-weight:700;line-height:1.25;background:rgba(255,255,255,.05)}
 .bdl-tb thead th:first-child{background:none}
-.bdl-tb thead small{font-weight:400;font-size:11px;color:#7F90AE}
+.bdl-tb thead small{font-weight:400;font-size:11px;color:#8FA0BD}
 .bdl-tb tbody th{color:#A9B8D3;font-size:12.5px;font-weight:500;text-align:start;background:none;width:18%}
 .bdl-tb td{background:rgba(255,255,255,.05);font-family:'IBM Plex Mono',ui-monospace,monospace;font-weight:600;font-size:clamp(15px,2.2vw,19px);color:#fff;direction:ltr;font-variant-numeric:tabular-nums;white-space:nowrap}
 .bdl-tb .mid{background:rgba(255,156,122,.12)}
@@ -126,7 +127,7 @@
 .bdl-save span{grid-row:1/3;color:#C9D6EA;font-size:13.5px;line-height:1.5}
 .bdl-save span b{color:#fff}
 .bdl-save strong{font-family:'IBM Plex Mono',ui-monospace,monospace;font-weight:600;font-size:24px;color:#7FE3A8;direction:ltr;text-align:end;font-variant-numeric:tabular-nums}
-.bdl-save em{font-style:normal;font-size:11px;color:#7F90AE;text-align:end}
+.bdl-save em{font-style:normal;font-size:11px;color:#8FA0BD;text-align:end}
 .bdl-note{margin:10px 0 0;font-size:12px;color:var(--m)}
 .bdl-rp{display:inline-flex;align-items:center;gap:6px;margin-top:12px;min-height:40px;padding:0 14px;font:600 13px 'Heebo',sans-serif;color:var(--accent,#0038B8);background:#fff;border:1px solid var(--l);border-radius:10px;cursor:pointer;transition:border-color .2s}
 .bdl-rp[hidden]{display:none}
@@ -142,7 +143,7 @@
 @media (min-width:820px){.bdr-grid{grid-template-columns:1fr 1fr}.bdr-scr{position:sticky;top:calc(var(--nav-h,64px) + 16px)}}
 .bdr-in{display:flex;flex-direction:column;gap:8px}
 .bdr-lb{font-weight:700;font-size:14.5px}
-.bdr-num{width:100%;box-sizing:border-box;font:700 16px 'Heebo',sans-serif;padding:9px 10px;border:1px solid var(--l);border-radius:10px;background:#fff;color:var(--n);direction:ltr;text-align:center}
+.bdr-num{width:100%;box-sizing:border-box;font:700 16px 'Heebo',sans-serif;padding:9px 10px;border:1px solid #7F8AA0;border-radius:10px;background:#fff;color:var(--n);direction:ltr;text-align:center}
 #bdr-price{max-width:120px}
 .bdr-num:focus{outline:2px solid var(--b);outline-offset:1px}
 .bdr-list{display:flex;flex-direction:column;gap:10px;margin-top:6px}
@@ -172,10 +173,10 @@
 .bdr-row{display:grid;grid-template-columns:auto 1fr 1fr 1fr;gap:6px;align-items:stretch}
 .bdr-row > *{background:rgba(255,255,255,.05);border-radius:10px;padding:7px 8px;min-width:0}
 .bdr-row .nm{color:#C9D6EA;font-weight:700;font-size:13px;display:flex;align-items:center}
-.bdr-row span.c{display:block;font-size:10.5px;color:#7F90AE}
+.bdr-row span.c{display:block;font-size:10.5px;color:#8FA0BD}
 .bdr-row b{display:block;font-family:'IBM Plex Mono',ui-monospace,monospace;font-weight:600;font-size:15px;color:#fff;direction:ltr;text-align:end;white-space:nowrap;font-variant-numeric:tabular-nums}
 .bdr-row .t b{color:#8FB0FF}
-.bdr-row .off b{color:#7F90AE}
+.bdr-row .off b{color:#8FA0BD}
 .bdr-yr{display:flex;justify-content:space-between;align-items:center;background:rgba(127,227,168,.10);border-radius:10px;padding:9px 12px;color:#C9D6EA;font-size:13px}
 .bdr-yr b{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:20px;font-weight:600;color:#7FE3A8;direction:ltr}
 .bdr-note{margin:12px 0 0;font-size:12px;color:var(--m);line-height:1.5}
@@ -194,7 +195,7 @@
 .bdc-opt{font-weight:400;color:var(--m)}
 .bdc-row{display:flex;gap:12px;align-items:center}
 .bdc-row input[type=range]{flex:1;accent-color:var(--b);height:28px}
-.bdc-row input[type=number],.bdc-num{width:110px;font:700 16px 'Heebo',sans-serif;padding:10px 12px;border:1px solid var(--l);border-radius:10px;background:#fff;color:var(--n);direction:ltr;text-align:center}
+.bdc-row input[type=number],.bdc-num{width:110px;font:700 16px 'Heebo',sans-serif;padding:10px 12px;border:1px solid #7F8AA0;border-radius:10px;background:#fff;color:var(--n);direction:ltr;text-align:center}
 .bdc-row input[type=number]:focus,.bdc-num:focus{outline:2px solid var(--b);outline-offset:1px}
 .bdc-row input[type=range]:focus-visible{outline:2px solid var(--b);outline-offset:2px}
 .bdc-chips{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
@@ -213,7 +214,7 @@
 .bdc-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
 .bdc-t{background:rgba(255,255,255,.05);border-radius:10px;padding:8px 10px;min-width:0}
 .bdc-t b{display:block;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:19px;font-weight:600;color:#fff;direction:ltr;text-align:end;font-variant-numeric:tabular-nums;white-space:nowrap;line-height:1.35}
-.bdc-u{display:block;font-size:10.5px;color:#7F90AE}
+.bdc-u{display:block;font-size:10.5px;color:#8FA0BD}
 .bdc-t.us b{color:#8FB0FF}
 .bdc-t.sv b{color:#7FE3A8}
 .bdc-t b.neg,.bdc-be b.neg{color:#FF9C7A}
@@ -239,9 +240,9 @@
 .bdt-old .bdt-val{color:#FF9C7A}
 .bdt-old s{text-decoration-thickness:2px}
 .bdt-new .bdt-val{color:#7FE3A8}
-.bdt-per{font-size:12.5px;color:#7F90AE}
+.bdt-per{font-size:12.5px;color:#8FA0BD}
 .bdt-plus{margin-top:4px;font:600 14px 'IBM Plex Mono',ui-monospace,monospace;color:#8FB0FF}
-.bdt-arrow{align-self:center;color:#7F90AE;font-size:20px}
+.bdt-arrow{align-self:center;color:#8FA0BD;font-size:20px}
 .bdt-note{margin:10px 0 0;font-size:13px;color:var(--m);line-height:1.6}
 .bdt-quote{margin:18px 0 0;padding:0 16px 0 0;border-inline-start:3px solid var(--b)}
 .bdt-quote p{margin:0;font-size:16px;line-height:1.8;color:var(--n)}
@@ -533,6 +534,7 @@
 </script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to main content</a>
 
 <nav class="site-nav">
   <div class="wrap nav-in">
@@ -1096,12 +1098,15 @@
       <a href="index.html">Blog</a>
       <a href="../projects.html">Projects</a>
       <a href="../track.html">Track your project</a>
+      <a href="../accessibility.html">Accessibility statement</a>
+      <a href="../privacy.html">Privacy policy</a>
+      <button type="button" class="foot-cookies" data-consent-open hidden>Cookie settings</button>
       <a class="foot-admin" href="../admin/index.html" rel="nofollow">Admin</a>
     </span>
   </div>
 </footer>
 
-<div class="float-actions">
+<aside class="float-actions" aria-label="Quick contact">
   <a class="whatsapp-float" href="https://wa.me/972527905122" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.55L2.3 21.7l5.28-1.38A9.7 9.7 0 1 0 12 2Zm0 17.65a7.94 7.94 0 0 1-4.05-1.1l-.29-.17-3.13.82.84-3.05-.19-.31A7.94 7.94 0 1 1 12 19.65Zm4.36-5.95c-.24-.12-1.41-.7-1.63-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18a7.2 7.2 0 0 1-1.33-1.66c-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>
     <span>WhatsApp</span>
@@ -1110,9 +1115,9 @@
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 16H5V10h14v10Zm0-12H5V6h14v2Z"/></svg>
     <span>Book a call</span>
   </a>
-</div>
+</aside>
 
-<script src="../assets/site-pages.js?v=2"></script>
+<script src="../assets/site-pages.js?v=3"></script>
 <script>
 // FAQ accordion: one answer open at a time (without JS every answer stays open)
 document.querySelectorAll('#post-faq [data-faq]').forEach(function(list){

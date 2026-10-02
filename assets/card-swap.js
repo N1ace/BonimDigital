@@ -22,7 +22,7 @@
   var order = cards.map(function(_, i){ return i; });
   var pos = cards.map(function(){ return { x: 0, y: 0, z: 0 }; });
   var tweens = [], events = [];
-  var clock = 0, next = DELAY, hold = false, visible = false, raf = 0, last = 0;
+  var clock = 0, next = DELAY, hold = false, paused = false, visible = false, raf = 0, last = 0;
 
   function slot(i){ return { x: i * dist.x * dir, y: -i * dist.y, z: -i * dist.x * 1.5, zi: n - i }; }
   function paint(i){
@@ -126,7 +126,7 @@
     var dt = last ? Math.min(0.05, (ts - last) / 1000) : 0;
     last = ts;
     clock += dt;
-    if (hold) next += dt;
+    if (hold || paused) next += dt;
     if (!reduce && clock >= next) { swap(); next = clock + DELAY; }
     step();
     if (!reduce) progress();
@@ -135,7 +135,7 @@
   }
 
   function kick(){
-    if (works) works.classList.toggle('is-paused', hold || !running());
+    if (works) works.classList.toggle('is-paused', hold || paused || !running());
     if (running() && !raf) { last = 0; raf = requestAnimationFrame(frame); }
   }
 
@@ -159,7 +159,8 @@
     if (!w) return;
     dir = getComputedStyle(stage).direction === 'rtl' ? -1 : 1;
     var small = w < 560, side = small ? 28 : 40;
-    dist = small ? { x: 48 / spread, y: 72 / spread } : { x: 132 / spread, y: 120 / spread };
+    // every card behind the front one keeps a strip of at least 24px to tap (WCAG 2.5.8)
+    dist = small ? { x: 48 / spread, y: Math.max(32, 72 / spread) } : { x: 132 / spread, y: 120 / spread };
     var even = function(v){ return Math.round(v / 2) * 2; };
     // the back card is pushed away in 3D and drawn smaller; 1200 must match .cs-anchor perspective
     var reach = spread * dist.x, s = 1200 / (1200 + reach * 1.5);
@@ -202,6 +203,21 @@
   stage.addEventListener('mouseleave', function(){ hold = stage.contains(document.activeElement); kick(); });
   stage.addEventListener('focusin', function(){ hold = true; kick(); });
   stage.addEventListener('focusout', function(e){ if (!stage.contains(e.relatedTarget)) { hold = stage.matches(':hover'); kick(); } });
+  if (!reduce) {
+    var pauseBtn = document.createElement('button');
+    pauseBtn.type = 'button';
+    pauseBtn.className = 'a11y-pause cs-pause';
+    pauseBtn.setAttribute('aria-pressed', 'false');
+    pauseBtn.setAttribute('aria-label', 'Pause the project slideshow');
+    pauseBtn.innerHTML = '<svg class="a11y-stop" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg><svg class="a11y-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l11 7-11 7z"/></svg>';
+    pauseBtn.addEventListener('click', function(){
+      paused = !paused;
+      pauseBtn.setAttribute('aria-pressed', paused ? 'true' : 'false');
+      if (!paused) hold = false;
+      kick();
+    });
+    stage.appendChild(pauseBtn);
+  }
   document.addEventListener('visibilitychange', kick);
   window.addEventListener('portfolio-languagechange', layout);
   var rz = 0;

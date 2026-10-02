@@ -19,6 +19,7 @@
     btn.disabled = on;
     btnTxt.textContent = on ? 'Sending…' : 'Send message';
   }
+  function lead(){ if (window.bdTrack) window.bdTrack('lead', 'contact-form'); }
   function finish(viaWhatsApp){
     doneP.textContent = viaWhatsApp
       ? 'WhatsApp opened with your message. Just press send and we will get back to you.'
@@ -53,7 +54,8 @@
     var d = {
       name: f.name.value.trim(), phone: f.phone.value.trim(), email: f.email.value.trim(),
       business: f.business.value.trim(), message: f.message.value.trim(),
-      topic: topic ? topic.value : 'unsure', lang: lang()
+      topic: topic ? topic.value : 'unsure', lang: lang(),
+      marketing: f.marketing_opt_in.checked, ads: f.ads_audience_opt_in.checked
     };
     if (f.website.value) { finish(false); return; }
     if (d.name.length < 2) return showError(tr('Please enter your name.'), f.name);
@@ -65,13 +67,13 @@
       var label = topic ? topic.parentNode.querySelector('span').textContent.trim() : '';
       window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(waText(d, label)), '_blank', 'noopener');
       if (B) B.sendMessage(d);
-      finish(true);
+      lead(); finish(true);
       return;
     }
 
     busy(true);
     B.sendMessage(d).then(function(){
-      busy(false); finish(false);
+      busy(false); lead(); finish(false);
     }, function(err){
       busy(false);
       var code = err && err.code;

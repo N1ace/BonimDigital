@@ -205,6 +205,13 @@
     'Testimonials':'המלצות',
     'Track your project':'מעקב פרויקט',
     'Admin':'ניהול',
+    'Skip to main content':'דילוג לתוכן הראשי',
+    'Accessibility statement':'הצהרת נגישות',
+    'Privacy policy':'מדיניות פרטיות',
+    'Cookie settings':'הגדרות עוגיות',
+    'Quick contact':'יצירת קשר מהירה',
+    'Pause the project slideshow':'עצירת החלפת הפרויקטים',
+    'Pause the background animation':'עצירת האנימציה ברקע',
     'See services & prices':'לשירותים ולמחירים',
     '// testimonials':'// המלצות',
     'What our clients say':'מה הלקוחות שלנו אומרים',
@@ -426,7 +433,10 @@
     'e.g. Dana Cohen':'לדוגמה: דנה כהן',
     'Send message':'שליחת פנייה',
     'Sending…':'שולחים…',
-    'No spam. We only use your details to get back to you.':'בלי ספאם. נשתמש בפרטים רק כדי לחזור אליכם.',
+    'We use your details only to get back to you and handle your request.':'הפרטים שתשאירו ישמשו אותנו רק כדי לחזור אליכם ולטפל בפנייה.',
+    'Updates (optional)':'עדכונים (לא חובה)',
+    'I agree to receive promotional messages, updates and offers from Bonim Digital on WhatsApp, SMS or email. I can unsubscribe at any time.':'אני מאשר/ת לקבל מבונים דיגיטל הודעות פרסומיות, עדכונים והצעות בוואטסאפ, ב-SMS או במייל. אפשר להסיר בכל עת.',
+    'I agree that Bonim Digital may use my phone and email to show me its ads on Facebook, Instagram and Google.':'אני מאשר/ת שבונים דיגיטל תשתמש בטלפון ובמייל שלי כדי להציג לי מודעות שלה בפייסבוק, באינסטגרם ובגוגל.',
     'Thanks! Your message is on its way.':'תודה! הפנייה בדרך אלינו.',
     'We will get back to you within 24 hours. Need an answer sooner?':'נחזור אליכם תוך 24 שעות. צריכים תשובה מהר יותר?',
     'WhatsApp opened with your message. Just press send and we will get back to you.':'וואטסאפ נפתח עם הפנייה שלכם. רק לוחצים שליחה ונחזור אליכם.',
@@ -522,7 +532,9 @@
     'Why Barbershops Need Their Own Booking App | Bonim Digital':'למה מספרה צריכה אפליקציית תורים משלה | בונים דיגיטל',
     'Why Barbershops Need Their Own Booking App | Andrey Toriyanik':'למה מספרה צריכה אפליקציית תורים משלה | בונים דיגיטל',
     'Why Your Business Is Not Showing Up on Google | Bonim Digital':'למה העסק שלך לא מופיע בגוגל | בונים דיגיטל',
-    'Why a Slow Website Loses Customers | Bonim Digital':'למה אתר איטי מאבד לקוחות | בונים דיגיטל'
+    'Why a Slow Website Loses Customers | Bonim Digital':'למה אתר איטי מאבד לקוחות | בונים דיגיטל',
+    'Accessibility Statement | Bonim Digital':'הצהרת נגישות | בונים דיגיטל',
+    'Privacy Policy | Bonim Digital':'מדיניות פרטיות | בונים דיגיטל'
   };
   const DESCRIPTIONS={
     'Book a call or a session with Bonim Digital: an intro call, website planning, a booking system demo and more.':'קביעת שיחה או פגישה עם בונים דיגיטל: שיחת היכרות, אפיון אתר, הדגמת מערכת תורים ועוד.',
@@ -534,7 +546,9 @@
     'Notes on booking systems, local-business sites, SEO, and custom software — written for shop owners and the people who build for them.':'הערות על מערכות תורים, אתרים לעסקים מקומיים, SEO ותוכנה מותאמת — לבעלי עסקים ולמי שבונה בשבילם.',
     'A barber booking app lets clients pick a service, barber, and time, then confirms on WhatsApp. Less phone tag, fewer empty chairs — with a live shop example.':'אפליקציית תורים לספרים: בחירת שירות, ספר ושעה, ואישור בוואטסאפ. פחות הודעות חוזרות, פחות כיסאות ריקים — עם דוגמה חיה.',
     'Most small business sites never show up for the searches that matter: the service plus the area. Why that happens, what local SEO fixes, and a real client example.':'רוב האתרים של עסקים קטנים לא מופיעים בחיפושים שחשובים: השירות והאזור. למה זה קורה, מה קידום מקומי מתקן, ודוגמה מלקוח אמיתי.',
-    'Most visitors open your site on a phone. If it is still loading after a few seconds, they go back to Google. What makes small business sites slow, and what fast looks like.':'רוב הגולשים נכנסים לאתר מהטלפון. אם הוא עדיין נטען אחרי כמה שניות, הם חוזרים לגוגל. מה מאט אתרים של עסקים קטנים, ואיך נראה אתר מהיר.'
+    'Most visitors open your site on a phone. If it is still loading after a few seconds, they go back to Google. What makes small business sites slow, and what fast looks like.':'רוב הגולשים נכנסים לאתר מהטלפון. אם הוא עדיין נטען אחרי כמה שניות, הם חוזרים לגוגל. מה מאט אתרים של עסקים קטנים, ואיך נראה אתר מהיר.',
+    'Accessibility statement for the Bonim Digital website: the standard we follow, what we made accessible, known limitations and how to contact our accessibility coordinator.':'הצהרת הנגישות של אתר בונים דיגיטל: התקן שלפיו בנינו, מה הונגש, חלקים שעדיין לא נגישים במלואם ואיך פונים לרכז הנגישות.',
+    'Privacy policy for the Bonim Digital website: what we collect, why, where it is stored, how long we keep it and how to use your rights.':'מדיניות הפרטיות של אתר בונים דיגיטל: איזה מידע אנחנו אוספים, למה, איפה הוא נשמר, כמה זמן ואיך מממשים את הזכויות שלך.'
   };
   const extra=window.PORTFOLIO_I18N_EXTRA||{};
   Object.assign(HE,extra.he);

@@ -1,6 +1,6 @@
 /* Background journey line: winds down the page margins behind the sections and draws itself with scroll. */
 (function(){
-  var sections = [].slice.call(document.querySelectorAll('body > section[id]'));
+  var sections = [].slice.call(document.querySelectorAll('body > section[id], main > section[id]'));
   if (sections.length < 2 || !document.createElementNS) return;
 
   var NS = 'http://www.w3.org/2000/svg';

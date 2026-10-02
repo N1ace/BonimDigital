@@ -30,4 +30,19 @@
     es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target);} });
   },{threshold:.12});
   document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+  // a table that scrolls sideways must be reachable and scrollable with the keyboard
+  const wraps=[...document.querySelectorAll('.tbl')];
+  if(wraps.length){
+    wraps.forEach(w=>{
+      const cap=w.querySelector('caption');
+      w.setAttribute('role','region');
+      if(cap) w.setAttribute('aria-label',cap.textContent.trim());
+    });
+    const sync=()=>wraps.forEach(w=>{
+      if(w.scrollWidth>w.clientWidth+1) w.tabIndex=0; else w.removeAttribute('tabindex');
+    });
+    sync();
+    window.addEventListener('resize',sync);
+  }
 })();

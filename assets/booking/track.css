@@ -10,7 +10,7 @@ html[lang="he"] .tr,html[lang="he"] .tr h1,html[lang="he"] .tr h2,html[lang="he"
 .tr-form{margin-top:24px;background:#FFFFFF;border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 14px 36px -24px rgba(11,27,51,.25)}
 .tr-form label{display:block;font-weight:700;font-size:14px;margin-bottom:8px}
 .tr-form-row{display:flex;gap:10px}
-.tr-form input{flex:1;min-width:0;font-family:var(--mono);font-size:20px;letter-spacing:.08em;text-transform:uppercase;height:52px;padding:0 16px;border-radius:12px;border:1px solid var(--line-strong,#C9D2DF);background:var(--card);color:var(--text);text-align:left}
+.tr-form input{flex:1;min-width:0;font-family:var(--mono);font-size:20px;letter-spacing:.08em;text-transform:uppercase;height:52px;padding:0 16px;border-radius:12px;border:1px solid #7F8AA0;background:var(--card);color:var(--text);text-align:left}
 .tr-form input::placeholder{color:#A3AEC2}
 .tr-form input:focus{outline:none;border-color:var(--accent);background:#FFFFFF;box-shadow:0 0 0 3px var(--accent-soft)}
 .tr-form input[aria-invalid="true"]{border-color:var(--danger,#D92D20)}

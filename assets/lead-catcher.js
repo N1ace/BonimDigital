@@ -189,7 +189,8 @@
     cx.fillStyle=C.white;cx.beginPath();cx.arc(x,y,r*.4,0,Math.PI*2);cx.fill();
     cx.globalAlpha=1}
   function loop(t){if(!running)return;var dt=Math.min(.05,(t-(last||t))/1000);last=t;step(dt);draw();requestAnimationFrame(loop)}
-  function start(){if(running||reduce)return;running=true;last=0;requestAnimationFrame(loop)}
+  var paused=false;
+  function start(){if(running||reduce||paused)return;running=true;last=0;requestAnimationFrame(loop)}
   function stop(){running=false}
   if(window.ResizeObserver)new ResizeObserver(function(){size();if(!running)draw()}).observe(box);
   else window.addEventListener('resize',function(){size();if(!running)draw()});
@@ -197,5 +198,16 @@
   document.addEventListener('visibilitychange',function(){document.hidden?stop():(visible&&start())});
   size();
   if(reduce){for(var n=0;n<3;n++){spawn();items[n].age=1;items[n].y=topY()*(.15+n*.25)}draw()}
-  else start();
+  else{
+    var btn=document.createElement('button');
+    btn.type='button';btn.className='a11y-pause lc-pause';
+    btn.setAttribute('aria-pressed','false');btn.setAttribute('aria-label','Pause the background animation');
+    btn.innerHTML='<svg class="a11y-stop" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg><svg class="a11y-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l11 7-11 7z"/></svg>';
+    btn.addEventListener('click',function(){
+      paused=!paused;btn.setAttribute('aria-pressed',paused?'true':'false');
+      if(paused)stop();else if(visible&&!document.hidden)start();
+    });
+    box.appendChild(btn);
+    start();
+  }
 })();

@@ -163,6 +163,7 @@
           r('עסק', esc(m.business)) +
           r('מה צריך', esc(t.name)) +
           r('שפת האתר', m.lang === 'en' ? 'אנגלית' : 'עברית') +
+          r('שיווק', esc(A.consent(m).text) + (A.consent(m).canOptOut ? ' <button class="adm-btn ghost" type="button" data-act="optout">ביקש/ה הסרה</button>' : '')) +
         '</div>' +
         '<div class="adm-field"><span>סטטוס</span><div class="adm-seg wide" role="radiogroup">' + Object.keys(STATUS).map(function(k){
           return '<button type="button" role="radio" data-act="status" data-v="' + k + '" aria-checked="' + (pend === k) + '" class="st-' + k + (pend === k ? ' on' : '') + '">' + STATUS[k] + '</button>';
@@ -197,6 +198,13 @@
       var m = openItem(); if (!m) return;
       m._pending = el.getAttribute('data-v');
       modalRoot.querySelectorAll('[data-act="status"]').forEach(function(b){ var on = b === el; b.classList.toggle('on', on); b.setAttribute('aria-checked', on); });
+      return;
+    }
+    if (act === 'optout') {
+      var o = openItem(); if (!o) return;
+      if (!confirm('לסמן ש' + o.name + ' ביקש/ה הסרה מכל השיווק? מעכשיו לא לשלוח הודעות פרסומיות ולהסיר מקהלי פרסום.')) return;
+      var op = { marketing_opt_out_at: new Date().toISOString() };
+      M.update(o.id, op).then(function(){ Object.assign(o, op); renderModal(); }, function(){ alert('השמירה נכשלה. נסו שוב.'); });
       return;
     }
     if (act === 'save') {

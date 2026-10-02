@@ -52,6 +52,14 @@
     return v;
   }
   function err(code, message){ var e = new Error(message || code); e.code = code; return e; }
+  function optIns(x, source){
+    var now = new Date().toISOString(), mkt = x.marketing === true, ads = x.ads === true;
+    return {
+      marketing_opt_in: mkt, marketing_opt_in_at: mkt ? now : null,
+      ads_audience_opt_in: ads, ads_audience_opt_in_at: ads ? now : null,
+      opt_in_source: mkt || ads ? source : null, marketing_opt_out_at: null
+    };
+  }
 
   /* ---------- demo storage ---------- */
   function demoAll(){ try { return JSON.parse(localStorage.getItem(DEMO_KEY)) || []; } catch (e) { return []; } }
@@ -114,13 +122,27 @@
         meeting: b.meeting, note: b.note || null, lang: b.lang, status: 'confirmed', admin_note: null,
         created_at: new Date().toISOString()
       };
+      Object.assign(row, optIns(b, 'booking'));
       list.push(row); demoSave(list);
       return Promise.resolve({ id: row.id, demo: true });
     }
     return api('/rest/v1/rpc/booking_create', { method: 'POST', body: {
       p_service: s.id, p_start: start.toISOString(), p_name: b.name, p_phone: normalizePhone(b.phone),
-      p_email: b.email || null, p_business: b.business || null, p_meeting: b.meeting, p_note: b.note || null, p_lang: b.lang
+      p_email: b.email || null, p_business: b.business || null, p_meeting: b.meeting, p_note: b.note || null, p_lang: b.lang,
+      p_marketing: b.marketing === true, p_ads: b.ads === true
     } }).then(function(id){ return { id: id, demo: false }; });
+  }
+
+  /* marketing_opt_out_at means the person asked to stop all marketing: messages and ad audiences */
+  function consentSummary(x){
+    function d(iso){ return iso ? new Intl.DateTimeFormat('he-IL', { timeZone: TZ, day: 'numeric', month: 'numeric', year: '2-digit' }).format(new Date(iso)) : ''; }
+    if (x.marketing_opt_out_at) return { text: 'ביקש/ה הסרה מכל השיווק (' + d(x.marketing_opt_out_at) + ')', canOptOut: false };
+    var p = [];
+    if (x.marketing_opt_in) p.push('הודעות פרסומיות, אושר ' + d(x.marketing_opt_in_at));
+    if (x.ads_audience_opt_in) p.push('קהלי פרסום, אושר ' + d(x.ads_audience_opt_in_at));
+    return p.length
+      ? { text: p.join(' · '), canOptOut: true }
+      : { text: 'לא אישר/ה שיווק. לא להוסיף לרשימות תפוצה או לקהלי פרסום.', canOptOut: false };
   }
 
   /* ---------- admin API ---------- */
@@ -191,13 +213,14 @@
     };
     if (!configured) {
       var list = msgDemoAll();
-      list.push(Object.assign({ id: 'demo-' + Date.now().toString(36), status: 'new', admin_note: null, created_at: new Date().toISOString() }, row));
+      list.push(Object.assign({ id: 'demo-' + Date.now().toString(36), status: 'new', admin_note: null, created_at: new Date().toISOString() }, row, optIns(m, 'contact-form')));
       msgDemoSave(list);
       return Promise.resolve({ demo: true });
     }
     return api('/rest/v1/rpc/contact_create', { method: 'POST', body: {
       p_name: row.name, p_phone: row.phone, p_email: row.email, p_business: row.business,
-      p_topic: row.topic, p_message: row.message, p_lang: row.lang
+      p_topic: row.topic, p_message: row.message, p_lang: row.lang,
+      p_marketing: m.marketing === true, p_ads: m.ads === true
     } }).then(function(id){ return { id: id, demo: false }; });
   }
 
@@ -559,7 +582,7 @@
     service: service, validPhone: validPhone, formatPhone: formatPhone, normalizePhone: normalizePhone,
     busy: busy, create: create, sendMessage: sendMessage, topics: TOPICS,
     admin: {
-      session: getSession, login: login, logout: logout, list: list, update: update, remove: remove,
+      session: getSession, login: login, logout: logout, list: list, update: update, remove: remove, consent: consentSummary,
       messages: { list: listMessages, update: updateMessage, remove: removeMessage },
       projects: { list: listProjects, create: createProject, update: updateProject, remove: removeProject }
     }

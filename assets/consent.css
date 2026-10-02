@@ -1,0 +1,65 @@
+/* Privacy UI: form notice, marketing opt-ins, cookie banner, footer cookie link */
+
+.form-privacy{font-size:13px;line-height:1.6;color:var(--muted,#5B6577);text-align:center;margin:0}
+.form-privacy a{color:var(--accent,#0038B8);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+
+.form-optins{border:0;padding:0;margin:0;min-width:0;display:grid;gap:8px}
+.form-optins legend{font-size:14px;font-weight:600;color:var(--text,#0B1B33);padding:0;margin-bottom:6px}
+.form-optin{display:grid;grid-template-columns:20px minmax(0,1fr);gap:10px;align-items:start;min-height:40px;padding:4px 0;font-size:13.5px;line-height:1.55;color:var(--text,#0B1B33);cursor:pointer}
+.form-optin input{width:20px;height:20px;margin:1px 0 0;accent-color:var(--accent,#0038B8);cursor:pointer}
+.form-optin input:focus-visible{outline:2px solid var(--accent,#0038B8);outline-offset:2px}
+
+.foot-cookies{background:none;border:0;padding:0;margin:0;font:inherit;color:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.foot-cookies[hidden]{display:none}
+.pv-dormant[hidden],.bd-tracking-on .pv-dormant{display:none}
+
+.bd-ck{
+  position:fixed;z-index:100;
+  inset-inline:max(12px,env(safe-area-inset-left,0px));
+  bottom:max(12px,env(safe-area-inset-bottom,0px));
+  max-width:560px;max-height:calc(100dvh - 24px);overflow-y:auto;
+  background:#FFFFFF;color:#0B1B33;border:1px solid #C9D1DE;border-radius:16px;
+  box-shadow:0 18px 48px rgba(11,27,51,.22);padding:18px;
+  font-family:var(--body,system-ui,sans-serif);font-size:14.5px;line-height:1.6
+}
+.bd-ck[hidden]{display:none}
+.bd-ck[dir="rtl"]{font-family:'Heebo',var(--body,system-ui,sans-serif)}
+.bd-ck-title{font-size:17px;font-weight:700;margin:0 0 6px;font-family:inherit;letter-spacing:0}
+.bd-ck-text{margin:0 0 14px;color:#2B3A52}
+.bd-ck-text a{color:var(--accent,#0038B8);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.bd-ck-btns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.bd-ck-btn{
+  min-height:44px;padding:8px 10px;border-radius:10px;
+  border:1.5px solid var(--accent,#0038B8);background:#FFFFFF;color:var(--accent,#0038B8);
+  font:inherit;font-size:14px;font-weight:700;line-height:1.25;cursor:pointer;
+  transition:background .15s,color .15s
+}
+.bd-ck-btn:focus-visible,.bd-ck a:focus-visible{outline:2px solid #0B1B33;outline-offset:2px}
+.bd-ck-set{display:grid;gap:4px;margin:0 0 14px;padding:12px 0;border-block:1px solid #E3E8F0}
+.bd-ck-set[hidden]{display:none}
+.bd-ck-tg{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:start;min-height:44px;padding:6px 0;cursor:pointer;position:relative}
+.bd-ck-tg input{position:absolute;z-index:1;opacity:0;width:44px;height:26px;margin:0;inset-inline-start:0;top:6px;cursor:pointer}
+.bd-ck-sw{width:44px;height:26px;border-radius:999px;background:#7F8AA0;position:relative;transition:background .15s;flex:none}
+.bd-ck-sw::after{content:"";position:absolute;top:3px;inset-inline-start:3px;width:20px;height:20px;border-radius:50%;background:#FFFFFF;transition:inset-inline-start .15s}
+.bd-ck-tg input:checked + .bd-ck-sw{background:var(--accent,#0038B8)}
+.bd-ck-tg input:checked + .bd-ck-sw::after{inset-inline-start:21px}
+.bd-ck-tg input:focus-visible + .bd-ck-sw{outline:2px solid #0B1B33;outline-offset:2px}
+.bd-ck-tg-txt b{display:block;font-size:14.5px}
+.bd-ck-tg-txt small{display:block;font-size:13px;color:#4A5870;line-height:1.5}
+.bd-ck-always{font-size:13px;color:#4A5870;margin:4px 0 8px}
+.bd-ck-save{width:100%;background:var(--accent,#0038B8);color:#FFFFFF}
+
+@media (hover:hover) and (pointer:fine){
+  .bd-ck-btn:hover{background:var(--accent,#0038B8);color:#FFFFFF}
+  .bd-ck-save:hover{background:var(--accent-hover,#002E96)}
+}
+@media (max-width:480px){
+  .bd-ck{padding:16px 14px;font-size:14px}
+  .bd-ck-btn{font-size:13.5px;padding:8px 6px}
+}
+@media (max-width:900px){
+  html.bd-ck-open .float-actions{opacity:0;visibility:hidden;pointer-events:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .bd-ck-btn,.bd-ck-sw,.bd-ck-sw::after{transition:none}
+}

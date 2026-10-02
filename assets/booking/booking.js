@@ -18,7 +18,11 @@
       toConfirm: 'המשך לאישור', errName: 'נא למלא שם (לפחות 2 תווים)', errPhone: 'מספר טלפון לא תקין', errEmail: 'כתובת אימייל לא תקינה',
       confirm: 'אישור הפגישה', rService: 'נושא', rWhen: 'מועד', rLength: 'משך', rMeeting: 'אופן השיחה', rName: 'שם',
       rPhone: 'טלפון', rEmail: 'אימייל', rBusiness: 'עסק', rNote: 'הערה',
-      book: 'אשרו וקבעו', booking: 'קובע…', privacy: 'הפרטים משמשים רק לתיאום הפגישה.',
+      book: 'אשרו וקבעו', booking: 'קובע…', privacy: 'הפרטים שתשאירו ישמשו אותנו רק כדי לחזור אליכם ולטפל בפנייה.', privacyLink: 'מדיניות הפרטיות',
+      optLegend: 'עדכונים (לא חובה)',
+      optMarketing: 'אני מאשר/ת לקבל מבונים דיגיטל הודעות פרסומיות, עדכונים והצעות בוואטסאפ, ב-SMS או במייל. אפשר להסיר בכל עת.',
+      optAds: 'אני מאשר/ת שבונים דיגיטל תשתמש בטלפון ובמייל שלי כדי להציג לי מודעות שלה בפייסבוק, באינסטגרם ובגוגל.',
+      rOptins: 'הסכמות', optM: 'הודעות פרסומיות', optA: 'קהלי פרסום',
       taken: 'השעה הזו נתפסה הרגע. בחרו שעה אחרת.', invalid: 'השעה כבר לא זמינה. בחרו שעה אחרת.',
       failed: 'משהו השתבש. נסו שוב, או כתבו לנו בוואטסאפ.',
       done: 'הפגישה נקבעה', doneSub: 'ניצור קשר בזמן שקבעתם. אם משהו משתנה — פשוט כתבו לנו.',
@@ -42,7 +46,11 @@
       toConfirm: 'Continue', errName: 'Please enter your name (at least 2 characters)', errPhone: 'That phone number does not look right', errEmail: 'That email does not look right',
       confirm: 'Confirm the meeting', rService: 'Topic', rWhen: 'When', rLength: 'Length', rMeeting: 'Meeting', rName: 'Name',
       rPhone: 'Phone', rEmail: 'Email', rBusiness: 'Business', rNote: 'Note',
-      book: 'Confirm and book', booking: 'Booking…', privacy: 'Your details are used only to arrange the meeting.',
+      book: 'Confirm and book', booking: 'Booking…', privacy: 'We use your details only to get back to you and handle your request.', privacyLink: 'Privacy policy',
+      optLegend: 'Updates (optional)',
+      optMarketing: 'I agree to receive promotional messages, updates and offers from Bonim Digital on WhatsApp, SMS or email. I can unsubscribe at any time.',
+      optAds: 'I agree that Bonim Digital may use my phone and email to show me its ads on Facebook, Instagram and Google.',
+      rOptins: 'Consents', optM: 'Promotional messages', optA: 'Ad audiences',
       taken: 'That time was just taken. Please pick another one.', invalid: 'That time is no longer available. Please pick another one.',
       failed: 'Something went wrong. Try again, or message us on WhatsApp.',
       done: 'Your meeting is booked', doneSub: 'We will get in touch at the time you chose. If anything changes, just message us.',
@@ -83,7 +91,7 @@
   var todayC = T.today();
   var state = {
     step: 1, service: null, month: { y: todayC.y, m: todayC.m }, day: null, slot: null,
-    busy: {}, busyState: {}, form: { name: '', phone: '', email: '', business: '', meeting: 'phone', note: '' },
+    busy: {}, busyState: {}, form: { name: '', phone: '', email: '', business: '', meeting: 'phone', note: '', marketing: false, ads: false },
     errors: {}, submitting: false, notice: '', result: null
   };
 
@@ -164,13 +172,14 @@
       '<button type="button" class="bk-icon-btn" data-act="month" data-dir="-1" aria-label="' + t('prevMonth') + '"' + (canPrev ? '' : ' disabled') + '>' + icon('chevron', 'bk-i-sm bk-flip') + '</button>' +
       '<b>' + title + '</b>' +
       '<button type="button" class="bk-icon-btn" data-act="month" data-dir="1" aria-label="' + t('nextMonth') + '"' + (canNext ? '' : ' disabled') + '>' + icon('chevron', 'bk-i-sm') + '</button></div>';
-    html += '<div class="bk-cal-grid" role="grid">';
-    t('weekdays').forEach(function(w){ html += '<span class="bk-wd">' + w + '</span>'; });
-    for (var i = 0; i < first.dow; i++) html += '<span></span>';
+    html += '<div class="bk-cal-grid" role="group" aria-label="' + esc(title) + '">';
+    t('weekdays').forEach(function(w){ html += '<span class="bk-wd" aria-hidden="true">' + w + '</span>'; });
+    for (var i = 0; i < first.dow; i++) html += '<span aria-hidden="true"></span>';
     for (var d = 1; d <= days; d++) {
       var c = T.civil(y, m, d), ok = inRange(c) && st === 'ok' && slotsFor(c).length > 0;
-      var cls = 'bk-day' + (T.sameDay(c, state.day) ? ' sel' : '') + (T.sameDay(c, todayC) ? ' today' : '');
-      html += '<button type="button" class="' + cls + '" data-act="day" data-d="' + d + '"' + (ok ? '' : ' disabled') + '>' + d + '</button>';
+      var sel = !!T.sameDay(c, state.day), isToday = !!T.sameDay(c, todayC);
+      var cls = 'bk-day' + (sel ? ' sel' : '') + (isToday ? ' today' : '');
+      html += '<button type="button" class="' + cls + '" data-act="day" data-d="' + d + '" aria-label="' + esc(dayLabel(c)) + '" aria-pressed="' + sel + '"' + (isToday ? ' aria-current="date"' : '') + (ok ? '' : ' disabled') + '>' + d + '</button>';
     }
     html += '</div></div>';
 
@@ -213,9 +222,13 @@
     });
     html += '</div></fieldset>';
     html += '<label class="bk-field"><span>' + t('note') + '</span><textarea name="note" rows="3" maxlength="1000" placeholder="' + esc(t('notePh')) + '">' + esc(state.form.note) + '</textarea></label>';
-    html += '<button class="btn solid bk-wide" type="submit">' + t('toConfirm') + '</button></form>';
+    html += '<fieldset class="form-optins"><legend>' + t('optLegend') + '</legend>' +
+      '<label class="form-optin"><input type="checkbox" name="marketing_opt_in" value="1"' + (state.form.marketing ? ' checked' : '') + '><span>' + t('optMarketing') + '</span></label>' +
+      '<label class="form-optin"><input type="checkbox" name="ads_audience_opt_in" value="1"' + (state.form.ads ? ' checked' : '') + '><span>' + t('optAds') + '</span></label></fieldset>';
+    html += '<button class="btn solid bk-wide" type="submit">' + t('toConfirm') + '</button>' + privacyNote() + '</form>';
     return html;
   }
+  function privacyNote(){ return '<p class="form-privacy">' + t('privacy') + ' <a href="privacy.html">' + t('privacyLink') + '</a></p>'; }
   function whenLabel(){ return dayLabel(state.day) + ' · ' + T.timeLabel(state.slot); }
   function summaryStrip(){
     return '<div class="bk-strip" style="--svc:' + state.service.color + '"><span class="bk-service-ic">' + icon(state.service.icon) + '</span><div><b>' + esc(sname(state.service)) + '</b><span><bdi>' + whenLabel() + '</bdi></span></div></div>';
@@ -233,10 +246,11 @@
     html += row(t('rEmail'), f.email ? '<bdi dir="ltr">' + esc(f.email) + '</bdi>' : '');
     html += row(t('rBusiness'), esc(f.business));
     html += row(t('rNote'), esc(f.note));
+    html += row(t('rOptins'), [f.marketing && t('optM'), f.ads && t('optA')].filter(Boolean).join(', '));
     html += '</div>';
     if (state.notice) html += '<p class="bk-msg err" role="alert">' + state.notice + '</p>';
     html += '<button class="btn solid bk-wide" type="button" data-act="submit"' + (state.submitting ? ' disabled' : '') + '>' + (state.submitting ? t('booking') : t('book')) + '</button>';
-    html += '<p class="bk-fine">' + t('privacy') + '</p>';
+    html += privacyNote();
     return html;
   }
 
@@ -293,6 +307,8 @@
     var f = state.form;
     ['name', 'phone', 'email', 'business', 'note'].forEach(function(k){ var el = form.elements[k]; if (el) f[k] = el.value.trim(); });
     var m = form.querySelector('input[name="meeting"]:checked'); if (m) f.meeting = m.value;
+    f.marketing = !!(form.elements.marketing_opt_in && form.elements.marketing_opt_in.checked);
+    f.ads = !!(form.elements.ads_audience_opt_in && form.elements.ads_audience_opt_in.checked);
   }
   function validate(){
     var f = state.form, e = {};
@@ -306,8 +322,12 @@
     if (state.submitting) return;
     state.submitting = true; state.notice = ''; render();
     var f = state.form;
-    B.create({ service: state.service.id, start: state.slot, name: f.name, phone: f.phone, email: f.email, business: f.business, meeting: f.meeting, note: f.note, lang: lang })
-      .then(function(res){ state.submitting = false; state.result = res; go('done'); })
+    B.create({ service: state.service.id, start: state.slot, name: f.name, phone: f.phone, email: f.email, business: f.business, meeting: f.meeting, note: f.note, lang: lang, marketing: f.marketing, ads: f.ads })
+      .then(function(res){
+        state.submitting = false; state.result = res;
+        if (window.bdTrack) window.bdTrack('lead', 'booking');
+        go('done');
+      })
       .catch(function(e){
         state.submitting = false;
         if (e.code === 'taken' || e.code === 'invalid') {

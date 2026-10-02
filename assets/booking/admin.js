@@ -242,6 +242,7 @@
           row('אופן השיחה', MEETING[b.meeting] || '') +
           row('משך', Math.round((b.end - b.start) / 60000) + ' דק׳') +
           row('הערת הלקוח', esc(b.note)) +
+          row('שיווק', esc(A.consent(b).text) + (A.consent(b).canOptOut ? ' <button class="adm-btn ghost" type="button" data-act="optout">ביקש/ה הסרה</button>' : '')) +
           row('נקבע', b.created_at ? fmt(new Date(b.created_at), { day: 'numeric', month: 'numeric', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }) : '') +
         '</div>' +
         '<div class="adm-field"><span>סטטוס</span><div class="adm-seg wide" role="radiogroup">' + Object.keys(STATUS).map(function(k){
@@ -281,6 +282,13 @@
       var b = openItem(); if (!b) return;
       b._pending = el.getAttribute('data-v');
       modalRoot.querySelectorAll('[data-act="status"]').forEach(function(x){ var on = x === el; x.classList.toggle('on', on); x.setAttribute('aria-checked', on); });
+      return;
+    }
+    if (act === 'optout') {
+      var o = openItem(); if (!o) return;
+      if (!confirm('לסמן ש' + o.name + ' ביקש/ה הסרה מכל השיווק? מעכשיו לא לשלוח הודעות פרסומיות ולהסיר מקהלי פרסום.')) return;
+      var op = { marketing_opt_out_at: new Date().toISOString() };
+      A.update(o.id, op).then(function(){ Object.assign(o, op); renderModal(); }, function(){ alert('השמירה נכשלה. נסו שוב.'); });
       return;
     }
     if (act === 'save') {
