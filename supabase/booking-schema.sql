@@ -65,6 +65,8 @@ language sql stable security definer set search_path = public as $$
     where lower(email) = lower(coalesce(auth.jwt() ->> 'email', ''))
   );
 $$;
+revoke all on function is_booking_admin() from public, anon;
+grant execute on function is_booking_admin() to authenticated;
 
 drop policy if exists bookings_admin_select on bookings;
 drop policy if exists bookings_admin_update on bookings;

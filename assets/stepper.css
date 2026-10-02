@@ -4,20 +4,18 @@
 .stp-ind{list-style:none;display:flex;align-items:center;gap:12px;padding:28px 32px 10px}
 .stp-ind li{display:flex;align-items:center;gap:12px;flex:1 1 0;min-width:0}
 .stp-ind li:last-child{flex:none}
-.stp-dot{position:relative;isolation:isolate;flex:none;width:40px;height:40px;border-radius:50%;border:2px solid var(--line);background:var(--card);color:var(--muted);display:grid;place-items:center;font:600 14px/1 var(--mono);cursor:pointer;transition:background .3s,color .3s,border-color .3s,transform .2s}
+.stp-dot{position:relative;flex:none;width:40px;height:40px;border-radius:50%;border:2px solid var(--line);background:var(--card);color:var(--muted);display:grid;place-items:center;font:600 14px/1 var(--mono);cursor:pointer;transition:background .3s,color .3s,border-color .3s,box-shadow .3s,transform .2s}
 .stp-dot:hover{border-color:var(--accent)}
 .stp-dot:active{transform:scale(.94)}
 .stp-dot::after{content:"";position:absolute;inset:-4px;border-radius:50%}
 .stp-dot:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-.stp-dot::before{content:"";position:absolute;inset:-5px;z-index:-1;border-radius:50%;background:rgba(0,56,184,.2);filter:blur(4px);opacity:0;transition:opacity .3s}
 .stp-check{display:none;width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
 .stp-lbl{font-size:14px;font-weight:600;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:color .3s;flex:0 1 auto;min-width:0}
 .stp-line{position:relative;flex:1 1 24px;min-width:18px;height:2px;border-radius:2px;background:var(--line);overflow:hidden}
 .stp-line i{position:absolute;inset:0;background:var(--accent);transform:scaleX(0);transform-origin:left center;transition:transform .5s cubic-bezier(.33,1,.68,1)}
 html[dir="rtl"] .stp-line i{transform-origin:right center}
 
-.stp-ind li.is-on .stp-dot{background:#FFFFFF;color:var(--accent);border-color:var(--accent)}
-.stp-ind li.is-on .stp-dot::before{opacity:1}
+.stp-ind li.is-on .stp-dot{background:#FFFFFF;color:var(--accent);border-color:var(--accent);box-shadow:0 0 0 5px rgba(0,56,184,.13),0 6px 14px -6px rgba(0,56,184,.45)}
 .stp-ind li.is-done .stp-dot{background:var(--accent);color:#FFFFFF;border-color:var(--accent)}
 .stp-ind li.is-done .stp-num{display:none}
 .stp-ind li.is-done .stp-check{display:block}
@@ -67,7 +65,7 @@ html[dir="ltr"] .stp-next svg{transform:scaleX(-1)}
 }
 @media (max-width:560px){
   .stp{border-radius:18px}
-  .stp-ind{padding:18px 16px 4px}
+  .stp-ind{padding:22px 20px 6px}
   .stp-dot{width:36px;height:36px;font-size:13px}
   .stp-body{padding:0 16px}
   .stp-list{padding:16px}

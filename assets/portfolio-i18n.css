@@ -138,6 +138,15 @@ html[dir="rtl"] .contact-note{direction:ltr}
     padding-bottom:calc(8px + env(safe-area-inset-bottom,0px))
   }
 }
+/* menu button icon is drawn here, not with the ☰/× text, so it looks the same with every phone font */
+:root .nav-toggle{position:relative;font-size:0;color:var(--text);background:linear-gradient(currentColor,currentColor) center/20px 2px no-repeat,var(--card)}
+:root .nav-toggle::before,:root .nav-toggle::after{content:"";position:absolute;left:50%;top:50%;width:20px;height:2px;margin:-1px 0 0 -10px;border-radius:2px;background:currentColor;transition:transform .25s ease}
+:root .nav-toggle::before{transform:translateY(-6px)}
+:root .nav-toggle::after{transform:translateY(6px)}
+:root .nav-toggle[aria-expanded="true"]{background-size:0 2px,auto}
+:root .nav-toggle[aria-expanded="true"]::before{transform:rotate(45deg)}
+:root .nav-toggle[aria-expanded="true"]::after{transform:rotate(-45deg)}
+@media(prefers-reduced-motion:reduce){:root .nav-toggle::before,:root .nav-toggle::after{transition:none}}
 @media(max-width:560px){
   .lang-switch{min-width:62px;height:38px;padding-inline:10px;font-size:12px}
   .lang-switch::before{display:none}

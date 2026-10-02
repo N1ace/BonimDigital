@@ -1,9 +1,9 @@
 window.BONIM_BOOKING = {
-  // Leave empty for demo mode (bookings stay in this browser only).
-  // Fill both after running supabase/booking-schema.sql — the anon key is public by design.
-  // Use a dedicated Bonim project, never the misparat-lidor one (ggfcqrlpqiqpytoygqxs): it shares auth users and data.
-  supabaseUrl: '',
-  supabaseAnonKey: '',
+  // Empty both for demo mode (bookings stay in this browser only).
+  // The anon key is public by design; never put the service_role or sb_secret key here.
+  // Bonim's own project. Never the misparat-lidor one (ggfcqrlpqiqpytoygqxs): it shares auth users and data.
+  supabaseUrl: 'https://tdgqpofzvhbdrhqiknbp.supabase.co',
+  supabaseAnonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRkZ3Fwb2Z6dmhiZHJocWlrbmJwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA5NTE4NzAsImV4cCI6MjEwNjUyNzg3MH0.kWRMGVlxar_KHNAEzQcGsIBrogT2Sn7A_N-SUkQVGHc',
 
   whatsapp: '972527905122',
   timeZone: 'Asia/Jerusalem',

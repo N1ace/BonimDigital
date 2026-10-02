@@ -98,7 +98,7 @@ window.PORTFOLIO_I18N_EXTRA={
     "Orders come in through Instagram messages and get lost.": "הזמנות מגיעות בהודעות באינסטגרם והולכות לאיבוד.",
     "You collect payments by bank transfer and chase people.": "גובים בהעברה בנקאית ורודפים אחרי אנשים.",
     "Customers ask the same questions about price and stock.": "לקוחות שואלים שוב ושוב על מחיר ומלאי.",
-    "Up to 20 products with photos, prices and options": "עד 20 מוצרים עם תמונות, מחירים ואפשרויות",
+    "Up to 10 products with photos, prices and options": "עד 10 מוצרים עם תמונות, מחירים ואפשרויות",
     "A cart and checkout that work well on a phone": "סל ותשלום שעובדים טוב בטלפון",
     "Online card payments": "תשלום באשראי אונליין",
     "Shipping and pickup options": "אפשרויות משלוח ואיסוף עצמי",
@@ -112,7 +112,7 @@ window.PORTFOLIO_I18N_EXTRA={
     "We place a real test order together, then open the store.": "מבצעים יחד הזמנת ניסיון אמיתית ופותחים את החנות.",
     "ÉCRU Store, a demo shop we built": "ÉCRU Store, חנות הדגמה שבנינו",
     "Open the demo": "לפתוח את ההדגמה",
-    "What if I have more than 20 products?": "ומה אם יש לי יותר מ־20 מוצרים?",
+    "What if I have more than 10 products?": "ומה אם יש לי יותר מ־10 מוצרים?",
     "No problem. We will price the extra work on the call.": "אין בעיה. נתמחר את העבודה הנוספת בשיחה.",
     "Are there fees on payments?": "יש עמלות על תשלומים?",
     "The payment provider charges a small fee per sale. We help you pick one.": "ספק הסליקה גובה עמלה קטנה על כל מכירה. נעזור לכם לבחור ספק.",
@@ -174,7 +174,8 @@ window.PORTFOLIO_I18N_EXTRA={
     "No. Fixes and SEO work can be one-time. Maintenance is optional.": "לא. תיקונים ו־SEO יכולים להיות חד־פעמיים. התחזוקה היא אופציונלית.",
     "How fast will I see results on Google?": "תוך כמה זמן רואים תוצאות בגוגל?",
     "Local SEO usually takes a few weeks to show. We track it in Search Console so you can see it too.": "קידום מקומי לוקח בדרך כלל כמה שבועות. אנחנו עוקבים ב־Search Console כדי שגם אתם תראו.",
-    "From ₪150 a month": "מ־₪150 לחודש"
+    "From ₪150 a month": "מ־₪150 לחודש",
+    "From ₪500": "מ־₪500"
 },
   titles:{
     "Booking System with SMS Reminders | Bonim Digital": "מערכת תורים עם תזכורות SMS | בונים דיגיטל",
@@ -188,7 +189,7 @@ window.PORTFOLIO_I18N_EXTRA={
     "A booking system for beauticians, barbers, clinics and trainers: clients book on their own 24/7 and get an SMS reminder the day before. Launch price ₪800.": "מערכת תורים לקוסמטיקאיות, ספרים, מרפאות ומאמנים: הלקוחות קובעים לבד 24/7 ומקבלים תזכורת SMS יום לפני. מחיר השקה ₪800.",
     "A WordPress site for lawyers, accountants, contractors and service providers. You update it yourself, it is ready for Google, and it has a WhatsApp button. From ₪1,000.": "אתר וורדפרס לעורכי דין, רואי חשבון, קבלנים ונותני שירות. מעדכנים לבד, מוכן לגוגל, עם כפתור וואטסאפ. מ־₪1,000.",
     "A custom-coded website with a design made for your business: extra fast, no template limits and built for Google from the first line.": "אתר בקוד מותאם עם עיצוב שנבנה לעסק שלכם: מהיר במיוחד, בלי מגבלות של תבנית ובנוי לגוגל מהשורה הראשונה.",
-    "An online store with a catalog, cart and card payments. Up to 20 products, ready to sell. For bakeries, boutiques and makers. From ₪2,000.": "חנות אונליין עם קטלוג, סל ותשלום באשראי. עד 20 מוצרים, מוכנה למכירה. למאפיות, בוטיקים ויוצרים. מ־₪2,000.",
+    "An online store with a catalog, cart and card payments. Up to 10 products, ready to sell. For bakeries, boutiques and makers. From ₪2,000.": "חנות אונליין עם קטלוג, סל ותשלום באשראי. עד 10 מוצרים, מוכנה למכירה. למאפיות, בוטיקים ויוצרים. מ־₪2,000.",
     "App development for Android and iPhone: a scoping session, screen designs you approve, development in stages and help publishing to the stores.": "פיתוח אפליקציות לאנדרואיד ולאייפון: פגישת אפיון, עיצוב מסכים שאתם מאשרים, פיתוח בשלבים ועזרה בפרסום בחנויות.",
     "Already have a site? We fix slow and broken sites, handle monthly maintenance from ₪150 and do local Google SEO, without building from scratch.": "כבר יש לכם אתר? מתקנים אתרים איטיים ושבורים, מתחזקים מ־₪150 לחודש ומקדמים בגוגל המקומי — בלי לבנות מאפס."
 }

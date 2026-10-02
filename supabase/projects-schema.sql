@@ -37,7 +37,7 @@ create table if not exists projects (
 create index if not exists projects_created_idx on projects (created_at desc);
 
 create or replace function projects_touch() returns trigger
-language plpgsql as $$
+language plpgsql set search_path = public as $$
 begin
   new.updated_at := now();
   return new;
