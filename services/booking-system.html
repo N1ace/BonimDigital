@@ -4,13 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#FFFFFF">
-<title>Booking System with SMS Reminders | Bonim Digital</title>
-<meta name="description" content="A booking system for beauticians, barbers, clinics and trainers: clients book on their own 24/7 and get an SMS reminder the day before. Launch price ₪800.">
+<title>אפליקציה לקביעת תורים לעסק – מ-800 ₪ · בונים דיגיטל</title>
+<meta name="description" content="אפליקציה לקביעת תורים משלך: יומן דיגיטלי, תזכורות SMS ווואטסאפ וניהול עובדים, למספרות, קליניקות וקוסמטיקאיות. 800 ₪ חד פעמי.">
 <link rel="canonical" href="https://n1ace.github.io/portfolio/services/booking-system.html">
+<meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="אפליקציה לקביעת תורים לעסק – מ-800 ₪ · בונים דיגיטל">
+<meta property="og:description" content="יומן דיגיטלי, תזכורות SMS ווואטסאפ וניהול עובדים, עם המותג שלך. 800 ₪ חד פעמי, בלי מנוי חודשי למערכת.">
 <meta property="og:url" content="https://n1ace.github.io/portfolio/services/booking-system.html">
-<meta property="og:title" content="מערכת תורים עם תזכורות SMS | בונים דיגיטל">
-<meta property="og:description" content="מערכת תורים לקוסמטיקאיות, ספרים, מרפאות ומאמנים: הלקוחות קובעים לבד 24/7 ומקבלים תזכורת SMS יום לפני. מחיר השקה ₪800.">
 <meta property="og:image" content="https://n1ace.github.io/portfolio/assets/logo/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <script>try{if(localStorage.getItem('portfolio-language')!=='en'){document.documentElement.lang='he';document.documentElement.dir='rtl'}}catch(e){}</script>
@@ -25,31 +27,413 @@
 <script src="../assets/consent.js?v=1"></script>
 <link rel="stylesheet" href="../assets/cta.css?v=1">
 <script src="../assets/cta.js?v=1"></script>
-<link rel="stylesheet" href="../assets/service-page.css?v=2">
-<script src="../assets/services-i18n.js?v=2" defer></script>
+<link rel="stylesheet" href="../assets/service-page.css?v=4">
 <script src="../assets/portfolio-i18n.js?v=34" defer></script>
+<style>
+/* ---------- article ---------- */
+.post{padding:40px 0 8px}
+.post .wrap{max-width:808px}
+.post-body{font-family:'Heebo',var(--body);color:var(--text);font-size:17px;line-height:1.8}
+.post .crumbs{font-family:'Heebo',var(--body);font-size:13px;margin-bottom:14px}
+.post .crumbs a{color:var(--muted)}
+.post .sec-eyebrow{font-family:'Heebo',var(--body);font-size:14.5px;font-weight:700;letter-spacing:0}
+.post-head h1{font-family:'Heebo',var(--display);font-weight:800;font-size:clamp(28px,4.4vw,42px);line-height:1.2;letter-spacing:0;margin:0 0 10px}
+.post-meta{color:var(--muted);font-size:14px;margin:0 0 28px}
+.post-body :where(h2){font-family:'Heebo',var(--display);font-weight:800;font-size:clamp(22px,3vw,28px);line-height:1.3;letter-spacing:0;margin:48px 0 14px;scroll-margin-top:calc(var(--nav-h) + 16px)}
+.post-body :where(p){margin:0 0 16px}
+.post-body :where(ul,ol){padding-inline-start:22px;margin:0 0 18px}
+.post-body :where(li){margin-bottom:8px}
+.post-body :where(a:not([class])){color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.post-body :where(a:not([class])):hover{color:var(--accent-hover)}
+.post-body :where(strong){font-weight:700}
+.post-body :where(a:focus-visible,button:focus-visible){outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.ico{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* tables */
+.tbl{overflow-x:auto;margin:20px 0 28px;border:1px solid var(--line);border-radius:12px}
+.tbl table{width:100%;border-collapse:collapse;font-size:15px;min-width:480px}
+.tbl th,.tbl td{padding:12px 14px;text-align:start;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl thead th{background:var(--card);font-weight:700}
+.tbl tbody th{font-weight:600}
+.tbl tbody tr:last-child td,.tbl tbody tr:last-child th{border-bottom:0}
+.tbl td{font-variant-numeric:tabular-nums}
+.tbl tr.hl th,.tbl tr.hl td{background:var(--gold-soft)}
+.tbl .pz{font-weight:800;white-space:nowrap}
+.tbl-note{font-size:14px;color:var(--muted);margin:-18px 0 24px!important}
+.tbl code{font-family:var(--mono);font-size:14px;font-weight:600;color:var(--accent);background:var(--accent-soft);border-radius:6px;padding:2px 7px;direction:ltr;display:inline-block}
+/* on phones, tables marked .stack become one card per row */
+@media (max-width:560px){
+  .tbl.stack{border:0;overflow:visible}
+  .tbl.stack table{min-width:0}
+  .tbl.stack thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+  .tbl.stack tbody,.tbl.stack tr,.tbl.stack th,.tbl.stack td{display:block}
+  .tbl.stack tr{border:1px solid var(--line);border-radius:12px;margin-bottom:10px;overflow:hidden}
+  .tbl.stack tbody th{background:var(--card);padding:10px 14px;border-bottom:1px solid var(--line)}
+  .tbl.stack tr.hl th{background:var(--gold-soft)}
+  .tbl.stack td{display:grid;grid-template-columns:84px minmax(0,1fr);gap:10px;padding:10px 14px}
+  .tbl.stack td::before{content:attr(data-l);font-size:12.5px;font-weight:700;color:var(--muted)}
+  .tbl.stack tbody tr:last-child td{border-bottom:1px solid var(--line)}
+  .tbl.stack tbody tr td:last-child{border-bottom:0}
+}
+
+/* lead, summary, table of contents */
+.rd-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:1200;pointer-events:none}
+.rd-progress span{display:block;height:100%;background:var(--accent);transform:scaleX(0);transform-origin:100% 50%}
+.post-lead{font-size:clamp(18px,2.2vw,20px);line-height:1.75;color:var(--text)}
+.tldr{background:var(--accent-soft);border-radius:16px;padding:20px 22px;margin:26px 0 16px}
+.tldr-k{display:flex;align-items:center;gap:8px;margin:0 0 12px!important;font-weight:800;font-size:15px;color:var(--accent)}
+.tldr ul{list-style:none;padding:0!important;margin:0!important;display:grid;gap:10px}
+.tldr li{position:relative;margin:0!important;padding-inline-start:30px;font-size:16px;line-height:1.65}
+.tldr li::before{content:"";position:absolute;inset-inline-start:0;top:4px;width:20px;height:20px;border-radius:50%;background:var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/12px no-repeat}
+.toc{border:1px solid var(--line);border-radius:16px;padding:16px 20px 10px;margin:0}
+.toc-k{margin:0 0 6px!important;font-size:13px;font-weight:800;color:var(--muted)}
+.toc ol{list-style:none;padding:0!important;margin:0!important;display:grid;grid-template-columns:1fr 1fr;column-gap:24px}
+.toc li{margin:0!important}
+.toc a{display:flex;align-items:baseline;gap:10px;padding:8px 0;border-top:1px solid var(--line);color:var(--text);text-decoration:none;font-size:15px;font-weight:500;line-height:1.4;transition:color .2s}
+.toc li:nth-child(-n+2) a{border-top:0}
+.toc a span,.toc-side a span{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--accent);min-width:20px}
+@media (hover:hover) and (pointer:fine){.toc a:hover{color:var(--accent)}}
+@media (max-width:620px){.toc ol{grid-template-columns:1fr}.toc li:nth-child(2) a{border-top:1px solid var(--line)}}
+.toc-side{display:none}
+@media (min-width:1400px){
+  .toc-side{display:block;position:fixed;top:calc(var(--nav-h,64px) + 40px);left:calc(50% + 510px);width:170px;z-index:5;font-family:'Heebo',var(--body);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .3s,transform .3s,visibility 0s .3s}
+  .toc-side.show{opacity:1;visibility:visible;transform:none;transition:opacity .3s,transform .3s}
+  .toc-side-k{margin:0 0 8px;font-size:12px;font-weight:800;color:var(--muted)}
+  .toc-side ol{list-style:none;margin:0;padding:0}
+  .toc-side a{display:flex;gap:8px;padding:7px 12px;border-inline-start:2px solid var(--line);color:var(--muted);text-decoration:none;font-size:13.5px;line-height:1.4;transition:color .2s,border-color .2s}
+  .toc-side a span{color:inherit}
+  .toc-side a.on{color:var(--accent);border-color:var(--accent);font-weight:700}
+  .toc-side a:hover{color:var(--text)}
+}
+
+/* chapters */
+.ch-sec{margin-top:64px;padding-top:44px;border-top:1px solid var(--line)}
+.ch-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.ch-n{font-family:var(--mono);font-weight:600;font-size:13px;line-height:1;color:var(--accent);background:var(--accent-soft);border-radius:8px;padding:6px 9px}
+.ch-k{font-size:13.5px;font-weight:700;color:var(--muted)}
+.post-body .ch-sec h2{margin-top:0;margin-bottom:16px}
+.lead-in{margin-top:28px!important;font-weight:700}
+.lead-in::before{content:"";display:inline-block;width:18px;height:2px;background:var(--accent);vertical-align:middle;margin-inline-end:10px}
+.callout{display:flex;gap:14px;align-items:flex-start;background:var(--accent-soft);border-inline-start:4px solid var(--accent);border-radius:12px;padding:16px 18px;margin:22px 0}
+.callout .ico{width:24px;height:24px;color:var(--accent);margin-top:4px}
+.callout p{margin:0!important;font-size:clamp(18px,2.4vw,21px);font-weight:800;line-height:1.5}
+
+/* icon cards */
+.cards{list-style:none;padding:0!important;margin:14px 0 24px!important;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.cards > li{margin:0!important;border:1px solid var(--line);border-radius:14px;padding:16px;background:#FFFFFF;display:flex;gap:12px;align-items:flex-start;transition:border-color .2s,box-shadow .2s}
+.cards.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.cards.c3 > li{flex-direction:column;gap:10px}
+.cards.soft > li{background:var(--card);border-color:transparent}
+.cards b{display:block;font-size:16px;line-height:1.4;margin-bottom:2px}
+.cards .d{display:block;font-size:15px;line-height:1.6;color:var(--muted)}
+.cards .d a{color:var(--accent)}
+.ci{flex:none;width:40px;height:40px;border-radius:11px;display:grid;place-items:center;color:var(--accent);background:var(--accent-soft)}
+.cards.soft .ci{background:#FFFFFF}
+@media (hover:hover) and (pointer:fine){.cards:not(.soft) > li:hover{border-color:var(--line-strong);box-shadow:0 6px 18px rgba(11,27,51,.06)}}
+@media (max-width:700px){.cards.c3{grid-template-columns:1fr}.cards.c3 > li{flex-direction:row}}
+@media (max-width:560px){.cards{grid-template-columns:1fr}}
+
+/* eight-step process */
+.sys{list-style:none;padding:0!important;margin:14px 0 24px!important;position:relative;display:grid;gap:12px;counter-reset:sys}
+.sys::before{content:"";position:absolute;inset-inline-start:17px;top:20px;bottom:20px;width:2px;background:var(--accent-soft)}
+.sys li{position:relative;display:flex;gap:16px;margin:0!important;counter-increment:sys}
+.sys li::before{content:counter(sys);flex:none;width:36px;height:36px;border-radius:50%;background:var(--accent);color:#FFFFFF;display:grid;place-items:center;font-family:var(--mono);font-weight:600;font-size:15px;box-shadow:0 0 0 5px #FFFFFF;position:relative}
+.sys li > div{flex:1;min-width:0;background:var(--card);border-radius:14px;padding:12px 16px}
+.sys b{display:block;font-size:16px;margin-bottom:2px}
+.sys p{margin:0!important;font-size:15.5px;line-height:1.7;color:var(--muted)}
+
+/* what you get, two cards */
+.inc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:18px 0 8px}
+.inc-card{border:1px solid var(--line);border-radius:16px;padding:18px 20px;background:#FFFFFF}
+.inc-card.store{background:var(--card);border-color:transparent}
+.post-body .inc-card h3{display:flex;align-items:center;gap:10px;margin:0 0 12px;font-size:17px;font-weight:800;line-height:1.3}
+.inc-card ul{list-style:none;padding:0!important;margin:0!important;display:grid;gap:10px}
+.inc-card li{position:relative;margin:0!important;padding-inline-start:28px;font-size:15.5px;line-height:1.6}
+.inc-card li::before{content:"";position:absolute;inset-inline-start:0;top:3px;width:18px;height:18px;border-radius:50%;background:var(--accent-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230038B8' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/11px no-repeat}
+@media (max-width:700px){.inc{grid-template-columns:1fr}}
+
+/* support timeline */
+.sup{list-style:none;padding:0!important;margin:16px 0 20px!important;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.sup li{margin:0!important;position:relative;border:1px solid var(--line);border-radius:14px;padding:16px;padding-top:20px;background:#FFFFFF}
+.sup li::before{content:"";position:absolute;top:-1px;inset-inline:16px;height:3px;border-radius:0 0 3px 3px;background:var(--accent)}
+.sup li:nth-child(2)::before{background:#3B6FE0}
+.sup li:nth-child(3)::before{background:var(--gold)}
+.sup .when{display:block;font-family:var(--mono);font-size:12.5px;font-weight:600;color:var(--accent);margin-bottom:6px}
+.sup b{display:block;font-size:16px;line-height:1.4;margin-bottom:4px}
+.sup p{margin:0!important;font-size:15px;line-height:1.6;color:var(--muted)}
+@media (max-width:700px){.sup{grid-template-columns:1fr}}
+
+/* final call to action and WhatsApp button */
+.btn-wa{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 20px;border-radius:10px;background:#25D366;border:1px solid #25D366;color:#071A0E;font-family:'Heebo',var(--body);font-weight:800;font-size:15px;text-decoration:none;transition:background .2s}
+.btn-wa svg{width:20px;height:20px;fill:currentColor;flex:none}
+@media (hover:hover) and (pointer:fine){.btn-wa:hover{background:#2EE06F;border-color:#2EE06F}}
+.post-cta{margin:56px 0 0;padding:28px;border-radius:20px;background:#0B1B33;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.post-cta p{margin:0;max-width:440px;color:#C9D6EA}
+.post-cta .post-cta-h{color:#FFFFFF;font-size:clamp(20px,2.6vw,24px);font-weight:800;line-height:1.3;margin-bottom:6px}
+
+/* faq: same accordion as the home page */
+.fq{margin-top:22px;display:grid;gap:10px}
+.fq .fq-it{border:1px solid var(--line);background:var(--card);border-radius:14px;transition:background .25s,border-color .25s,box-shadow .25s}
+.fq .fq-it.open{background:#FFFFFF;border-color:var(--accent);box-shadow:0 8px 24px rgba(0,56,184,.09)}
+.fq-h{margin:0;font:inherit}
+.fq-q{all:unset;box-sizing:border-box;width:100%;display:flex;align-items:center;gap:14px;padding:18px 20px;cursor:pointer;border-radius:14px}
+.fq-q:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.fq-n{flex:none;min-width:24px;font-family:var(--display);font-weight:800;font-size:14px;color:#657189;transition:color .25s}
+.fq-it.open .fq-n{color:var(--accent)}
+.fq-t{flex:1;font-family:'Heebo',var(--display);font-weight:700;font-size:17px;line-height:1.4;color:var(--text)}
+.fq-pl{flex:none;width:34px;height:34px;border-radius:50%;background:#FFFFFF;border:1px solid var(--line);color:var(--text);display:grid;place-items:center;transition:transform .3s,background .25s,color .25s,border-color .25s}
+.fq-pl svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round}
+.fq-it.open .fq-pl{transform:rotate(45deg);background:var(--accent);border-color:var(--accent);color:#FFFFFF}
+.fq-aw{display:grid;grid-template-rows:1fr;transition:grid-template-rows .35s ease}
+.fq.is-js .fq-it:not(.open) .fq-aw{grid-template-rows:0fr}
+.fq-ai{overflow:hidden;min-height:0}
+.fq.is-js .fq-it:not(.open) .fq-ai{visibility:hidden;transition:visibility 0s .35s}
+.fq-a{margin:0;padding:0 20px 20px;padding-inline-start:58px;font-size:15.5px;line-height:1.75;color:var(--muted)}
+@media (hover:hover) and (pointer:fine){.fq-q:hover .fq-pl{border-color:var(--accent);color:var(--accent)}}
+
+/* replay buttons for the demos */
+.rp{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 14px;font:600 13px 'Heebo',sans-serif;color:var(--accent);background:#FFFFFF;border:1px solid var(--line);border-radius:10px;cursor:pointer}
+.rp[hidden]{display:none}
+@media (hover:hover) and (pointer:fine){.rp:hover{border-color:var(--accent)}}
+
+/* key-value tables: on phones each row is a small card without column labels */
+@media (max-width:560px){.tbl.stack.kv td{display:block}.tbl.stack.kv td::before{content:none}}
+
+/* ---------- hero ---------- */
+.cc-acts{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0}
+.cc-acts .btn{min-height:48px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:'Heebo',var(--body)}
+.cc-trust{margin:14px 0 28px;font-family:'Heebo',var(--body)}
+.cc-promise{margin:0 0 4px!important;max-width:560px;font-size:clamp(17px,2vw,19px);line-height:1.65;color:var(--muted)}
+.cc-show{max-width:560px;margin:0 0 32px}
+@media (min-width:1100px){
+  .post .crumbs{margin-inline:-150px}
+  .cc-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,460px);column-gap:48px;align-items:center;margin-inline:-150px}
+  .cc-hero-txt{grid-column:1}
+  .cc-show{grid-column:2;grid-row:1;max-width:none;margin:0}
+  .cc-hero .cc-trust{margin-bottom:0}
+}
+@media (max-width:480px){.cc-acts .btn{flex:1 1 100%}}
+
+/* ---------- hero demo: live calendar on a phone ---------- */
+.bk{margin:0}
+.bk-ph{width:272px;max-width:100%;margin:0 auto;background:#0B1B33;border-radius:40px;padding:10px;box-shadow:0 30px 60px -28px rgba(11,27,51,.55)}
+.bk-scr{background:#F4F6FA;border-radius:31px;overflow:hidden;padding:0 10px 12px;display:flex;flex-direction:column;gap:8px;font-family:'Heebo',var(--body)}
+.bk-status{position:relative;display:flex;justify-content:space-between;align-items:center;padding:12px 12px 4px;direction:ltr;font:600 11px/1 var(--mono);color:var(--text)}
+.bk-status::before{content:"";position:absolute;left:50%;top:6px;width:72px;height:20px;margin-left:-36px;border-radius:12px;background:#0B1B33}
+.bk-status i{width:16px;height:8px;border:1.5px solid currentColor;border-radius:3px}
+.bk-app{display:flex;align-items:center;gap:10px;background:#FFFFFF;border:1px solid var(--line);border-radius:14px;padding:9px 12px}
+.bk-app > span:first-child{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.3}
+.bk-app b{font-size:14px;font-weight:800}
+.bk-app small{font-size:11.5px;color:var(--muted)}
+.bk-live{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;color:#0B7A3E;background:#E7F8EE;border-radius:999px;padding:3px 8px}
+.bk-live::before{content:"";width:6px;height:6px;border-radius:50%;background:#12A150}
+.bk-list{list-style:none;margin:0!important;padding:0!important;display:grid;gap:6px}
+.bk-row{margin:0!important;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:8px;background:#FFFFFF;border:1px solid var(--line);border-inline-start:3px solid #7FD3A0;border-radius:10px;padding:8px 10px;font-size:12.5px;line-height:1.3;transition:background .3s,border-color .3s}
+.bk-row time{font:600 11.5px var(--mono);color:var(--muted)}
+.bk-who{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600}
+.bk-st{font-size:10.5px;font-weight:700;color:#0B7A3E;background:#E7F8EE;border-radius:999px;padding:2px 8px;white-space:nowrap;transition:background .3s,color .3s}
+.bk-x .b,.bk-x .s2,.bk-x .s3{display:none}
+.bk[data-step="1"] .bk-x,.bk[data-step="2"] .bk-x{background:#FFF1EE;border-color:#F4B4A6}
+.bk[data-step="1"] .bk-x .a,.bk[data-step="2"] .bk-x .a{text-decoration:line-through;color:#B42318}
+.bk[data-step="1"] .bk-x .s1,.bk[data-step="2"] .bk-x .s1{display:none}
+.bk[data-step="1"] .bk-x .s2,.bk[data-step="2"] .bk-x .s2{display:inline}
+.bk[data-step="1"] .bk-x .bk-st,.bk[data-step="2"] .bk-x .bk-st{color:#B42318;background:#FDECEC}
+.bk[data-step="3"] .bk-x{background:#E7F8EE;border-color:#12A150}
+.bk[data-step="3"] .bk-x .a,.bk[data-step="3"] .bk-x .s1{display:none}
+.bk[data-step="3"] .bk-x .b,.bk[data-step="3"] .bk-x .s3{display:inline}
+.bk[data-step="3"] .bk-x .bk-st{color:#FFFFFF;background:#0B7A3E}
+.bk-msg{background:#0B1B33;color:#FFFFFF;border-radius:12px;padding:9px 12px;font-size:12.5px;line-height:1.45;opacity:0;transform:translateY(8px);transition:opacity .4s,transform .4s}
+.bk-msg-k{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:700;color:#7FE3A8;margin-bottom:2px}
+.bk-msg-k .ico{width:14px;height:14px}
+.bk[data-step="2"] .bk-msg,.bk[data-step="3"] .bk-msg{opacity:1;transform:none}
+.bk-steps{list-style:none;padding:0!important;margin:36px auto 0!important;max-width:460px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;font-family:'Heebo',var(--body)}
+.bk-steps li{margin:0!important;display:flex;gap:8px;align-items:flex-start;font-size:13.5px;line-height:1.45;color:var(--muted);transition:color .3s}
+.bk-steps li span{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font:600 12px var(--mono);border:1.5px solid var(--line-strong);transition:background .3s,border-color .3s,color .3s}
+.bk[data-step="1"] .t1,.bk[data-step="2"] .t1,.bk[data-step="2"] .t2,.bk[data-step="3"] .bk-steps li{color:var(--text);font-weight:600}
+.bk[data-step="1"] .t1 span,.bk[data-step="2"] .t1 span,.bk[data-step="2"] .t2 span,.bk[data-step="3"] .bk-steps li span{background:var(--accent);border-color:var(--accent);color:#FFFFFF}
+.bk-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 14px;margin-top:12px;font-family:'Heebo',var(--body);font-size:13.5px;line-height:1.5;color:var(--muted);text-align:center}
+.bk-foot p{margin:0!important}
+@media (min-width:1100px){.bk-ph{width:300px}}
+@media (max-width:480px){.bk-steps{grid-template-columns:1fr;max-width:300px}}
+
+/* ---------- demo: traffic-light client rating ---------- */
+.rz{margin:22px 0 26px;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:14px;align-items:start}
+.rz-card{border:1px solid var(--line);border-radius:16px;background:#FFFFFF;padding:14px;box-shadow:0 10px 28px -18px rgba(11,27,51,.3)}
+.rz-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 10px;padding:0 4px 10px;margin-bottom:6px;border-bottom:1px solid var(--line)}
+.rz-top b{font-size:15px}
+.rz-top span{font-size:12.5px;color:var(--muted)}
+.rz-list{list-style:none;padding:0!important;margin:0!important;display:grid;gap:2px}
+.rz-row{margin:0!important;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:10px;padding:8px 4px}
+.rz-av{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:14px;background:var(--card);color:var(--text);transition:background .35s,color .35s}
+.rz-who{display:flex;flex-direction:column;line-height:1.35;min-width:0}
+.rz-who b{font-size:14.5px}
+.rz-who span{font-size:12.5px;color:var(--muted)}
+.rz-tag{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:4px 10px;font-size:12.5px;font-weight:700;white-space:nowrap;transition:background .35s,color .35s}
+.rz-tag i{flex:none;width:9px;height:9px;border-radius:50%;transition:background .35s}
+.rz-tag .q{display:none}
+.rz .g{--c:#12A150;--bg:#E7F8EE;--fg:#0B7A3E}
+.rz .y{--c:#F2B200;--bg:#FFF4D6;--fg:#7A5A00}
+.rz .r{--c:#E5484D;--bg:#FDECEC;--fg:#B42318}
+.rz-row .rz-tag{background:var(--bg);color:var(--fg)}
+.rz-row .rz-tag i{background:var(--c)}
+.rz-row.sty .rz-av{background:var(--bg);color:var(--fg)}
+.rz-row:not(.sty) .rz-tag{background:#EEF1F6;color:var(--muted)}
+.rz-row:not(.sty) .rz-tag i{background:#C3CBD8}
+.rz-row:not(.sty) .rz-tag .w{display:none}
+.rz-row:not(.sty) .rz-tag .q{display:inline}
+.rz-key{list-style:none;padding:0!important;margin:0!important;display:grid;gap:10px}
+.rz-key li{margin:0!important;border-radius:14px;padding:14px 16px;background:var(--card);border-inline-start:4px solid var(--c);transition:opacity .35s}
+.rz-key li:not(.sty){opacity:.4}
+.rz-key b{display:flex;align-items:center;gap:8px;font-size:15.5px;margin-bottom:2px}
+.rz-key b i{width:10px;height:10px;border-radius:50%;background:var(--c)}
+.rz-key span{display:block;font-size:14.5px;line-height:1.6;color:var(--muted)}
+.rz .rp{grid-column:1 / -1;justify-self:start}
+@media (max-width:700px){.rz{grid-template-columns:1fr}}
+
+/* ---------- migration steps ---------- */
+.mig{list-style:none;padding:0!important;margin:14px 0 20px!important;display:flex;flex-wrap:wrap;gap:8px}
+.mig li{margin:0!important;display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:700;font-size:14.5px;line-height:1.4}
+.mig .ico{width:16px;height:16px}
+
+/* ---------- real example: website mockup ---------- */
+.bk-case{margin:22px 0 8px}
+.bk-case .mk{margin:0}
+
+/* ---------- dark price card with add-ons ---------- */
+.pc{margin:22px 0 0;background:#0B1B33;color:#FFFFFF;border-radius:20px;padding:clamp(20px,3.4vw,32px);font-family:'Heebo',var(--body);box-shadow:0 30px 60px -34px rgba(11,27,51,.6)}
+.pc-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:12px;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.12)}
+.pc-k{margin:0 0 8px!important;font-size:14px;font-weight:700;color:#A9B8D3}
+.pc-price{margin:0!important;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;line-height:1}
+.pc-price b{font-size:clamp(40px,6vw,54px);font-weight:800;font-variant-numeric:tabular-nums}
+.pc-price s{font-size:20px;font-weight:600;color:#FF9C7A;text-decoration-thickness:2px}
+.pc-sub{margin:10px 0 0!important;font-size:14.5px;line-height:1.6;color:#C9D6EA}
+.pc-badge{flex:none;background:#7FE3A8;color:#0B1B33;font-size:13px;font-weight:800;border-radius:999px;padding:6px 12px}
+.pc-lk{margin:18px 0 12px!important;font-weight:800;font-size:15.5px}
+.pc-inc{list-style:none;padding:0!important;margin:0!important;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 20px}
+.pc-inc li{position:relative;margin:0!important;padding-inline-start:28px;font-size:15px;line-height:1.55;color:#E6ECF6}
+.pc-inc li::before{content:"";position:absolute;inset-inline-start:0;top:2px;width:19px;height:19px;border-radius:50%;background:rgba(127,227,168,.16) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237FE3A8' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/11px no-repeat}
+.pc-run{margin-top:20px;background:rgba(255,255,255,.06);border-radius:14px;padding:16px 18px}
+.pc-run > b{display:block;font-size:15.5px;margin-bottom:4px}
+.pc-run > p{margin:0 0 10px!important;font-size:14.5px;line-height:1.65;color:#C9D6EA}
+.pc-eg{list-style:none;padding:0!important;margin:0!important;display:grid;gap:6px}
+.pc-eg li{margin:0!important;display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 12px;padding-top:6px;border-top:1px dashed rgba(255,255,255,.14);font-size:14px;line-height:1.5}
+.pc-eg span{color:#C9D6EA}
+.pc-eg b{font-weight:700;color:#A9C2FF}
+.pc-x{margin-top:16px;border-top:1px solid rgba(255,255,255,.12)}
+.pc-x summary{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:52px;padding:14px 0 12px;cursor:pointer;list-style:none;border-radius:6px}
+.pc-x summary::-webkit-details-marker{display:none}
+.pc-x summary:focus-visible{outline:2px solid #A9C2FF;outline-offset:2px}
+.pc-x summary b{display:block;font-size:16px;font-weight:800;line-height:1.4}
+.pc-x summary small{display:block;font-size:13.5px;color:#A9B8D3}
+.pc-pl{flex:none;width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.3);display:grid;place-items:center;transition:transform .3s,background .25s,color .25s}
+.pc-pl svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round}
+.pc-x[open] .pc-pl{transform:rotate(45deg);background:#FFFFFF;color:#0B1B33}
+.pc-xl{list-style:none;padding:0!important;margin:4px 0 12px!important;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.pc-xl li{margin:0!important;background:rgba(255,255,255,.06);border-radius:12px;padding:12px 14px}
+.pc-xl b{display:block;font-size:15px;line-height:1.4;margin-bottom:2px}
+.pc-xl span{display:block;font-size:14px;line-height:1.55;color:#C9D6EA}
+.pc-x p{margin:0 0 4px!important;font-size:14.5px;line-height:1.6;color:#C9D6EA}
+.pc-acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.pc-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 20px;border-radius:10px;background:#FFFFFF;color:#0B1B33;font-weight:800;font-size:15px;text-decoration:none;transition:background .2s}
+.pc-btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.post-body .pc a:focus-visible{outline-color:#A9C2FF}
+@media (hover:hover) and (pointer:fine){.pc-btn:hover{background:#E6EDFB}.pc-x summary:hover .pc-pl{border-color:#FFFFFF}}
+@media (max-width:620px){.pc-inc,.pc-xl{grid-template-columns:1fr}.pc-acts > *{flex:1 1 100%}}
+
+/* ---------- testimonial card (Lidor) ---------- */
+.bdt{--b:var(--accent,#0038B8);--bs:var(--accent-soft,#E6EDFB);--n:var(--text,#0B1B33);--m:var(--muted,#52607A);--l:var(--line,#E3E8F0);--c:var(--card,#F4F6FA);
+  font-family:'Heebo',sans-serif;background:#fff;border:1px solid var(--l);border-radius:16px;padding:clamp(18px,3vw,28px);margin:20px 0 0;color:var(--n);
+  box-shadow:0 6px 20px rgba(11,27,51,.06)}
+.bdt-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+.bdt-badge{width:44px;height:44px;border-radius:12px;background:#0B1B33;color:#fff;display:grid;place-items:center;font:800 34px/1 'Archivo',serif;padding-top:10px;box-sizing:border-box}
+.bdt-tag{background:var(--bs);color:var(--b);font-weight:700;font-size:13px;padding:6px 12px;border-radius:999px}
+.bdt-head{margin:0 0 16px!important;font-size:clamp(20px,2.6vw,26px);font-weight:800;line-height:1.35}
+.bdt-cmp{display:grid;grid-template-columns:1fr auto 1fr;align-items:stretch;gap:10px;background:#0B1B33;border-radius:14px;padding:12px}
+.bdt-col{background:rgba(255,255,255,.05);border-radius:10px;padding:12px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:2px}
+.bdt-lb{font-size:12.5px;color:#A9B8D3}
+.bdt-val{font:600 clamp(22px,3.4vw,30px) 'IBM Plex Mono',ui-monospace,monospace;direction:ltr;color:#fff;font-variant-numeric:tabular-nums}
+.bdt-old .bdt-val{color:#FF9C7A}
+.bdt-old s{text-decoration-thickness:2px}
+.bdt-new .bdt-val{color:#7FE3A8}
+.bdt-per{font-size:12.5px;color:#8FA0BD}
+.bdt-plus{margin-top:4px;font:600 14px 'IBM Plex Mono',ui-monospace,monospace;color:#8FB0FF}
+.bdt-arrow{align-self:center;color:#8FA0BD;font-size:20px}
+.bdt-note{margin:10px 0 0!important;font-size:13px;color:var(--m);line-height:1.6}
+.bdt-quote{margin:18px 0 0;padding-inline-start:16px;border-inline-start:3px solid var(--b)}
+.bdt-quote p{margin:0!important;font-size:16px;line-height:1.8;color:var(--n)}
+.bdt-sig{display:flex;align-items:center;gap:12px;margin-top:18px;flex-wrap:wrap}
+.bdt-av{width:44px;height:44px;border-radius:50%;background:var(--c);border:1px solid var(--l);display:grid;place-items:center;font-weight:800;color:var(--b)}
+.bdt-who{display:flex;flex-direction:column;line-height:1.3;flex:1;min-width:140px}
+.bdt-who span{font-size:13px;color:var(--m)}
+.bdt-pill{font-weight:700;font-size:12px;color:var(--b);border:1px solid var(--bs);background:var(--bs);border-radius:999px;padding:5px 10px;text-decoration:none}
+.bdt-more{display:inline-block;margin-top:14px;font-size:14px;font-weight:700;color:var(--b);text-decoration:none}
+@media (hover:hover) and (pointer:fine){.bdt-pill:hover{background:#D6E2F8}.bdt-more:hover{text-decoration:underline}}
+@media (max-width:480px){.bdt-cmp{grid-template-columns:1fr}.bdt-arrow{display:none}}
+
+.post-body .cc-others{margin-top:18px}
+.cc-others .sp-other{text-decoration:none;color:var(--text)}
+
+/* scroll reveal (content is fully visible without JS) */
+.pr-on .pr{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;transition-delay:var(--d,0s)}
+.pr-on .pr.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .pr-on .pr{opacity:1;transform:none;transition:none}
+  .toc-side,.fq .fq-it,.fq-n,.fq-pl,.fq-aw,.btn-wa,.bk-row,.bk-st,.bk-msg,.bk-steps li,.bk-steps li span,.rz-av,.rz-tag,.rz-tag i,.rz-key li,.pc-pl,.pc-btn{transition:none!important}
+}
+@media (max-width:620px){
+  .post{padding-top:28px}
+  .post-body{font-size:16px}
+  .ch-sec{margin-top:48px;padding-top:32px}
+  .tldr{padding:18px 16px}
+  .fq-q{padding:16px;gap:12px}
+  .fq-t{font-size:16px}
+  .fq-a{padding:0 16px 18px;font-size:15px}
+  .post-cta{padding:22px}
+  .btn-wa{width:100%}
+}
+</style>
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Booking system + SMS reminders",
-  "serviceType": "Booking system + SMS reminders",
-  "description": "מערכת תורים לקוסמטיקאיות, ספרים, מרפאות ומאמנים: הלקוחות קובעים לבד 24/7 ומקבלים תזכורת SMS יום לפני. מחיר השקה ₪800.",
-  "url": "https://n1ace.github.io/portfolio/services/booking-system.html",
-  "areaServed": {
-    "@type": "Country",
-    "name": "Israel"
-  },
-  "provider": {
-    "@type": "Organization",
-    "name": "בונים דיגיטל",
-    "url": "https://n1ace.github.io/portfolio/"
-  },
-  "offers": {
-    "@type": "Offer",
-    "price": "800",
-    "priceCurrency": "ILS"
-  }
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Service",
+      "name":"אפליקציה לקביעת תורים",
+      "serviceType":"פיתוח אפליקציה לקביעת תורים",
+      "description":"אפליקציה לקביעת תורים משלך: יומן דיגיטלי, תזכורות SMS ווואטסאפ וניהול עובדים, למספרות, קליניקות וקוסמטיקאיות. 800 ₪ חד פעמי.",
+      "url":"https://n1ace.github.io/portfolio/services/booking-system.html",
+      "inLanguage":"he-IL",
+      "areaServed":{"@type":"Country","name":"Israel"},
+      "audience":{"@type":"BusinessAudience","name":"מספרות, קליניקות, אורתופדים, רופאים פרטיים, קוסמטיקאיות ונותני שירות"},
+      "provider":{"@type":"Organization","name":"בונים דיגיטל","url":"https://n1ace.github.io/portfolio/","logo":"https://n1ace.github.io/portfolio/assets/logo/bonim-digital-512.png"},
+      "offers":{"@type":"Offer","name":"אפליקציה לקביעת תורים, חבילה בסיסית","price":"800","priceCurrency":"ILS","availability":"https://schema.org/InStock","priceSpecification":{"@type":"PriceSpecification","price":"800","priceCurrency":"ILS","valueAddedTaxIncluded":false}}
+    },
+    {
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"למי מתאימה האפליקציה לקביעת תורים?","acceptedAnswer":{"@type":"Answer","text":"לכל מי שעובד עם תורים: מספרות, קליניקות, אורתופדים, רופאים פרטיים, קוסמטיקאיות, וכל מי שנותן שירות. בנינו אותה קודם כאפליקציה לספר, והיום אנחנו מתאימים אותה לכל עסק."}},
+        {"@type":"Question","name":"אתם מפתחים אפליקציה בהתאמה אישית?","acceptedAnswer":{"@type":"Answer","text":"כן. פיתוח האפליקציה נעשה סביב העסק שלך: העיצוב, השירותים, העובדים והדרך שבה אתה עובד. ואם חסר לך משהו, אנחנו מוסיפים אותו."}},
+        {"@type":"Question","name":"הלקוחות שלי צריכים להוריד אפליקציה?","acceptedAnswer":{"@type":"Answer","text":"לא. הם נכנסים לקישור, למשל מהפרופיל בוואטסאפ או באינסטגרם, וקובעים תור בלי להוריד כלום."}},
+        {"@type":"Question","name":"מה קורה עם הלקוחות והתורים שכבר יש לי?","acceptedAnswer":{"@type":"Answer","text":"אנחנו מעבירים הכל: לקוחות, תורים, שירותים, מחירים, שעות ועובדים."}},
+        {"@type":"Question","name":"היומן מסתנכרן עם הטלפון שלי?","acceptedAnswer":{"@type":"Answer","text":"כן. כל התורים מופיעים גם ביומן גוגל או ביומן הטלפון."}},
+        {"@type":"Question","name":"התזכורות נשלחות ב-SMS או בוואטסאפ?","acceptedAnswer":{"@type":"Answer","text":"איך שתבחר: SMS, וואטסאפ, מייל, או דרך אחרת שנתאים לך."}},
+        {"@type":"Question","name":"מה זה הרמזור?","acceptedAnswer":{"@type":"Answer","text":"דירוג צבע לכל לקוח, לפי התורים, הביטולים, ההחלפות ואי ההגעות שלו. ככה אתה רואה מיד על מי אפשר לסמוך."}},
+        {"@type":"Question","name":"אפשר לנהל כמה עובדים וכיסאות מושכרים?","acceptedAnswer":{"@type":"Answer","text":"כן, עד 3 עובדים. לכל עובד יומן משלו, ואתה רואה את התורים, המכירות והעמלות של כל אחד, וגם כמה עמלה מגיעה לך מכל שוכר כיסא."}},
+        {"@type":"Question","name":"אין לי לוגו. זה בעיה?","acceptedAnswer":{"@type":"Answer","text":"לא. אנחנו ממתגים את העסק מאפס, כולל צבעים ולוגו, וזה כלול בחבילה."}},
+        {"@type":"Question","name":"אפשר לעשות שינויים אחרי המסירה?","acceptedAnswer":{"@type":"Answer","text":"שעות, מחירים ושירותים אתה מעדכן לבד מהפאנל. שינויים גדולים יותר אנחנו מסדרים איתך."}},
+        {"@type":"Question","name":"יש עלויות חודשיות?","acceptedAnswer":{"@type":"Answer","text":"אין מנוי חודשי למערכת. משלמים רק על הודעות ודומיין, לפי השימוש, בדרך כלל בין 0 ל-30 ₪ בחודש. למשל, 500 הודעות SMS בחודש עולות בערך 13 ₪, ודומיין .com עולה בערך 176 ₪ ל-5 שנים. דומיין .co.il והודעות וואטסאפ מתומחרים אחרת. בלי התחייבות."}}
+      ]
+    },
+    {
+      "@type":"BreadcrumbList",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"בית","item":"https://n1ace.github.io/portfolio/"},
+        {"@type":"ListItem","position":2,"name":"שירותים","item":"https://n1ace.github.io/portfolio/#services"},
+        {"@type":"ListItem","position":3,"name":"אפליקציה לקביעת תורים"}
+      ]
+    }
+  ]
 }
 </script>
 </head>
@@ -65,6 +449,7 @@
     <div class="menu" id="site-menu">
       <a href="../index.html#home">Home</a>
       <a href="../index.html#services" aria-current="page">Services</a>
+      <a href="../index.html#testimonials">Testimonials</a>
       <a href="../projects.html">Work</a>
       <a href="../index.html#results">Results</a>
       <a href="../index.html#process">How it works</a>
@@ -80,111 +465,380 @@
   </div>
 </nav>
 
-<main id="main">
-  <header class="sp-hero">
-    <div class="wrap sp-hero-in">
-      <div class="sp-hero-text">
-        <nav class="crumbs rv" aria-label="Breadcrumb">
-          <a href="../index.html">Home</a>
-          <span>/</span>
-          <a href="../index.html#services">Services</a>
-          <span>/</span>
-          <span>Booking system + SMS reminders</span>
-        </nav>
-        <div class="sec-eyebrow rv">// service</div>
-        <h1 class="rv">Booking system + SMS reminders</h1>
-        <p class="sec-sub rv">Clients book on their own 24/7, get a reminder the day before, and you get fewer no-shows.</p>
-        <div class="page-actions rv">
-          <a class="btn solid cta" href="../booking.html?s=booking"><span class="cta-txt">Book a free call</span><svg class="cta-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a class="btn sp-wa" href="https://wa.me/972527905122?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%91%D7%95%D7%A0%D7%99%D7%9D%20%D7%93%D7%99%D7%92%D7%99%D7%98%D7%9C%2C%20%D7%99%D7%A9%20%D7%9C%D7%99%20%D7%A2%D7%A1%D7%A7%20%D7%95%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.55L2.3 21.7l5.28-1.38A9.7 9.7 0 1 0 12 2Zm0 17.65a7.94 7.94 0 0 1-4.05-1.1l-.29-.17-3.13.82.84-3.05-.19-.31A7.94 7.94 0 1 1 12 19.65Zm4.36-5.95c-.24-.12-1.41-.7-1.630-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18a7.2 7.2 0 0 1-1.33-1.66c-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.690 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg><span>Ask on WhatsApp</span></a>
+<div class="rd-progress" aria-hidden="true"><span></span></div>
+
+<main id="main" class="post" lang="he" dir="rtl" data-i18n-skip>
+  <div class="wrap">
+    <nav class="crumbs rv" aria-label="פירורי לחם"><a href="../index.html">בית</a> / <a href="../index.html#services">שירותים</a> / <span aria-current="page">אפליקציה לקביעת תורים</span></nav>
+
+    <nav class="toc-side" aria-label="ניווט מהיר בעמוד"><p class="toc-side-k">בעמוד</p><ol></ol></nav>
+
+    <article class="post-body">
+      <header class="post-head cc-hero">
+        <div class="cc-hero-txt">
+        <div class="sec-eyebrow rv">// שירות · אפליקציה לקביעת תורים</div>
+        <h1 class="rv">אפליקציה לקביעת תורים עם המותג שלך</h1>
+        <p class="cc-promise rv">הלקוחות קובעים לבד, מקבלים תזכורת, ואתה רואה הכל ביומן אחד. 800 ₪ חד פעמי, בלי מנוי חודשי למערכת.</p>
+        <div class="cc-acts rv">
+          <a class="btn solid cta" href="../booking.html?s=booking"><span class="cta-txt">לקביעת שיחת היכרות חינם</span><svg class="cta-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn sp-wa" href="https://wa.me/972527905122?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%90%D7%A4%D7%9C%D7%99%D7%A7%D7%A6%D7%99%D7%94%20%D7%9C%D7%A7%D7%91%D7%99%D7%A2%D7%AA%20%D7%AA%D7%95%D7%A8%D7%99%D7%9D%20%D7%9C%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.55L2.3 21.7l5.28-1.38A9.7 9.7 0 1 0 12 2Zm0 17.65a7.94 7.94 0 0 1-4.05-1.1l-.29-.17-3.13.82.84-3.05-.19-.31A7.94 7.94 0 1 1 12 19.65Zm4.36-5.95c-.24-.12-1.41-.7-1.63-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18a7.2 7.2 0 0 1-1.33-1.66c-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg><span>שאלה בוואטסאפ</span></a>
         </div>
-        <div class="sp-trust rv">
-          <span><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>15 minutes</span></span>
-          <span><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Free of charge</span></span>
-          <span><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>No commitment</span></span>
+        <div class="sp-trust cc-trust rv">
+          <span><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>800 ₪ חד פעמי במקום 3,000 ₪</span></span>
+          <span><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>מוכן תוך 4–14 ימי עסקים</span></span>
+          <span><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>הלקוחות לא מורידים כלום</span></span>
         </div>
-      </div>
-      <aside class="sp-glance rv" aria-label="Booking system + SMS reminders">
-        <div class="sp-glance-top"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M16 3v4M8 3v4M4 11h16M8 15h2v2H8z"/></svg></span><span class="sp-glance-name">Booking system + SMS reminders</span></div>
-        <div class="sp-price"><b>₪800</b><s>₪3,000</s><span class="sp-tag">Launch price</span></div>
-        <dl class="sp-facts"><div><dt>Ready in</dt><dd>7–14 days</dd></div><div><dt>Best for</dt><dd>Beauticians, barbers, clinics, trainers</dd></div><div><dt>First step</dt><dd>A free 15-min call</dd></div></dl>
-        <a class="btn solid cta" href="../booking.html?s=booking"><span class="cta-txt">Book a free call</span><svg class="cta-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <p class="sp-glance-note">Fixed price, agreed before we start</p>
+        </div>
+        <div class="cc-show rv">
+          <figure class="bk" id="bk-demo" data-step="3">
+            <figcaption class="sr-only">הדגמה: לקוח מבטל את התור של 17:00, המערכת מציעה אותו ללקוח שחיכה, והתור מתמלא מחדש.</figcaption>
+            <div class="bk-ph" aria-hidden="true">
+              <div class="bk-scr">
+                <div class="bk-status"><span>9:41</span><i></i></div>
+                <div class="bk-app"><span><b>היומן שלך</b><small>יום שלישי · 5 תורים</small></span><span class="bk-live">פעיל</span></div>
+                <ul class="bk-list">
+                  <li class="bk-row"><time>15:00</time><span class="bk-who">דני · פייד</span><span class="bk-st">נקבע</span></li>
+                  <li class="bk-row"><time>16:00</time><span class="bk-who">מאור · זקן</span><span class="bk-st">נקבע</span></li>
+                  <li class="bk-row bk-x"><time>17:00</time><span class="bk-who"><span class="a">יוסי · תספורת</span><span class="b">אבי · תספורת</span></span><span class="bk-st"><span class="s1">נקבע</span><span class="s2">בוטל</span><span class="s3">נתפס מחדש</span></span></li>
+                  <li class="bk-row"><time>18:00</time><span class="bk-who">רון · פייד + זקן</span><span class="bk-st">נקבע</span></li>
+                  <li class="bk-row"><time>19:00</time><span class="bk-who">עומר · תספורת</span><span class="bk-st">נקבע</span></li>
+                </ul>
+                <div class="bk-msg"><span class="bk-msg-k"><svg class="ico" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1.2-4.6A8 8 0 1 1 21 12z"/></svg>נשלח לאבי · רשימת המתנה</span>התפנה תור היום ב-17:00. רוצה אותו?</div>
+              </div>
+            </div>
+            <ol class="bk-steps">
+              <li class="t1"><span>1</span>לקוח מבטל</li>
+              <li class="t2"><span>2</span>התור מוצע למי שחיכה</li>
+              <li class="t3"><span>3</span>התור מתמלא, בלי שנגעת בטלפון</li>
+            </ol>
+            <div class="bk-foot">
+              <p>השלמת תורים אוטומטית היא אחת <a href="#price">התוספות לחבילה</a>.</p>
+              <button type="button" class="rp" data-replay hidden><span aria-hidden="true">↻</span>הפעל שוב</button>
+            </div>
+          </figure>
+        </div>
+      </header>
+
+      <p class="post-lead">ב<a href="../index.html">בונים דיגיטל</a> אנחנו מפתחים לך אפליקציה לקביעת תורים משלך, עם השם, הצבעים והסגנון של העסק. הלקוחות שלך קובעים תור לבד, מקבלים תזכורת, ואתה רואה הכל מסודר ביומן דיגיטלי אחד.</p>
+      <p>אנחנו בונים את האפליקציה למספרות, קליניקות, אורתופדים, רופאים פרטיים, קוסמטיקאיות, וכל מי שנותן שירות לאנשים. מהניסיון שלנו, בכל העסקים האלה הבעיה הגדולה היא לא העבודה עצמה. היא הטלפון שלא מפסיק לצלצל, ההודעות בין לקוח ללקוח, והחורים ביומן כשמישהו לא מגיע. בשביל זה בנינו את האפליקציה.</p>
+
+      <aside class="tldr pr" aria-label="בקצרה">
+        <p class="tldr-k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg>בקצרה</p>
+        <ul>
+          <li><strong>יומן דיגיטלי חכם</strong>, מאגר לקוחות ותזכורות אוטומטיות ב-SMS, בוואטסאפ או במייל.</li>
+          <li>ניהול של עד 3 עובדים, כיסאות מושכרים ועמלות, מפאנל אחד.</li>
+          <li>מיתוג מלא, לוגו ודף נחיתה ממותג לקביעת תורים, שאפשר לשלוח לכל לקוח.</li>
+          <li>אנחנו מעבירים את כל הנתונים מהמערכת הקודמת שלך.</li>
+          <li><strong>800 ₪ חד פעמי במקום 3,000 ₪</strong>, לפני מע״מ. אפשר עד 5 תשלומים, ובלי מנוי חודשי למערכת.</li>
+        </ul>
       </aside>
-    </div>
-  </header>
 
-  <section class="sp-sec" aria-labelledby="sp-pains-h">
-    <div class="wrap">
-      <div class="sec-eyebrow rv">// sound familiar?</div>
-      <h2 class="rv" id="sp-pains-h">Sound familiar?</h2>
-      <div class="sp-pains"><div class="sp-pain rv"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16v.01"/></svg><span>The phone rings mid-treatment and you can't answer.</span></div><div class="sp-pain rv"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16v.01"/></svg><span>Half your evening goes on WhatsApp back-and-forth about times.</span></div><div class="sp-pain rv"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16v.01"/></svg><span>Clients forget, don't show up, and the slot stays empty.</span></div></div>
-      <p class="sp-answer rv"><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg><span>Here is how we fix that.</span></p>
-    </div>
-  </section>
+      <nav class="toc pr" aria-label="תוכן העמוד">
+        <p class="toc-k">מה בעמוד</p>
+        <ol>
+          <li><a href="#what"><span>01</span>מה האפליקציה עושה</a></li>
+          <li><a href="#traffic"><span>02</span>רמזור: דירוג לקוחות</a></li>
+          <li><a href="#panel"><span>03</span>פאנל הניהול</a></li>
+          <li><a href="#brand"><span>04</span>מיתוג, לוגו ודף נחיתה</a></li>
+          <li><a href="#migrate"><span>05</span>העברת הנתונים</a></li>
+          <li><a href="#tech"><span>06</span>נייד, נגישות ופרטיות</a></li>
+          <li><a href="#price"><span>07</span>המחיר והתוספות</a></li>
+          <li><a href="#timing"><span>08</span>זמנים ואחרי המסירה</a></li>
+          <li><a href="#faq"><span>09</span>שאלות נפוצות</a></li>
+          <li><a href="#more"><span>10</span>שירותים נוספים</a></li>
+        </ol>
+      </nav>
 
-  <section class="sp-sec" aria-labelledby="sp-gets-h">
-    <div class="wrap">
-      <div class="sec-eyebrow rv">// what you get</div>
-      <h2 class="rv" id="sp-gets-h">What you get</h2>
-      <ul class="sp-gets rv"><li><span class="sp-check"><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span>Your own booking page with your logo and colors</span></li><li><span class="sp-check"><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span>Clients pick a service and a time and book on their own, 24/7</span></li><li><span class="sp-check"><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span>An SMS reminder the day before every appointment</span></li><li><span class="sp-check"><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span>A calendar for you with day, week and month views</span></li><li><span class="sp-check"><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span>Working hours, breaks and days off, set once</span></li><li><span class="sp-check"><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span>Works on any phone, nothing to install</span></li><li><span class="sp-check"><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span>Setup and a short training on how to use it</span></li><li><span class="sp-check"><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span>Support after launch</span></li></ul>
-      <div class="sp-inline-cta rv"><a class="btn solid cta" href="../booking.html?s=booking"><span class="cta-txt">Book a free call</span><svg class="cta-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><p>Want to see if it fits your business?</p></div>
-    </div>
-  </section>
+      <!-- ===== 01 ===== -->
+      <section class="ch-sec" aria-labelledby="what">
+        <div class="ch-head pr"><span class="ch-n">01</span><span class="ch-k">מה אתה מקבל</span></div>
+        <h2 id="what">מה האפליקציה לקביעת תורים עושה בשבילך</h2>
+        <p>בנינו את האפליקציה כדי לעשות לך סדר ביומן, להוריד אותך מהטלפון, ולהקטין את החורים ביום העבודה. ככה גם לא תפסיד לקוחות שניסו לתפוס אותך ולא הצליחו לקבוע תור.</p>
+        <ul class="cards pr">
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v16H4zM4 10h16M8 3v4M16 3v4M8 14h3M8 17h6"/></svg></span><span><b>יומן דיגיטלי חכם</b><span class="d">הלקוחות שלך מסדרים קביעת תורים לבד, בשעות הפנויות שלך, ואתה רואה את כל היום במבט אחד.</span></span></li>
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 20v-1.5a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4V20M9 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM22 20v-1.5a4 4 0 0 0-3-3.9M16 4.1a3.5 3.5 0 0 1 0 6.8"/></svg></span><span><b>מאגר לקוחות</b><span class="d">כל הלקוחות שלך במקום אחד, עם היסטוריית תורים מלאה.</span></span></li>
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 0 1-15.5 6.2M3 12a9 9 0 0 1 15.5-6.2M18.5 2v4h-4M5.5 22v-4h4"/></svg></span><span><b>סנכרון ליומן שלך</b><span class="d">כל התורים מופיעים גם ביומן גוגל או ביומן הטלפון.</span></span></li>
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1.2-4.6A8 8 0 1 1 21 12z"/></svg></span><span><b>תזכורות אוטומטיות</b><span class="d">הלקוח מקבל אישור ותזכורת ב-SMS, בוואטסאפ, במייל, או בדרך אחרת שנתאים לך.</span></span></li>
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v5l3 2M3 12a9 9 0 1 0 2.6-6.4M3 4v4h4"/></svg></span><span><b>מעקב אחרי כל שינוי</b><span class="d">כל תור שנקבע, הוזז, הוחלף או בוטל נשמר ומופיע אצלך.</span></span></li>
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="2" width="8" height="20" rx="4"/><circle cx="12" cy="7" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="17" r="1.5"/></svg></span><span><b>דירוג לקוחות ברמזור</b><span class="d">אתה רואה מיד על מי אפשר לסמוך, ומי נוטה לבטל. פירוט <a href="#traffic">בפרק הבא</a>.</span></span></li>
+        </ul>
+      </section>
 
-  <section class="sp-sec" aria-labelledby="sp-steps-h">
-    <div class="wrap">
-      <div class="sec-eyebrow rv">// how it works</div>
-      <h2 class="rv" id="sp-steps-h">How it works</h2>
-      <div class="sp-steps"><div class="sp-step rv"><span class="sp-step-n">01</span><h3>Free intro call</h3><p>15 minutes. We learn the business and what it needs.</p></div><div class="sp-step rv"><span class="sp-step-n">02</span><h3>Fixed-price quote</h3><p>A clear number and scope in writing. No hourly surprises.</p></div><div class="sp-step rv"><span class="sp-step-n">03</span><h3>Setup</h3><p>We set up your services, prices, hours and the SMS reminders.</p></div><div class="sp-step rv"><span class="sp-step-n">04</span><h3>Launch</h3><p>You share the link on Instagram, WhatsApp and Google, and clients start booking.</p></div></div>
-    </div>
-  </section>
+      <!-- ===== 02 ===== -->
+      <section class="ch-sec" aria-labelledby="traffic">
+        <div class="ch-head pr"><span class="ch-n">02</span><span class="ch-k">רמזור</span></div>
+        <h2 id="traffic">רמזור: דירוג לקוחות שמראה לך על מי אפשר לסמוך</h2>
+        <p>בנינו במערכת שיטת דירוג שקראנו לה רמזור. כל לקוח מקבל צבע לפי ההתנהגות שלו בתורים: כמה תורים הוא קובע, כמה הוא מבטל, האם הוא מחליף תורים, והאם קרה שלא הגיע בלי לעדכן מראש.</p>
+        <figure class="rz pr" id="rz-demo" data-step="5">
+          <figcaption class="sr-only">דוגמה: רשימת לקוחות עם דירוג רמזור לכל לקוח</figcaption>
+          <div class="rz-card">
+            <div class="rz-top"><b>הלקוחות שלך</b><span>הדירוג מתעדכן אחרי כל תור</span></div>
+            <ul class="rz-list">
+              <li class="rz-row g sty" data-c="1"><span class="rz-av" aria-hidden="true">ד</span><span class="rz-who"><b>דני כהן</b><span>14 תורים · מגיע בזמן</span></span><span class="rz-tag"><i aria-hidden="true"></i><span class="w">ירוק · אמין</span><span class="q" aria-hidden="true">בודק…</span></span></li>
+              <li class="rz-row y sty" data-c="2"><span class="rz-av" aria-hidden="true">מ</span><span class="rz-who"><b>מאור לוי</b><span>9 תורים · 4 החלפות</span></span><span class="rz-tag"><i aria-hidden="true"></i><span class="w">צהוב · מחליף</span><span class="q" aria-hidden="true">בודק…</span></span></li>
+              <li class="rz-row g sty" data-c="3"><span class="rz-av" aria-hidden="true">ר</span><span class="rz-who"><b>רון אזולאי</b><span>11 תורים · ביטל פעם, מראש</span></span><span class="rz-tag"><i aria-hidden="true"></i><span class="w">ירוק · אמין</span><span class="q" aria-hidden="true">בודק…</span></span></li>
+              <li class="rz-row r sty" data-c="4"><span class="rz-av" aria-hidden="true">י</span><span class="rz-who"><b>יוסי פרץ</b><span>6 תורים · לא הגיע בלי לעדכן</span></span><span class="rz-tag"><i aria-hidden="true"></i><span class="w">אדום · לא הגיע</span><span class="q" aria-hidden="true">בודק…</span></span></li>
+              <li class="rz-row y sty" data-c="5"><span class="rz-av" aria-hidden="true">א</span><span class="rz-who"><b>אבי מזרחי</b><span>8 תורים · 3 ביטולים</span></span><span class="rz-tag"><i aria-hidden="true"></i><span class="w">צהוב · מבטל</span><span class="q" aria-hidden="true">בודק…</span></span></li>
+            </ul>
+          </div>
+          <ul class="rz-key">
+            <li class="g sty" data-c="1"><b><i aria-hidden="true"></i>ירוק</b><span>לקוח אמין: מגיע לתורים, ומעדכן מראש כשמשהו משתנה.</span></li>
+            <li class="y sty" data-c="2"><b><i aria-hidden="true"></i>צהוב</b><span>לקוח שמבטל או מחליף תורים לעיתים קרובות.</span></li>
+            <li class="r sty" data-c="4"><b><i aria-hidden="true"></i>אדום</b><span>לקוח שלא הגיע לתור בלי לעדכן.</span></li>
+          </ul>
+          <button type="button" class="rp" data-replay hidden><span aria-hidden="true">↻</span>הפעל שוב את ההדגמה</button>
+        </figure>
+        <p>ככה אתה יודע על מי אפשר לסמוך, ויכול להחליט איך לעבוד עם כל לקוח, בלי לנחש ובלי לזכור הכל בראש.</p>
+      </section>
 
-  <section class="sp-sec">
-    <div class="wrap">
-      <div class="sec-eyebrow rv">// real example</div>
-      <div class="sp-proof rv">
-        <div class="sp-proof-text"><b>Aryian Studio, a barbershop in Ashdod</b><span>Clients book on their own, 24/7</span></div>
-        <a class="btn" href="../products/barber-booking.html">See how it works</a>
-      </div>
-      <div class="sp-proof rv">
-        <div class="sp-proof-text"><b>Ready-made app or your own system? Full comparison</b><span>Real prices, a savings calculator and a chair rental calculator for barbers</span></div>
-        <a class="btn" href="../blog/booking-app-for-barbers.html">Read the comparison</a>
-      </div>
-    </div>
-  </section>
+      <!-- ===== 03 ===== -->
+      <section class="ch-sec" aria-labelledby="panel">
+        <div class="ch-head pr"><span class="ch-n">03</span><span class="ch-k">פאנל הניהול</span></div>
+        <h2 id="panel">פאנל הניהול: כל העסק שלך במקום אחד</h2>
+        <p>מפאנל הניהול אתה מנהל את העסק, לא רק את היומן:</p>
+        <ul class="cards soft pr">
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>שעות עבודה ושירותים</b><span class="d">מעדכנים שעות, שירותים ומחירים במקום אחד, והשינוי מופיע מיד גם בדף הנחיתה.</span></span></li>
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 20v-1.5a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4V20M9 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM22 20v-1.5a4 4 0 0 0-3-3.9M16 4.1a3.5 3.5 0 0 1 0 6.8"/></svg></span><span><b>עובדים</b><span class="d">עד 3 עובדים. לכל עובד יומן משלו, ואתה רואה את התורים שלו, מה הוא מוכר ובכמה.</span></span></li>
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 21v-4M17 21v-4M5 17h14M6 13h12a2 2 0 0 1 2 2v2H4v-2a2 2 0 0 1 2-2zM8 13V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v8"/></svg></span><span><b>כיסאות מושכרים</b><span class="d">משכיר כיסאות? אתה רואה כמה לקוחות מהמאגר שלך קיבל כל שוכר, ויודע בדיוק כמה עמלה מגיעה לך.</span></span></li>
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v12H5.2L4 17.2zM8 9h8M8 12h5"/></svg></span><span><b>פניות מהאתר</b><span class="d">כל מי שהשאיר פרטים נכנס לפאנל, כדי שאף פנייה לא תתפספס.</span></span></li>
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg></span><span><b>לקוחות</b><span class="d">המאגר המלא, עם היסטוריה ודירוג רמזור לכל לקוח.</span></span></li>
+        </ul>
+        <p>משכיר כיסאות ורוצה לדעת כמה זה שווה לך? יש <a href="../blog/booking-app-for-barbers.html#bd-chairs">מחשבון השכרת כיסאות</a> במדריך שלנו לספרים.</p>
+      </section>
 
-  <section class="sp-sec" aria-labelledby="sp-faq-h">
-    <div class="wrap">
-      <div class="sec-eyebrow rv">// questions</div>
-      <h2 class="rv" id="sp-faq-h">Questions before you book</h2>
-      <div class="sp-faq"><details class="rv" open><summary>Do my clients need to download an app?</summary><p>No. It is a link that opens in the browser on any phone.</p></details><details class="rv"><summary>Can I block times or take a day off?</summary><p>Yes. You close hours or days in the calendar and they disappear from the booking page.</p></details><details class="rv"><summary>Is the ₪800 a one-time payment?</summary><p>The ₪800 launch price covers the build and setup. Ongoing costs, like SMS messages, are explained on the call before you commit.</p></details><details class="rv"><summary>How long does it take?</summary><p>Usually 7–14 days after we agree on the quote.</p></details></div>
-    </div>
-  </section>
+      <!-- ===== 04 ===== -->
+      <section class="ch-sec" aria-labelledby="brand">
+        <div class="ch-head pr"><span class="ch-n">04</span><span class="ch-k">מיתוג</span></div>
+        <h2 id="brand">מיתוג, לוגו ודף נחיתה שמרגיש כמו העסק שלך</h2>
+        <p>בשבילנו, האפליקציה לקביעת תורים היא גם הפנים של העסק שלך באינטרנט. לכן אנחנו לוקחים את הזהות של העסק, בין אם זה השלט במקום או האתר הישן, והופכים אותה לזהות דיגיטלית משודרגת. ואם אין לך עדיין זהות, אנחנו ממתגים את העסק מאפס.</p>
+        <ul class="cards pr">
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span><span><b>צבעים ולוגו</b><span class="d">צבעים שמציגים את המותג בדרך שאתה רוצה ואוהב, ולוגו שאנחנו מעצבים בשבילך.</span></span></li>
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M11 4h2M12 17v.01"/></svg></span><span><b>דף נחיתה ממותג</b><span class="d">דף שאפשר לשלוח לכל לקוח, עם קביעת התורים בפנים, כדי שכבר מהרגע הראשון הוא ירגיש את המותג שלך.</span></span></li>
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><span><b>תצוגת עבודות</b><span class="d">עמוד שמציג את העבודות שלך, כדי שהלקוח ידע למה לצפות עוד לפני שהגיע.</span></span></li>
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.9 5.6L19.5 10l-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.4zM19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></span><span><b>עיצוב שיוצא מן הכלל</b><span class="d">עיצוב בהתאמה אישית, עם אנימציות מיוחדות שאנחנו בונים רק לעסק שלך.</span></span></li>
+        </ul>
+        <p class="lead-in">ככה זה נראה אצל לידור מ-Aryian Studio, מספרה באשדוד:</p>
+        <figure class="bk-case pr">
+          <div class="mk">
+            <a class="mk-web" href="https://aryianstudio.com/" target="_blank" rel="noopener noreferrer">
+              <span class="mk-bar" aria-hidden="true"><i></i><i></i><i></i><span>aryianstudio.com</span></span>
+              <img src="../assets/projects/aryian-studio/desktop.jpg" alt="אפליקציה לקביעת תורים ואתר ממותג של Aryian Studio, על מסך מחשב" width="1600" height="900" loading="lazy">
+            </a>
+            <a class="mk-phone" href="https://aryianstudio.com/" target="_blank" rel="noopener noreferrer">
+              <img src="../assets/projects/aryian-studio/mobile.jpg" alt="דף קביעת התורים של Aryian Studio בטלפון" width="585" height="1266" loading="lazy">
+            </a>
+          </div>
+          <figcaption class="mk-cap">האתר והאפליקציה לקביעת תורים שבנינו ל-Aryian Studio. לחיצה פותחת את האתר החי.</figcaption>
+        </figure>
+      </section>
 
-  <section class="sp-final">
-    <div class="wrap">
-      <div class="sp-final-box rv">
+      <!-- ===== 05 ===== -->
+      <section class="ch-sec" aria-labelledby="migrate">
+        <div class="ch-head pr"><span class="ch-n">05</span><span class="ch-k">מעבר מערכת</span></div>
+        <h2 id="migrate">עוברים אלינו? אנחנו מעבירים את כל הנתונים</h2>
+        <p>אתה לא מתחיל מאפס. אנחנו מעבירים את כל הנתונים מהמערכת שעבדת איתה עד עכשיו, בין אם זו אפליקציית תורים או האתר הישן שלך:</p>
+        <ul class="mig pr">
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>הלקוחות</li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>התורים שכבר נקבעו</li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>השירותים והמחירים</li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>שעות העבודה</li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>העובדים</li>
+        </ul>
+        <ol class="sys pr">
+          <li><div><b>אתה מבקש ייצוא</b><p>כל מה שצריך ממך הוא לבקש מהמערכת הקודמת ייצוא של הנתונים.</p></div></li>
+          <li><div><b>אנחנו מעבירים</b><p>משם אנחנו מסתדרים, ומכניסים הכל למערכת החדשה שלך.</p></div></li>
+          <li><div><b>מעדכנים את הלקוחות</b><p>בסוף מעדכנים יחד את הלקוחות בקישור החדש לקביעת תורים.</p></div></li>
+        </ol>
+      </section>
+
+      <!-- ===== 06 ===== -->
+      <section class="ch-sec" aria-labelledby="tech">
+        <div class="ch-head pr"><span class="ch-n">06</span><span class="ch-k">הצד הטכני</span></div>
+        <h2 id="tech">עובד בכל מסך, נגיש ושומר על הפרטיות</h2>
+        <p>מהצד הטכני אנחנו דואגים שתוכל לעבוד בראש שקט:</p>
+        <ul class="cards c3 soft pr">
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="14" height="10" rx="1.5"/><path d="M6 18h6M9 14v4"/><rect x="17" y="8" width="5" height="12" rx="1.2"/></svg></span><span><b>נייד ומחשב</b><span class="d">גם המערכת וגם דף הנחיתה מותאמים לטלפון ולמחשב, ומוגדרים כמו שצריך מבחינה טכנית.</span></span></li>
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="4.5" r="1.8"/><path d="M5 8l7 1.5L19 8M12 9.5V15M12 15l-3 6M12 15l3 6"/></svg></span><span><b>נגישות</b><span class="d">אנחנו עושים כל מאמץ כדי שהאתר יעמוד בדרישות הנגישות, ומוסיפים <a href="../accessibility.html">הצהרת נגישות</a>.</span></span></li>
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6zM9 12l2 2 4-4"/></svg></span><span><b>פרטיות</b><span class="d">המערכת עומדת בחוקים בישראל לגבי הפרטים של כל לקוח שקובע אצלך תור ומקבל הודעות, כולל <a href="../privacy.html">מדיניות פרטיות</a> והסכמה נפרדת להודעות פרסומיות.</span></span></li>
+        </ul>
+      </section>
+
+      <!-- ===== 07 ===== -->
+      <section class="ch-sec" aria-labelledby="price">
+        <div class="ch-head pr"><span class="ch-n">07</span><span class="ch-k">מחיר</span></div>
+        <h2 id="price">המחיר: 800 ₪ חד פעמי במקום 3,000 ₪</h2>
+        <p>האפליקציה לקביעת תורים בחבילה הבסיסית עולה עכשיו 800 ₪ חד פעמי, במקום 3,000 ₪ (לפני מע״מ). אפשר לפרוס עד 5 תשלומים. אין מנוי חודשי למערכת: משלמים רק על הודעות ודומיין, לפי השימוש שלך.</p>
+
+        <div class="pc pr">
+          <div class="pc-head">
+            <div>
+              <p class="pc-k">החבילה הבסיסית</p>
+              <p class="pc-price"><b>800 ₪</b><s><span class="sr-only">במקום </span>3,000 ₪</s></p>
+              <p class="pc-sub">חד פעמי, לפני מע״מ · אפשר לפרוס עד 5 תשלומים</p>
+            </div>
+            <span class="pc-badge">חוסכים 2,200 ₪</span>
+          </div>
+          <p class="pc-lk">מה כוללת החבילה:</p>
+          <ul class="pc-inc">
+            <li>יומן תורים חכם עם מאגר לקוחות ודירוג רמזור</li>
+            <li>הודעות ללקוחות ב-SMS, בוואטסאפ או במייל, לבחירתך</li>
+            <li>ניהול של עד 3 עובדים וכיסאות מושכרים</li>
+            <li>ניהול שירותים ושעות עבודה, שמתעדכנים גם בדף הנחיתה</li>
+            <li>דף נחיתה ממותג עם קביעת התורים בפנים</li>
+            <li>עיצוב לוגו וצבעים למותג</li>
+            <li>עמוד תצוגת עבודות</li>
+            <li>העברת הנתונים מהמערכת הקודמת</li>
+          </ul>
+          <div class="pc-run">
+            <b>עלויות שוטפות: רק לפי השימוש</b>
+            <p>משלמים רק על הודעות ודומיין, בדרך כלל בין 0 ל-30 ₪ בחודש. הסכום תלוי בכמה הודעות נשלחות, ובאיזה דומיין בחרת. לדוגמה:</p>
+            <ul class="pc-eg">
+              <li><span>500 הודעות SMS בחודש</span><b>כ-13 ₪ לחודש</b></li>
+              <li><span>דומיין <bdi>.com</bdi></span><b>כ-176 ₪ ל-5 שנים</b></li>
+              <li><span>דומיין <bdi>.co.il</bdi> או הודעות וואטסאפ</span><b>מתומחרים אחרת, נפרט בשיחה</b></li>
+            </ul>
+          </div>
+          <details class="pc-x">
+            <summary><span><b>רוצה יותר? אפשר להוסיף</b><small>7 תוספות שאפשר לחבר כשהעסק גדל, הכל באותו מקום</small></span><span class="pc-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+            <ul class="pc-xl">
+              <li><b>אוטומציות להשלמת תורים</b><span>תור שהתפנה מוצע אוטומטית למי שחיכה, והיומן מתמלא לבד.</span></li>
+              <li><b>התראות חכמות</b><span>תזכורת ללקוח שלא קבע תור הרבה זמן, והצעה לתאם מחדש למי שפספס.</span></li>
+              <li><b>מנוי חודשי ללקוחות</b><span>חבילות, למשל מספר תספורות בחודש במחיר קבוע.</span></li>
+              <li><b>סליקה וחיוב מראש</b><span>הלקוח משלם או משאיר פקדון כבר בקביעת התור.</span></li>
+              <li><b>חשבוניות</b><span>חשבונית יוצאת ללקוח לבד.</span></li>
+              <li><b>חתימה על מסמכים</b><span>הלקוח חותם על הצהרה או טופס הסכמה לפני שהוא מגיע לשירות.</span></li>
+              <li><b>עוזר AI אישי</b><span>עונה ללקוחות שלך ומלווה אותם בקביעת התור.</span></li>
+            </ul>
+            <p>נספר לך מה מתאים לעסק שלך, ונבנה הצעת מחיר לפי מה שתבחר.</p>
+          </details>
+          <div class="pc-acts">
+            <a class="pc-btn" href="../booking.html?s=booking">לקביעת שיחת היכרות חינם<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a>
+            <a class="btn-wa" href="https://wa.me/972527905122?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%90%D7%A4%D7%9C%D7%99%D7%A7%D7%A6%D7%99%D7%94%20%D7%9C%D7%A7%D7%91%D7%99%D7%A2%D7%AA%20%D7%AA%D7%95%D7%A8%D7%99%D7%9D%20%D7%9C%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.55L2.3 21.7l5.28-1.38A9.7 9.7 0 1 0 12 2Zm0 17.65a7.94 7.94 0 0 1-4.05-1.1l-.29-.17-3.13.82.84-3.05-.19-.31A7.94 7.94 0 1 1 12 19.65Zm4.36-5.95c-.24-.12-1.41-.7-1.63-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18a7.2 7.2 0 0 1-1.33-1.66c-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>שאלה בוואטסאפ</a>
+          </div>
+        </div>
+
+        <figure class="bdt pr" id="bd-testimonial-lidor">
+          <div class="bdt-top">
+            <span class="bdt-badge" aria-hidden="true">”</span>
+            <span class="bdt-tag">אפליקציה לקביעת תורים + אתר</span>
+          </div>
+          <p class="bdt-head">סוף סוף אני ספר, ולא שירות לקוחות בטלפון.</p>
+          <div class="bdt-cmp" role="group" aria-label="השוואת עלויות">
+            <div class="bdt-col bdt-old">
+              <span class="bdt-lb">קודם: אפליקציית תורים</span>
+              <span class="bdt-val"><s>₪150</s></span>
+              <span class="bdt-per">לחודש, כל חודש</span>
+            </div>
+            <span class="bdt-arrow" aria-hidden="true">←</span>
+            <div class="bdt-col bdt-new">
+              <span class="bdt-lb">עכשיו: בונים דיגיטל</span>
+              <span class="bdt-val">₪800</span>
+              <span class="bdt-per">חד פעמי</span>
+              <span class="bdt-plus"><bdi dir="ltr">+ ₪15</bdi> לחודש</span>
+            </div>
+          </div>
+          <p class="bdt-note">אצל לידור, ה-15 ₪ החודשיים הם הודעות SMS ודומיין. אצלך הסכום תלוי בשימוש.</p>
+          <blockquote class="bdt-quote">
+            <p>שילמתי 150 ₪ כל חודש על מערכת תורים, ובסוף זה עוד הוצאה קבועה שאוכלת מהרווח. בבונים דיגיטל שילמתי 800 ₪ חד פעמי, ופרסתי לתשלומים, והיום אני משלם רק 15 ₪ בחודש. ועל אותו כסף קיבלתי הרבה יותר ממערכת תורים: אתר, ניהול לידים, ניהול הכיסאות שאני משכיר, ומאגר לקוחות, הכל במקום אחד. אני כבר לא עונה לוואטסאפים באמצע תספורת.</p>
+          </blockquote>
+          <figcaption class="bdt-sig">
+            <span class="bdt-av" aria-hidden="true">ל</span>
+            <span class="bdt-who"><b>לידור</b><span><a href="https://aryianstudio.com/" target="_blank" rel="noopener noreferrer">Aryian Studio</a> · אשדוד</span></span>
+            <a class="bdt-pill" href="../track.html?code=BD-ARYN-0726">פרויקט <bdi dir="ltr">#BD-ARYN-0726</bdi></a>
+          </figcaption>
+          <a class="bdt-more" href="../index.html#testimonials">עוד המלצות ←</a>
+        </figure>
+
+        <p>מתלבט בין אפליקציה מוכנה למערכת משלך? <a href="../blog/booking-app-for-barbers.html">במדריך שלנו לספרים</a> השווינו מחירים אמיתיים, עם מחשבון שמראה כמה תחסוך בשנה.</p>
+      </section>
+
+      <!-- ===== 08 ===== -->
+      <section class="ch-sec" aria-labelledby="timing">
+        <div class="ch-head pr"><span class="ch-n">08</span><span class="ch-k">זמנים</span></div>
+        <h2 id="timing">כמה זמן זה לוקח, ומה קורה אחרי המסירה</h2>
+        <div class="tbl stack kv pr">
+          <table>
+            <caption class="sr-only">זמן הקמה, אחריות ובעלות</caption>
+            <thead><tr><th scope="col">מה</th><th scope="col">פרטים</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">זמן הקמה</th><td>4–14 ימי עסקים, מרגע שקיבלנו ממך את התכנים והתמונות</td></tr>
+              <tr><th scope="row">מעקב פרויקט</th><td>אתה רואה בכל שלב איפה הפרויקט עומד, <a href="../track.html">כמו מעקב משלוח</a></td></tr>
+              <tr><th scope="row">אחריות</th><td>חודש אחריות על תיקונים קטנים ובינוניים אחרי שהמערכת עולה</td></tr>
+              <tr><th scope="row">בעלות</th><td>הדומיין רשום על שמך, ומאגר הלקוחות נשאר שלך</td></tr>
+              <tr><th scope="row">בלי התחייבות</th><td>רוצה להפסיק? מפסיקים לרכוש חבילות הודעות</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ===== 09 ===== -->
+      <section class="ch-sec" id="post-faq" aria-labelledby="faq">
+        <div class="ch-head pr"><span class="ch-n">09</span><span class="ch-k">שאלות ותשובות</span></div>
+        <h2 id="faq">שאלות נפוצות על האפליקציה לקביעת תורים</h2>
+        <div class="fq" data-faq>
+          <div class="fq-it open">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q1" aria-expanded="true" aria-controls="fq-a1"><span class="fq-n">01</span><span class="fq-t">למי מתאימה האפליקציה לקביעת תורים?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a1" role="region" aria-labelledby="fq-q1"><div class="fq-ai"><p class="fq-a">לכל מי שעובד עם תורים: מספרות, קליניקות, אורתופדים, רופאים פרטיים, קוסמטיקאיות, וכל מי שנותן שירות. בנינו אותה קודם כאפליקציה לספר, והיום אנחנו מתאימים אותה לכל עסק.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q2" aria-expanded="false" aria-controls="fq-a2"><span class="fq-n">02</span><span class="fq-t">אתם מפתחים אפליקציה בהתאמה אישית?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a2" role="region" aria-labelledby="fq-q2"><div class="fq-ai"><p class="fq-a">כן. פיתוח האפליקציה נעשה סביב העסק שלך: העיצוב, השירותים, העובדים והדרך שבה אתה עובד. ואם חסר לך משהו, אנחנו מוסיפים אותו.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q3" aria-expanded="false" aria-controls="fq-a3"><span class="fq-n">03</span><span class="fq-t">הלקוחות שלי צריכים להוריד אפליקציה?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a3" role="region" aria-labelledby="fq-q3"><div class="fq-ai"><p class="fq-a">לא. הם נכנסים לקישור, למשל מהפרופיל בוואטסאפ או באינסטגרם, וקובעים תור בלי להוריד כלום.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q4" aria-expanded="false" aria-controls="fq-a4"><span class="fq-n">04</span><span class="fq-t">מה קורה עם הלקוחות והתורים שכבר יש לי?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a4" role="region" aria-labelledby="fq-q4"><div class="fq-ai"><p class="fq-a">אנחנו מעבירים הכל: לקוחות, תורים, שירותים, מחירים, שעות ועובדים.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q5" aria-expanded="false" aria-controls="fq-a5"><span class="fq-n">05</span><span class="fq-t">היומן מסתנכרן עם הטלפון שלי?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a5" role="region" aria-labelledby="fq-q5"><div class="fq-ai"><p class="fq-a">כן. כל התורים מופיעים גם ביומן גוגל או ביומן הטלפון.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q6" aria-expanded="false" aria-controls="fq-a6"><span class="fq-n">06</span><span class="fq-t">התזכורות נשלחות ב-SMS או בוואטסאפ?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a6" role="region" aria-labelledby="fq-q6"><div class="fq-ai"><p class="fq-a">איך שתבחר: SMS, וואטסאפ, מייל, או דרך אחרת שנתאים לך.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q7" aria-expanded="false" aria-controls="fq-a7"><span class="fq-n">07</span><span class="fq-t">מה זה הרמזור?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a7" role="region" aria-labelledby="fq-q7"><div class="fq-ai"><p class="fq-a">דירוג צבע לכל לקוח, לפי התורים, הביטולים, ההחלפות ואי ההגעות שלו. ככה אתה רואה מיד על מי אפשר לסמוך.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q8" aria-expanded="false" aria-controls="fq-a8"><span class="fq-n">08</span><span class="fq-t">אפשר לנהל כמה עובדים וכיסאות מושכרים?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a8" role="region" aria-labelledby="fq-q8"><div class="fq-ai"><p class="fq-a">כן, עד 3 עובדים. לכל עובד יומן משלו, ואתה רואה את התורים, המכירות והעמלות של כל אחד, וגם כמה עמלה מגיעה לך מכל שוכר כיסא.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q9" aria-expanded="false" aria-controls="fq-a9"><span class="fq-n">09</span><span class="fq-t">אין לי לוגו. זה בעיה?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a9" role="region" aria-labelledby="fq-q9"><div class="fq-ai"><p class="fq-a">לא. אנחנו ממתגים את העסק מאפס, כולל צבעים ולוגו, וזה כלול בחבילה.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q10" aria-expanded="false" aria-controls="fq-a10"><span class="fq-n">10</span><span class="fq-t">אפשר לעשות שינויים אחרי המסירה?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a10" role="region" aria-labelledby="fq-q10"><div class="fq-ai"><p class="fq-a">שעות, מחירים ושירותים אתה מעדכן לבד מהפאנל. שינויים גדולים יותר אנחנו מסדרים איתך.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q11" aria-expanded="false" aria-controls="fq-a11"><span class="fq-n">11</span><span class="fq-t">יש עלויות חודשיות?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a11" role="region" aria-labelledby="fq-q11"><div class="fq-ai"><p class="fq-a">אין מנוי חודשי למערכת. משלמים רק על הודעות ודומיין, לפי השימוש, בדרך כלל בין 0 ל-30 ₪ בחודש. למשל, 500 הודעות SMS בחודש עולות בערך 13 ₪, ודומיין <bdi>.com</bdi> עולה בערך 176 ₪ ל-5 שנים. דומיין <bdi>.co.il</bdi> והודעות וואטסאפ מתומחרים אחרת. בלי התחייבות.</p></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 10 ===== -->
+      <section class="ch-sec" aria-labelledby="more">
+        <div class="ch-head pr"><span class="ch-n">10</span><span class="ch-k">עוד שירותים</span></div>
+        <h2 id="more">שירותים נוספים</h2>
+        <div class="sp-others cc-others"><a class="sp-other pr" href="custom-code-website.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8l-4 4 4 4M17 8l4 4-4 4M14 4l-4 16"/></svg></span><b>אתר בקוד מותאם אישית</b><span>מ־₪500</span></a><a class="sp-other pr" href="wordpress-website.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9h3M4 9h2.5M11 9l3 11 4-9M5.5 9l3.5 11 3-7M18 11c.18-.53 1-1.36 1-2.5C19 6.72 18.22 6 17.13 6 16.23 6 16 6.81 16 7.43 16 9.26 18 9.49 18 11"/></svg></span><b>אתר תדמית בוורדפרס</b><span>₪1,000</span></a><a class="sp-other pr" href="online-store.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.33 8h11.34a2 2 0 0 1 1.98 2.3l-1.26 8.16A3 3 0 0 1 15.43 21H8.57a3 3 0 0 1-2.96-2.54l-1.26-8.16A2 2 0 0 1 6.33 8z"/><path d="M9 11V6a3 3 0 0 1 6 0v5"/></svg></span><b>חנות אונליין</b><span>₪2,000</span></a><a class="sp-other pr" href="app-development.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M11 4h2M12 17v.01"/></svg></span><b>פיתוח אפליקציה</b><span>לפי אפיון</span></a><a class="sp-other pr" href="existing-site.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10h3V7L6.5 3.5a6 6 0 0 1 8 8l6 6a2 2 0 0 1-3 3l-6-6a6 6 0 0 1-8-8L7 10"/></svg></span><b>כבר יש לך אתר?</b><span>מ־₪150 לחודש</span></a></div>
+      </section>
+
+      <aside class="post-cta pr" aria-label="יצירת קשר">
         <div>
-          <h2>Let's talk about your business</h2>
-          <p>A free 15-minute call. We'll understand what you need and tell you exactly what it costs. No commitment.</p>
+          <p class="post-cta-h">רוצה לראות איך זה ייראה אצלך?</p>
+          <p>שלח לנו הודעה בוואטסאפ עם שם העסק, ונחזור אליך עם הצעה מותאמת.</p>
         </div>
-        <div class="sp-final-actions">
-          <a class="btn solid cta" href="../booking.html?s=booking"><span class="cta-txt">Book a free call</span><svg class="cta-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a class="btn sp-wa" href="https://wa.me/972527905122?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%91%D7%95%D7%A0%D7%99%D7%9D%20%D7%93%D7%99%D7%92%D7%99%D7%98%D7%9C%2C%20%D7%99%D7%A9%20%D7%9C%D7%99%20%D7%A2%D7%A1%D7%A7%20%D7%95%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.55L2.3 21.7l5.28-1.38A9.7 9.7 0 1 0 12 2Zm0 17.65a7.94 7.94 0 0 1-4.05-1.1l-.29-.17-3.13.82.84-3.05-.19-.31A7.94 7.94 0 1 1 12 19.65Zm4.36-5.95c-.24-.12-1.41-.7-1.630-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18a7.2 7.2 0 0 1-1.33-1.66c-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.690 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg><span>Ask on WhatsApp</span></a>
-          <small>Pick a time that suits you, online</small>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sp-sec" aria-labelledby="sp-others-h">
-    <div class="wrap">
-      <div class="sec-eyebrow rv">// more services</div>
-      <h2 class="rv" id="sp-others-h">Other services</h2>
-      <div class="sp-others"><a class="sp-other rv" href="wordpress-website.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9h3M4 9h2.5M11 9l3 11 4-9M5.5 9l3.5 11 3-7M18 11c.18-.53 1-1.36 1-2.5C19 6.72 18.22 6 17.13 6 16.23 6 16 6.81 16 7.43 16 9.26 18 9.49 18 11"/></svg></span><b>WordPress business website</b><span>₪1,000</span></a><a class="sp-other rv" href="custom-code-website.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8l-4 4 4 4M17 8l4 4-4 4M14 4l-4 16"/></svg></span><b>Custom-coded website</b><span>From ₪500</span></a><a class="sp-other rv" href="online-store.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.33 8h11.34a2 2 0 0 1 1.98 2.3l-1.26 8.16A3 3 0 0 1 15.43 21H8.57a3 3 0 0 1-2.96-2.54l-1.26-8.16A2 2 0 0 1 6.33 8z"/><path d="M9 11V6a3 3 0 0 1 6 0v5"/></svg></span><b>Online store</b><span>₪2,000</span></a><a class="sp-other rv" href="app-development.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M11 4h2M12 17v.01"/></svg></span><b>App development</b><span>Custom quote</span></a><a class="sp-other rv" href="existing-site.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10h3V7L6.5 3.5a6 6 0 0 1 8 8l6 6a2 2 0 0 1-3 3l-6-6a6 6 0 0 1-8-8L7 10"/></svg></span><b>Already have a site?</b><span>From ₪150 a month</span></a></div>
-    </div>
-  </section>
+        <a class="btn-wa" href="https://wa.me/972527905122?text=%D7%94%D7%99%D7%99%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%94%D7%A2%D7%9E%D7%95%D7%93%20%D7%A2%D7%9C%20%D7%90%D7%A4%D7%9C%D7%99%D7%A7%D7%A6%D7%99%D7%94%20%D7%9C%D7%A7%D7%91%D7%99%D7%A2%D7%AA%20%D7%AA%D7%95%D7%A8%D7%99%D7%9D.%20%D7%A9%D7%9D%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99%3A%20" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.55L2.3 21.7l5.28-1.38A9.7 9.7 0 1 0 12 2Zm0 17.65a7.94 7.94 0 0 1-4.05-1.1l-.29-.17-3.13.82.84-3.05-.19-.31A7.94 7.94 0 1 1 12 19.65Zm4.36-5.95c-.24-.12-1.41-.7-1.63-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18a7.2 7.2 0 0 1-1.33-1.66c-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>שלח הודעה בוואטסאפ</a>
+      </aside>
+    </article>
+  </div>
 </main>
 
 <footer>
@@ -192,7 +846,7 @@
     <span>© <span id="yr"></span> Bonim Digital · <a href="https://github.com/N1ace" target="_blank" rel="noopener noreferrer">GitHub</a></span>
     <nav class="social-links" aria-label="Social">
       <a href="https://www.instagram.com/bonimdigital/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4zm0 2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7zm5 2.6A4.4 4.4 0 1 1 7.6 12 4.4 4.4 0 0 1 12 7.6zm0 2A2.4 2.4 0 1 0 14.4 12 2.4 2.4 0 0 0 12 9.6zm5.25-3.350a1.05 1.05 0 1 1-1.05 1.05 1.05 1.05 0 0 1 1.05-1.05z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4zm0 2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7zm5 2.6A4.4 4.4 0 1 1 7.6 12 4.4 4.4 0 0 1 12 7.6zm0 2A2.4 2.4 0 1 0 14.4 12 2.4 2.4 0 0 0 12 9.6zm5.25-3.35a1.05 1.05 0 1 1-1.05 1.05 1.05 1.05 0 0 1 1.05-1.05z"/></svg>
       </a>
       <a href="https://www.facebook.com/profile.php?id=61594940790647" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.07A10 10 0 1 0 10.4 21.9v-6.94H7.9v-2.89h2.5V9.8c0-2.47 1.47-3.84 3.72-3.84 1.08 0 2.2.2 2.2.2v2.42h-1.24c-1.22 0-1.6.76-1.6 1.54v1.85h2.72l-.43 2.89h-2.29v6.94A10 10 0 0 0 22 12.07z"/></svg>
@@ -212,7 +866,7 @@
 
 <aside class="float-actions" aria-label="Quick contact">
   <a class="whatsapp-float" href="https://wa.me/972527905122" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.55L2.3 21.7l5.28-1.38A9.7 9.7 0 1 0 12 2Zm0 17.65a7.94 7.94 0 0 1-4.05-1.1l-.29-.17-3.13.82.84-3.05-.19-.31A7.94 7.94 0 1 1 12 19.65Zm4.36-5.95c-.24-.12-1.41-.7-1.630-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18a7.2 7.2 0 0 1-1.33-1.66c-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.690 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.55L2.3 21.7l5.28-1.38A9.7 9.7 0 1 0 12 2Zm0 17.65a7.94 7.94 0 0 1-4.05-1.1l-.29-.17-3.13.82.84-3.05-.19-.31A7.94 7.94 0 1 1 12 19.65Zm4.36-5.95c-.24-.12-1.41-.7-1.63-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18a7.2 7.2 0 0 1-1.33-1.66c-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>
     <span>WhatsApp</span>
   </a>
   <a class="booking-float" href="../booking.html?s=booking" aria-label="Book a call" title="Book a call">
@@ -222,6 +876,69 @@
 </aside>
 
 <script src="../assets/site-pages.js?v=3"></script>
-<script src="../assets/journey.js?v=1"></script>
+<script>
+// FAQ accordion: one answer open at a time (without JS every answer stays open)
+document.querySelectorAll('#post-faq [data-faq]').forEach(function(list){
+  list.classList.add('is-js');
+  list.addEventListener('click',function(e){
+    var q=e.target.closest('.fq-q'); if(!q) return;
+    var it=q.closest('.fq-it'), was=it.classList.contains('open');
+    list.querySelectorAll('.fq-it').forEach(function(x){x.classList.remove('open');x.querySelector('.fq-q').setAttribute('aria-expanded','false')});
+    if(!was){it.classList.add('open');q.setAttribute('aria-expanded','true')}
+  });
+});
+
+// reading flow: scroll reveal, progress bar, side navigation (page works fully without JS)
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches, hasIO='IntersectionObserver' in window;
+  if(hasIO&&!reduce){
+    document.documentElement.classList.add('pr-on');
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.post .pr').forEach(function(el){io.observe(el)});
+  }
+  var art=document.querySelector('.post-body'), bar=document.querySelector('.rd-progress span');
+  var toc=document.querySelector('.toc'), side=document.querySelector('.toc-side'), end=document.querySelector('.post-cta');
+  var links=[], heads=[];
+  if(toc&&side){
+    side.querySelector('ol').innerHTML=toc.querySelector('ol').innerHTML;
+    links=[].slice.call(side.querySelectorAll('a'));
+    heads=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1))});
+  }
+  var queued=false;
+  function update(){
+    queued=false;
+    if(art&&bar){var r=art.getBoundingClientRect(),h=r.height-innerHeight;bar.style.transform='scaleX('+(h>0?Math.min(1,Math.max(0,-r.top/h)):1)+')'}
+    if(links.length&&getComputedStyle(side).display!=='none'){
+      var cur=-1,y=innerHeight*.35;
+      heads.forEach(function(h,i){if(h&&h.getBoundingClientRect().top<y)cur=i});
+      links.forEach(function(a,i){a.classList.toggle('on',i===cur);if(i===cur)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')});
+      var past=toc.getBoundingClientRect().bottom<0, before=!end||end.getBoundingClientRect().top>innerHeight*.6;
+      side.classList.toggle('show',past&&before);
+    }
+  }
+  function onScroll(){if(!queued){queued=true;requestAnimationFrame(update)}}
+  addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);update();
+})();
+
+// step demos: play once when visible; the final state is written in the HTML
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window)) return;
+  function demo(id,times){
+    var root=document.getElementById(id); if(!root) return;
+    var styled=[].slice.call(root.querySelectorAll('[data-c]')), rp=root.querySelector('[data-replay]'), timers=[];
+    function set(n){
+      root.dataset.step=n;
+      styled.forEach(function(el){el.classList.toggle('sty',n>=+el.dataset.c)});
+    }
+    function play(){timers.forEach(clearTimeout);timers=[];set(0);times.forEach(function(t,i){timers.push(setTimeout(function(){set(i+1)},t))})}
+    set(0);
+    var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){io.disconnect();play()}},{threshold:.4});
+    io.observe(root);
+    if(rp){rp.hidden=false;rp.addEventListener('click',play)}
+  }
+  demo('bk-demo',[900,2300,4000]);
+  demo('rz-demo',[500,1100,1700,2300,2900]);
+})();
+</script>
 </body>
 </html>
