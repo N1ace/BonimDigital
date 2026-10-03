@@ -62,7 +62,7 @@ html.boot-out .boot{opacity:0;visibility:hidden}
 </script>
 <link rel="stylesheet" href="assets/fonts/fonts.css?v=1">
 <link rel="stylesheet" href="assets/portfolio-i18n.css?v=19">
-<link rel="stylesheet" href="assets/a11y.css?v=1">
+<link rel="stylesheet" href="assets/a11y.css?v=2">
 <link rel="stylesheet" href="assets/consent.css?v=1">
 <script src="assets/consent.js?v=1"></script>
 <link rel="stylesheet" href="assets/cta.css?v=1">
@@ -104,7 +104,7 @@ img{display:block;max-width:100%;height:auto}
 /* ---------- nav ---------- */
 .site-nav{
   position:fixed;top:0;left:0;right:0;z-index:100;width:100%;
-  background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);
+  background:#FFFFFF;border-bottom:1px solid var(--line);
   padding-top:env(safe-area-inset-top,0px)
 }
 .nav-in{display:flex;align-items:center;justify-content:space-between;flex-direction:row-reverse;gap:12px;height:var(--nav-h);position:relative}
@@ -139,9 +139,10 @@ img{display:block;max-width:100%;height:auto}
 .hero > *{position:relative;z-index:1}
 .hero-in{
   display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center;
-  padding:72px clamp(20px,5vw,40px) 64px
+  padding:72px clamp(20px,5vw,40px) 64px;
+  pointer-events:none
 }
-.hero-text{min-width:0}
+.hero-text{min-width:0;pointer-events:auto}
 h1{font-family:var(--display);font-weight:800;font-size:clamp(30px,4.6vw,52px);line-height:1.12;letter-spacing:-.02em}
 .hero p.sub{color:var(--muted);max-width:620px;margin:22px 0 30px;font-size:18px}
 .hero-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
@@ -172,7 +173,7 @@ h1{font-family:var(--display);font-weight:800;font-size:clamp(30px,4.6vw,52px);l
 
 /* ---------- sections ---------- */
 section{padding:88px 0 0}
-.sec-eyebrow{display:inline-flex;align-items:center;font-family:var(--mono);font-size:13px;font-weight:600;color:var(--accent);background:var(--accent-soft);border:1px solid rgba(0,56,184,.16);border-radius:999px;padding:5px 14px;letter-spacing:.04em;line-height:1.4;margin-bottom:14px}
+.sec-eyebrow{display:inline-flex;align-items:center;font-family:var(--mono);font-size:13px;font-weight:600;color:var(--accent);background:var(--accent-soft);border:1px solid rgba(0,56,184,.16);border-radius:999px;padding:5px 14px;letter-spacing:.04em;line-height:1.4;margin-bottom:14px;white-space:nowrap}
 html[lang="he"] .sec-eyebrow{font-family:'Heebo',var(--body);font-size:14.5px;font-weight:700;letter-spacing:0}
 h2{font-family:var(--display);font-weight:700;font-size:clamp(28px,3.4vw,38px);letter-spacing:-.01em}
 .sec-sub{color:var(--muted);margin-top:8px;max-width:560px}
@@ -563,7 +564,7 @@ html[lang="he"] .svc-card h3,html[lang="he"] .svc-band-hd b{font-family:'Heebo',
   .status-in > span:last-child{border-bottom:0;border-right:0}
   .menu{
     display:none;position:fixed;top:calc(var(--nav-h) + env(safe-area-inset-top,0px));left:0;right:0;flex-direction:column;gap:0;
-    padding:8px 0 max(14px,env(safe-area-inset-bottom,0px));background:rgba(255,255,255,.98);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+    padding:8px 0 max(14px,env(safe-area-inset-bottom,0px));background:#FFFFFF;
     border-bottom:1px solid var(--line);z-index:40;max-height:calc(100dvh - var(--nav-h));overflow-y:auto
   }
   .menu.is-open{display:flex}
@@ -598,6 +599,9 @@ html[lang="he"] .svc-card h3,html[lang="he"] .svc-band-hd b{font-family:'Heebo',
   .hero-cta .btn{flex:1 1 auto;text-align:center;justify-content:center}
   .card{padding:20px}
   .foot-in{flex-direction:column;gap:8px;text-align:center;padding:20px 0}
+  .foot-links{gap:4px 20px}
+  .foot-links::after{content:"";flex-basis:100%;order:1}
+  .foot-in .foot-admin{order:2;padding-inline-start:0;border-inline-start:0}
   footer{margin-top:48px}
   .tetris-box{grid-template-columns:1fr;padding:16px;gap:16px}
   .tetris-panel{grid-template-columns:1fr 1fr}
