@@ -57,8 +57,50 @@ create policy projects_admin_insert on projects for insert to authenticated with
 create policy projects_admin_update on projects for update to authenticated using (is_booking_admin()) with check (is_booking_admin());
 create policy projects_admin_delete on projects for delete to authenticated using (is_booking_admin());
 
--- Public tracking: anyone with the code sees the project's progress, never the client's phone, email or internal notes.
-create or replace function project_track(p_code text) returns jsonb
+-- Tracking password: 8 random characters (letters, digits, signs), shown to the admin in the project panel
+-- and sent to the client with the code. Safe to run again on an existing database.
+create extension if not exists pgcrypto with schema extensions;
+
+create or replace function gen_project_pass() returns text
+language plpgsql volatile set search_path = public, extensions as $$
+declare
+  -- no I, O, l, o, 0 or 1, so the password can't be misread
+  abc constant text := 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789!@#%&*?+=';
+  n constant int := length(abc);
+  s text;
+  b bytea;
+begin
+  loop
+    s := '';
+    b := gen_random_bytes(32);
+    for i in 0..31 loop
+      exit when length(s) = 8;
+      if get_byte(b, i) < 256 - (256 % n) then s := s || substr(abc, get_byte(b, i) % n + 1, 1); end if;
+    end loop;
+    exit when length(s) = 8 and s ~ '[A-Za-z]' and s ~ '[2-9]' and s ~ '[!@#%&*?+=]';
+  end loop;
+  return s;
+end;
+$$;
+-- authenticated keeps EXECUTE: the access_pass column default runs with the inserting admin's rights
+revoke all on function gen_project_pass() from public, anon;
+grant execute on function gen_project_pass() to authenticated;
+
+alter table projects add column if not exists access_pass text;
+-- showcase projects (linked from the public site as examples) open with the code alone
+alter table projects add column if not exists showcase boolean not null default false;
+update projects set access_pass = gen_project_pass() where access_pass is null;
+alter table projects alter column access_pass set default gen_project_pass();
+alter table projects alter column access_pass set not null;
+alter table projects drop constraint if exists projects_pass_len;
+alter table projects add constraint projects_pass_len check (char_length(access_pass) between 8 and 64);
+update projects set showcase = true where code = 'BD-ARYN-0726';
+
+-- Public tracking: the code AND the password are needed (except showcase projects).
+-- A wrong code and a wrong password return the same null, so codes can't be probed.
+-- Never returns the client's phone, email, the password or internal notes.
+drop function if exists project_track(text);
+create or replace function project_track(p_code text, p_pass text default null) returns jsonb
 language sql stable security definer set search_path = public as $$
   select jsonb_build_object(
     'code', p.code, 'status', p.status, 'title', p.title, 'category', p.category, 'summary', p.summary,
@@ -71,7 +113,8 @@ language sql stable security definer set search_path = public as $$
   )
   from projects p
   where p.code = upper(btrim(coalesce(p_code, '')))
+    and (p.showcase or p.access_pass = coalesce(p_pass, ''))
 $$;
 
-revoke all on function project_track(text) from public;
-grant execute on function project_track(text) to anon, authenticated;
+revoke all on function project_track(text, text) from public;
+grant execute on function project_track(text, text) to anon, authenticated;

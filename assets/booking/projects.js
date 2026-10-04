@@ -157,8 +157,8 @@
     var bullets = function(a){ return a.map(function(x){ return '• ' + x; }).join('\n'); };
     var stagesTxt = PJ.stages.map(function(k, i){ return (i + 1) + '. ' + PL.stages[k] + (k === 'edits' ? (he ? ' (אם צריך)' : ' (if needed)') : ''); }).join('\n');
     var out = he
-      ? ['שלום ' + first + ',', '', 'הפרויקט "' + p.title + '" נפתח אצלנו בבונים דיגיטל.', '', 'קוד מעקב: ' + p.code, 'מעקב אחרי ההתקדמות: ' + trackLink(p), '', 'סוג: ' + PL.categories[p.category], 'תאריך יעד: ' + dl]
-      : ['Hi ' + first + ',', '', 'Your project "' + p.title + '" is now open at Bonim Digital.', '', 'Tracking code: ' + p.code, 'Track the progress: ' + trackLink(p), '', 'Type: ' + PL.categories[p.category], 'Deadline: ' + dl];
+      ? ['שלום ' + first + ',', '', 'הפרויקט "' + p.title + '" נפתח אצלנו בבונים דיגיטל.', '', 'קוד מעקב: ' + p.code, 'סיסמה: ' + (p.access_pass || ''), 'מעקב אחרי ההתקדמות: ' + trackLink(p), '', 'סוג: ' + PL.categories[p.category], 'תאריך יעד: ' + dl]
+      : ['Hi ' + first + ',', '', 'Your project "' + p.title + '" is now open at Bonim Digital.', '', 'Tracking code: ' + p.code, 'Password: ' + (p.access_pass || ''), 'Track the progress: ' + trackLink(p), '', 'Type: ' + PL.categories[p.category], 'Deadline: ' + dl];
     if (p.summary) out.push('', p.summary);
     if ((p.requirements || []).length) out.push('', he ? 'מה נבנה:' : 'What we will build:', bullets(p.requirements));
     if ((p.tips || []).length) out.push('', he ? 'הטיפים שלנו:' : 'Our recommendations:', bullets(p.tips));
@@ -240,14 +240,16 @@
         '<aside class="adm-pd-side">' +
           '<section class="adm-card"><div class="adm-card-head"><h2>שליחה ללקוח</h2></div>' +
             '<div class="adm-codebox"><span>קוד מעקב</span><bdi dir="ltr">' + esc(p.code) + '</bdi></div>' +
+            '<div class="adm-codebox"><span>סיסמה</span><bdi dir="ltr">' + (p.access_pass ? esc(p.access_pass) : '—') + '</bdi></div>' +
             '<div class="adm-share">' +
               '<button class="adm-btn" type="button" data-act="copy" data-v="code">' + icon(I.copy, 'adm-i-sm') + 'העתקת קוד</button>' +
+              '<button class="adm-btn" type="button" data-act="copy" data-v="pass"' + (p.access_pass ? '' : ' disabled') + '>' + icon(I.copy, 'adm-i-sm') + 'העתקת סיסמה</button>' +
               '<button class="adm-btn" type="button" data-act="copy" data-v="link">' + icon(I.link, 'adm-i-sm') + 'העתקת קישור</button>' +
               '<a class="adm-btn" href="' + esc(trackLink(p)) + '" target="_blank" rel="noopener">' + icon(I.open, 'adm-i-sm') + 'דף המעקב</a>' +
               '<button class="adm-btn" type="button" data-act="copy" data-v="msg">' + icon(I.copy, 'adm-i-sm') + 'העתקת ההודעה</button>' +
               (mail ? '<a class="adm-btn" href="' + esc(mail) + '">' + icon(I.mail, 'adm-i-sm') + 'שליחה במייל</a>' : '<span class="adm-btn off" title="אין אימייל ללקוח">' + icon(I.mail, 'adm-i-sm') + 'אין אימייל</span>') +
               (p.client_phone ? '<a class="adm-btn wa" href="https://wa.me/' + esc(intl(p.client_phone)) + '?text=' + encodeURIComponent(msg.body) + '" target="_blank" rel="noopener noreferrer">' + icon(I.chat, 'adm-i-sm') + 'וואטסאפ</a>' : '<span class="adm-btn off" title="אין טלפון ללקוח">' + icon(I.chat, 'adm-i-sm') + 'אין טלפון</span>') +
-            '</div><p class="adm-hint">ההודעה כוללת את הקוד, הקישור, תאריך היעד, הדרישות והטיפים. שליחת מייל אוטומטית תחובר בהמשך. בינתיים "שליחה במייל" פותח טיוטה מוכנה.</p></section>' +
+            '</div><p class="adm-hint">ההודעה כוללת את הקוד, הסיסמה, הקישור, תאריך היעד, הדרישות והטיפים. שליחת מייל אוטומטית תחובר בהמשך. בינתיים "שליחה במייל" פותח טיוטה מוכנה.</p></section>' +
           '<section class="adm-card"><div class="adm-card-head"><h2>לקוח</h2></div>' +
             '<p class="adm-client"><b dir="auto">' + esc(p.client_name) + '</b>' + (p.client_business ? '<span dir="auto">' + esc(p.client_business) + '</span>' : '') + '</p>' +
             (p.client_phone ? '<div class="adm-quick"><a class="adm-btn" href="tel:' + esc(p.client_phone) + '">' + icon(I.phone, 'adm-i-sm') + 'התקשרות</a>' +
@@ -263,7 +265,11 @@
               row('התחלה', fmtDay(p.start_date)) +
               row('דדליין', fmtDay(p.deadline) + ' <span class="adm-due ' + d.c + '">' + d.t + '</span>') +
               row('נפתח', fmt(new Date(p.created_at), { day: 'numeric', month: 'short', year: 'numeric' })) +
+              row('קוד מעקב', '<bdi class="adm-code" dir="ltr">' + esc(p.code) + '</bdi>') +
+              row('סיסמת מעקב', (p.access_pass ? '<bdi class="adm-code" dir="ltr">' + esc(p.access_pass) + '</bdi>' : '<span class="adm-muted">אין סיסמה</span>') +
+                ' <button class="adm-btn ghost sm" type="button" data-act="new-pass">' + icon(I.refresh, 'adm-i-sm') + (p.access_pass ? 'סיסמה חדשה' : 'יצירת סיסמה') + '</button>') +
             '</div>' +
+            '<label class="adm-check adm-show"><input type="checkbox" data-act="showcase"' + (p.showcase ? ' checked' : '') + '>פרויקט לדוגמה: נפתח עם הקוד בלבד, בלי סיסמה (רק לפרויקטים שמקושרים מהאתר)</label>' +
             (p.summary ? '<div class="adm-sub"><h3>תקציר</h3><p dir="auto">' + esc(p.summary) + '</p></div>' : '') +
             listBlock('דרישות הלקוח', p.requirements) +
             listBlock('הטיפים שלנו', p.tips) +
@@ -450,7 +456,7 @@
       if (!created) { load(); closeModal(); return; }
       state.items.unshift(created); state.view = created.id; setHash(created.id);
       closeModal(); render(); window.scrollTo(0, 0);
-      toast('הפרויקט נוצר. קוד המעקב: ' + created.code);
+      toast('הפרויקט נוצר. קוד: ' + created.code + (created.access_pass ? ' · סיסמה: ' + created.access_pass : ''));
     }, function(e){ fail(e, form); });
   }
   function saveDelay(form){
@@ -508,6 +514,13 @@
       }, function(e){ fail(e); });
       return;
     }
+    if (act === 'new-pass') {
+      if (p.access_pass && !confirm('ליצור סיסמה חדשה? הסיסמה הנוכחית תפסיק לעבוד, וצריך לשלוח ללקוח את החדשה.')) return;
+      var np = PJ.newPass();
+      commit(p, { access_pass: np }).then(function(){ if (p.access_pass === np) toast('נוצרה סיסמה חדשה: ' + np); });
+      return;
+    }
+    if (act === 'showcase') { commit(p, { showcase: el.checked }); return; }
     var si = +el.getAttribute('data-s');
     if (act === 'goto') { setStage(p, si); return; }
     if (act === 'finish') {
@@ -544,6 +557,7 @@
     if (act === 'copy') {
       var what = el.getAttribute('data-v');
       if (what === 'code') copy(p.code, 'הקוד');
+      else if (what === 'pass') copy(p.access_pass || '', 'הסיסמה');
       else if (what === 'link') copy(trackLink(p), 'הקישור');
       else { var m = clientMessage(p); copy(m.subject + '\n\n' + m.body, 'ההודעה'); }
     }

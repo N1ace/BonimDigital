@@ -4,13 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#FFFFFF">
-<title>App Development for Android and iPhone | Bonim Digital</title>
-<meta name="description" content="App development for Android and iPhone: a scoping session, screen designs you approve, development in stages and help publishing to the stores.">
+<title>פיתוח אפליקציות לעסקים ויזמים | בונים דיגיטל</title>
+<meta name="description" content="פיתוח אפליקציות ומערכות מאפס: אפליקציה לאנדרואיד ולאייפון, מערכות CRM, ניהול עובדים ומלאי, עוזרי AI וחיבור למכשירים. משיחת היכרות ועד מוצר באוויר.">
 <link rel="canonical" href="https://n1ace.github.io/portfolio/services/app-development.html">
+<meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="פיתוח אפליקציות לעסקים ויזמים | בונים דיגיטל">
+<meta property="og:description" content="פיתוח אפליקציות ומערכות מאפס, לעסקים ולמי שיש לו רעיון. משיחת היכרות ועד מוצר באוויר.">
 <meta property="og:url" content="https://n1ace.github.io/portfolio/services/app-development.html">
-<meta property="og:title" content="פיתוח אפליקציות לאנדרואיד ולאייפון | בונים דיגיטל">
-<meta property="og:description" content="פיתוח אפליקציות לאנדרואיד ולאייפון: פגישת אפיון, עיצוב מסכים שאתם מאשרים, פיתוח בשלבים ועזרה בפרסום בחנויות.">
 <meta property="og:image" content="https://n1ace.github.io/portfolio/assets/logo/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <script>try{if(localStorage.getItem('portfolio-language')!=='en'){document.documentElement.lang='he';document.documentElement.dir='rtl'}}catch(e){}</script>
@@ -25,26 +27,659 @@
 <script src="../assets/consent.js?v=1"></script>
 <link rel="stylesheet" href="../assets/cta.css?v=1">
 <script src="../assets/cta.js?v=1"></script>
-<link rel="stylesheet" href="../assets/service-page.css?v=4">
-<script src="../assets/services-i18n.js?v=3" defer></script>
-<script src="../assets/portfolio-i18n.js?v=34" defer></script>
+<link rel="stylesheet" href="../assets/service-page.css?v=5">
+<script src="../assets/portfolio-i18n.js?v=35" defer></script>
+<script src="../assets/app-dev-en.js?v=1" defer></script>
+<style>
+/* ---------- article ---------- */
+.post{padding:40px 0 8px}
+.post .wrap{max-width:808px}
+.post-body{font-family:'Heebo',var(--body);color:var(--text);font-size:17px;line-height:1.8}
+.post .crumbs{font-family:'Heebo',var(--body);font-size:13px;margin-bottom:14px}
+.post .crumbs a{color:var(--muted)}
+.post .sec-eyebrow{font-family:'Heebo',var(--body);font-size:14.5px;font-weight:700;letter-spacing:0}
+.post-head h1{font-family:'Heebo',var(--display);font-weight:800;font-size:clamp(28px,4.4vw,42px);line-height:1.2;letter-spacing:0;margin:0 0 10px}
+.post-meta{color:var(--muted);font-size:14px;margin:0 0 28px}
+.post-body :where(h2){font-family:'Heebo',var(--display);font-weight:800;font-size:clamp(22px,3vw,28px);line-height:1.3;letter-spacing:0;margin:48px 0 14px;scroll-margin-top:calc(var(--nav-h) + 16px)}
+.post-body :where(p){margin:0 0 16px}
+.post-body :where(ul,ol){padding-inline-start:22px;margin:0 0 18px}
+.post-body :where(li){margin-bottom:8px}
+.post-body :where(a:not([class])){color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.post-body :where(a:not([class])):hover{color:var(--accent-hover)}
+.post-body :where(strong){font-weight:700}
+.post-body :where(a:focus-visible,button:focus-visible){outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.ico{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* tables */
+.tbl{overflow-x:auto;margin:20px 0 28px;border:1px solid var(--line);border-radius:12px}
+.tbl table{width:100%;border-collapse:collapse;font-size:15px;min-width:480px}
+.tbl th,.tbl td{padding:12px 14px;text-align:start;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl thead th{background:var(--card);font-weight:700}
+.tbl tbody th{font-weight:600}
+.tbl tbody tr:last-child td,.tbl tbody tr:last-child th{border-bottom:0}
+.tbl td{font-variant-numeric:tabular-nums}
+.tbl tr.hl th,.tbl tr.hl td{background:var(--gold-soft)}
+.tbl .pz{font-weight:800;white-space:nowrap}
+.tbl-note{font-size:14px;color:var(--muted);margin:-18px 0 24px!important}
+.tbl code{font-family:var(--mono);font-size:14px;font-weight:600;color:var(--accent);background:var(--accent-soft);border-radius:6px;padding:2px 7px;direction:ltr;display:inline-block}
+/* on phones, tables marked .stack become one card per row */
+@media (max-width:560px){
+  .tbl.stack{border:0;overflow:visible}
+  .tbl.stack table{min-width:0}
+  .tbl.stack thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+  .tbl.stack tbody,.tbl.stack tr,.tbl.stack th,.tbl.stack td{display:block}
+  .tbl.stack tr{border:1px solid var(--line);border-radius:12px;margin-bottom:10px;overflow:hidden}
+  .tbl.stack tbody th{background:var(--card);padding:10px 14px;border-bottom:1px solid var(--line)}
+  .tbl.stack tr.hl th{background:var(--gold-soft)}
+  .tbl.stack td{display:grid;grid-template-columns:84px minmax(0,1fr);gap:10px;padding:10px 14px}
+  .tbl.stack td::before{content:attr(data-l);font-size:12.5px;font-weight:700;color:var(--muted)}
+  .tbl.stack tbody tr:last-child td{border-bottom:1px solid var(--line)}
+  .tbl.stack tbody tr td:last-child{border-bottom:0}
+}
+
+/* lead, summary, table of contents */
+.rd-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:1200;pointer-events:none}
+.rd-progress span{display:block;height:100%;background:var(--accent);transform:scaleX(0);transform-origin:100% 50%}
+.post-lead{font-size:clamp(18px,2.2vw,20px);line-height:1.75;color:var(--text)}
+.tldr{background:var(--accent-soft);border-radius:16px;padding:20px 22px;margin:26px 0 16px}
+.tldr-k{display:flex;align-items:center;gap:8px;margin:0 0 12px!important;font-weight:800;font-size:15px;color:var(--accent)}
+.tldr ul{list-style:none;padding:0!important;margin:0!important;display:grid;gap:10px}
+.tldr li{position:relative;margin:0!important;padding-inline-start:30px;font-size:16px;line-height:1.65}
+.tldr li::before{content:"";position:absolute;inset-inline-start:0;top:4px;width:20px;height:20px;border-radius:50%;background:var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/12px no-repeat}
+.toc{border:1px solid var(--line);border-radius:16px;padding:16px 20px 10px;margin:0}
+.toc-k{margin:0 0 6px!important;font-size:13px;font-weight:800;color:var(--muted)}
+.toc ol{list-style:none;padding:0!important;margin:0!important;display:grid;grid-template-columns:1fr 1fr;column-gap:24px}
+.toc li{margin:0!important}
+.toc a{display:flex;align-items:baseline;gap:10px;padding:8px 0;border-top:1px solid var(--line);color:var(--text);text-decoration:none;font-size:15px;font-weight:500;line-height:1.4;transition:color .2s}
+.toc li:nth-child(-n+2) a{border-top:0}
+.toc a span,.toc-side a span{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--accent);min-width:20px}
+@media (hover:hover) and (pointer:fine){.toc a:hover{color:var(--accent)}}
+@media (max-width:620px){.toc ol{grid-template-columns:1fr}.toc li:nth-child(2) a{border-top:1px solid var(--line)}}
+.toc-side{display:none}
+@media (min-width:1400px){
+  .toc-side{display:block;position:fixed;top:calc(var(--nav-h,64px) + 40px);left:calc(50% + 510px);width:170px;z-index:5;font-family:'Heebo',var(--body);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .3s,transform .3s,visibility 0s .3s}
+  .toc-side.show{opacity:1;visibility:visible;transform:none;transition:opacity .3s,transform .3s}
+  .toc-side-k{margin:0 0 8px;font-size:12px;font-weight:800;color:var(--muted)}
+  .toc-side ol{list-style:none;margin:0;padding:0}
+  .toc-side a{display:flex;gap:8px;padding:7px 12px;border-inline-start:2px solid var(--line);color:var(--muted);text-decoration:none;font-size:13.5px;line-height:1.4;transition:color .2s,border-color .2s}
+  .toc-side a span{color:inherit}
+  .toc-side a.on{color:var(--accent);border-color:var(--accent);font-weight:700}
+  .toc-side a:hover{color:var(--text)}
+}
+
+/* chapters */
+.ch-sec{margin-top:64px;padding-top:44px;border-top:1px solid var(--line)}
+.ch-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.ch-n{font-family:var(--mono);font-weight:600;font-size:13px;line-height:1;color:var(--accent);background:var(--accent-soft);border-radius:8px;padding:6px 9px}
+.ch-k{font-size:13.5px;font-weight:700;color:var(--muted)}
+.post-body .ch-sec h2{margin-top:0;margin-bottom:16px}
+.lead-in{margin-top:28px!important;font-weight:700}
+.lead-in::before{content:"";display:inline-block;width:18px;height:2px;background:var(--accent);vertical-align:middle;margin-inline-end:10px}
+.callout{display:flex;gap:14px;align-items:flex-start;background:var(--accent-soft);border-inline-start:4px solid var(--accent);border-radius:12px;padding:16px 18px;margin:22px 0}
+.callout .ico{width:24px;height:24px;color:var(--accent);margin-top:4px}
+.callout p{margin:0!important;font-size:clamp(18px,2.4vw,21px);font-weight:800;line-height:1.5}
+
+/* icon cards */
+.cards{list-style:none;padding:0!important;margin:14px 0 24px!important;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.cards > li{margin:0!important;border:1px solid var(--line);border-radius:14px;padding:16px;background:#FFFFFF;display:flex;gap:12px;align-items:flex-start;transition:border-color .2s,box-shadow .2s}
+.cards.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.cards.c3 > li{flex-direction:column;gap:10px}
+.cards.soft > li{background:var(--card);border-color:transparent}
+.cards b{display:block;font-size:16px;line-height:1.4;margin-bottom:2px}
+.cards .d{display:block;font-size:15px;line-height:1.6;color:var(--muted)}
+.cards .d a{color:var(--accent)}
+.ci{flex:none;width:40px;height:40px;border-radius:11px;display:grid;place-items:center;color:var(--accent);background:var(--accent-soft)}
+.cards.soft .ci{background:#FFFFFF}
+@media (hover:hover) and (pointer:fine){.cards:not(.soft) > li:hover{border-color:var(--line-strong);box-shadow:0 6px 18px rgba(11,27,51,.06)}}
+@media (max-width:700px){.cards.c3{grid-template-columns:1fr}.cards.c3 > li{flex-direction:row}}
+@media (max-width:560px){.cards{grid-template-columns:1fr}}
+
+/* eight-step process */
+.sys{list-style:none;padding:0!important;margin:14px 0 24px!important;position:relative;display:grid;gap:12px;counter-reset:sys}
+.sys::before{content:"";position:absolute;inset-inline-start:17px;top:20px;bottom:20px;width:2px;background:var(--accent-soft)}
+.sys li{position:relative;display:flex;gap:16px;margin:0!important;counter-increment:sys}
+.sys li::before{content:counter(sys);flex:none;width:36px;height:36px;border-radius:50%;background:var(--accent);color:#FFFFFF;display:grid;place-items:center;font-family:var(--mono);font-weight:600;font-size:15px;box-shadow:0 0 0 5px #FFFFFF;position:relative}
+.sys li > div{flex:1;min-width:0;background:var(--card);border-radius:14px;padding:12px 16px}
+.sys b{display:block;font-size:16px;margin-bottom:2px}
+.sys p{margin:0!important;font-size:15.5px;line-height:1.7;color:var(--muted)}
+
+/* what you get, two cards */
+.inc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:18px 0 8px}
+.inc-card{border:1px solid var(--line);border-radius:16px;padding:18px 20px;background:#FFFFFF}
+.inc-card.store{background:var(--card);border-color:transparent}
+.post-body .inc-card h3{display:flex;align-items:center;gap:10px;margin:0 0 12px;font-size:17px;font-weight:800;line-height:1.3}
+.inc-card ul{list-style:none;padding:0!important;margin:0!important;display:grid;gap:10px}
+.inc-card li{position:relative;margin:0!important;padding-inline-start:28px;font-size:15.5px;line-height:1.6}
+.inc-card li::before{content:"";position:absolute;inset-inline-start:0;top:3px;width:18px;height:18px;border-radius:50%;background:var(--accent-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230038B8' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/11px no-repeat}
+@media (max-width:700px){.inc{grid-template-columns:1fr}}
+
+/* support timeline */
+.sup{list-style:none;padding:0!important;margin:16px 0 20px!important;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.sup li{margin:0!important;position:relative;border:1px solid var(--line);border-radius:14px;padding:16px;padding-top:20px;background:#FFFFFF}
+.sup li::before{content:"";position:absolute;top:-1px;inset-inline:16px;height:3px;border-radius:0 0 3px 3px;background:var(--accent)}
+.sup li:nth-child(2)::before{background:#3B6FE0}
+.sup li:nth-child(3)::before{background:var(--gold)}
+.sup .when{display:block;font-family:var(--mono);font-size:12.5px;font-weight:600;color:var(--accent);margin-bottom:6px}
+.sup b{display:block;font-size:16px;line-height:1.4;margin-bottom:4px}
+.sup p{margin:0!important;font-size:15px;line-height:1.6;color:var(--muted)}
+@media (max-width:700px){.sup{grid-template-columns:1fr}}
+
+/* final call to action and WhatsApp button */
+.btn-wa{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 20px;border-radius:10px;background:#25D366;border:1px solid #25D366;color:#071A0E;font-family:'Heebo',var(--body);font-weight:800;font-size:15px;text-decoration:none;transition:background .2s}
+.btn-wa svg{width:20px;height:20px;fill:currentColor;flex:none}
+@media (hover:hover) and (pointer:fine){.btn-wa:hover{background:#2EE06F;border-color:#2EE06F}}
+.post-cta{margin:56px 0 0;padding:28px;border-radius:20px;background:#0B1B33;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.post-cta p{margin:0;max-width:440px;color:#C9D6EA}
+.post-cta .post-cta-h{color:#FFFFFF;font-size:clamp(20px,2.6vw,24px);font-weight:800;line-height:1.3;margin-bottom:6px}
+
+/* faq: same accordion as the home page */
+.fq{margin-top:22px;display:grid;gap:10px}
+.fq .fq-it{border:1px solid var(--line);background:var(--card);border-radius:14px;transition:background .25s,border-color .25s,box-shadow .25s}
+.fq .fq-it.open{background:#FFFFFF;border-color:var(--accent);box-shadow:0 8px 24px rgba(0,56,184,.09)}
+.fq-h{margin:0;font:inherit}
+.fq-q{all:unset;box-sizing:border-box;width:100%;display:flex;align-items:center;gap:14px;padding:18px 20px;cursor:pointer;border-radius:14px}
+.fq-q:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.fq-n{flex:none;min-width:24px;font-family:var(--display);font-weight:800;font-size:14px;color:#657189;transition:color .25s}
+.fq-it.open .fq-n{color:var(--accent)}
+.fq-t{flex:1;font-family:'Heebo',var(--display);font-weight:700;font-size:17px;line-height:1.4;color:var(--text)}
+.fq-pl{flex:none;width:34px;height:34px;border-radius:50%;background:#FFFFFF;border:1px solid var(--line);color:var(--text);display:grid;place-items:center;transition:transform .3s,background .25s,color .25s,border-color .25s}
+.fq-pl svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round}
+.fq-it.open .fq-pl{transform:rotate(45deg);background:var(--accent);border-color:var(--accent);color:#FFFFFF}
+.fq-aw{display:grid;grid-template-rows:1fr;transition:grid-template-rows .35s ease}
+.fq.is-js .fq-it:not(.open) .fq-aw{grid-template-rows:0fr}
+.fq-ai{overflow:hidden;min-height:0}
+.fq.is-js .fq-it:not(.open) .fq-ai{visibility:hidden;transition:visibility 0s .35s}
+.fq-a{margin:0;padding:0 20px 20px;padding-inline-start:58px;font-size:15.5px;line-height:1.75;color:var(--muted)}
+@media (hover:hover) and (pointer:fine){.fq-q:hover .fq-pl{border-color:var(--accent);color:var(--accent)}}
+
+/* replay buttons for the demos */
+.rp{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 14px;font:600 13px 'Heebo',sans-serif;color:var(--accent);background:#FFFFFF;border:1px solid var(--line);border-radius:10px;cursor:pointer}
+.rp[hidden]{display:none}
+@media (hover:hover) and (pointer:fine){.rp:hover{border-color:var(--accent)}}
+
+/* key-value tables: on phones each row is a small card without column labels */
+@media (max-width:560px){.tbl.stack.kv td{display:block}.tbl.stack.kv td::before{content:none}}
+
+/* ---------- hero ---------- */
+.cc-acts{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0}
+.cc-acts .btn{min-height:48px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:'Heebo',var(--body)}
+.cc-trust{margin:14px 0 28px;font-family:'Heebo',var(--body)}
+.cc-promise{margin:0 0 4px!important;max-width:560px;font-size:clamp(17px,2vw,19px);line-height:1.65;color:var(--muted)}
+.cc-show{max-width:560px;margin:0 0 32px}
+@media (min-width:1100px){
+  .post .crumbs{margin-inline:-150px}
+  .cc-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,460px);column-gap:48px;align-items:center;margin-inline:-150px}
+  .cc-hero-txt{grid-column:1}
+  .cc-show{grid-column:2;grid-row:1;max-width:none;margin:0}
+  .cc-hero .cc-trust{margin-bottom:0}
+}
+@media (max-width:480px){.cc-acts .btn{flex:1 1 100%}}
+
+/* ---------- demo: traffic-light client rating ---------- */
+.rz{margin:22px 0 26px;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:14px;align-items:start}
+.rz-card{border:1px solid var(--line);border-radius:16px;background:#FFFFFF;padding:14px;box-shadow:0 10px 28px -18px rgba(11,27,51,.3)}
+.rz-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 10px;padding:0 4px 10px;margin-bottom:6px;border-bottom:1px solid var(--line)}
+.rz-top b{font-size:15px}
+.rz-top span{font-size:12.5px;color:var(--muted)}
+.rz-list{list-style:none;padding:0!important;margin:0!important;display:grid;gap:2px}
+.rz-row{margin:0!important;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:10px;padding:8px 4px}
+.rz-av{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:14px;background:var(--card);color:var(--text);transition:background .35s,color .35s}
+.rz-who{display:flex;flex-direction:column;line-height:1.35;min-width:0}
+.rz-who b{font-size:14.5px}
+.rz-who span{font-size:12.5px;color:var(--muted)}
+.rz-tag{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:4px 10px;font-size:12.5px;font-weight:700;white-space:nowrap;transition:background .35s,color .35s}
+.rz-tag i{flex:none;width:9px;height:9px;border-radius:50%;transition:background .35s}
+.rz-tag .q{display:none}
+.rz .g{--c:#12A150;--bg:#E7F8EE;--fg:#0B7A3E}
+.rz .y{--c:#F2B200;--bg:#FFF4D6;--fg:#7A5A00}
+.rz .r{--c:#E5484D;--bg:#FDECEC;--fg:#B42318}
+.rz-row .rz-tag{background:var(--bg);color:var(--fg)}
+.rz-row .rz-tag i{background:var(--c)}
+.rz-row.sty .rz-av{background:var(--bg);color:var(--fg)}
+.rz-row:not(.sty) .rz-tag{background:#EEF1F6;color:var(--muted)}
+.rz-row:not(.sty) .rz-tag i{background:#C3CBD8}
+.rz-row:not(.sty) .rz-tag .w{display:none}
+.rz-row:not(.sty) .rz-tag .q{display:inline}
+.rz-key{list-style:none;padding:0!important;margin:0!important;display:grid;gap:10px}
+.rz-key li{margin:0!important;border-radius:14px;padding:14px 16px;background:var(--card);border-inline-start:4px solid var(--c);transition:opacity .35s}
+.rz-key li:not(.sty){opacity:.4}
+.rz-key b{display:flex;align-items:center;gap:8px;font-size:15.5px;margin-bottom:2px}
+.rz-key b i{width:10px;height:10px;border-radius:50%;background:var(--c)}
+.rz-key span{display:block;font-size:14.5px;line-height:1.6;color:var(--muted)}
+.rz .rp{grid-column:1 / -1;justify-self:start}
+@media (max-width:700px){.rz{grid-template-columns:1fr}}
+
+.post-body .cc-others{margin-top:18px}
+.cc-others .sp-other{text-decoration:none;color:var(--text)}
+
+/* scroll reveal (content is fully visible without JS) */
+.pr-on .pr{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;transition-delay:var(--d,0s)}
+.pr-on .pr.in{opacity:1;transform:none}
+
+/* ---------- page width: prose stays narrow, product blocks go wide ---------- */
+.post-body :where(p){max-width:720px}
+@media (min-width:1100px){.wide{margin-inline:-150px}}
+@media (min-width:1400px) and (max-width:1499.98px){.toc-side{display:none}}
+@media (min-width:1500px){.toc-side{left:calc(50% + 572px);width:160px}}
+.ext{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* ---------- hero: laptop + phone with YeshTor screens ---------- */
+@media (min-width:1100px){.cc-hero{grid-template-columns:minmax(0,1fr) minmax(0,500px)}}
+.dv{margin:0}
+.dv-stage{position:relative;max-width:520px;margin:0 auto;padding-top:9%;animation:dv-fade .8s both}
+.dv-lap{width:84%;margin-inline-end:auto;margin-bottom:5%}
+.dv-lid{background:#1c1a18;border-radius:10px 10px 3px 3px;padding:5px 5px 6px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),0 30px 60px -30px rgba(28,26,24,.55)}
+.dv-scr{position:relative;aspect-ratio:16/10;border-radius:3px;overflow:hidden;background:#F6F4F2;container-type:inline-size}
+.dv-base{position:relative;height:8px;margin:0 -5%;background:linear-gradient(#ECE9E5,#CFCAC3);border-radius:0 0 10px 10px;box-shadow:0 10px 18px -12px rgba(28,26,24,.45)}
+.dv-base::before{content:"";position:absolute;left:50%;top:0;width:14%;height:3px;margin-left:-7%;border-radius:0 0 4px 4px;background:#B5AFA7}
+.dv-stage .dv-ph{--bz:5px;position:absolute;inset-inline-end:0;bottom:0;width:30%;animation:dv-up .9s .15s both cubic-bezier(.2,.7,.2,1)}
+.dv-bar{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:16px;min-height:40px}
+.dv-dots{display:none;gap:6px}
+.dv.is-on .dv-dots{display:flex}
+.dv-dots i{width:7px;height:7px;border-radius:50%;background:var(--line-strong);transition:width .3s,background .3s}
+.dv-dots i.on{width:20px;border-radius:999px;background:#C9692F}
+.dv .dv-pl,.dv.paused .dv-pa{display:none}
+.dv.paused .dv-pl{display:inline}
+@keyframes dv-up{from{transform:translateY(22px)}}
+@keyframes dv-fade{from{opacity:0;transform:translateY(10px)}}
+@media (max-width:699.98px){
+  .dv-stage{padding-top:0}
+  .dv-lap{display:none}
+  .dv-stage .dv-ph{--bz:7px;position:relative;width:min(240px,68%);margin:0 auto}
+}
+
+/* ---------- YeshTor screens, rebuilt in HTML/CSS and sized from the screen width ---------- */
+.ys-ph{position:relative;aspect-ratio:9/19;background:#1c1a18;border-radius:16%/7.6%;padding:var(--bz,8px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.1),0 26px 50px -22px rgba(28,26,24,.6)}
+.ys-scr{position:relative;height:100%;border-radius:13%/6.1%;overflow:hidden;background:#F6F4F2;container-type:inline-size}
+.ys-in{position:absolute;inset:0;font-family:'Heebo',sans-serif;font-size:4.1cqi;line-height:1.35;color:#1c1a18;text-align:start}
+.ys-in svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ys-sb{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;height:2.6em;padding:0 1.8em;direction:ltr;font-family:var(--mono);font-weight:600;font-size:1em}
+.ys-sb::before{content:"";position:absolute;left:50%;top:.5em;width:6.4em;height:1.7em;margin-left:-3.2em;border-radius:1em;background:#1c1a18}
+.ys-sb i{position:relative;box-sizing:border-box;width:1.8em;height:1em;border:max(1px,.12em) solid currentColor;border-radius:.28em}
+.ys-sb i::before{content:"";position:absolute;top:20%;bottom:20%;left:10%;right:50%;border-radius:1px;background:currentColor}
+.ys-vs{position:absolute;inset:2.6em 0 0}
+.ys-v{position:absolute;inset:0;display:flex;flex-direction:column;opacity:0;visibility:hidden;transition:opacity .5s,visibility 0s .5s}
+.ys-v.on{opacity:1;visibility:visible;transition:opacity .5s}
+.ys-col{position:relative;display:flex;flex-direction:column;height:100%}
+.ys-top{display:flex;align-items:center;gap:.7em;padding:.7em 1.4em;border-bottom:1px solid #E4E1DD;background:#FBFAF9}
+.ys-top b{font-size:1.1em;font-weight:800}
+.ys-bg{width:1.15em;height:.85em;border-block:.14em solid currentColor;position:relative}
+.ys-bg::after{content:"";position:absolute;inset-inline:0;top:50%;height:.14em;margin-top:-.07em;background:currentColor}
+.ys-tic{margin-inline-start:auto;display:flex;gap:.9em}
+.ys-tic i{width:1.05em;height:1.05em;border:.14em solid #57524C;border-radius:.3em}
+.ys-h{padding:.9em 1.4em .3em}
+.ys-h b{display:block;font-size:1.6em;font-weight:800;line-height:1.2}
+.ys-h small{display:block;font-size:.88em;color:#57524C;margin-top:.15em}
+.ys-btn{display:flex;align-items:center;justify-content:center;gap:.4em;margin:.5em 1.4em;padding:.7em;border-radius:.9em;background:#A4501F;color:#FFFFFF;font-weight:700;font-size:1em}
+.ys-seg{display:flex;margin:.5em 1.4em;background:#EFEDEA;border-radius:.8em;padding:.25em}
+.ys-seg span{flex:1;text-align:center;padding:.45em .2em;border-radius:.6em;font-size:.92em;font-weight:600;color:#57524C;white-space:nowrap}
+.ys-seg .on{background:#FFFFFF;color:#1c1a18;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.ys-list{list-style:none;margin:.4em 1.4em 0!important;padding:0!important;background:#FFFFFF;border:1px solid #E4E1DD;border-radius:1em;overflow:hidden}
+.ys-list li{margin:0!important;display:flex;align-items:center;gap:.7em;padding:.7em .9em;border-top:1px solid #EFEDEA}
+.ys-list li:first-child{border-top:0}
+.ys-av{flex:none;width:2.3em;height:2.3em;border-radius:50%;display:grid;place-items:center;background:#F8E4D4;color:#8A4518;font-weight:800;font-size:.95em}
+.ys-who{flex:1;min-width:0;display:flex;flex-direction:column;gap:.1em}
+.ys-who b{font-size:1em;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ys-who small{font-size:.8em;color:#57524C;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ys-tag{flex:none;font-size:.76em;font-weight:700;border-radius:1em;padding:.2em .6em;background:#F8E4D4;color:#8A4518;white-space:nowrap}
+.ys-tag.g{background:#E3F3EA;color:#17663F}
+.ys-tag.y{background:#FBF0D9;color:#6E4800}
+.ys-tag.n{background:#EFEDEA;color:#57524C}
+.ys-dot{flex:none;width:.75em;height:.75em;border-radius:50%}
+.ys-dot.g{background:#2FA56A}.ys-dot.y{background:#E2A23A}.ys-dot.r{background:#D6453F}
+.ys-tab{margin-top:auto;display:flex;justify-content:space-around;align-items:flex-end;background:#1c1a18;color:#9A948D;border-radius:1.4em 1.4em 0 0;padding:.6em .4em .9em}
+.ys-tab span{display:flex;flex-direction:column;align-items:center;gap:.25em;font-size:.72em;font-weight:600}
+.ys-tab svg{width:1.9em;height:1.9em}
+.ys-tab .on{color:#FFFFFF}
+.ys-tab .mid svg{width:2.9em;height:2.9em;padding:.5em;margin-top:-1.8em;border-radius:50%;background:#FFFFFF;color:#1c1a18;box-shadow:0 0 0 .3em #1c1a18}
+/* calendar */
+.ys-day{display:flex;justify-content:space-between;align-items:center;margin:.2em 1.4em .1em;font-size:.9em;font-weight:700}
+.ys-day span{font-size:.85em;font-weight:700;background:#EFEDEA;border-radius:1em;padding:.2em .7em}
+.ys-cal{list-style:none;margin:.2em 0 0!important;padding:0 1.4em!important}
+.ys-cal li{margin:0!important;display:grid;grid-template-columns:3.1em minmax(0,1fr);align-items:center;gap:.5em;min-height:3.2em;border-top:1px solid #E4E1DD}
+.ys-cal time{font-family:var(--mono);font-size:.82em;color:#57524C}
+.ys-ev{display:block;background:#F8E4D4;border-inline-start:.3em solid #E28140;border-radius:.5em;padding:.45em .6em;font-size:.9em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ys-ev b{font-weight:800}
+.ys-ev.g{background:#E3F3EA;border-color:#2FA56A}
+.ys-free{font-size:.82em;color:#6E6862;border:1px dashed #D8D3CD;border-radius:.5em;padding:.4em .6em}
+.ys-cal .now span{position:relative;height:.14em;background:#E28140;border-radius:1em}
+.ys-cal .now span::before{content:"";position:absolute;inset-inline-start:-.3em;top:50%;width:.6em;height:.6em;margin-top:-.3em;border-radius:50%;background:#E28140}
+.ys-fab{position:absolute;inset-inline-end:1.1em;bottom:1.1em;width:2.6em;height:2.6em;border-radius:50%;background:#A4501F;color:#FFFFFF;display:grid;place-items:center;font-size:1.3em;line-height:1;box-shadow:0 .3em .8em rgba(164,80,31,.4)}
+/* booking flow */
+.ys-bh{background:#1c1a18;color:#FFFFFF;text-align:center;padding:.8em .8em 1em}
+.ys-bh b{display:block;font-size:1.15em;font-weight:800}
+.ys-bh small{font-size:.78em;color:#BDB6AE}
+.ys-stp{display:flex;align-items:center;justify-content:center;gap:.3em;margin:.9em 1.4em .3em;background:#FFFFFF;border-radius:2em;padding:.5em;box-shadow:0 .3em .8em rgba(0,0,0,.06)}
+.ys-stp i{font-style:normal;width:1.8em;height:1.8em;border-radius:50%;border:1px solid #E4E1DD;display:grid;place-items:center;font-size:.8em;font-weight:700;color:#57524C}
+.ys-stp i.on{background:#1c1a18;border-color:#1c1a18;color:#FFFFFF}
+.ys-stp em{width:1em;height:1px;background:#D8D3CD}
+.ys-sub{margin:.7em 1.4em .1em;font-weight:800;font-size:1.1em}
+.ys-svc{margin:.45em 1.4em 0;display:flex;align-items:center;justify-content:space-between;gap:.6em;background:#FFFFFF;border:1.5px solid #E4E1DD;border-radius:1em;padding:.7em .9em}
+.ys-svc b{display:block;font-size:.98em}
+.ys-svc small{font-size:.78em;color:#57524C}
+.ys-svc strong{font-weight:800;font-size:.98em}
+.ys-svc.sel{border-color:#E28140;box-shadow:0 0 0 .2em #F8E4D4}
+/* clients */
+.ys-search{display:flex;align-items:center;gap:.5em;margin:.4em 1.4em;background:#FFFFFF;border:1px solid #E4E1DD;border-radius:.8em;padding:.6em .8em;font-size:.88em;color:#57524C}
+.ys-search::before{content:"";flex:none;width:.85em;height:.85em;border:.14em solid currentColor;border-radius:50%}
+/* business page */
+.ys-cover{position:relative;flex:none;height:13em;background:linear-gradient(160deg,#3D2A1F,#7A3F1A 70%,#9A5022);display:flex;align-items:flex-end;padding:1em 1.3em;color:#FFFFFF;overflow:hidden}
+.ys-cover svg{position:absolute;inset-inline-end:-.6em;top:.4em;width:9em;height:9em;opacity:.2}
+.ys-cover b{display:block;font-size:1.4em;font-weight:800}
+.ys-open{display:inline-block;margin-top:.3em;font-size:.74em;background:rgba(0,0,0,.45);border-radius:1em;padding:.2em .6em}
+.ys-biz{padding:.7em 1.4em 0;display:flex;flex-direction:column;gap:.5em;font-size:.9em}
+.ys-rate{font-weight:700}
+.ys-rate small{color:#57524C;font-weight:500}
+.ys-ln{display:flex;align-items:center;gap:.5em;color:#4A4641}
+.ys-ln svg{width:1.1em;height:1.1em;flex:none}
+.ys-soc{display:flex;justify-content:space-around;margin:.2em 0}
+.ys-soc span{display:flex;flex-direction:column;align-items:center;gap:.25em;font-size:.76em;color:#57524C}
+.ys-soc i{width:2.6em;height:2.6em;border-radius:50%;background:#FFFFFF;border:1px solid #E4E1DD;display:grid;place-items:center;color:#1c1a18}
+.ys-soc i svg{width:1.3em;height:1.3em}
+.ys-cta{display:block;text-align:center;background:#1c1a18;color:#FFFFFF;border-radius:2em;padding:.65em;font-weight:800}
+.ys-svl{display:flex;flex-direction:column;gap:.35em;margin-top:.4em}
+.ys-svl b{font-weight:800;font-size:1.05em}
+.ys-svl > span{display:flex;justify-content:space-between;gap:.6em;background:#FFFFFF;border:1px solid #E4E1DD;border-radius:.8em;padding:.55em .8em}
+.ys-svl i,.ys-svl em{font-style:normal}
+.ys-svl em{font-weight:800}
+/* documents */
+.ys-doc{flex:none;width:1.9em;height:1.9em;display:grid;place-items:center;color:#57524C}
+.ys-doc svg{width:1.4em;height:1.4em}
+.ys-sig{margin:.6em 1.4em 0;background:#FFFFFF;border:1px solid #E4E1DD;border-radius:1em;padding:.6em .9em}
+.ys-sig svg{display:block;width:100%;height:3.2em;stroke-width:2}
+.ys-sig small{display:block;font-size:.78em;color:#57524C;border-top:1px dashed #D8D3CD;padding-top:.3em}
+/* statistics */
+.ys-sel{align-self:flex-start;margin:.2em 1.4em .1em;font-size:.82em;font-weight:600;background:#FFFFFF;border:1px solid #E4E1DD;border-radius:.6em;padding:.3em .7em}
+.ys-kv{display:grid;grid-template-columns:1fr 1fr;gap:.5em;margin:.4em 1.4em 0}
+.ys-kv div{background:#FFFFFF;border:1px solid #E4E1DD;border-radius:1em;padding:.55em .8em}
+.ys-kv small{display:block;font-size:.78em;color:#57524C}
+.ys-kv b{font-size:1.55em;font-weight:800;line-height:1.2}
+.ys-chart{margin:.5em 1.4em 0;background:#FFFFFF;border:1px solid #E4E1DD;border-radius:1em;padding:.6em .8em}
+.ys-chart small{font-size:.78em;color:#57524C}
+.ys-bars{display:flex;align-items:flex-end;gap:.45em;height:6em;margin-top:.4em}
+.ys-bars i{flex:1;height:var(--h);background:#F0C8A6;border-radius:.3em .3em 0 0}
+.ys-bars i:last-child{background:#E28140}
+/* settings */
+.ys-grp{margin:.7em 1.4em 0;font-size:.78em;font-weight:700;color:#57524C}
+.ys-set li{justify-content:space-between;font-size:.92em}
+.ys-tg{flex:none;position:relative;width:2.6em;height:1.5em;border-radius:1em;background:#D8D3CD}
+.ys-tg::after{content:"";position:absolute;top:.2em;inset-inline-start:.2em;width:1.1em;height:1.1em;border-radius:50%;background:#FFFFFF}
+.ys-tg.on{background:#2FA56A}
+.ys-tg.on::after{inset-inline-start:auto;inset-inline-end:.2em}
+/* laptop dashboard */
+.ys-desk{position:absolute;inset:0;display:grid;grid-template-columns:23% minmax(0,1fr);font-family:'Heebo',sans-serif;font-size:2cqi;line-height:1.35;color:#1c1a18;text-align:start}
+.ys-side{background:#1c1a18;color:#BDB6AE;padding:1.3em .8em;display:flex;flex-direction:column;gap:.3em}
+.ys-logo{display:flex;align-items:center;gap:.45em;color:#FFFFFF;font-size:1.25em;font-weight:800;margin:0 .4em .7em}
+.ys-logo i{width:.85em;height:.85em;border-radius:.3em;background:#E28140}
+.ys-side span{padding:.5em .7em;border-radius:.6em}
+.ys-side .on{background:#FFFFFF;color:#1c1a18;font-weight:700}
+.ys-main{padding:1.3em 1.5em;display:flex;flex-direction:column;gap:.9em;min-width:0;min-height:0}
+.ys-mh{display:flex;justify-content:space-between;align-items:center;gap:1em}
+.ys-mh b{display:block;font-size:1.45em;font-weight:800;line-height:1.2}
+.ys-mh small{color:#57524C;font-size:.9em}
+.ys-new{flex:none;background:#A4501F;color:#FFFFFF;border-radius:.6em;padding:.45em .9em;font-weight:700;font-size:.9em}
+.ys-kpi{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.6em}
+.ys-kpi div{background:#FFFFFF;border:1px solid #E4E1DD;border-radius:.8em;padding:.55em .7em}
+.ys-kpi small{display:block;font-size:.82em;color:#57524C;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ys-kpi b{font-size:1.65em;font-weight:800;line-height:1.2}
+.ys-week{flex:1;min-height:0;overflow:hidden;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.45em;background:#FFFFFF;border:1px solid #E4E1DD;border-radius:.8em;padding:.6em}
+.ys-week > div{display:flex;flex-direction:column;gap:.35em;min-width:0}
+.ys-week i{font-style:normal;font-size:.82em;font-weight:700;color:#57524C;text-align:center;padding-bottom:.25em;border-bottom:1px solid #EFEDEA}
+.ys-week span{display:block;height:calc(var(--h,1) * 2em);border-radius:.4em;background:#F8E4D4;border-inline-start:.25em solid #E28140;padding:.25em .45em;font-size:.78em;font-weight:600;color:#8A4518;white-space:nowrap;overflow:hidden}
+.ys-week span.g{background:#E3F3EA;border-color:#2FA56A;color:#17663F}
+.ys-week span.e{background:none;border:0}
+
+/* ---------- 01: audiences ---------- */
+.aud .ci{background:var(--accent-soft)}
+
+/* ---------- 02: what we build, cards with an example on hover ---------- */
+.wb{list-style:none;padding:0!important;margin:18px 0 10px!important;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.wb > li{margin:0!important;position:relative;display:flex;flex-direction:column;gap:10px;border:1px solid var(--line);border-radius:16px;background:#FFFFFF;padding:18px;transition:transform .25s,box-shadow .25s,border-color .25s}
+.wb > li > b{font-size:16.5px;line-height:1.4}
+.wb > li > b a{color:var(--text);text-decoration:none}
+.wb > li > b a::after{content:"";position:absolute;inset:0;border-radius:16px}
+.wb > li > b a:focus-visible{outline:none}
+.wb > li:has(a:focus-visible){outline:2px solid var(--accent);outline-offset:2px}
+.wb-go{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:700;color:var(--accent)}
+.wb-sw{display:flex;flex-direction:column;gap:10px}
+.wb-sw .d{font-size:15px;line-height:1.6;color:var(--muted)}
+.wb-ex{display:flex;gap:8px;font-style:normal;font-size:14.5px;line-height:1.55;color:var(--accent);font-weight:600;padding-top:10px;border-top:1px dashed var(--line)}
+.wb-ex span{flex:none;color:var(--muted);font-weight:700}
+.wb > li:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (hover:hover) and (pointer:fine){
+  .wb-sw{display:grid}
+  .wb-sw > *{grid-area:1 / 1;transition:opacity .25s,transform .25s}
+  .wb-ex{border-top:0;padding-top:0;opacity:0;transform:translateY(8px)}
+  .wb > li:hover,.wb > li:focus-visible,.wb > li:focus-within{transform:translateY(-4px);border-color:var(--line-strong);box-shadow:0 16px 32px -18px rgba(11,27,51,.3)}
+  .wb > li:hover .wb-ex,.wb > li:focus-visible .wb-ex,.wb > li:focus-within .wb-ex{opacity:1;transform:none}
+  .wb > li:hover .d,.wb > li:focus-visible .d,.wb > li:focus-within .d{opacity:0;transform:translateY(-8px)}
+}
+@media (max-width:900px){.wb{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.wb{grid-template-columns:1fr}}
+
+/* ---------- 02: device demo (NFC gate + remote light) ---------- */
+.io{margin:16px 0 22px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.io-p{margin:0;display:flex;flex-direction:column;gap:12px;border-radius:18px;background:#0B1B33;padding:16px 18px 18px;color:#FFFFFF}
+.io-k{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.io-k b{font-size:15.5px;font-weight:800}
+.io-k small{font:600 12px var(--mono);color:#A9B8D3;background:rgba(255,255,255,.08);border-radius:6px;padding:3px 8px}
+.io-p svg{display:block;width:100%;height:auto}
+.io-pill{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:6px 12px;font-size:13.5px;font-weight:700;background:rgba(255,255,255,.08);color:#C9D6EA;transition:background .35s,color .35s}
+.io-pill i{flex:none;width:8px;height:8px;border-radius:50%;background:#8FA0BD;transition:background .35s}
+.io-pill .w{display:none}
+.io-pill.sty{background:rgba(127,227,168,.16);color:#7FE3A8}
+.io-pill.sty i{background:#7FE3A8}
+.io-pill.sty .w{display:inline}
+.io-pill.sty .q{display:none}
+.io .rp{grid-column:1 / -1;justify-self:start}
+.io-tap{transition:transform .5s ease}
+.io-tap.sty{transform:translateX(18px)}
+.io-ring{opacity:0;transform-box:view-box;transform-origin:115px 64px}
+.io-ring.sty{animation:io-ping 1.1s ease-out 3}
+.io-ring.r2.sty{animation-delay:.45s}
+.io-led{fill:#F87171;transition:fill .3s}
+.io-led.sty{fill:#7FE3A8}
+.io-door{transform-box:view-box;transform-origin:256px 94px;transition:transform .9s cubic-bezier(.5,0,.2,1)}
+.io-door.sty{transform:scaleX(.12)}
+.io-sw{fill:#3A4F73;transition:fill .3s}
+.io-sw.sty{fill:#2FA56A}
+.io-knob{transition:transform .3s}
+.io-knob.sty{transform:translateX(9px)}
+.io-wave{opacity:.25;transition:opacity .4s}
+.io-wave.sty{opacity:1}
+.io-bulb{fill:rgba(255,255,255,.1);transition:fill .5s}
+.io-bulb.sty{fill:#FFD66B}
+.io-glow{opacity:0;transition:opacity .6s}
+.io-glow.sty{opacity:1}
+@keyframes io-ping{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(2.3)}}
+@media (max-width:700px){.io{grid-template-columns:1fr}}
+
+/* ---------- 03: process timeline with a sticky step indicator ---------- */
+.pt{margin:20px 0 14px}
+.pt-nav{display:none}
+.pt-steps{list-style:none;padding:0!important;margin:0!important;position:relative;display:grid;gap:14px}
+.pt-steps::before{content:"";position:absolute;inset-inline-start:21px;top:24px;bottom:24px;width:2px;background:var(--accent-soft)}
+.pt-s{margin:0!important;position:relative;display:flex;gap:18px;scroll-margin-top:calc(var(--nav-h,64px) + 24px)}
+.pt-n{flex:none;position:relative;z-index:1;width:44px;height:44px;border-radius:50%;background:#FFFFFF;border:2px solid var(--accent);color:var(--accent);display:grid;place-items:center;font:600 15px var(--mono);box-shadow:0 0 0 6px #FFFFFF;transition:background .3s,color .3s}
+.pt-js .pt-s.cur .pt-n,.pt-js .pt-s.done .pt-n{background:var(--accent);color:#FFFFFF}
+.pt-b{flex:1;min-width:0;background:var(--card);border-radius:16px;padding:16px 18px}
+.pt-b > b{display:block;font-size:17px;margin-bottom:4px}
+.pt-b > p{margin:0!important;font-size:15.5px;line-height:1.7;color:var(--muted)}
+@media (min-width:900px){
+  .pt{display:grid;grid-template-columns:200px minmax(0,1fr);gap:36px;align-items:start}
+  .pt-nav{display:block;position:sticky;top:calc(var(--nav-h,64px) + 28px)}
+}
+.pt-nav-k{margin:0 0 8px!important;font-size:12.5px;font-weight:800;color:var(--muted)}
+.pt-nav ol{list-style:none;margin:0!important;padding:0!important;position:relative;border-inline-start:2px solid var(--line)}
+.pt-nav ol::before{content:"";position:absolute;inset-inline-start:-2px;top:0;width:2px;height:var(--p,0%);background:var(--accent);transition:height .4s ease}
+.pt-nav li{margin:0!important}
+.pt-nav a{display:flex;gap:10px;align-items:baseline;padding:10px 14px;color:var(--muted);text-decoration:none;font-size:14.5px;font-weight:600;line-height:1.4;transition:color .25s}
+.pt-nav a span{font-family:var(--mono);font-size:12px}
+.pt-nav a.done{color:var(--text)}
+.pt-nav a.cur{color:var(--accent)}
+@media (hover:hover) and (pointer:fine){.pt-nav a:hover{color:var(--text)}}
+/* mini project tracking card */
+.tk{margin-top:14px;background:#FFFFFF;border:1px solid var(--line);border-radius:14px;padding:14px 16px;box-shadow:0 10px 24px -18px rgba(11,27,51,.3)}
+.tk-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:6px 10px;margin-bottom:10px}
+.tk-top b{font-size:14.5px}
+.tk-top span{display:flex;align-items:center;gap:8px}
+.tk-code{font:600 12px var(--mono);color:var(--muted)}
+.tk-eg{font-size:11.5px;font-weight:700;color:var(--muted);background:var(--card);border-radius:999px;padding:2px 8px}
+.tk-st{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 10px;font-size:13.5px;margin-bottom:8px}
+.tk-st span{color:var(--muted)}
+.tk-bar{height:8px;border-radius:999px;background:#E9EDF4;overflow:hidden}
+.tk-bar i{display:block;width:90%;height:100%;border-radius:inherit;background:linear-gradient(270deg,var(--accent),#3B6FE0)}
+.post[dir="ltr"] .tk-bar i{background:linear-gradient(90deg,var(--accent),#3B6FE0)}
+.tk-log{list-style:none;padding:0!important;margin:12px 0 10px!important;display:grid;gap:8px}
+.tk-log li{margin:0!important;display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;align-items:start;font-size:13.5px;line-height:1.5}
+.tk-log time{font:600 12px var(--mono);color:var(--accent);background:var(--accent-soft);border-radius:6px;padding:2px 7px}
+.tk > a{font-size:14px;font-weight:700}
+
+/* ---------- 04: YeshTor case study ---------- */
+.ycw{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,290px);gap:36px;align-items:center;margin:22px 0 12px}
+.yf-k{margin:0 0 10px!important;font-weight:800}
+.yf{list-style:none;padding:0!important;margin:0!important;display:grid;gap:8px}
+.yf li{margin:0!important;display:flex;align-items:center;gap:12px;background:var(--card);border-radius:12px;padding:10px 14px;font-size:15.5px;line-height:1.5}
+.yf .ci{width:34px;height:34px;border-radius:10px;background:#FFFFFF}
+.yf .ico{width:18px;height:18px}
+.yc{display:flex;flex-direction:column;align-items:center;gap:8px}
+.yc-ph{width:min(260px,100%)}
+.yc-track{position:absolute;inset:2.6em 0 0;display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
+.yc-track::-webkit-scrollbar{display:none}
+.yc-track:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
+.yc-s{flex:0 0 100%;scroll-snap-align:center;position:relative}
+.yc-nav{display:flex;align-items:center;gap:4px;margin-top:6px}
+.yc-nav[hidden]{display:none}
+.yc-btn{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:#FFFFFF;color:var(--text);display:grid;place-items:center;cursor:pointer;padding:0}
+.yc-btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.post[dir="ltr"] .yc-btn svg{transform:scaleX(-1)}
+.yc-dots{display:flex}
+.yc-dots button{width:34px;height:40px;border:0;background:none;padding:0;cursor:pointer;display:grid;place-items:center;border-radius:10px}
+.yc-dots button::before{content:"";width:8px;height:8px;border-radius:999px;background:var(--line-strong);transition:width .25s,background .25s}
+.yc-dots button[aria-current="true"]::before{width:22px;background:var(--accent)}
+.yc-btn:focus-visible,.yc-dots button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (hover:hover) and (pointer:fine){.yc-btn:hover{border-color:var(--accent);color:var(--accent)}}
+.yc-cap{margin:0!important;min-height:1.6em;font-size:14px;font-weight:700;text-align:center}
+.yc-note{margin:0!important;max-width:280px!important;font-size:12.5px;line-height:1.5;color:var(--muted);text-align:center}
+@media (max-width:760px){.ycw{grid-template-columns:minmax(0,1fr);gap:24px}.yc{order:-1}}
+/* billing flow */
+.bf{margin:18px 0 26px;border:1px solid var(--line);border-radius:18px;padding:20px;background:#FFFFFF}
+.bf-h{margin:0 0 16px;font-weight:800;font-size:16.5px;line-height:1.4}
+.bf-steps{list-style:none;padding:0!important;margin:0!important;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px}
+.bf-steps li{margin:0!important;position:relative;display:flex;flex-direction:column;gap:6px;background:var(--card);border:1.5px solid transparent;border-radius:14px;padding:16px;transition:border-color .4s,box-shadow .4s}
+.bf-steps li .ci{transition:opacity .4s,transform .4s}
+.bf-steps li.tz{background:#FFFFFF;border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+.bf-steps li + li::before{content:"";position:absolute;inset-inline-start:-29px;top:50%;width:24px;height:24px;margin-top:-12px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230038B8' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 12H5M11 6l-6 6 6 6'/%3E%3C/svg%3E") center/contain no-repeat}
+.post[dir="ltr"] .bf-steps li + li::before{transform:scaleX(-1)}
+.bf-steps b{font-size:15.5px;line-height:1.4}
+.bf-steps span:not(.ci){font-size:14px;line-height:1.55;color:var(--muted)}
+.bf-us{display:flex;gap:12px;align-items:flex-start;margin-top:16px;padding:14px 16px;border-radius:14px;background:#E7F8EE;color:#0B5A2E;font-size:15px;line-height:1.6;transition:background .4s,color .4s}
+.bf-us .ico{width:22px;height:22px;margin-top:2px}
+.bf .bf-steps li:not(.sty) .ci{opacity:.3;transform:scale(.85)}
+.bf .bf-steps li.tz:not(.sty){border-color:transparent;box-shadow:none;background:var(--card)}
+.bf .bf-steps li:not(.sty)::before{opacity:.3}
+.bf .bf-us:not(.sty){background:var(--card);color:var(--muted)}
+.bf .rp{margin-top:12px}
+@media (max-width:700px){
+  .bf-steps{grid-template-columns:minmax(0,1fr);gap:30px}
+  .bf-steps li + li::before,.post[dir="ltr"] .bf-steps li + li::before{inset-inline-start:50%;top:-27px;margin-top:0;margin-inline-start:-12px;transform:rotate(-90deg)}
+}
+.ys-go{min-height:48px;display:inline-flex;align-items:center;gap:8px;font-family:'Heebo',var(--body)}
+
+/* traffic light: waiting rows stay readable, only the color marker is grey */
+.rz-key li{transition:border-color .35s}
+.rz-key li:not(.sty){opacity:1;border-inline-start-color:var(--line-strong)}
+.rz-key li:not(.sty) b i{background:#C3CBD8}
+
+/* ---------- 05: timing ---------- */
+.du{list-style:none;padding:0!important;margin:16px 0 8px!important;display:grid;gap:10px;max-width:720px}
+.du li{margin:0!important;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 12px;align-items:center;border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.du span{font-size:15px;color:var(--muted)}
+.du b{font-size:17px;font-weight:800;white-space:nowrap}
+.du i{grid-column:1 / -1;position:relative;height:8px;border-radius:999px;background:var(--accent-soft);overflow:hidden}
+.du i::before{content:"";position:absolute;inset-block:0;inset-inline-start:0;width:var(--w);border-radius:inherit;background:var(--accent)}
+
+/* ---------- calls to action ---------- */
+.mid-cta{margin:34px 0 0;padding:24px 26px;border-radius:20px;background:#0B1B33;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.mid-cta p{margin:0;max-width:460px;color:#C9D6EA}
+.mid-cta .post-cta-h{color:#FFFFFF;font-size:clamp(19px,2.4vw,22px);font-weight:800;line-height:1.3;margin-bottom:6px}
+.cta-acts{display:flex;flex-wrap:wrap;gap:10px}
+.btn-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 20px;border-radius:10px;border:1px solid rgba(255,255,255,.45);color:#FFFFFF;font-family:'Heebo',var(--body);font-weight:800;font-size:15px;text-decoration:none;transition:background .2s,border-color .2s}
+.post-body .post-cta a:focus-visible,.post-body .mid-cta a:focus-visible{outline-color:#A9C2FF}
+@media (hover:hover) and (pointer:fine){.btn-ghost:hover{background:rgba(255,255,255,.08);border-color:#FFFFFF}}
+
+/* scroll reveal (content is fully visible without JS) */
+@media (prefers-reduced-motion:reduce){
+  .pr-on .pr{opacity:1;transform:none;transition:none}
+  .dv-stage,.dv-stage .dv-ph{animation:none}
+  .io-ring.sty{animation:none}
+  .toc-side,.fq .fq-it,.fq-n,.fq-pl,.fq-aw,.btn-wa,.btn-ghost,.rz-av,.rz-tag,.rz-tag i,.rz-key li,.ys-v,.dv-dots i,.wb > li,.wb-sw > *,.io-pill,.io-pill i,.io-tap,.io-led,.io-door,.io-sw,.io-knob,.io-wave,.io-bulb,.io-glow,.pt-n,.pt-nav ol::before,.pt-nav a,.bf-steps li,.bf-steps li .ci,.bf-us,.yc-dots button::before{transition:none!important}
+}
+@media (max-width:620px){
+  .post{padding-top:28px}
+  .post-body{font-size:16px}
+  .ch-sec{margin-top:48px;padding-top:32px}
+  .fq-q{padding:16px;gap:12px}
+  .fq-t{font-size:16px}
+  .fq-a{padding:0 16px 18px;font-size:15px}
+  .post-cta,.mid-cta{padding:22px}
+  .cta-acts{width:100%}
+  .cta-acts > *{flex:1 1 100%}
+  .btn-wa{width:100%}
+  .bf{padding:16px}
+}
+</style>
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "App development",
-  "serviceType": "App development",
-  "description": "פיתוח אפליקציות לאנדרואיד ולאייפון: פגישת אפיון, עיצוב מסכים שאתם מאשרים, פיתוח בשלבים ועזרה בפרסום בחנויות.",
-  "url": "https://n1ace.github.io/portfolio/services/app-development.html",
-  "areaServed": {
-    "@type": "Country",
-    "name": "Israel"
-  },
-  "provider": {
-    "@type": "Organization",
-    "name": "בונים דיגיטל",
-    "url": "https://n1ace.github.io/portfolio/"
-  }
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Service",
+      "name":"פיתוח אפליקציות",
+      "serviceType":"App development",
+      "description":"פיתוח אפליקציות ומערכות מאפס: אפליקציה לאנדרואיד ולאייפון, מערכות CRM, ניהול עובדים ומלאי, עוזרי AI וחיבור למכשירים. משיחת היכרות ועד מוצר באוויר.",
+      "url":"https://n1ace.github.io/portfolio/services/app-development.html",
+      "inLanguage":"he-IL",
+      "areaServed":{"@type":"Country","name":"Israel"},
+      "audience":{"@type":"BusinessAudience","name":"יזמים, עסקים וחברות שצריכים אפליקציה או מערכת"},
+      "provider":{"@type":"Organization","name":"בונים דיגיטל","url":"https://n1ace.github.io/portfolio/","logo":"https://n1ace.github.io/portfolio/assets/logo/bonim-digital-512.png"}
+    },
+    {
+      "@type":"CreativeWork",
+      "name":"יש תור",
+      "alternateName":"YeshTor",
+      "url":"https://yeshtor.com/",
+      "description":"אפליקציה לקביעת תורים לבעלי עסקים במנוי חודשי: יומן ואוטומציות, דירוג לקוחות ברמזור, ניהול עובדים וכיסאות, חתימה על מסמכים, דף עסקי וחיוב חודשי אוטומטי.",
+      "inLanguage":"he-IL",
+      "creator":{"@type":"Organization","name":"בונים דיגיטל","url":"https://n1ace.github.io/portfolio/"}
+    },
+    {
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"אני רוצה לפתח אפליקציה. מאיפה מתחילים?","acceptedAnswer":{"@type":"Answer","text":"משיחת היכרות. ספר לנו על הרעיון, גם אם הוא עוד לא מגובש, ואנחנו נעזור לך להפוך אותו לתוכנית ברורה."}},
+        {"@type":"Question","name":"מחפשים חברת פיתוח לאפליקציה. למה לבחור בכם?","acceptedAnswer":{"@type":"Answer","text":"כי אנחנו מלווים אותך מהרעיון ועד המוצר באוויר, מראים לך סקיצה לפני שמתחילים, ונותנים לך לראות כל שלב בזמן אמת. ויש לנו מוצר אמיתי שבנינו מאפס, שאפשר לראות."}},
+        {"@type":"Question","name":"כמה עולה פיתוח אפליקציה?","acceptedAnswer":{"@type":"Answer","text":"תלוי בהיקף. אחרי שיחת ההיכרות והסקיצה תקבל הצעת מחיר מסודרת, לפני שמתחילים לעבוד."}},
+        {"@type":"Question","name":"כמה זמן לוקח לפתח אפליקציה?","acceptedAnswer":{"@type":"Answer","text":"אפליקציה פשוטה עם מטרה ברורה: 10–14 ימי עסקים. מערכת מורכבת: כמה חודשים. הערכה מדויקת תקבל אחרי השיחה הראשונה."}},
+        {"@type":"Question","name":"אתם מפתחים אפליקציה לאנדרואיד ולאייפון?","acceptedAnswer":{"@type":"Answer","text":"כן, לשתי המערכות. אנחנו מפתחים אפליקציות נייטיב לאנדרואיד ולאייפון, ומלווים אותך עד שהאפליקציה עולה ל-Google Play ול-App Store."}},
+        {"@type":"Question","name":"אפשר לשדרג או לתקן אפליקציה קיימת?","acceptedAnswer":{"@type":"Answer","text":"כן. עיצוב חדש, אנימציות, חלקים בתלת-ממד, תיקונים טכניים, או פיתוח מחדש מאפס."}},
+        {"@type":"Question","name":"אפשר להוסיף עוזר AI לאפליקציה או לאתר?","acceptedAnswer":{"@type":"Answer","text":"כן. אנחנו מקימים מערכות AI חכמות, כמו יועץ או עוזר אישי שעונה ללקוחות ומלווה אותם."}},
+        {"@type":"Question","name":"אפשר לחבר את האפליקציה למכשירים?","acceptedAnswer":{"@type":"Answer","text":"כן. למשל NFC, תדרים ו-Wi-Fi, ניהול שערים, או שליטה מרחוק במוצרי חשמל."}},
+        {"@type":"Question","name":"אפשר לחבר סליקה ומנויים?","acceptedAnswer":{"@type":"Answer","text":"כן. ביש תור חיברנו סליקה דרך טרנזילה עם חיוב חודשי אוטומטי, ואנחנו בונים גם מערכות חיוב אחרות."}},
+        {"@type":"Question","name":"איך אני יודע מה קורה עם הפרויקט?","acceptedAnswer":{"@type":"Answer","text":"דרך מעקב הפרויקט: אתה רואה באיזה שלב הוא נמצא ומה בוצע בכל יום."}},
+        {"@type":"Question","name":"של מי הקוד בסוף הפרויקט?","acceptedAnswer":{"@type":"Answer","text":"שלך. בסוף הפרויקט הקוד והמוצר עוברים לבעלות מלאה שלך."}},
+        {"@type":"Question","name":"הרעיון שלי מוגן?","acceptedAnswer":{"@type":"Answer","text":"כן. אם תרצה, אנחנו חותמים איתך על הסכם סודיות (NDA) עוד לפני שאתה מספר לנו את הפרטים."}}
+      ]
+    },
+    {
+      "@type":"BreadcrumbList",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"בית","item":"https://n1ace.github.io/portfolio/"},
+        {"@type":"ListItem","position":2,"name":"שירותים","item":"https://n1ace.github.io/portfolio/#services"},
+        {"@type":"ListItem","position":3,"name":"פיתוח אפליקציות"}
+      ]
+    }
+  ]
 }
 </script>
 </head>
@@ -60,6 +695,7 @@
     <div class="menu" id="site-menu">
       <a href="../index.html#home">Home</a>
       <a href="../index.html#services" aria-current="page">Services</a>
+      <a href="../index.html#testimonials">Testimonials</a>
       <a href="../projects.html">Work</a>
       <a href="../index.html#results">Results</a>
       <a href="../index.html#process">How it works</a>
@@ -75,107 +711,504 @@
   </div>
 </nav>
 
-<main id="main">
-  <header class="sp-hero">
-    <div class="wrap sp-hero-in">
-      <div class="sp-hero-text">
-        <nav class="crumbs rv" aria-label="Breadcrumb">
-          <a href="../index.html">Home</a>
-          <span>/</span>
-          <a href="../index.html#services">Services</a>
-          <span>/</span>
-          <span>App development</span>
-        </nav>
-        <div class="sec-eyebrow rv">// service</div>
-        <h1 class="rv">App development</h1>
-        <p class="sec-sub rv">An app for Android and iPhone, from the idea to the store.</p>
-        <div class="page-actions rv">
-          <a class="btn solid cta" href="../booking.html?s=app"><span class="cta-txt">Book a free call</span><svg class="cta-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a class="btn sp-wa" href="https://wa.me/972527905122?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%91%D7%95%D7%A0%D7%99%D7%9D%20%D7%93%D7%99%D7%92%D7%99%D7%98%D7%9C%2C%20%D7%99%D7%A9%20%D7%9C%D7%99%20%D7%A2%D7%A1%D7%A7%20%D7%95%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.55L2.3 21.7l5.28-1.38A9.7 9.7 0 1 0 12 2Zm0 17.65a7.94 7.94 0 0 1-4.05-1.1l-.29-.17-3.13.82.84-3.05-.19-.31A7.94 7.94 0 1 1 12 19.65Zm4.36-5.95c-.24-.12-1.41-.7-1.630-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18a7.2 7.2 0 0 1-1.33-1.66c-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.690 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg><span>Ask on WhatsApp</span></a>
+<div class="rd-progress" aria-hidden="true"><span></span></div>
+
+<main id="main" class="post" lang="he" dir="rtl" data-i18n-skip>
+  <div class="wrap">
+    <nav class="crumbs rv" aria-label="פירורי לחם" data-ta="aria-label:crumbsL" data-t="crumbs"><a href="../index.html">בית</a> / <a href="../index.html#services">שירותים</a> / <span aria-current="page">פיתוח אפליקציות</span></nav>
+
+    <nav class="toc-side" aria-label="ניווט מהיר בעמוד" data-ta="aria-label:sideL"><p class="toc-side-k" data-t="sideK">בעמוד</p><ol></ol></nav>
+
+    <article class="post-body">
+      <header class="post-head cc-hero">
+        <div class="cc-hero-txt">
+        <div class="sec-eyebrow rv" lang="en" dir="ltr">// App Development · Web Development</div>
+        <h1 class="rv" data-t="h1">פיתוח אפליקציות: מהרעיון שלך למוצר שעובד</h1>
+        <p class="cc-promise rv" data-t="lead">אנחנו בבונים דיגיטל מפתחים אפליקציות ומערכות מאפס, לעסקים ולמי שיש לו רעיון. אנחנו מתחילים משיחה, מבינים מה אתה צריך, ומלווים אותך עד שהמוצר באוויר.</p>
+        <div class="cc-acts rv">
+          <a class="btn-wa" href="https://wa.me/972527905122?text=%D7%94%D7%99%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%A2%D7%9E%D7%95%D7%93%20%D7%A4%D7%99%D7%AA%D7%95%D7%97%20%D7%94%D7%90%D7%A4%D7%9C%D7%99%D7%A7%D7%A6%D7%99%D7%95%D7%AA%20%D7%95%D7%99%D7%A9%20%D7%9C%D7%99%20%D7%A8%D7%A2%D7%99%D7%95%D7%9F%20%D7%9C%D7%90%D7%A4%D7%9C%D7%99%D7%A7%D7%A6%D7%99%D7%94" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.55L2.3 21.7l5.28-1.38A9.7 9.7 0 1 0 12 2Zm0 17.65a7.94 7.94 0 0 1-4.05-1.1l-.29-.17-3.13.82.84-3.05-.19-.31A7.94 7.94 0 1 1 12 19.65Zm4.36-5.95c-.24-.12-1.41-.7-1.63-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18a7.2 7.2 0 0 1-1.33-1.66c-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg><span data-t="waIdea">יש לי רעיון לאפליקציה</span></a>
+          <a class="btn" href="#yeshtor"><span data-t="heroSee">לראות פרויקט שבנינו</span><span aria-hidden="true">↓</span></a>
         </div>
-        <div class="sp-trust rv">
-          <span><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>15 minutes</span></span>
-          <span><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Free of charge</span></span>
-          <span><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>No commitment</span></span>
+        <div class="sp-trust cc-trust rv">
+          <span><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span data-t="tr1">משיחת היכרות ועד מוצר באוויר</span></span>
+          <span><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span data-t="tr2">סקיצה לאישור לפני שמתחילים</span></span>
+          <span><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span data-t="tr3">מעקב פרויקט בכל שלב</span></span>
         </div>
-      </div>
-      <aside class="sp-glance rv" aria-label="App development">
-        <div class="sp-glance-top"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M11 4h2M12 17v.01"/></svg></span><span class="sp-glance-name">App development</span></div>
-        <div class="sp-price"><b class="sp-quote">Custom quote</b></div>
-        <dl class="sp-facts"><div><dt>Ready in</dt><dd>Depends on scope</dd></div><div><dt>Best for</dt><dd>Businesses with regular customers and a clear idea</dd></div><div><dt>First step</dt><dd>A free 15-min call</dd></div></dl>
-        <a class="btn solid cta" href="../booking.html?s=app"><span class="cta-txt">Book a free call</span><svg class="cta-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <p class="sp-glance-note">Fixed price, agreed before we start</p>
-      </aside>
-    </div>
-  </header>
+        </div>
+        <div class="cc-show">
+          <figure class="dv" id="dv" lang="he" dir="rtl">
+            <div class="dv-stage" role="img" aria-label="פיתוח אפליקציות בבונים דיגיטל: מסכי אפליקציית יש תור בטלפון ובמחשב" data-ta="aria-label:dvAlt">
+              <div class="dv-lap" aria-hidden="true">
+                <div class="dv-lid"><div class="dv-scr">
+                  <div class="ys-desk">
+                    <div class="ys-side"><b class="ys-logo"><i></i>יש תור</b><span class="on">יומן</span><span>לקוחות</span><span>צוות</span><span>מסמכים</span><span>סטטיסטיקות</span><span>הגדרות</span></div>
+                    <div class="ys-main">
+                      <div class="ys-mh"><span><b>בוקר טוב, הדר</b><small>יום שלישי · 14.10</small></span><span class="ys-new">+ תור חדש</span></div>
+                      <div class="ys-kpi"><div><small>תורים היום</small><b>9</b></div><div><small>הושלמו</small><b>6</b></div><div><small>לא הגיעו</small><b>1</b></div><div><small>לקוחות חדשים</small><b>3</b></div></div>
+                      <div class="ys-week">
+                        <div><i>א׳</i><span style="--h:2">דני</span><span class="g">נועם</span><span>מאור</span><span class="e"></span><span>רון</span></div>
+                        <div><i>ב׳</i><span class="e"></span><span style="--h:2">עומר</span><span>אבי</span><span class="g">גיל</span></div>
+                        <div><i>ג׳</i><span>יואב</span><span class="g" style="--h:2">שי</span><span>עידו</span><span style="--h:2">תום</span></div>
+                        <div><i>ד׳</i><span style="--h:3">אלון</span><span class="e"></span><span>ליאור</span></div>
+                        <div><i>ה׳</i><span class="g">איתי</span><span>אורי</span><span style="--h:2">נדב</span><span>ערן</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div></div>
+                <div class="dv-base"></div>
+              </div>
+              <div class="dv-ph ys-ph" aria-hidden="true"><div class="ys-scr"><div class="ys-in">
+                <div class="ys-sb"><span>9:41</span><i></i></div>
+                <div class="ys-vs">
+                  <div class="ys-v on">
+                    <div class="ys-top"><i class="ys-bg"></i><b>יומן</b><span class="ys-tic"><i></i><i></i></span></div>
+                    <div class="ys-seg"><span class="on">יום</span><span>שבוע</span><span>חודש</span></div>
+                    <div class="ys-day">יום שלישי, 14.10<span>היום</span></div>
+                    <ul class="ys-cal">
+                      <li><time>09:00</time><span class="ys-ev"><b>דני</b> · תספורת גבר</span></li>
+                      <li><time>10:00</time><span class="ys-ev"><b>נועם</b> · סידור זקן</span></li>
+                      <li class="now"><time>11:00</time><span></span></li>
+                      <li><time>12:00</time><span class="ys-ev g"><b>מאור</b> · פייד + זקן</span></li>
+                      <li><time>13:00</time><span class="ys-free">פנוי</span></li>
+                      <li><time>14:00</time><span class="ys-ev"><b>עומר</b> · תספורת</span></li>
+                      <li><time>15:00</time><span class="ys-ev"><b>רון</b> · תספורת ילד</span></li>
+                      <li><time>16:00</time><span class="ys-ev g"><b>אבי</b> · צבע</span></li>
+                      <li><time>17:00</time><span class="ys-free">פנוי</span></li>
+                    </ul>
+                    <span class="ys-fab">+</span>
+                  </div>
+                  <div class="ys-v">
+                    <div class="ys-bh"><b>מספרת השכונה</b><small>מופעל באמצעות יש תור</small></div>
+                    <div class="ys-stp"><i class="on">1</i><em></em><i>2</i><em></em><i>3</i><em></em><i>4</i><em></em><i>5</i></div>
+                    <div class="ys-sub">בחירת שירות</div>
+                    <div class="ys-svc sel"><span><b>תספורת גבר</b><small>30 דק׳</small></span><strong>₪120</strong></div>
+                    <div class="ys-svc"><span><b>סידור זקן</b><small>20 דק׳</small></span><strong>₪60</strong></div>
+                    <div class="ys-svc"><span><b>תספורת + זקן</b><small>45 דק׳</small></span><strong>₪160</strong></div>
+                    <div class="ys-svc"><span><b>תספורת ילד</b><small>25 דק׳</small></span><strong>₪80</strong></div>
+                    <div class="ys-tab">
+                      <span><svg viewBox="0 0 24 24"><path d="M4 10v10h16V10M3 6l1.5-3h15L21 6v2a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0z"/></svg>עמוד העסק</span>
+                      <span class="mid on"><svg viewBox="0 0 24 24"><path d="M4 5h16v16H4zM4 10h16M8 3v4M16 3v4M12 13v5M9.5 15.5h5"/></svg>קביעת תור</span>
+                      <span><svg viewBox="0 0 24 24"><path d="M9 4h6v3H9zM6 5.5h-1v15h14v-15h-1M8 11h8M8 15h5"/></svg>התורים שלי</span>
+                    </div>
+                  </div>
+                  <div class="ys-v">
+                    <div class="ys-top"><i class="ys-bg"></i><b>לקוחות</b><span class="ys-tic"><i></i><i></i></span></div>
+                    <div class="ys-h"><b>לקוחות</b><small>212 לקוחות · מתעדכן אחרי כל תור</small></div>
+                    <div class="ys-search">חיפוש לפי שם או טלפון</div>
+                    <ul class="ys-list">
+                      <li><span class="ys-av">ד</span><span class="ys-who"><b>דני כהן</b><small><bdi dir="ltr">052-•••-4410</bdi> · 14 תורים</small></span><span class="ys-dot g"></span></li>
+                      <li><span class="ys-av">מ</span><span class="ys-who"><b>מאור לוי</b><small><bdi dir="ltr">054-•••-1832</bdi> · 9 תורים</small></span><span class="ys-dot y"></span></li>
+                      <li><span class="ys-av">נ</span><span class="ys-who"><b>נועם אזולאי</b><small><bdi dir="ltr">050-•••-7719</bdi> · 11 תורים</small></span><span class="ys-dot g"></span></li>
+                      <li><span class="ys-av">י</span><span class="ys-who"><b>יוסי פרץ</b><small><bdi dir="ltr">052-•••-2205</bdi> · 6 תורים</small></span><span class="ys-dot r"></span></li>
+                      <li><span class="ys-av">ע</span><span class="ys-who"><b>עומר ביטון</b><small><bdi dir="ltr">053-•••-6081</bdi> · 3 תורים</small></span><span class="ys-tag n">חדש</span></li>
+                    </ul>
+                    <span class="ys-fab">+</span>
+                  </div>
+                </div>
+              </div></div></div>
+            </div>
+            <div class="dv-bar"><span class="dv-dots" aria-hidden="true"><i class="on"></i><i></i><i></i></span><button type="button" class="rp" data-dv-toggle hidden><span class="dv-pa" data-t="dvPause">השהיית ההדגמה</span><span class="dv-pl" data-t="dvPlay">המשך ההדגמה</span></button></div>
+          </figure>
+        </div>
+      </header>
 
-  <section class="sp-sec" aria-labelledby="sp-pains-h">
-    <div class="wrap">
-      <div class="sec-eyebrow rv">// sound familiar?</div>
-      <h2 class="rv" id="sp-pains-h">Sound familiar?</h2>
-      <div class="sp-pains"><div class="sp-pain rv"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16v.01"/></svg><span>You have an idea but don't know where to start.</span></div><div class="sp-pain rv"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16v.01"/></svg><span>Agencies quoted a fortune before hearing the details.</span></div><div class="sp-pain rv"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16v.01"/></svg><span>You're not sure what the first version really needs.</span></div></div>
-      <p class="sp-answer rv"><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg><span>Here is how we fix that.</span></p>
-    </div>
-  </section>
+      <nav class="toc pr" aria-label="תוכן העמוד" data-ta="aria-label:tocL">
+        <p class="toc-k" data-t="tocK">מה בעמוד</p>
+        <ol>
+          <li><a href="#who" data-t="t1"><span>01</span>למי אנחנו מפתחים</a></li>
+          <li><a href="#build" data-t="t2"><span>02</span>מה אנחנו מפתחים</a></li>
+          <li><a href="#process" data-t="t3"><span>03</span>איך אנחנו עובדים</a></li>
+          <li><a href="#yeshtor" data-t="t4"><span>04</span>פרויקט שבנינו: יש תור</a></li>
+          <li><a href="#time" data-t="t5"><span>05</span>כמה זמן זה לוקח</a></li>
+          <li><a href="#security" data-t="t6"><span>06</span>אבטחה</a></li>
+          <li><a href="#faq" data-t="t7"><span>07</span>שאלות נפוצות</a></li>
+          <li><a href="#more" data-t="t8"><span>08</span>שירותים נוספים</a></li>
+        </ol>
+      </nav>
 
-  <section class="sp-sec" aria-labelledby="sp-gets-h">
-    <div class="wrap">
-      <div class="sec-eyebrow rv">// what you get</div>
-      <h2 class="rv" id="sp-gets-h">What you get</h2>
-      <ul class="sp-gets rv"><li><span class="sp-check"><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span>A scoping session: what goes in the first version and what waits</span></li><li><span class="sp-check"><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span>Screen designs you approve before we build</span></li><li><span class="sp-check"><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span>One app for Android and iPhone</span></li><li><span class="sp-check"><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span>Login, notifications and payments when needed</span></li><li><span class="sp-check"><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span>A management panel for you</span></li><li><span class="sp-check"><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span>Help publishing to Google Play and the App Store</span></li><li><span class="sp-check"><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span>Testing on real devices</span></li><li><span class="sp-check"><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span>Updates and fixes after launch</span></li></ul>
-      <div class="sp-inline-cta rv"><a class="btn solid cta" href="../booking.html?s=app"><span class="cta-txt">Book a free call</span><svg class="cta-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><p>Want to see if it fits your business?</p></div>
-    </div>
-  </section>
+      <!-- ===== 01 ===== -->
+      <section class="ch-sec" aria-labelledby="who">
+        <div class="ch-head pr"><span class="ch-n">01</span><span class="ch-k" data-t="ck1">מפתחי אפליקציות</span></div>
+        <h2 id="who" data-t="h01">למי אנחנו מפתחים</h2>
+        <ul class="cards c3 aud pr">
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg></span><span><b data-t="a1t">יש לך רעיון כבר הרבה זמן?</b><span class="d" data-t="a1d">אנחנו עובדים עם יזמים צעירים ובינוניים שרוצים להפוך רעיון למוצר דיגיטלי אמיתי. אנחנו עוזרים לחדד אותו, בונים אותו, ומעלים אותו לאוויר.</span></span></li>
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M16 9h2a2 2 0 0 1 2 2v10M2 21h20M8 7h4M8 11h4M8 15h4"/></svg></span><span><b data-t="a2t">העסק שלך צריך אפליקציה או מערכת?</b><span class="d" data-t="a2d">אנחנו בונים מערכות שעושות סדר בעבודה היומיומית, מאפס ולפי הצורך שלך.</span></span></li>
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10h3V7L6.5 3.5a6 6 0 0 1 8 8l6 6a2 2 0 0 1-3 3l-6-6a6 6 0 0 1-8-8L7 10"/></svg></span><span><b data-t="a3t">כבר יש לך אפליקציה?</b><span class="d" data-t="a3d">אנחנו משדרגים ומתקנים: עיצוב חדש, אנימציות, חלקים בתלת-ממד (3D), תיקונים טכניים, ואם צריך, פיתוח מחדש מאפס.</span></span></li>
+        </ul>
+      </section>
 
-  <section class="sp-sec" aria-labelledby="sp-steps-h">
-    <div class="wrap">
-      <div class="sec-eyebrow rv">// how it works</div>
-      <h2 class="rv" id="sp-steps-h">How it works</h2>
-      <div class="sp-steps"><div class="sp-step rv"><span class="sp-step-n">01</span><h3>Free intro call</h3><p>15 minutes. We learn the business and what it needs.</p></div><div class="sp-step rv"><span class="sp-step-n">02</span><h3>Fixed-price quote</h3><p>A clear number and scope in writing. No hourly surprises.</p></div><div class="sp-step rv"><span class="sp-step-n">03</span><h3>Build in stages</h3><p>You see progress along the way and try the app on your own phone.</p></div><div class="sp-step rv"><span class="sp-step-n">04</span><h3>Store launch</h3><p>We help publish the app and stay on for updates.</p></div></div>
-    </div>
-  </section>
+      <!-- ===== 02 ===== -->
+      <section class="ch-sec" aria-labelledby="build">
+        <div class="ch-head pr"><span class="ch-n">02</span><span class="ch-k" lang="en" dir="ltr">App · Web Development</span></div>
+        <h2 id="build" data-t="h02">מה אנחנו מפתחים</h2>
+        <p data-t="p02">כחברה לפיתוח אפליקציות, אנחנו לא מוגבלים לסוג אחד של מוצר. הנה חלק ממה שאנחנו בונים:</p>
+        <ul class="wb wide pr">
+          <li tabindex="0"><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg></span><b data-t="w1t">אפליקציות לאנדרואיד ולאייפון</b><span class="wb-sw"><span class="d" data-t="w1d">וגם אפליקציות ווב שעובדות בכל דפדפן.</span><em class="wb-ex" data-t="w1e"><span>למשל:</span>לקוח מוריד את האפליקציה מהחנות, ומזמין ממנה בשתי לחיצות.</em></span></li>
+          <li tabindex="0"><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 20v-1.5a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4V20M9 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM22 20v-1.5a4 4 0 0 0-3-3.9M16 4.1a3.5 3.5 0 0 1 0 6.8"/></svg></span><b data-t="w2t">מערכות CRM</b><span class="wb-sw"><span class="d" data-t="w2d">לניהול לקוחות, פניות ומכירות.</span><em class="wb-ex" data-t="w2e"><span>למשל:</span>כל פנייה מהאתר נפתחת ככרטיס לקוח, עם תזכורת מתי לחזור אליו.</em></span></li>
+          <li tabindex="0"><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2.2"/><path d="M5.8 16a3.4 3.4 0 0 1 6.4 0M14 10h4M14 13h3"/></svg></span><b data-t="w3t">מערכות ניהול עובדים</b><span class="wb-sw"><span class="d" data-t="w3d">מעקב אחרי עובדים, אפליקציה לניהול שעות, משמרות ושכר.</span><em class="wb-ex" data-t="w3e"><span>למשל:</span>עובד מחתים כרטיס עם NFC, והשעות נרשמות לבד.</em></span></li>
+          <li tabindex="0"><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8l-9-5-9 5 9 5 9-5zM3 8v8l9 5 9-5V8M12 13v8"/></svg></span><b data-t="w4t">מעקב מלאי והזמנות</b><span class="wb-sw"><span class="d" data-t="w4d">רואים מה יש במחסן ומה כבר הוזמן, בזמן אמת.</span><em class="wb-ex" data-t="w4e"><span>למשל:</span>כשמוצר עומד להיגמר, מקבלים התראה לפני שהמדף מתרוקן.</em></span></li>
+          <li tabindex="0"><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6M9 16h3"/></svg></span><b data-t="w5t">אפליקציה לניהול חשבונות</b><span class="wb-sw"><span class="d" data-t="w5d">הוצאות והכנסות, מסודרות במקום אחד.</span><em class="wb-ex" data-t="w5e"><span>למשל:</span>מצלמים קבלה, וההוצאה נרשמת לבד בחודש הנכון.</em></span></li>
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v16H4zM4 10h16M8 3v4M16 3v4M8 14h3M8 17h6"/></svg></span><b><a href="booking-system.html" data-t="w6t">אפליקציה לקביעת תורים</a></b><span class="wb-sw"><span class="d" data-t="w6d">עם תזכורות, ניהול עובדים ודירוג לקוחות.</span><em class="wb-ex" data-t="w6e"><span>למשל:</span>הלקוח קובע תור לבד, ומקבל תזכורת יום לפני.</em></span><span class="wb-go" aria-hidden="true"><span data-t="w6g">לעמוד המוצר</span> ←</span></li>
+          <li tabindex="0"><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.9 5.6L19.5 10l-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.4zM19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></span><b data-t="w7t">מערכות AI חכמות</b><span class="wb-sw"><span class="d" data-t="w7d">יועץ או עוזר אישי באתר ובאפליקציה, שעונה ללקוחות ומלווה אותם.</span><em class="wb-ex" data-t="w7e"><span>למשל:</span>עוזר AI עונה ללקוח באתר בשתיים בלילה, ומעביר אליך רק את מה שחשוב.</em></span></li>
+          <li tabindex="0"><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M2 9a15 15 0 0 1 20 0"/><circle cx="12" cy="19.5" r="1"/></svg></span><b data-t="w8t">חיבור למכשירים</b><span class="wb-sw"><span class="d" data-t="w8d">NFC, תדרים ו-Wi-Fi, ניהול שערים, ושליטה מרחוק במוצרי חשמל.</span><em class="wb-ex" data-t="w8e"><span>למשל:</span>פותחים את שער החניה מהטלפון, בלי שלט.</em></span></li>
+          <li tabindex="0"><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 10h19M6 15h4"/></svg></span><b data-t="w9t">סליקה וחיובים</b><span class="wb-sw"><span class="d" data-t="w9d">תשלום חד פעמי, מנויים חודשיים וחיוב אוטומטי.</span><em class="wb-ex" data-t="w9e"><span>למשל:</span>המנוי מתחדש ומחויב לבד, כל חודש.</em></span></li>
+        </ul>
 
-  <section class="sp-sec">
-    <div class="wrap">
-      <div class="sec-eyebrow rv">// real example</div>
-      <div class="sp-proof rv">
-        <div class="sp-proof-text"><b>Torio, a booking app we built</b><span>Clients pick a service and time themselves</span></div>
-        <a class="btn" href="https://n1ace.github.io/bookingapp/" target="_blank" rel="noopener noreferrer">Open the demo</a>
-      </div>
-    </div>
-  </section>
+        <p class="lead-in" data-t="ioK">ככה זה נראה כשאפליקציה מדברת עם מכשירים:</p>
+        <figure class="io pr" id="io-demo" data-step="3">
+          <figcaption class="sr-only" data-t="ioCap">הדגמה: טלפון נוגע בקורא NFC והשער נפתח, ובפאנל השני האור נדלק מרחוק מהטלפון.</figcaption>
+          <div class="io-p">
+            <div class="io-k"><b data-t="ioG">שער חניה</b><small>NFC</small></div>
+            <svg viewBox="0 0 280 150" aria-hidden="true" focusable="false">
+              <line x1="10" y1="132" x2="270" y2="132" stroke="#2A3F63" stroke-width="2"/>
+              <rect x="112" y="72" width="6" height="60" fill="#2A3F63"/>
+              <rect x="100" y="46" width="30" height="36" rx="6" fill="#16294A" stroke="#7FB0FF" stroke-width="1.5"/>
+              <path d="M111 58a8 8 0 0 1 0 12M117 54a14 14 0 0 1 0 20" stroke="#7FB0FF" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+              <circle class="io-ring" data-c="1" cx="115" cy="64" r="16" fill="none" stroke="#7FB0FF" stroke-width="2"/>
+              <circle class="io-ring r2" data-c="1" cx="115" cy="64" r="16" fill="none" stroke="#7FB0FF" stroke-width="2"/>
+              <g class="io-tap sty" data-c="1">
+                <rect x="34" y="40" width="40" height="72" rx="8" fill="#E6ECF6"/>
+                <rect x="38" y="48" width="32" height="54" rx="3" fill="#0B1B33"/>
+                <path d="M50 70a6 6 0 0 1 0 9M55 67a11 11 0 0 1 0 15" stroke="#7FB0FF" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+                <rect x="49" y="105" width="10" height="2.5" rx="1.2" fill="#8FA0BD"/>
+              </g>
+              <rect x="168" y="56" width="8" height="76" rx="2" fill="#C9D6EA"/>
+              <rect x="256" y="56" width="8" height="76" rx="2" fill="#C9D6EA"/>
+              <circle class="io-led sty" data-c="2" cx="172" cy="48" r="4"/>
+              <g class="io-door sty" data-c="2" stroke="#7FB0FF" stroke-width="2.5" fill="none">
+                <rect x="178" y="66" width="76" height="56" rx="3"/>
+                <path d="M191 66v56M204 66v56M217 66v56M230 66v56M243 66v56" stroke-width="2"/>
+              </g>
+            </svg>
+            <span class="io-pill sty" data-c="2"><i aria-hidden="true"></i><span class="q" data-t="ioGq">ממתין לסריקה</span><span class="w" data-t="ioGw">השער נפתח</span></span>
+          </div>
+          <div class="io-p">
+            <div class="io-k"><b data-t="ioL">תאורה בבית</b><small>Wi-Fi</small></div>
+            <svg viewBox="0 0 280 150" aria-hidden="true" focusable="false">
+              <defs><radialGradient id="io-gl"><stop offset="0" stop-color="#FFD66B" stop-opacity=".55"/><stop offset="1" stop-color="#FFD66B" stop-opacity="0"/></radialGradient></defs>
+              <rect x="34" y="40" width="40" height="72" rx="8" fill="#E6ECF6"/>
+              <rect x="38" y="48" width="32" height="54" rx="3" fill="#0B1B33"/>
+              <rect class="io-sw sty" data-c="3" x="44" y="70" width="20" height="11" rx="5.5"/>
+              <circle class="io-knob sty" data-c="3" cx="49.5" cy="75.5" r="4" fill="#FFFFFF"/>
+              <rect x="49" y="105" width="10" height="2.5" rx="1.2" fill="#8FA0BD"/>
+              <g class="io-wave sty" data-c="3" stroke="#7FB0FF" stroke-width="2.2" fill="none" stroke-linecap="round">
+                <path d="M105.1 79.9A10 10 0 0 1 105.1 94.1"/>
+                <path d="M110.7 74.3A18 18 0 0 1 110.7 99.7"/>
+                <path d="M116.4 68.6A26 26 0 0 1 116.4 105.4"/>
+              </g>
+              <line x1="210" y1="0" x2="210" y2="40" stroke="#8FA0BD" stroke-width="2"/>
+              <circle class="io-glow sty" data-c="3" cx="210" cy="72" r="56" fill="url(#io-gl)"/>
+              <g class="io-glow sty" data-c="3" stroke="#FFD66B" stroke-width="2.2" stroke-linecap="round">
+                <path d="M210 104v10M180 72h-10M240 72h10M188 50l-7-7M232 50l7-7M188 94l-7 7M232 94l7 7"/>
+              </g>
+              <rect x="203" y="40" width="14" height="10" rx="2" fill="#8FA0BD"/>
+              <circle class="io-bulb sty" data-c="3" cx="210" cy="70" r="20" stroke="#C9D6EA" stroke-width="1.5"/>
+            </svg>
+            <span class="io-pill sty" data-c="3"><i aria-hidden="true"></i><span class="q" data-t="ioLq">האור כבוי</span><span class="w" data-t="ioLw">האור נדלק מרחוק</span></span>
+          </div>
+          <button type="button" class="rp" data-replay hidden><span aria-hidden="true">↻</span><span data-t="rp1">הפעל שוב את ההדגמה</span></button>
+        </figure>
 
-  <section class="sp-sec" aria-labelledby="sp-faq-h">
-    <div class="wrap">
-      <div class="sec-eyebrow rv">// questions</div>
-      <h2 class="rv" id="sp-faq-h">Questions before you book</h2>
-      <div class="sp-faq"><details class="rv" open><summary>How much does an app cost?</summary><p>It depends on the screens and features. After a 60-minute session you get a fixed quote.</p></details><details class="rv"><summary>Do I need an app, or is a website enough?</summary><p>Often a good website is enough. We will tell you honestly on the call.</p></details><details class="rv"><summary>Who owns the code?</summary><p>You do. The app and its code belong to the business.</p></details></div>
-    </div>
-  </section>
+        <p data-t="p02b">ואם הרעיון שלך לא ברשימה, ספר לנו. רוב מה שאנחנו בונים לא היה ברשימה של אף אחד לפני כן.</p>
+      </section>
 
-  <section class="sp-final">
-    <div class="wrap">
-      <div class="sp-final-box rv">
+      <!-- ===== 03 ===== -->
+      <section class="ch-sec" aria-labelledby="process">
+        <div class="ch-head pr"><span class="ch-n">03</span><span class="ch-k" data-t="ck3">תהליך</span></div>
+        <h2 id="process" data-t="h03">איך אנחנו עובדים</h2>
+        <div class="pt wide">
+          <nav class="pt-nav" aria-label="שלבי העבודה" data-ta="aria-label:ptL">
+            <p class="pt-nav-k" data-t="ptK">ארבעה שלבים</p>
+            <ol>
+              <li><a href="#st1" data-t="pn1"><span>01</span>שיחת היכרות</a></li>
+              <li><a href="#st2" data-t="pn2"><span>02</span>סקיצה ואפיון</a></li>
+              <li><a href="#st3" data-t="pn3"><span>03</span>פיתוח</a></li>
+              <li><a href="#st4" data-t="pn4"><span>04</span>הצגה ובדיקה</a></li>
+            </ol>
+          </nav>
+          <ol class="pt-steps">
+            <li class="pt-s pr" id="st1"><span class="pt-n" aria-hidden="true">1</span><div class="pt-b"><b data-t="s1t">שיחת היכרות.</b><p data-t="s1d">אנחנו מבינים לעומק מה אתה צריך, ובונים תמונה ראשונית של כל תהליך הפיתוח.</p></div></li>
+            <li class="pt-s pr" id="st2"><span class="pt-n" aria-hidden="true">2</span><div class="pt-b"><b data-t="s2t">סקיצה ואפיון.</b><p data-t="s2d">אנחנו בונים סקיצה ראשונית של המוצר עם הפרטים הטכניים, מציגים לך אותה עם הסבר מלא, ומתחילים לעבוד רק אחרי שאישרת.</p></div></li>
+            <li class="pt-s pr" id="st3"><span class="pt-n" aria-hidden="true">3</span><div class="pt-b"><b data-t="s3t">פיתוח.</b><p data-t="s3d">אחרי האישור אנחנו מפתחים את המוצר.</p></div></li>
+            <li class="pt-s pr" id="st4"><span class="pt-n" aria-hidden="true">4</span><div class="pt-b"><b data-t="s4t">הצגה, תיקונים ובדיקה.</b><p data-t="s4d">אנחנו מציגים לך את המוצר המוכן, מתקנים לפי מה שאתה צריך, ועוברים שוב על כל מה שבנינו לפני שהוא עולה.</p>
+              <div class="tk">
+                <div class="tk-top"><b data-t="tkT">מעקב פרויקט</b><span><span class="tk-eg" data-t="tkEg">דוגמה</span><bdi class="tk-code" dir="ltr">BD-APP-1026</bdi></span></div>
+                <div class="tk-st" data-t="tkS"><span>שלב 4 מתוך 4</span><b>הצגה, תיקונים ובדיקה</b></div>
+                <div class="tk-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="90" aria-label="התקדמות הפרויקט" data-ta="aria-label:tkBar"><i></i></div>
+                <ul class="tk-log">
+                  <li data-t="tk1"><time>16.10</time><span>תיקונים אחרי ההצגה: צבעים ומסך התשלום</span></li>
+                  <li data-t="tk2"><time>15.10</time><span>הצגת המוצר המוכן</span></li>
+                  <li data-t="tk3"><time>13.10</time><span>חיבור הסליקה והמנויים הושלם</span></li>
+                </ul>
+                <a href="../track.html" data-t="tkA">לעמוד מעקב הפרויקט</a>
+              </div>
+            </div></li>
+          </ol>
+        </div>
+        <p data-t="p03">לאורך כל הדרך יש לך <a href="../track.html">מעקב פרויקט</a>: אתה רואה בדיוק באיזה שלב הפרויקט נמצא, ואילו עבודות בוצעו בכל יום.</p>
+      </section>
+
+      <!-- ===== 04 ===== -->
+      <section class="ch-sec" aria-labelledby="yeshtor">
+        <div class="ch-head pr"><span class="ch-n">04</span><span class="ch-k" data-t="ck4">מקרה בוחן</span></div>
+        <h2 id="yeshtor" data-t="h04">פרויקט שבנינו: יש תור</h2>
+        <p data-t="p04">יש תור היא אפליקציה שפיתחנו מאפס: מערכת לקביעת תורים לבעלי עסקים, שעובדת במנוי חודשי. בעל העסק משלם מנוי, ומקבל מערכת שלמה לניהול העסק.</p>
+
+        <div class="ycw wide">
+          <div class="pr">
+            <p class="yf-k" data-t="yfK">מה יש באפליקציה:</p>
+            <ul class="yf">
+              <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v16H4zM4 10h16M8 3v4M16 3v4M13 13l-2 3h3l-2 3"/></svg></span><span data-t="f1">ניהול יומן וקביעת תורים, עם אוטומציות.</span></li>
+              <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="2" width="8" height="20" rx="4"/><circle cx="12" cy="7" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="17" r="1.5"/></svg></span><span data-t="f2">מעקב אחרי לקוחות, ודירוג לקוחות בשיטת רמזור.</span></li>
+              <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 21v-4M17 21v-4M5 17h14M6 13h12a2 2 0 0 1 2 2v2H4v-2a2 2 0 0 1 2-2zM8 13V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v8"/></svg></span><span data-t="f3">ניהול עובדים וניהול כיסאות מושכרים.</span></li>
+              <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9zM14 3v6h6M8 17l2.5-.5L16 11l-2-2-5.5 5.5z"/></svg></span><span data-t="f4">מערכת שלמה לחתימה ושליחה של מסמכים.</span></li>
+              <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v10h16V10M3 6l1.5-3h15L21 6v2a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0zM10 20v-5h4v5"/></svg></span><span data-t="f5">דף עסקי מעוצב לכל בעל עסק, עם חיבור לרשתות החברתיות.</span></li>
+              <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 0 1-15.5 6.2M3 12a9 9 0 0 1 15.5-6.2M18.5 2v4h-4M5.5 22v-4h4"/></svg></span><span data-t="f6">סנכרון ליומן גוגל וליומן הטלפון.</span></li>
+            </ul>
+          </div>
+
+          <div class="yc pr" role="region" aria-roledescription="קרוסלה" aria-label="מסכים מאפליקציית יש תור" data-ta="aria-label:ycL;aria-roledescription:ycR">
+            <div class="ys-ph yc-ph" lang="he" dir="rtl"><div class="ys-scr"><div class="ys-in">
+              <div class="ys-sb" aria-hidden="true"><span>9:41</span><i></i></div>
+              <div class="yc-track" tabindex="0">
+                <div class="yc-s" role="group" aria-roledescription="מסך" aria-label="1 מתוך 5: עמוד עסקי" data-ta="aria-roledescription:ysR;aria-label:s1">
+                  <div class="ys-col" aria-hidden="true">
+                    <div class="ys-cover"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.1 15.9M14.5 14.5L20 20M8.1 8.1L12 12"/></svg><span><b>מספרת השכונה</b><span class="ys-open">פתוח · נסגר ב-20:00</span></span></div>
+                    <div class="ys-biz">
+                      <span class="ys-rate">★ 4.9 <small>(128 ביקורות)</small></span>
+                      <span class="ys-ln"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>רחוב הדקל 12, אשדוד</span>
+                      <span class="ys-ln"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><bdi dir="ltr">052-•••-4410</bdi></span>
+                      <span class="ys-soc"><span><i><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></i>חיוג</span><span><i><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1.2-4.6A8 8 0 1 1 21 12z"/></svg></i>וואטסאפ</span><span><i><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></i>אינסטגרם</span><span><i><svg viewBox="0 0 24 24"><path d="M3 11l18-8-8 18-2-8z"/></svg></i>ניווט</span></span>
+                      <span class="ys-cta">קבעו תור</span>
+                      <span class="ys-svl"><b>השירותים שלנו</b><span><i>תספורת גבר</i><em>₪120</em></span><span><i>סידור זקן</i><em>₪60</em></span><span><i>תספורת + זקן</i><em>₪160</em></span></span>
+                    </div>
+                    <div class="ys-tab">
+                      <span class="on"><svg viewBox="0 0 24 24"><path d="M4 10v10h16V10M3 6l1.5-3h15L21 6v2a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0z"/></svg>עמוד העסק</span>
+                      <span class="mid"><svg viewBox="0 0 24 24"><path d="M4 5h16v16H4zM4 10h16M8 3v4M16 3v4M12 13v5M9.5 15.5h5"/></svg>קביעת תור</span>
+                      <span><svg viewBox="0 0 24 24"><path d="M9 4h6v3H9zM6 5.5h-1v15h14v-15h-1M8 11h8M8 15h5"/></svg>התורים שלי</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="yc-s" role="group" aria-roledescription="מסך" aria-label="2 מתוך 5: צוות וכיסאות" data-ta="aria-roledescription:ysR;aria-label:s2">
+                  <div class="ys-col" aria-hidden="true">
+                    <div class="ys-top"><i class="ys-bg"></i><b>צוות</b><span class="ys-tic"><i></i><i></i></span></div>
+                    <div class="ys-h"><b>צוות</b><small>3 עובדים · 2 כיסאות מושכרים</small></div>
+                    <div class="ys-btn">+ הוספת עובד</div>
+                    <div class="ys-seg"><span class="on">הכל</span><span>עובדים</span><span>שוכרי כיסא</span></div>
+                    <ul class="ys-list">
+                      <li><span class="ys-av">ה</span><span class="ys-who"><b>הדר</b><small>פעיל: א׳–ה׳ · 24 תורים השבוע</small></span><span class="ys-tag">בעל/ת העסק</span></li>
+                      <li><span class="ys-av">נ</span><span class="ys-who"><b>נועם</b><small>כיסא 2 · עמלה החודש ₪640</small></span><span class="ys-tag y">שוכר כיסא</span></li>
+                      <li><span class="ys-av">מ</span><span class="ys-who"><b>מאור</b><small>18 תורים השבוע</small></span><span class="ys-tag g">עובד</span></li>
+                      <li><span class="ys-av">ש</span><span class="ys-who"><b>שי</b><small>כיסא 3 · עמלה החודש ₪410</small></span><span class="ys-tag y">שוכר כיסא</span></li>
+                      <li><span class="ys-av">4</span><span class="ys-who"><b>כיסא 4</b><small>אפשר להשכיר</small></span><span class="ys-tag n">פנוי</span></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="yc-s" role="group" aria-roledescription="מסך" aria-label="3 מתוך 5: מסמכים לחתימה" data-ta="aria-roledescription:ysR;aria-label:s3">
+                  <div class="ys-col" aria-hidden="true">
+                    <div class="ys-top"><i class="ys-bg"></i><b>מסמכים</b><span class="ys-tic"><i></i><i></i></span></div>
+                    <div class="ys-h"><b>מסמכים</b><small>שולחים מסמך, והלקוח חותם מהטלפון.</small></div>
+                    <div class="ys-btn">+ שליחה חדשה</div>
+                    <div class="ys-seg"><span>ספריית מסמכים</span><span class="on">היסטוריית חתימות</span></div>
+                    <ul class="ys-list">
+                      <li><span class="ys-doc"><svg viewBox="0 0 24 24"><path d="M14 3H6v18h12V7zM14 3v4h4M9 12h6M9 16h4"/></svg></span><span class="ys-who"><b>הצהרת בריאות</b><small>דני כהן · 14.10</small></span><span class="ys-tag g">נחתם</span></li>
+                      <li><span class="ys-doc"><svg viewBox="0 0 24 24"><path d="M14 3H6v18h12V7zM14 3v4h4M9 12h6M9 16h4"/></svg></span><span class="ys-who"><b>טופס הסכמה לטיפול</b><small>מאור לוי · נשלח היום</small></span><span class="ys-tag y">ממתין</span></li>
+                      <li><span class="ys-doc"><svg viewBox="0 0 24 24"><path d="M14 3H6v18h12V7zM14 3v4h4M9 12h6M9 16h4"/></svg></span><span class="ys-who"><b>תקנון ביטולים</b><small>נועם אזולאי · 12.10</small></span><span class="ys-tag g">נחתם</span></li>
+                    </ul>
+                    <div class="ys-sig"><svg viewBox="0 0 200 40"><path d="M8 28c10-14 18-20 22-14s-8 16-2 16 14-22 20-20-4 18 2 18 10-12 16-12 4 10 10 10 12-8 18-8 6 6 14 4 20-6 30-4"/></svg><small>נחתם על ידי דני כהן · 14.10 · 10:42</small></div>
+                  </div>
+                </div>
+                <div class="yc-s" role="group" aria-roledescription="מסך" aria-label="4 מתוך 5: סטטיסטיקות" data-ta="aria-roledescription:ysR;aria-label:s4">
+                  <div class="ys-col" aria-hidden="true">
+                    <div class="ys-top"><i class="ys-bg"></i><b>סטטיסטיקות</b><span class="ys-tic"><i></i><i></i></span></div>
+                    <div class="ys-h"><b>סטטיסטיקות</b><small>נתוני העסק בטווח שבחרת</small></div>
+                    <span class="ys-sel">30 ימים אחרונים ▾</span>
+                    <div class="ys-kv"><div><small>סה״כ תורים</small><b>128</b></div><div><small>הושלמו</small><b>112</b></div><div><small>לא הגיעו</small><b>3</b></div><div><small>בוטלו מראש</small><b>9</b></div></div>
+                    <div class="ys-chart"><small>תורים לפי שבוע</small><div class="ys-bars"><i style="--h:52%"></i><i style="--h:64%"></i><i style="--h:58%"></i><i style="--h:76%"></i><i style="--h:70%"></i><i style="--h:92%"></i></div></div>
+                  </div>
+                </div>
+                <div class="yc-s" role="group" aria-roledescription="מסך" aria-label="5 מתוך 5: סנכרון ותזכורות" data-ta="aria-roledescription:ysR;aria-label:s5">
+                  <div class="ys-col" aria-hidden="true">
+                    <div class="ys-top"><i class="ys-bg"></i><b>הגדרות</b><span class="ys-tic"><i></i><i></i></span></div>
+                    <div class="ys-h"><b>הגדרות</b><small>סנכרון יומנים ותזכורות ללקוחות</small></div>
+                    <p class="ys-grp">סנכרון יומן</p>
+                    <ul class="ys-list ys-set">
+                      <li>יומן גוגל<span class="ys-tg on"></span></li>
+                      <li>יומן הטלפון<span class="ys-tg on"></span></li>
+                    </ul>
+                    <p class="ys-grp">תזכורות ללקוחות</p>
+                    <ul class="ys-list ys-set">
+                      <li>SMS יום לפני התור<span class="ys-tg on"></span></li>
+                      <li>וואטסאפ שעתיים לפני<span class="ys-tg on"></span></li>
+                      <li>מייל אישור קביעה<span class="ys-tg"></span></li>
+                    </ul>
+                    <p class="ys-grp">תשלומים</p>
+                    <ul class="ys-list ys-set">
+                      <li>חיוב חודשי אוטומטי<span class="ys-tg on"></span></li>
+                      <li>קבלה ללקוח במייל<span class="ys-tg on"></span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div></div></div>
+            <div class="yc-nav" hidden>
+              <button type="button" class="yc-btn" data-yc="prev" aria-label="המסך הקודם" data-ta="aria-label:ycP"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+              <div class="yc-dots">
+                <button type="button" aria-label="עמוד עסקי" data-ta="aria-label:d1" aria-current="true"></button>
+                <button type="button" aria-label="צוות וכיסאות" data-ta="aria-label:d2"></button>
+                <button type="button" aria-label="מסמכים לחתימה" data-ta="aria-label:d3"></button>
+                <button type="button" aria-label="סטטיסטיקות" data-ta="aria-label:d4"></button>
+                <button type="button" aria-label="סנכרון ותזכורות" data-ta="aria-label:d5"></button>
+              </div>
+              <button type="button" class="yc-btn" data-yc="next" aria-label="המסך הבא" data-ta="aria-label:ycN"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+            </div>
+            <p class="yc-cap" aria-live="polite"></p>
+            <p class="yc-note" data-t="ycNote">המסכים נבנו מחדש לדוגמה, עם שמות ופרטים מומצאים.</p>
+          </div>
+        </div>
+
+        <p class="lead-in" data-t="p04b"><strong>חיוב חודשי אוטומטי.</strong> חיברנו סליקה דרך טרנזילה, והקמנו מערכת טוקנים: פרטי האשראי נשמרים אצל חברת הסליקה, ואצלנו נשמר רק טוקן מאובטח. ככה המנוי מחויב לבד, כל חודש בחודשו. את אותו הדבר, ומערכות חיוב אחרות, אנחנו יכולים לבנות גם בשבילך.</p>
+        <figure class="bf pr" id="bf-demo" data-step="4">
+          <figcaption class="bf-h" data-t="bfH">איך עובד החיוב החודשי ביש תור</figcaption>
+          <ol class="bf-steps">
+            <li class="sty" data-c="1"><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 10h19M6 15h4"/></svg></span><b data-t="bf1t">לקוח מזין אשראי</b><span data-t="bf1d">פרטי הכרטיס עוברים ישר לטרנזילה</span></li>
+            <li class="tz sty" data-c="2"><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="M10.8 12.2L20 3M16 7l3 3M14 9l2 2"/></svg></span><b data-t="bf2t">טרנזילה שומרת ומחזירה טוקן</b><span data-t="bf2d">פרטי האשראי נשמרים אצל חברת הסליקה</span></li>
+            <li class="sty" data-c="3"><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 2l4 4-4 4M3 11V9a3 3 0 0 1 3-3h15M7 22l-4-4 4-4M21 13v2a3 3 0 0 1-3 3H3"/></svg></span><b data-t="bf3t">חיוב אוטומטי כל חודש</b><span data-t="bf3d">המנוי מחויב לבד עם הטוקן, כל חודש בחודשו</span></li>
+          </ol>
+          <p class="bf-us sty" data-c="4"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6zM9 12l2 2 4-4"/></svg><span data-t="bfUs"><b>אצלנו נשמר רק טוקן מאובטח.</b> פרטי האשראי לא מגיעים לשרת שלנו.</span></p>
+          <button type="button" class="rp" data-replay hidden><span aria-hidden="true">↻</span><span data-t="rp2">הפעל שוב את ההדגמה</span></button>
+        </figure>
+
+        <p class="lead-in" data-t="p04c"><strong>דירוג לקוחות ברמזור.</strong> כל לקוח מקבל צבע לפי ההתנהגות שלו בתורים, וככה בעל העסק רואה מיד על מי אפשר לסמוך:</p>
+        <figure class="rz pr" id="rz-demo" data-step="3">
+          <figcaption class="sr-only" data-t="rzCap">דוגמה: שלושה לקוחות עם דירוג רמזור</figcaption>
+          <div class="rz-card">
+            <div class="rz-top" data-t="rzTop"><b>הלקוחות שלך</b><span>הדירוג מתעדכן אחרי כל תור</span></div>
+            <ul class="rz-list">
+              <li class="rz-row g sty" data-c="1"><span class="rz-av" aria-hidden="true" data-t="rav1">ד</span><span class="rz-who" data-t="rw1"><b>דני כהן</b><span>14 תורים · מגיע בזמן</span></span><span class="rz-tag"><i aria-hidden="true"></i><span class="w" data-t="rt1">ירוק · אמין</span><span class="q" aria-hidden="true" data-t="rq1">בודק…</span></span></li>
+              <li class="rz-row y sty" data-c="2"><span class="rz-av" aria-hidden="true" data-t="rav2">מ</span><span class="rz-who" data-t="rw2"><b>מאור לוי</b><span>9 תורים · 4 החלפות</span></span><span class="rz-tag"><i aria-hidden="true"></i><span class="w" data-t="rt2">צהוב · מחליף</span><span class="q" aria-hidden="true" data-t="rq2">בודק…</span></span></li>
+              <li class="rz-row r sty" data-c="3"><span class="rz-av" aria-hidden="true" data-t="rav3">י</span><span class="rz-who" data-t="rw3"><b>יוסי פרץ</b><span>6 תורים · לא הגיע בלי לעדכן</span></span><span class="rz-tag"><i aria-hidden="true"></i><span class="w" data-t="rt3">אדום · לא הגיע</span><span class="q" aria-hidden="true" data-t="rq3">בודק…</span></span></li>
+            </ul>
+          </div>
+          <ul class="rz-key">
+            <li class="g sty" data-c="1" data-t="rk1"><b><i aria-hidden="true"></i>ירוק</b><span>לקוח אמין: מגיע לתורים, ומעדכן מראש כשמשהו משתנה.</span></li>
+            <li class="y sty" data-c="2" data-t="rk2"><b><i aria-hidden="true"></i>צהוב</b><span>לקוח שמבטל או מחליף תורים לעיתים קרובות.</span></li>
+            <li class="r sty" data-c="3" data-t="rk3"><b><i aria-hidden="true"></i>אדום</b><span>לקוח שלא הגיע לתור בלי לעדכן.</span></li>
+          </ul>
+          <button type="button" class="rp" data-replay hidden><span aria-hidden="true">↻</span><span data-t="rp3">הפעל שוב את ההדגמה</span></button>
+        </figure>
+
+        <p data-t="p04d">בנינו את יש תור כמוצר לשוק. בסוף החלטנו לא להשיק אותו, והיום הוא אחד הפרויקטים בתיק העבודות שלנו, כדי שתוכל לראות בדיוק מה אנחנו יודעים לבנות.</p>
+        <p><a class="btn ys-go" href="https://yeshtor.com/" target="_blank" rel="noopener noreferrer"><span data-t="ysBtn">לראות את יש תור</span><span class="sr-only" data-t="newTab"> (נפתח בחלון חדש)</span><svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></p>
+
+        <aside class="mid-cta pr" aria-label="יצירת קשר" data-ta="aria-label:ctaL">
+          <div>
+            <p class="post-cta-h" data-t="m1">רוצה מוצר כזה משלך?</p>
+            <p data-t="m2">ספר לנו על הרעיון בוואטסאפ, ונחזור אליך עם תמונה ראשונית של הדרך.</p>
+          </div>
+          <a class="btn-wa" href="https://wa.me/972527905122?text=%D7%94%D7%99%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%A2%D7%9E%D7%95%D7%93%20%D7%A4%D7%99%D7%AA%D7%95%D7%97%20%D7%94%D7%90%D7%A4%D7%9C%D7%99%D7%A7%D7%A6%D7%99%D7%95%D7%AA%20%D7%95%D7%99%D7%A9%20%D7%9C%D7%99%20%D7%A8%D7%A2%D7%99%D7%95%D7%9F%20%D7%9C%D7%90%D7%A4%D7%9C%D7%99%D7%A7%D7%A6%D7%99%D7%94" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.55L2.3 21.7l5.28-1.38A9.7 9.7 0 1 0 12 2Zm0 17.65a7.94 7.94 0 0 1-4.05-1.1l-.29-.17-3.13.82.84-3.05-.19-.31A7.94 7.94 0 1 1 12 19.65Zm4.36-5.95c-.24-.12-1.41-.7-1.63-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18a7.2 7.2 0 0 1-1.33-1.66c-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg><span data-t="waIdea2">יש לי רעיון לאפליקציה</span></a>
+        </aside>
+      </section>
+
+      <!-- ===== 05 ===== -->
+      <section class="ch-sec" aria-labelledby="time">
+        <div class="ch-head pr"><span class="ch-n">05</span><span class="ch-k" data-t="ck5">זמנים</span></div>
+        <h2 id="time" data-t="h05">כמה זמן לוקח לפתח אפליקציה</h2>
+        <p data-t="p05">אי אפשר לדעת בדיוק לפני שיחת ההיכרות, כי כל מקרה לגופו. אפליקציה פשוטה עם מטרה ברורה יכולה להיות מוכנה תוך 10 עד 14 ימי עסקים. מערכת מורכבת יכולה לקחת כמה חודשים. אחרי השיחה הראשונה תקבל מאיתנו הערכה ברורה.</p>
+        <ul class="du pr">
+          <li><span data-t="du1">אפליקציה פשוטה עם מטרה ברורה</span><b data-t="du1v">10–14 ימי עסקים</b><i aria-hidden="true" style="--w:22%"></i></li>
+          <li><span data-t="du2">מערכת מורכבת</span><b data-t="du2v">כמה חודשים</b><i aria-hidden="true" style="--w:100%"></i></li>
+        </ul>
+      </section>
+
+      <!-- ===== 06 ===== -->
+      <section class="ch-sec" aria-labelledby="security">
+        <div class="ch-head pr"><span class="ch-n">06</span><span class="ch-k" data-t="ck6">אבטחה</span></div>
+        <h2 id="security" data-t="h06">אבטחה</h2>
+        <p data-t="p06">אנחנו בונים כל אפליקציה לפי תקני האבטחה המקובלים בישראל ובעולם: הצפנה, הרשאות גישה, ופרטי תשלום שלא נשמרים אצלנו אלא אצל חברת הסליקה. ואם המוצר שומר מידע אישי, אנחנו בונים אותו לפי חוק הגנת הפרטיות.</p>
+        <ul class="cards soft pr">
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span><span><b data-t="c1t">הצפנה</b><span class="d" data-t="c1d">חיבור מוצפן בין האפליקציה לשרת.</span></span></li>
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M3 20v-1a5 5 0 0 1 8-4M15 16l2 2 4-4"/></svg></span><span><b data-t="c2t">הרשאות גישה</b><span class="d" data-t="c2d">כל משתמש רואה רק את מה שמותר לו לראות.</span></span></li>
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 10h19M6 15h4"/></svg></span><span><b data-t="c3t">תשלומים אצל חברת הסליקה</b><span class="d" data-t="c3d">פרטי האשראי לא נשמרים אצלנו.</span></span></li>
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6zM9 12l2 2 4-4"/></svg></span><span><b data-t="c4t">חוק הגנת הפרטיות</b><span class="d" data-t="c4d">מוצר ששומר מידע אישי נבנה לפי החוק.</span></span></li>
+        </ul>
+      </section>
+
+      <!-- ===== 07 ===== -->
+      <section class="ch-sec" id="post-faq" aria-labelledby="faq">
+        <div class="ch-head pr"><span class="ch-n">07</span><span class="ch-k" data-t="ck7">שאלות ותשובות</span></div>
+        <h2 id="faq" data-t="h07">שאלות נפוצות על פיתוח אפליקציות</h2>
+        <div class="fq" data-faq>
+          <div class="fq-it open">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q1" aria-expanded="true" aria-controls="fq-a1"><span class="fq-n">01</span><span class="fq-t" data-t="fq1">אני רוצה לפתח אפליקציה. מאיפה מתחילים?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a1" role="region" aria-labelledby="fq-q1"><div class="fq-ai"><p class="fq-a" data-t="fa1">משיחת היכרות. ספר לנו על הרעיון, גם אם הוא עוד לא מגובש, ואנחנו נעזור לך להפוך אותו לתוכנית ברורה.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q2" aria-expanded="false" aria-controls="fq-a2"><span class="fq-n">02</span><span class="fq-t" data-t="fq2">מחפשים חברת פיתוח לאפליקציה. למה לבחור בכם?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a2" role="region" aria-labelledby="fq-q2"><div class="fq-ai"><p class="fq-a" data-t="fa2">כי אנחנו מלווים אותך מהרעיון ועד המוצר באוויר, מראים לך סקיצה לפני שמתחילים, ונותנים לך לראות כל שלב בזמן אמת. ויש לנו מוצר אמיתי שבנינו מאפס, שאפשר לראות.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q3" aria-expanded="false" aria-controls="fq-a3"><span class="fq-n">03</span><span class="fq-t" data-t="fq3">כמה עולה פיתוח אפליקציה?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a3" role="region" aria-labelledby="fq-q3"><div class="fq-ai"><p class="fq-a" data-t="fa3">תלוי בהיקף. אחרי שיחת ההיכרות והסקיצה תקבל הצעת מחיר מסודרת, לפני שמתחילים לעבוד.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q4" aria-expanded="false" aria-controls="fq-a4"><span class="fq-n">04</span><span class="fq-t" data-t="fq4">כמה זמן לוקח לפתח אפליקציה?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a4" role="region" aria-labelledby="fq-q4"><div class="fq-ai"><p class="fq-a" data-t="fa4">אפליקציה פשוטה עם מטרה ברורה: 10–14 ימי עסקים. מערכת מורכבת: כמה חודשים. הערכה מדויקת תקבל אחרי השיחה הראשונה.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q5" aria-expanded="false" aria-controls="fq-a5"><span class="fq-n">05</span><span class="fq-t" data-t="fq5">אתם מפתחים אפליקציה לאנדרואיד ולאייפון?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a5" role="region" aria-labelledby="fq-q5"><div class="fq-ai"><p class="fq-a" data-t="fa5">כן, לשתי המערכות. אנחנו מפתחים אפליקציות נייטיב לאנדרואיד ולאייפון, ומלווים אותך עד שהאפליקציה עולה ל-Google Play ול-App Store.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q6" aria-expanded="false" aria-controls="fq-a6"><span class="fq-n">06</span><span class="fq-t" data-t="fq6">אפשר לשדרג או לתקן אפליקציה קיימת?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a6" role="region" aria-labelledby="fq-q6"><div class="fq-ai"><p class="fq-a" data-t="fa6">כן. עיצוב חדש, אנימציות, חלקים בתלת-ממד, תיקונים טכניים, או פיתוח מחדש מאפס.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q7" aria-expanded="false" aria-controls="fq-a7"><span class="fq-n">07</span><span class="fq-t" data-t="fq7">אפשר להוסיף עוזר AI לאפליקציה או לאתר?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a7" role="region" aria-labelledby="fq-q7"><div class="fq-ai"><p class="fq-a" data-t="fa7">כן. אנחנו מקימים מערכות AI חכמות, כמו יועץ או עוזר אישי שעונה ללקוחות ומלווה אותם.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q8" aria-expanded="false" aria-controls="fq-a8"><span class="fq-n">08</span><span class="fq-t" data-t="fq8">אפשר לחבר את האפליקציה למכשירים?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a8" role="region" aria-labelledby="fq-q8"><div class="fq-ai"><p class="fq-a" data-t="fa8">כן. למשל NFC, תדרים ו-Wi-Fi, ניהול שערים, או שליטה מרחוק במוצרי חשמל.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q9" aria-expanded="false" aria-controls="fq-a9"><span class="fq-n">09</span><span class="fq-t" data-t="fq9">אפשר לחבר סליקה ומנויים?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a9" role="region" aria-labelledby="fq-q9"><div class="fq-ai"><p class="fq-a" data-t="fa9">כן. ביש תור חיברנו סליקה דרך טרנזילה עם חיוב חודשי אוטומטי, ואנחנו בונים גם מערכות חיוב אחרות.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q10" aria-expanded="false" aria-controls="fq-a10"><span class="fq-n">10</span><span class="fq-t" data-t="fq10">איך אני יודע מה קורה עם הפרויקט?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a10" role="region" aria-labelledby="fq-q10"><div class="fq-ai"><p class="fq-a" data-t="fa10">דרך <a href="../track.html">מעקב הפרויקט</a>: אתה רואה באיזה שלב הוא נמצא ומה בוצע בכל יום.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q11" aria-expanded="false" aria-controls="fq-a11"><span class="fq-n">11</span><span class="fq-t" data-t="fq11">של מי הקוד בסוף הפרויקט?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a11" role="region" aria-labelledby="fq-q11"><div class="fq-ai"><p class="fq-a" data-t="fa11">שלך. בסוף הפרויקט הקוד והמוצר עוברים לבעלות מלאה שלך.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q12" aria-expanded="false" aria-controls="fq-a12"><span class="fq-n">12</span><span class="fq-t" data-t="fq12">הרעיון שלי מוגן?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a12" role="region" aria-labelledby="fq-q12"><div class="fq-ai"><p class="fq-a" data-t="fa12">כן. אם תרצה, אנחנו חותמים איתך על הסכם סודיות (NDA) עוד לפני שאתה מספר לנו את הפרטים.</p></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 08 ===== -->
+      <section class="ch-sec" aria-labelledby="more">
+        <div class="ch-head pr"><span class="ch-n">08</span><span class="ch-k" data-t="ck8">עוד שירותים</span></div>
+        <h2 id="more" data-t="h08">שירותים נוספים</h2>
+        <div class="sp-others cc-others"><a class="sp-other pr" href="booking-system.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M16 3v4M8 3v4M4 11h16M8 15h2v2H8z"/></svg></span><b data-t="o1">אפליקציה לקביעת תורים</b><span>₪800</span></a><a class="sp-other pr" href="custom-code-website.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8l-4 4 4 4M17 8l4 4-4 4M14 4l-4 16"/></svg></span><b data-t="o2">אתר בקוד מותאם אישית</b><span data-t="o2p">מ־₪500</span></a><a class="sp-other pr" href="wordpress-website.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9h3M4 9h2.5M11 9l3 11 4-9M5.5 9l3.5 11 3-7M18 11c.18-.53 1-1.36 1-2.5C19 6.72 18.22 6 17.13 6 16.23 6 16 6.81 16 7.43 16 9.26 18 9.49 18 11"/></svg></span><b data-t="o3">אתר תדמית בוורדפרס</b><span>₪1,000</span></a><a class="sp-other pr" href="online-store.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.33 8h11.34a2 2 0 0 1 1.98 2.3l-1.26 8.16A3 3 0 0 1 15.43 21H8.57a3 3 0 0 1-2.96-2.54l-1.26-8.16A2 2 0 0 1 6.33 8z"/><path d="M9 11V6a3 3 0 0 1 6 0v5"/></svg></span><b data-t="o4">חנות אונליין</b><span>₪2,000</span></a><a class="sp-other pr" href="existing-site.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10h3V7L6.5 3.5a6 6 0 0 1 8 8l6 6a2 2 0 0 1-3 3l-6-6a6 6 0 0 1-8-8L7 10"/></svg></span><b data-t="o5">כבר יש לך אתר?</b><span data-t="o5p">מ־₪150 לחודש</span></a></div>
+      </section>
+
+      <aside class="post-cta pr" aria-label="יצירת קשר" data-ta="aria-label:ctaL">
         <div>
-          <h2>Let's talk about your business</h2>
-          <p>A free 15-minute call. We'll understand what you need and tell you exactly what it costs. No commitment.</p>
+          <p class="post-cta-h" data-t="c1">יש לך רעיון לאפליקציה?</p>
+          <p data-t="c2">ספר לנו עליו בוואטסאפ, או קבע שיחת היכרות. נחזור אליך עם תמונה ראשונית של הדרך.</p>
         </div>
-        <div class="sp-final-actions">
-          <a class="btn solid cta" href="../booking.html?s=app"><span class="cta-txt">Book a free call</span><svg class="cta-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a class="btn sp-wa" href="https://wa.me/972527905122?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%91%D7%95%D7%A0%D7%99%D7%9D%20%D7%93%D7%99%D7%92%D7%99%D7%98%D7%9C%2C%20%D7%99%D7%A9%20%D7%9C%D7%99%20%D7%A2%D7%A1%D7%A7%20%D7%95%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.55L2.3 21.7l5.28-1.38A9.7 9.7 0 1 0 12 2Zm0 17.65a7.94 7.94 0 0 1-4.05-1.1l-.29-.17-3.13.82.84-3.05-.19-.31A7.94 7.94 0 1 1 12 19.65Zm4.36-5.95c-.24-.12-1.41-.7-1.630-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18a7.2 7.2 0 0 1-1.33-1.66c-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.690 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg><span>Ask on WhatsApp</span></a>
-          <small>Pick a time that suits you, online</small>
+        <div class="cta-acts">
+          <a class="btn-wa" href="https://wa.me/972527905122?text=%D7%94%D7%99%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%A2%D7%9E%D7%95%D7%93%20%D7%A4%D7%99%D7%AA%D7%95%D7%97%20%D7%94%D7%90%D7%A4%D7%9C%D7%99%D7%A7%D7%A6%D7%99%D7%95%D7%AA%20%D7%95%D7%99%D7%A9%20%D7%9C%D7%99%20%D7%A8%D7%A2%D7%99%D7%95%D7%9F%20%D7%9C%D7%90%D7%A4%D7%9C%D7%99%D7%A7%D7%A6%D7%99%D7%94" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.55L2.3 21.7l5.28-1.38A9.7 9.7 0 1 0 12 2Zm0 17.65a7.94 7.94 0 0 1-4.05-1.1l-.29-.17-3.13.82.84-3.05-.19-.31A7.94 7.94 0 1 1 12 19.65Zm4.36-5.95c-.24-.12-1.41-.7-1.63-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18a7.2 7.2 0 0 1-1.33-1.66c-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg><span data-t="waBtn">שלח הודעה בוואטסאפ</span></a>
+          <a class="btn-ghost" href="../booking.html?s=app" data-t="bookBtn">קביעת שיחת היכרות</a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sp-sec" aria-labelledby="sp-others-h">
-    <div class="wrap">
-      <div class="sec-eyebrow rv">// more services</div>
-      <h2 class="rv" id="sp-others-h">Other services</h2>
-      <div class="sp-others"><a class="sp-other rv" href="booking-system.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M16 3v4M8 3v4M4 11h16M8 15h2v2H8z"/></svg></span><b>Booking system + SMS reminders</b><span>₪800</span></a><a class="sp-other rv" href="wordpress-website.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9h3M4 9h2.5M11 9l3 11 4-9M5.5 9l3.5 11 3-7M18 11c.18-.53 1-1.36 1-2.5C19 6.72 18.22 6 17.13 6 16.23 6 16 6.81 16 7.43 16 9.26 18 9.49 18 11"/></svg></span><b>WordPress business website</b><span>₪1,000</span></a><a class="sp-other rv" href="custom-code-website.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8l-4 4 4 4M17 8l4 4-4 4M14 4l-4 16"/></svg></span><b>Custom-coded website</b><span>From ₪500</span></a><a class="sp-other rv" href="online-store.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.33 8h11.34a2 2 0 0 1 1.98 2.3l-1.26 8.16A3 3 0 0 1 15.43 21H8.57a3 3 0 0 1-2.96-2.54l-1.26-8.16A2 2 0 0 1 6.33 8z"/><path d="M9 11V6a3 3 0 0 1 6 0v5"/></svg></span><b>Online store</b><span>₪2,000</span></a><a class="sp-other rv" href="existing-site.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10h3V7L6.5 3.5a6 6 0 0 1 8 8l6 6a2 2 0 0 1-3 3l-6-6a6 6 0 0 1-8-8L7 10"/></svg></span><b>Already have a site?</b><span>From ₪150 a month</span></a></div>
-    </div>
-  </section>
+      </aside>
+    </article>
+  </div>
 </main>
 
 <footer>
@@ -183,7 +1216,7 @@
     <span>© <span id="yr"></span> Bonim Digital · <a href="https://github.com/N1ace" target="_blank" rel="noopener noreferrer">GitHub</a></span>
     <nav class="social-links" aria-label="Social">
       <a href="https://www.instagram.com/bonimdigital/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4zm0 2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7zm5 2.6A4.4 4.4 0 1 1 7.6 12 4.4 4.4 0 0 1 12 7.6zm0 2A2.4 2.4 0 1 0 14.4 12 2.4 2.4 0 0 0 12 9.6zm5.25-3.350a1.05 1.05 0 1 1-1.05 1.05 1.05 1.05 0 0 1 1.05-1.05z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4zm0 2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7zm5 2.6A4.4 4.4 0 1 1 7.6 12 4.4 4.4 0 0 1 12 7.6zm0 2A2.4 2.4 0 1 0 14.4 12 2.4 2.4 0 0 0 12 9.6zm5.25-3.35a1.05 1.05 0 1 1-1.05 1.05 1.05 1.05 0 0 1 1.05-1.05z"/></svg>
       </a>
       <a href="https://www.facebook.com/profile.php?id=61594940790647" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.07A10 10 0 1 0 10.4 21.9v-6.94H7.9v-2.89h2.5V9.8c0-2.47 1.47-3.84 3.72-3.84 1.08 0 2.2.2 2.2.2v2.42h-1.24c-1.22 0-1.6.76-1.6 1.54v1.85h2.72l-.43 2.89h-2.29v6.94A10 10 0 0 0 22 12.07z"/></svg>
@@ -203,7 +1236,7 @@
 
 <aside class="float-actions" aria-label="Quick contact">
   <a class="whatsapp-float" href="https://wa.me/972527905122" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.55L2.3 21.7l5.28-1.38A9.7 9.7 0 1 0 12 2Zm0 17.65a7.94 7.94 0 0 1-4.05-1.1l-.29-.17-3.13.82.84-3.05-.19-.31A7.94 7.94 0 1 1 12 19.65Zm4.36-5.95c-.24-.12-1.41-.7-1.630-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18a7.2 7.2 0 0 1-1.33-1.66c-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.690 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.55L2.3 21.7l5.28-1.38A9.7 9.7 0 1 0 12 2Zm0 17.65a7.94 7.94 0 0 1-4.05-1.1l-.29-.17-3.13.82.84-3.05-.19-.31A7.94 7.94 0 1 1 12 19.65Zm4.36-5.95c-.24-.12-1.41-.7-1.63-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18a7.2 7.2 0 0 1-1.33-1.66c-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>
     <span>WhatsApp</span>
   </a>
   <a class="booking-float" href="../booking.html?s=app" aria-label="Book a call" title="Book a call">
@@ -213,6 +1246,158 @@
 </aside>
 
 <script src="../assets/site-pages.js?v=3"></script>
-<script src="../assets/journey.js?v=1"></script>
+<script>
+// FAQ accordion: one answer open at a time (without JS every answer stays open)
+document.querySelectorAll('#post-faq [data-faq]').forEach(function(list){
+  list.classList.add('is-js');
+  list.addEventListener('click',function(e){
+    var q=e.target.closest('.fq-q'); if(!q) return;
+    var it=q.closest('.fq-it'), was=it.classList.contains('open');
+    list.querySelectorAll('.fq-it').forEach(function(x){x.classList.remove('open');x.querySelector('.fq-q').setAttribute('aria-expanded','false')});
+    if(!was){it.classList.add('open');q.setAttribute('aria-expanded','true')}
+  });
+});
+
+var reduceMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// reading flow: scroll reveal, progress bar, side navigation (page works fully without JS)
+(function(){
+  var hasIO='IntersectionObserver' in window;
+  if(hasIO&&!reduceMotion){
+    document.documentElement.classList.add('pr-on');
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.post .pr').forEach(function(el){io.observe(el)});
+  }
+  var art=document.querySelector('.post-body'), bar=document.querySelector('.rd-progress span');
+  var toc=document.querySelector('.toc'), side=document.querySelector('.toc-side'), end=document.querySelector('.post-cta');
+  var links=[], heads=[];
+  function clone(){
+    if(!toc||!side) return;
+    side.querySelector('ol').innerHTML=toc.querySelector('ol').innerHTML;
+    side.querySelectorAll('[data-t]').forEach(function(el){el.removeAttribute('data-t')});
+    links=[].slice.call(side.querySelectorAll('a'));
+    heads=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1))});
+  }
+  clone();
+  document.addEventListener('appdev-lang',function(){clone();update()});
+  var queued=false;
+  function update(){
+    queued=false;
+    if(art&&bar){var r=art.getBoundingClientRect(),h=r.height-innerHeight;bar.style.transform='scaleX('+(h>0?Math.min(1,Math.max(0,-r.top/h)):1)+')'}
+    if(links.length&&getComputedStyle(side).display!=='none'){
+      var cur=-1,y=innerHeight*.35;
+      heads.forEach(function(h,i){if(h&&h.getBoundingClientRect().top<y)cur=i});
+      links.forEach(function(a,i){a.classList.toggle('on',i===cur);if(i===cur)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')});
+      var past=toc.getBoundingClientRect().bottom<0, before=!end||end.getBoundingClientRect().top>innerHeight*.6;
+      side.classList.toggle('show',past&&before);
+    }
+  }
+  function onScroll(){if(!queued){queued=true;requestAnimationFrame(update)}}
+  addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);update();
+})();
+
+// hero phone: switches between three screens every 4 s, pauses on hover, with a pause button
+(function(){
+  var dv=document.getElementById('dv'); if(!dv||reduceMotion) return;
+  var views=[].slice.call(dv.querySelectorAll('.ys-v')), dots=[].slice.call(dv.querySelectorAll('.dv-dots i')), btn=dv.querySelector('[data-dv-toggle]');
+  var i=0, timer=null, hover=false, paused=false, seen=true;
+  function show(n){views[i].classList.remove('on');dots[i].classList.remove('on');i=n;views[i].classList.add('on');dots[i].classList.add('on')}
+  function sync(){
+    var run=!paused&&!hover&&seen&&!document.hidden;
+    if(run&&!timer) timer=setInterval(function(){show((i+1)%views.length)},4000);
+    if(!run&&timer){clearInterval(timer);timer=null}
+  }
+  dv.classList.add('is-on');
+  btn.hidden=false;
+  btn.addEventListener('click',function(){paused=!paused;dv.classList.toggle('paused',paused);sync()});
+  dv.addEventListener('mouseenter',function(){hover=true;sync()});
+  dv.addEventListener('mouseleave',function(){hover=false;sync()});
+  document.addEventListener('visibilitychange',sync);
+  if('IntersectionObserver' in window) new IntersectionObserver(function(es){seen=es[0].isIntersecting;sync()}).observe(dv);
+  sync();
+})();
+
+// process: the side indicator follows the step in view
+(function(){
+  var pt=document.querySelector('.pt'); if(!pt) return;
+  var steps=[].slice.call(pt.querySelectorAll('.pt-s')), links=[].slice.call(pt.querySelectorAll('.pt-nav a')), ol=pt.querySelector('.pt-nav ol'), queued=false;
+  pt.classList.add('pt-js');
+  function update(){
+    queued=false;
+    var cur=-1,y=innerHeight*.55;
+    steps.forEach(function(s,i){if(s.getBoundingClientRect().top<y)cur=i});
+    steps.forEach(function(s,i){s.classList.toggle('cur',i===cur);s.classList.toggle('done',i<cur)});
+    links.forEach(function(a,i){a.classList.toggle('cur',i===cur);a.classList.toggle('done',i<cur);if(i===cur)a.setAttribute('aria-current','step');else a.removeAttribute('aria-current')});
+    if(ol) ol.style.setProperty('--p',(cur<0?0:(cur+1)/steps.length*100)+'%');
+  }
+  addEventListener('scroll',function(){if(!queued){queued=true;requestAnimationFrame(update)}},{passive:true});
+  addEventListener('resize',update);
+  update();
+})();
+
+// YeshTor screens carousel: swipe (native scroll snap), arrows, dots and arrow keys
+(function(){
+  var yc=document.querySelector('.yc'); if(!yc) return;
+  var track=yc.querySelector('.yc-track'), slides=[].slice.call(yc.querySelectorAll('.yc-s')), nav=yc.querySelector('.yc-nav'), dots=[].slice.call(nav.querySelectorAll('.yc-dots button')), cap=yc.querySelector('.yc-cap'), cur=0, queued=false, lockUntil=0;
+  function mark(n){
+    cur=n;
+    dots.forEach(function(b,j){if(j===n)b.setAttribute('aria-current','true');else b.removeAttribute('aria-current')});
+    cap.textContent=slides[n].getAttribute('aria-label');
+  }
+  function go(n){
+    n=(n+slides.length)%slides.length;
+    var d=slides[n].getBoundingClientRect().left-track.getBoundingClientRect().left;
+    track.scrollBy({left:d,behavior:reduceMotion?'auto':'smooth'});
+    mark(n);
+    lockUntil=Date.now()+700;
+    setTimeout(nearest,750);
+  }
+  function nearest(){
+    queued=false;
+    if(Date.now()<lockUntil) return;
+    var t=track.getBoundingClientRect(), c=t.left+t.width/2, best=0, dist=1e9;
+    slides.forEach(function(s,j){var r=s.getBoundingClientRect(), dd=Math.abs(r.left+r.width/2-c);if(dd<dist){dist=dd;best=j}});
+    if(best!==cur) mark(best);
+  }
+  nav.hidden=false;
+  nav.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    if(b.dataset.yc==='prev') go(cur-1);
+    else if(b.dataset.yc==='next') go(cur+1);
+    else go(dots.indexOf(b));
+  });
+  track.addEventListener('scroll',function(){if(!queued){queued=true;requestAnimationFrame(nearest)}},{passive:true});
+  track.addEventListener('keydown',function(e){
+    var rtl=getComputedStyle(track).direction==='rtl';
+    if(e.key==='ArrowLeft'){e.preventDefault();go(rtl?cur+1:cur-1)}
+    else if(e.key==='ArrowRight'){e.preventDefault();go(rtl?cur-1:cur+1)}
+    else if(e.key==='Home'){e.preventDefault();go(0)}
+    else if(e.key==='End'){e.preventDefault();go(slides.length-1)}
+  });
+  document.addEventListener('appdev-lang',function(){mark(cur)});
+  mark(0);
+})();
+
+// step demos: play once when visible; the final state is written in the HTML
+(function(){
+  if(reduceMotion||!('IntersectionObserver' in window)) return;
+  function demo(id,times){
+    var root=document.getElementById(id); if(!root) return;
+    var styled=[].slice.call(root.querySelectorAll('[data-c]')), rp=root.querySelector('[data-replay]'), timers=[];
+    function set(n){
+      root.dataset.step=n;
+      styled.forEach(function(el){el.classList.toggle('sty',n>=+el.dataset.c)});
+    }
+    function play(){timers.forEach(clearTimeout);timers=[];set(0);times.forEach(function(t,i){timers.push(setTimeout(function(){set(i+1)},t))})}
+    set(0);
+    var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){io.disconnect();play()}},{threshold:.4});
+    io.observe(root);
+    if(rp){rp.hidden=false;rp.addEventListener('click',play)}
+  }
+  demo('io-demo',[700,1700,3200]);
+  demo('bf-demo',[400,1100,1800,2600]);
+  demo('rz-demo',[500,1200,1900]);
+})();
+</script>
 </body>
 </html>

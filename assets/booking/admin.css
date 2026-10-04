@@ -335,6 +335,10 @@ html[dir="ltr"] .adm-back .adm-i-sm{transform:scaleX(-1)}
 .adm-card .adm-quick{margin:0 0 10px}
 .adm-card .adm-rows{margin-top:0}
 .adm-row b .adm-due{margin-inline-start:6px}
+.adm-row b .adm-code{font-size:14px;color:var(--text)}
+.adm-row b .adm-btn{margin-inline-start:8px;min-height:30px;padding:0 10px;font-size:12.5px;vertical-align:middle}
+.adm-show{display:flex;align-items:flex-start;margin-top:12px;font-size:13px;color:var(--muted);line-height:1.5}
+.adm-show input{flex:none;margin-top:1px}
 .adm-sub{margin-top:14px}
 .adm-sub h3{font-size:13px;font-weight:700;color:var(--muted);margin-bottom:4px}
 .adm-sub p{font-size:14px;white-space:pre-wrap}

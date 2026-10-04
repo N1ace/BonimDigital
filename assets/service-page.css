@@ -105,7 +105,7 @@ html[dir="rtl"] .sp-flip{transform:scaleX(-1)}
 .sp-case-txt{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
 .sp-case-name{font-family:var(--display);font-size:20px;font-weight:800;line-height:1.3}
 .sp-case-stars{color:#B45309;font-size:15px;letter-spacing:2px;line-height:1}
-.sp-case blockquote{margin:0;font-size:clamp(19px,2.2vw,23px);font-weight:800;line-height:1.4;color:var(--text)}
+.sp-case blockquote,.sp-case-lead{margin:0;font-size:clamp(19px,2.2vw,23px);font-weight:800;line-height:1.4;color:var(--text)}
 .sp-case-who{margin-top:-6px;font-size:14px;color:var(--muted)}
 .sp-case-nums{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;width:100%;margin:4px 0}
 .sp-case-nums li{display:flex;flex-direction:column;gap:2px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:#FFFFFF;font-size:14px;line-height:1.5;color:var(--muted)}

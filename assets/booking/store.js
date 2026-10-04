@@ -312,6 +312,9 @@
   var WEIGHT = { collect: 20, build: 55, deliver: 25, edits: 0 };
   // 32 symbols without I, O, 0, 1 so a code read over the phone can't be mistyped.
   var CODE_ABC = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  // Must match gen_project_pass() in supabase/projects-schema.sql. No I, O, l, o, 0 or 1.
+  var PASS_ABC = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789!@#%&*?+=';
+  var DEMO_PASS = 'Dem7#Kp2';
 
   var PL = {
     he: {
@@ -365,6 +368,17 @@
     (window.crypto || window.msCrypto).getRandomValues(a);
     for (var i = 0; i < 8; i++) s += CODE_ABC[a[i] % 32];
     return 'BD-' + s.slice(0, 4) + '-' + s.slice(4);
+  }
+  function newPass(){
+    var n = PASS_ABC.length, lim = 256 - (256 % n), s, a, i;
+    do {
+      s = '';
+      while (s.length < 8) {
+        a = new Uint8Array(16); (window.crypto || window.msCrypto).getRandomValues(a);
+        for (i = 0; i < a.length && s.length < 8; i++) if (a[i] < lim) s += PASS_ABC[a[i] % n];
+      }
+    } while (!/[A-Za-z]/.test(s) || !/[2-9]/.test(s) || !/[!@#%&*?+=]/.test(s));
+    return s;
   }
   function normCode(v){
     var s = String(v || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
@@ -420,7 +434,13 @@
     var list;
     try { list = JSON.parse(localStorage.getItem(PROJ_KEY)) || []; } catch (e) { list = []; }
     var missing = realProjects().filter(function(r){ return !list.some(function(p){ return p.code === r.code; }); });
-    if (missing.length) { list = list.concat(missing); projDemoSave(list); }
+    var changed = !!missing.length;
+    list = list.concat(missing);
+    list.forEach(function(p){
+      if (!p.access_pass) { p.access_pass = p.id === 'demo-noa' ? DEMO_PASS : newPass(); changed = true; }
+      if (p.showcase == null) { p.showcase = realProjects().some(function(r){ return r.code === p.code; }); changed = true; }
+    });
+    if (changed) projDemoSave(list);
     return list;
   }
   function projDemoSave(list){ localStorage.setItem(PROJ_KEY, JSON.stringify(list)); }
@@ -431,7 +451,7 @@
   }
   function createProject(row, tries){
     tries = tries || 0;
-    var data = Object.assign({}, row, { code: newCode() });
+    var data = Object.assign({}, row, { code: newCode(), access_pass: newPass() });
     if (!configured) {
       var list = projDemoAll(), now = new Date().toISOString();
       if (list.some(function(p){ return p.code === data.code; })) return createProject(row, tries + 1);
@@ -459,14 +479,15 @@
     if (!configured) { projDemoSave(projDemoAll().filter(function(p){ return p.id !== id; })); return Promise.resolve(); }
     return token().then(function(t){ return api('/rest/v1/projects?id=eq.' + encodeURIComponent(id), { method: 'DELETE', prefer: 'return=minimal' }, t); });
   }
-  function track(code){
+  function track(code, pass){
     var c = normCode(code);
     if (!c) return Promise.reject(err('invalid'));
+    pass = String(pass || '');
     if (!configured) {
-      var hit = projDemoAll().filter(function(p){ return p.code === c; })[0];
+      var hit = projDemoAll().filter(function(p){ return p.code === c && (p.showcase || p.access_pass === pass); })[0];
       return Promise.resolve(hit ? publicView(hit) : null);
     }
-    return api('/rest/v1/rpc/project_track', { method: 'POST', body: { p_code: c } });
+    return api('/rest/v1/rpc/project_track', { method: 'POST', body: { p_code: c, p_pass: pass } });
   }
 
   /* delivered client projects, kept in sync with supabase/projects-seed.sql */
@@ -477,7 +498,7 @@
     }
     return [
       {
-        id: 'real-aryian', code: 'BD-ARYN-0726', status: 'closed',
+        id: 'real-aryian', code: 'BD-ARYN-0726', status: 'closed', showcase: true,
         created_at: at('2026-07-03T10:00'), updated_at: at('2026-07-24T18:00'), closed_at: at('2026-07-24T18:00'),
         client_name: 'לידור', client_business: 'Aryian Studio', client_phone: null, client_email: null, client_city: 'אשדוד', client_lang: 'he',
         title: 'אתר + מערכת תורים ל־Aryian Studio', category: 'booking',
@@ -528,7 +549,7 @@
     law.forEach(function(s, i){ if (s.state !== 'skipped') { s.state = 'done'; s.started_at = iso(-40 + i * 10); s.done_at = iso(-31 + i * 10); s.tasks.forEach(function(t){ t.done = true; }); } });
     return [
       {
-        id: 'demo-noa', code: 'BD-DEMO-2026', status: 'active', created_at: iso(-12), updated_at: iso(-2), closed_at: null,
+        id: 'demo-noa', code: 'BD-DEMO-2026', access_pass: DEMO_PASS, status: 'active', created_at: iso(-12), updated_at: iso(-2), closed_at: null,
         client_name: 'נועה כהן', client_business: 'סטודיו נועה', client_phone: '0521234567', client_email: 'noa@example.com', client_city: 'תל אביב', client_lang: 'he',
         title: 'אתר + מערכת תורים לסטודיו נועה', category: 'booking', summary: 'אתר תדמית קליל עם מערכת תורים ותזכורות SMS, כדי שהלקוחות יקבעו לבד ויהיו פחות ביטולים.',
         start_date: ymd(-12), deadline: ymd(21),
@@ -574,8 +595,8 @@
   window.BonimBooking = {
     cfg: cfg, configured: configured,
     projects: {
-      L: PL, stages: STAGES, tasks: TASKS, categories: CATEGORIES,
-      normCode: normCode, freshStages: freshStages, progress: progress, currentStage: currentStage,
+      L: PL, stages: STAGES, tasks: TASKS, categories: CATEGORIES, weight: WEIGHT,
+      normCode: normCode, newPass: newPass, demoPass: DEMO_PASS, freshStages: freshStages, progress: progress, currentStage: currentStage,
       taskLabel: taskLabel, updateTitle: updateTitle, uid: uid, track: track
     },
     time: { TZ: TZ, parts: parts, zoned: zoned, civil: civil, addDays: addDays, sameDay: sameDay, dayKey: dayKey, today: today, hm: hm, pad: pad, timeLabel: timeLabel },
