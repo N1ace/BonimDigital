@@ -4,13 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#FFFFFF">
-<title>Website Fixes, Maintenance and Google SEO | Bonim Digital</title>
-<meta name="description" content="Already have a site? We fix slow and broken sites, handle monthly maintenance from ₪150 and do local Google SEO, without building from scratch.">
+<title>תחזוקת אתרים, הנגשה וקידום אורגני | בונים דיגיטל</title>
+<meta name="description" content="אנחנו מתחזקים את האתר שלכם אחרי ההקמה: עדכונים וגיבויים, תיקונים ותוספות, הנגשה, מדיניות פרטיות, קידום אורגני וכתיבת תוכן. לאתרי וורדפרס ואתרים בקוד.">
 <link rel="canonical" href="https://n1ace.github.io/portfolio/services/existing-site.html">
+<meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="תחזוקת אתרים: האתר שלכם מתעדכן, מגובה ומביא לקוחות | בונים דיגיטל">
+<meta property="og:description" content="עדכונים וגיבויים, תיקונים ותוספות, הנגשה, מדיניות פרטיות, קידום אורגני וכתיבת תוכן. לאתרי וורדפרס ואתרים בקוד, גם כאלה שלא אנחנו בנינו.">
 <meta property="og:url" content="https://n1ace.github.io/portfolio/services/existing-site.html">
-<meta property="og:title" content="תיקון אתרים, תחזוקה וקידום בגוגל | בונים דיגיטל">
-<meta property="og:description" content="כבר יש לכם אתר? מתקנים אתרים איטיים ושבורים, מתחזקים מ־₪150 לחודש ומקדמים בגוגל המקומי — בלי לבנות מאפס.">
 <meta property="og:image" content="https://n1ace.github.io/portfolio/assets/logo/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <script>try{if(localStorage.getItem('portfolio-language')!=='en'){document.documentElement.lang='he';document.documentElement.dir='rtl'}}catch(e){}</script>
@@ -26,25 +28,473 @@
 <link rel="stylesheet" href="../assets/cta.css?v=1">
 <script src="../assets/cta.js?v=1"></script>
 <link rel="stylesheet" href="../assets/service-page.css?v=5">
-<script src="../assets/services-i18n.js?v=6" defer></script>
 <script src="../assets/portfolio-i18n.js?v=37" defer></script>
+<style>
+/* ---------- article ---------- */
+.post{padding:40px 0 8px}
+.post .wrap{max-width:808px}
+.post-body{font-family:'Heebo',var(--body);color:var(--text);font-size:17px;line-height:1.8}
+.post .crumbs{font-family:'Heebo',var(--body);font-size:13px;margin-bottom:14px}
+.post .crumbs a{color:var(--muted)}
+.post .sec-eyebrow{font-family:'Heebo',var(--body);font-size:14.5px;font-weight:700;letter-spacing:0}
+.post-head h1{font-family:'Heebo',var(--display);font-weight:800;font-size:clamp(28px,4.4vw,42px);line-height:1.2;letter-spacing:0;margin:0 0 10px}
+.post-meta{color:var(--muted);font-size:14px;margin:0 0 28px}
+.post-body :where(h2){font-family:'Heebo',var(--display);font-weight:800;font-size:clamp(22px,3vw,28px);line-height:1.3;letter-spacing:0;margin:48px 0 14px;scroll-margin-top:calc(var(--nav-h) + 16px)}
+.post-body :where(p){margin:0 0 16px}
+.post-body :where(ul,ol){padding-inline-start:22px;margin:0 0 18px}
+.post-body :where(li){margin-bottom:8px}
+.post-body :where(a:not([class])){color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.post-body :where(a:not([class])):hover{color:var(--accent-hover)}
+.post-body :where(strong){font-weight:700}
+.post-body :where(a:focus-visible,button:focus-visible){outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.ico{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* tables */
+.tbl{overflow-x:auto;margin:20px 0 28px;border:1px solid var(--line);border-radius:12px}
+.tbl table{width:100%;border-collapse:collapse;font-size:15px;min-width:480px}
+.tbl th,.tbl td{padding:12px 14px;text-align:start;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl thead th{background:var(--card);font-weight:700}
+.tbl tbody th{font-weight:600}
+.tbl tbody tr:last-child td,.tbl tbody tr:last-child th{border-bottom:0}
+.tbl td{font-variant-numeric:tabular-nums}
+.tbl tr.hl th,.tbl tr.hl td{background:var(--gold-soft)}
+.tbl .pz{font-weight:800;white-space:nowrap}
+.tbl-note{font-size:14px;color:var(--muted);margin:-18px 0 24px!important}
+.tbl code{font-family:var(--mono);font-size:14px;font-weight:600;color:var(--accent);background:var(--accent-soft);border-radius:6px;padding:2px 7px;direction:ltr;display:inline-block}
+/* on phones, tables marked .stack become one card per row */
+@media (max-width:560px){
+  .tbl.stack{border:0;overflow:visible}
+  .tbl.stack table{min-width:0}
+  .tbl.stack thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+  .tbl.stack tbody,.tbl.stack tr,.tbl.stack th,.tbl.stack td{display:block}
+  .tbl.stack tr{border:1px solid var(--line);border-radius:12px;margin-bottom:10px;overflow:hidden}
+  .tbl.stack tbody th{background:var(--card);padding:10px 14px;border-bottom:1px solid var(--line)}
+  .tbl.stack tr.hl th{background:var(--gold-soft)}
+  .tbl.stack td{display:grid;grid-template-columns:84px minmax(0,1fr);gap:10px;padding:10px 14px}
+  .tbl.stack td::before{content:attr(data-l);font-size:12.5px;font-weight:700;color:var(--muted)}
+  .tbl.stack tbody tr:last-child td{border-bottom:1px solid var(--line)}
+  .tbl.stack tbody tr td:last-child{border-bottom:0}
+}
+
+/* lead, summary, table of contents */
+.rd-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:1200;pointer-events:none}
+.rd-progress span{display:block;height:100%;background:var(--accent);transform:scaleX(0);transform-origin:100% 50%}
+.post-lead{font-size:clamp(18px,2.2vw,20px);line-height:1.75;color:var(--text)}
+.tldr{background:var(--accent-soft);border-radius:16px;padding:20px 22px;margin:26px 0 16px}
+.tldr-k{display:flex;align-items:center;gap:8px;margin:0 0 12px!important;font-weight:800;font-size:15px;color:var(--accent)}
+.tldr ul{list-style:none;padding:0!important;margin:0!important;display:grid;gap:10px}
+.tldr li{position:relative;margin:0!important;padding-inline-start:30px;font-size:16px;line-height:1.65}
+.tldr li::before{content:"";position:absolute;inset-inline-start:0;top:4px;width:20px;height:20px;border-radius:50%;background:var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/12px no-repeat}
+.toc{border:1px solid var(--line);border-radius:16px;padding:16px 20px 10px;margin:0}
+.toc-k{margin:0 0 6px!important;font-size:13px;font-weight:800;color:var(--muted)}
+.toc ol{list-style:none;padding:0!important;margin:0!important;display:grid;grid-template-columns:1fr 1fr;column-gap:24px}
+.toc li{margin:0!important}
+.toc a{display:flex;align-items:baseline;gap:10px;padding:8px 0;border-top:1px solid var(--line);color:var(--text);text-decoration:none;font-size:15px;font-weight:500;line-height:1.4;transition:color .2s}
+.toc li:nth-child(-n+2) a{border-top:0}
+.toc a span,.toc-side a span{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--accent);min-width:20px}
+@media (hover:hover) and (pointer:fine){.toc a:hover{color:var(--accent)}}
+@media (max-width:620px){.toc ol{grid-template-columns:1fr}.toc li:nth-child(2) a{border-top:1px solid var(--line)}}
+.toc-side{display:none}
+@media (min-width:1400px){
+  .toc-side{display:block;position:fixed;top:calc(var(--nav-h,64px) + 40px);left:calc(50% + 510px);width:170px;z-index:5;font-family:'Heebo',var(--body);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .3s,transform .3s,visibility 0s .3s}
+  .toc-side.show{opacity:1;visibility:visible;transform:none;transition:opacity .3s,transform .3s}
+  .toc-side-k{margin:0 0 8px;font-size:12px;font-weight:800;color:var(--muted)}
+  .toc-side ol{list-style:none;margin:0;padding:0}
+  .toc-side a{display:flex;gap:8px;padding:7px 12px;border-inline-start:2px solid var(--line);color:var(--muted);text-decoration:none;font-size:13.5px;line-height:1.4;transition:color .2s,border-color .2s}
+  .toc-side a span{color:inherit}
+  .toc-side a.on{color:var(--accent);border-color:var(--accent);font-weight:700}
+  .toc-side a:hover{color:var(--text)}
+}
+
+/* chapters */
+.ch-sec{margin-top:64px;padding-top:44px;border-top:1px solid var(--line)}
+.ch-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.ch-n{font-family:var(--mono);font-weight:600;font-size:13px;line-height:1;color:var(--accent);background:var(--accent-soft);border-radius:8px;padding:6px 9px}
+.ch-k{font-size:13.5px;font-weight:700;color:var(--muted)}
+.post-body .ch-sec h2{margin-top:0;margin-bottom:16px}
+.lead-in{margin-top:28px!important;font-weight:700}
+.lead-in::before{content:"";display:inline-block;width:18px;height:2px;background:var(--accent);vertical-align:middle;margin-inline-end:10px}
+.callout{display:flex;gap:14px;align-items:flex-start;background:var(--accent-soft);border-inline-start:4px solid var(--accent);border-radius:12px;padding:16px 18px;margin:22px 0}
+.callout .ico{width:24px;height:24px;color:var(--accent);margin-top:4px}
+.callout p{margin:0!important;font-size:clamp(18px,2.4vw,21px);font-weight:800;line-height:1.5}
+
+/* icon cards */
+.cards{list-style:none;padding:0!important;margin:14px 0 24px!important;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.cards > li{margin:0!important;border:1px solid var(--line);border-radius:14px;padding:16px;background:#FFFFFF;display:flex;gap:12px;align-items:flex-start;transition:border-color .2s,box-shadow .2s}
+.cards.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.cards.c3 > li{flex-direction:column;gap:10px}
+.cards.soft > li{background:var(--card);border-color:transparent}
+.cards b{display:block;font-size:16px;line-height:1.4;margin-bottom:2px}
+.cards .d{display:block;font-size:15px;line-height:1.6;color:var(--muted)}
+.cards .d a{color:var(--accent)}
+.ci{flex:none;width:40px;height:40px;border-radius:11px;display:grid;place-items:center;color:var(--accent);background:var(--accent-soft)}
+.cards.soft .ci{background:#FFFFFF}
+@media (hover:hover) and (pointer:fine){.cards:not(.soft) > li:hover{border-color:var(--line-strong);box-shadow:0 6px 18px rgba(11,27,51,.06)}}
+@media (max-width:700px){.cards.c3{grid-template-columns:1fr}.cards.c3 > li{flex-direction:row}}
+@media (max-width:560px){.cards{grid-template-columns:1fr}}
+
+/* eight-step process */
+.sys{list-style:none;padding:0!important;margin:14px 0 24px!important;position:relative;display:grid;gap:12px;counter-reset:sys}
+.sys::before{content:"";position:absolute;inset-inline-start:17px;top:20px;bottom:20px;width:2px;background:var(--accent-soft)}
+.sys li{position:relative;display:flex;gap:16px;margin:0!important;counter-increment:sys}
+.sys li::before{content:counter(sys);flex:none;width:36px;height:36px;border-radius:50%;background:var(--accent);color:#FFFFFF;display:grid;place-items:center;font-family:var(--mono);font-weight:600;font-size:15px;box-shadow:0 0 0 5px #FFFFFF;position:relative}
+.sys li > div{flex:1;min-width:0;background:var(--card);border-radius:14px;padding:12px 16px}
+.sys b{display:block;font-size:16px;margin-bottom:2px}
+.sys p{margin:0!important;font-size:15.5px;line-height:1.7;color:var(--muted)}
+
+/* what you get, two cards */
+.inc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:18px 0 8px}
+.inc-card{border:1px solid var(--line);border-radius:16px;padding:18px 20px;background:#FFFFFF}
+.inc-card.store{background:var(--card);border-color:transparent}
+.post-body .inc-card h3{display:flex;align-items:center;gap:10px;margin:0 0 12px;font-size:17px;font-weight:800;line-height:1.3}
+.inc-card ul{list-style:none;padding:0!important;margin:0!important;display:grid;gap:10px}
+.inc-card li{position:relative;margin:0!important;padding-inline-start:28px;font-size:15.5px;line-height:1.6}
+.inc-card li::before{content:"";position:absolute;inset-inline-start:0;top:3px;width:18px;height:18px;border-radius:50%;background:var(--accent-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230038B8' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/11px no-repeat}
+@media (max-width:700px){.inc{grid-template-columns:1fr}}
+
+/* support timeline */
+.sup{list-style:none;padding:0!important;margin:16px 0 20px!important;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.sup li{margin:0!important;position:relative;border:1px solid var(--line);border-radius:14px;padding:16px;padding-top:20px;background:#FFFFFF}
+.sup li::before{content:"";position:absolute;top:-1px;inset-inline:16px;height:3px;border-radius:0 0 3px 3px;background:var(--accent)}
+.sup li:nth-child(2)::before{background:#3B6FE0}
+.sup li:nth-child(3)::before{background:var(--gold)}
+.sup .when{display:block;font-family:var(--mono);font-size:12.5px;font-weight:600;color:var(--accent);margin-bottom:6px}
+.sup b{display:block;font-size:16px;line-height:1.4;margin-bottom:4px}
+.sup p{margin:0!important;font-size:15px;line-height:1.6;color:var(--muted)}
+@media (max-width:700px){.sup{grid-template-columns:1fr}}
+
+/* final call to action and WhatsApp button */
+.btn-wa{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 20px;border-radius:10px;background:#25D366;border:1px solid #25D366;color:#071A0E;font-family:'Heebo',var(--body);font-weight:800;font-size:15px;text-decoration:none;transition:background .2s}
+.btn-wa svg{width:20px;height:20px;fill:currentColor;flex:none}
+@media (hover:hover) and (pointer:fine){.btn-wa:hover{background:#2EE06F;border-color:#2EE06F}}
+.post-cta{margin:56px 0 0;padding:28px;border-radius:20px;background:#0B1B33;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.post-cta p{margin:0;max-width:440px;color:#C9D6EA}
+.post-cta .post-cta-h{color:#FFFFFF;font-size:clamp(20px,2.6vw,24px);font-weight:800;line-height:1.3;margin-bottom:6px}
+
+/* faq: same accordion as the home page */
+.fq{margin-top:22px;display:grid;gap:10px}
+.fq .fq-it{border:1px solid var(--line);background:var(--card);border-radius:14px;transition:background .25s,border-color .25s,box-shadow .25s}
+.fq .fq-it.open{background:#FFFFFF;border-color:var(--accent);box-shadow:0 8px 24px rgba(0,56,184,.09)}
+.fq-h{margin:0;font:inherit}
+.fq-q{all:unset;box-sizing:border-box;width:100%;display:flex;align-items:center;gap:14px;padding:18px 20px;cursor:pointer;border-radius:14px}
+.fq-q:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.fq-n{flex:none;min-width:24px;font-family:var(--display);font-weight:800;font-size:14px;color:#657189;transition:color .25s}
+.fq-it.open .fq-n{color:var(--accent)}
+.fq-t{flex:1;font-family:'Heebo',var(--display);font-weight:700;font-size:17px;line-height:1.4;color:var(--text)}
+.fq-pl{flex:none;width:34px;height:34px;border-radius:50%;background:#FFFFFF;border:1px solid var(--line);color:var(--text);display:grid;place-items:center;transition:transform .3s,background .25s,color .25s,border-color .25s}
+.fq-pl svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round}
+.fq-it.open .fq-pl{transform:rotate(45deg);background:var(--accent);border-color:var(--accent);color:#FFFFFF}
+.fq-aw{display:grid;grid-template-rows:1fr;transition:grid-template-rows .35s ease}
+.fq.is-js .fq-it:not(.open) .fq-aw{grid-template-rows:0fr}
+.fq-ai{overflow:hidden;min-height:0}
+.fq.is-js .fq-it:not(.open) .fq-ai{visibility:hidden;transition:visibility 0s .35s}
+.fq-a{margin:0;padding:0 20px 20px;padding-inline-start:58px;font-size:15.5px;line-height:1.75;color:var(--muted)}
+@media (hover:hover) and (pointer:fine){.fq-q:hover .fq-pl{border-color:var(--accent);color:var(--accent)}}
+
+/* ---------- service page parts ---------- */
+.cc-acts{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0}
+.cc-acts .btn{min-height:48px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:'Heebo',var(--body)}
+.cc-trust{margin:14px 0 28px;font-family:'Heebo',var(--body)}
+.cc-promise{margin:0 0 4px!important;max-width:560px;font-size:clamp(17px,2vw,19px);line-height:1.65;color:var(--muted)}
+.cc-show{max-width:560px;margin:0 0 28px}
+.cc-more{margin:0 0 32px;font-family:'Heebo',var(--body)}
+.cc-more-k{margin:0 0 10px!important;font-size:14px;font-weight:700;color:var(--muted)}
+.cc-more ul{list-style:none;padding:0!important;margin:0!important;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.cc-more li{margin:0!important}
+.cc-more li a{display:flex;flex-direction:column;height:100%;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#FFFFFF;color:var(--text);text-decoration:none;transition:border-color .2s,transform .2s}
+.cc-more li a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.cc-more img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;object-position:top;border-bottom:1px solid var(--line)}
+.cc-more li a > span{display:flex;flex-direction:column;padding:8px 12px 10px;line-height:1.35}
+.cc-more b{font-size:14px;font-weight:700}
+.cc-more li a > span span{font-size:12.5px;color:var(--muted)}
+@media (hover:hover) and (pointer:fine){.cc-more li a:hover{border-color:var(--accent);transform:translateY(-2px)}}
+@media (min-width:1100px){
+  .post .crumbs{margin-inline:-150px}
+  .cc-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,460px);column-gap:48px;align-items:center;margin-inline:-150px}
+  .cc-hero-txt{grid-column:1}
+  .cc-show{grid-column:2;grid-row:1;max-width:none;margin:0}
+  .cc-hero .cc-trust{margin-bottom:0}
+  .cc-more{grid-column:1 / -1;margin-top:32px}
+}
+@media (max-width:700px){.cc-more ul{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.cc-excl{display:flex;gap:14px;align-items:flex-start;margin:18px 0 0;padding:16px 18px;border:1px dashed var(--line-strong);border-radius:14px;background:#FFFFFF}
+.cc-excl .ci{background:var(--gold-soft);color:var(--gold-ink,#8A6A00)}
+.cc-excl p{margin:0!important;font-size:15.5px;line-height:1.7;color:var(--muted)}
+.cc-excl strong{color:var(--text)}
+.cc-time{list-style:none;padding:0!important;margin:16px 0 20px!important;display:grid;gap:10px}
+.cc-time li{margin:0!important;display:grid;grid-template-columns:120px auto minmax(0,1fr);grid-template-areas:"k n u" "bar bar bar";align-items:baseline;column-gap:10px;row-gap:8px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:#FFFFFF}
+.cc-time-k{grid-area:k;font-weight:700;font-size:16px}
+.cc-time b{grid-area:n;font-family:'Heebo',var(--display);font-weight:800;font-size:24px;line-height:1;font-variant-numeric:tabular-nums;direction:ltr}
+.cc-time-u{grid-area:u;font-size:14px;color:var(--muted)}
+.cc-time i{grid-area:bar;display:block;height:6px;border-radius:3px;background:var(--accent-soft);position:relative;overflow:hidden}
+.cc-time i::after{content:"";position:absolute;inset-block:0;inset-inline-start:0;width:var(--w);border-radius:3px;background:var(--accent)}
+@media (max-width:480px){.cc-time li{grid-template-columns:auto auto minmax(0,1fr)}.cc-acts .btn{flex:1 1 100%}}
+.post-body .cc-others{margin-top:18px}
+.cc-others .sp-other{text-decoration:none;color:var(--text)}
+.cc-acts .btn-wa{min-height:48px}
+.wp-tag{direction:ltr;unicode-bidi:isolate}
+@media (max-width:380px){.post .sec-eyebrow.wp-eb{white-space:normal;font-size:13px}}
+.chk{border:1px solid var(--line);border-radius:16px;padding:18px 20px;background:#FFFFFF;margin:18px 0 8px}
+.post-body .chk h3{margin:0 0 12px;font-size:17px;font-weight:800;line-height:1.3}
+.chk ul{list-style:none;padding:0!important;margin:0!important;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 18px}
+.chk li{position:relative;margin:0!important;padding-inline-start:28px;font-size:15.5px;line-height:1.6}
+.chk li::before{content:"";position:absolute;inset-inline-start:0;top:3px;width:18px;height:18px;border-radius:50%;background:var(--accent-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230038B8' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/11px no-repeat}
+@media (max-width:620px){.chk ul{grid-template-columns:1fr}}
+.dm-cap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;margin-top:10px;font-size:14px;color:var(--muted)}
+.rp{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 14px;font:600 13px 'Heebo',sans-serif;color:var(--accent);background:#FFFFFF;border:1px solid var(--line);border-radius:10px;cursor:pointer}
+.rp[hidden]{display:none}
+@media (hover:hover) and (pointer:fine){.rp:hover{border-color:var(--accent)}}
+.sk-bar{display:flex;align-items:center;gap:5px;height:30px;padding:0 10px;background:var(--card);border-bottom:1px solid var(--line);direction:ltr}
+.sk-bar i{width:8px;height:8px;border-radius:50%;background:var(--line-strong)}
+.sk-bar span{margin-left:8px;font-family:var(--mono);font-size:11px;color:var(--muted)}
+
+
+/* ---------- hero: site health report ---------- */
+.hc{margin:0;padding:20px;border-radius:22px;background:#0B1B33;color:#C9D6EA;box-shadow:0 24px 50px rgba(11,27,51,.22);font-family:'Heebo',var(--body)}
+.hc-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 10px;margin-bottom:14px}
+.hc-top b{font-size:16px;font-weight:800;color:#FFFFFF}
+.hc-url{font-family:var(--mono);font-size:12px;color:#9FB2CF;direction:ltr;unicode-bidi:isolate}
+.hc-sum{--n:6;display:flex;align-items:center;gap:12px;margin-bottom:12px;padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.06)}
+.hc-n{font-family:'Heebo',var(--display);font-weight:800;font-size:22px;line-height:1;color:#7FE3A8;font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate;min-width:36px}
+.hc-sum > span:last-child{font-size:13.5px;white-space:nowrap}
+.hc-bar{flex:1;height:8px;border-radius:4px;background:rgba(255,255,255,.12);overflow:hidden}
+.hc-bar i{display:block;width:calc(var(--n) / 6 * 100%);height:100%;border-radius:inherit;background:#7FE3A8;transition:width .4s ease}
+.hc-list{list-style:none;margin:0!important;padding:0!important;display:grid;gap:8px}
+.hc-r{--c:#7FE3A8;margin:0!important;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:12px;padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);transition:border-color .3s}
+.hc-r.off{--c:var(--bad);border-color:rgba(255,255,255,.16)}
+.hc-d{width:10px;height:10px;border-radius:50%;background:var(--c);box-shadow:0 0 0 4px rgba(255,255,255,.07);transition:background .3s}
+.hc-k{display:block;font-size:14.5px;font-weight:700;line-height:1.3;color:#FFFFFF}
+.hc-s{display:block;font-size:12.5px;line-height:1.4;color:#A9B8D3}
+.hc-p{padding:3px 9px;border-radius:999px;font-size:11.5px;font-weight:800;color:#0B1B33;background:var(--c);transition:background .3s;white-space:nowrap}
+.hc-r .b,.hc-r.off .a{display:none}
+.hc-r.off .b{display:inline}
+.hc-r.fix .hc-d{animation:hc-blink .45s ease-in-out infinite alternate}
+@keyframes hc-blink{to{opacity:.25}}
+.hc-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 12px;margin-top:12px;font-size:12.5px;color:#9FB2CF}
+.hc .rp{min-height:36px;background:transparent;color:#FFFFFF;border-color:rgba(255,255,255,.35)}
+.hc .rp:focus-visible{outline:2px solid #FFFFFF;outline-offset:2px}
+
+/* ---------- 02: backups and restore ---------- */
+.bk{margin:22px 0 10px;padding:18px;border:1px solid var(--line);border-radius:20px;background:#FFFFFF}
+.bk-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 12px;margin-bottom:14px}
+.post-body .bk h3{margin:0;font-size:17px;font-weight:800;line-height:1.3}
+.bk-head span{font-size:13px;color:var(--muted)}
+.bk-tl{list-style:none;position:relative;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;margin:0 0 16px!important;padding:0!important}
+.bk-tl::before{content:"";position:absolute;top:5px;left:7%;right:7%;height:2px;background:var(--accent-soft)}
+.bk-tl li{position:relative;z-index:1;margin:0!important;display:grid;justify-items:center;gap:6px;font-size:12px;line-height:1.3;color:var(--muted);text-align:center}
+.bk-tl li::before{content:"";width:12px;height:12px;border-radius:50%;background:#FFFFFF;box-shadow:inset 0 0 0 2px var(--accent)}
+.bk-tl li.now{color:var(--accent);font-weight:800}
+.bk-tl li.now::before{background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+.bk-site{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#F7F8FB}
+.bk-pr{height:3px;background:transparent}
+.bk-pr i{display:block;width:0;height:100%;background:var(--accent)}
+.bk-pr.run i{width:100%;transition:width 1.2s ease}
+.bk-pg{position:relative;display:grid;gap:10px;padding:14px;min-height:180px;overflow:hidden}
+.bk-nav{display:flex;align-items:center;justify-content:space-between}
+.bk-logo{width:64px;height:12px;border-radius:6px;background:#0B1B33}
+.bk-links{display:flex;gap:6px}
+.bk-links i{width:28px;height:8px;border-radius:4px;background:#C5CEDD}
+.bk-hero{display:grid;gap:8px;padding:16px;border-radius:10px;background:linear-gradient(135deg,#0038B8,#3B6FE0)}
+.bk-hero i{display:block;width:70%;height:10px;border-radius:5px;background:rgba(255,255,255,.85)}
+.bk-hero i + i{width:45%;opacity:.7}
+.bk-hero b{justify-self:start;width:84px;height:24px;border-radius:7px;background:#FFFFFF}
+.bk-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.bk-cards i{height:46px;border-radius:8px;background:#FFFFFF;box-shadow:inset 0 0 0 1px var(--line)}
+.bk-nav,.bk-hero,.bk-cards i{transition:transform .55s cubic-bezier(.2,.8,.2,1),opacity .4s,filter .4s}
+.bk-err{position:absolute;top:50%;inset-inline:14px;z-index:2;display:flex;gap:10px;align-items:center;padding:12px 14px;border-radius:10px;background:#FFFFFF;border:1.5px solid #C62828;color:#9B1C1C;font-size:13.5px;font-weight:700;line-height:1.45;box-shadow:0 10px 24px rgba(11,27,51,.14);opacity:0;visibility:hidden;transform:translateY(-50%) scale(.94);transition:opacity .3s,transform .3s,visibility 0s .3s}
+.bk-err .ico{color:#C62828}
+.bk.broken .bk-err{opacity:1;visibility:visible;transform:translateY(-50%);transition:opacity .3s,transform .3s}
+.bk.broken .bk-nav{transform:translateX(-14px) rotate(-2deg)}
+.bk.broken .bk-hero{transform:rotate(-4deg) translate(-10px,14px);filter:grayscale(1);opacity:.55}
+.bk.broken .bk-cards i:nth-child(1){transform:translate(8px,-6px) rotate(7deg)}
+.bk.broken .bk-cards i:nth-child(2){transform:translateY(18px)}
+.bk.broken .bk-cards i:nth-child(3){transform:rotate(-9deg);opacity:.35}
+.bk-ctl{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-top:14px}
+.bk-go{all:unset;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 18px;border-radius:10px;background:var(--accent);color:#FFFFFF;font:700 14.5px 'Heebo',sans-serif;cursor:pointer}
+.bk-go[hidden]{display:none}
+.bk-go:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.bk-go[aria-disabled="true"]{opacity:.65;cursor:progress}
+.bk-st{flex:1 1 240px;margin:0!important;font-size:14px;line-height:1.6;color:var(--muted)}
+
+/* ---------- 03: before and after ---------- */
+.ba{display:grid;justify-items:center;gap:12px;margin:22px 0 10px;padding:24px 16px 18px;border-radius:20px;background:var(--card)}
+.ba-ph{width:250px;max-width:100%;border:8px solid #0B1B33;border-radius:34px;background:#0B1B33;box-shadow:0 20px 40px rgba(11,27,51,.18)}
+.ba-vp{--x:50%;position:relative;aspect-ratio:9/17;border-radius:26px;overflow:hidden;background:#FFFFFF}
+.ba-s{position:absolute;inset:0;display:grid;align-content:start;gap:10px;padding:40px 12px 12px;background:#FFFFFF;font-family:'Heebo',sans-serif;color:#2B2522;overflow:hidden}
+.ba-b{clip-path:inset(0 0 0 var(--x))}
+.ba-tag{position:absolute;top:10px;z-index:3;padding:3px 9px;border-radius:999px;color:#FFFFFF;font:800 11px 'Heebo',sans-serif;pointer-events:none}
+.ba-tag.t-b{right:10px;background:#B42318}
+.ba-tag.t-a{left:10px;background:#0B6A35}
+.ba-in{position:absolute;inset:0;z-index:4;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize}
+.ba-in[hidden]{display:none}
+.ba-line{position:absolute;top:0;bottom:0;left:var(--x);z-index:3;width:2px;margin-left:-1px;background:#FFFFFF;box-shadow:0 0 0 1px rgba(11,27,51,.2);pointer-events:none}
+.ba-h{position:absolute;top:50%;left:50%;display:grid;place-items:center;width:36px;height:36px;margin:-18px 0 0 -18px;border-radius:50%;background:#FFFFFF;color:#0B1B33;box-shadow:0 4px 12px rgba(11,27,51,.3)}
+.ba-h .ico{width:18px;height:18px}
+.ba-in:focus-visible ~ .ba-line .ba-h{outline:3px solid var(--accent);outline-offset:2px}
+.ba-cap{margin:0!important;max-width:420px;text-align:center;font-size:13.5px;line-height:1.6;color:var(--muted)}
+.m-nav{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.m-nav b{font-size:14px;font-weight:800;letter-spacing:.02em}
+.m-burger{width:20px;height:14px;background:linear-gradient(#2B2522 0 0) 0 0/100% 2px no-repeat,linear-gradient(#2B2522 0 0) 0 6px/100% 2px no-repeat,linear-gradient(#2B2522 0 0) 0 12px/100% 2px no-repeat}
+.m-img{height:92px;border-radius:12px;background:linear-gradient(135deg,#C8A27A,#8C5A3C)}
+.m-h{font-size:17px;font-weight:800;line-height:1.25}
+.m-p{font-size:12px;line-height:1.5;color:#6F6259}
+.m-btn{justify-self:start;padding:8px 18px;border-radius:9px;background:#8C5A3C;color:#FFFFFF;font-size:12.5px;font-weight:700}
+.m-in{padding:8px 10px;border:1px solid #D8CEC4;border-radius:8px;font-size:11.5px;color:#8A7D73}
+.m-menu{white-space:nowrap;font-size:11px;font-weight:600}
+.ba-b .m-nav{justify-content:flex-start}
+.ba-b .m-img{width:150%;height:120px;margin-inline-start:-14%}
+.ba-b .m-h{font-size:30px;line-height:1;width:130%}
+.ba-b .m-p{font-size:8px}
+.ba-b .m-btn{margin-inline-start:62%;white-space:nowrap}
+.ba-b .m-in{width:150%}
+.m-pop{position:absolute;inset-inline:0;bottom:0;display:flex;align-items:center;justify-content:space-between;gap:6px;padding:14px 12px 22px;background:#2B2522;color:#FFFFFF;font-size:11.5px;font-weight:600}
+
+/* ---------- 04: keyboard view ---------- */
+.kb{margin:22px 0 10px;border:1px solid var(--line);border-radius:20px;background:#FFFFFF;overflow:hidden}
+.kb-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 14px;padding:12px 16px;border-bottom:1px solid var(--line);background:var(--card)}
+.kb-bar p{margin:0!important;font-size:14.5px;font-weight:700}
+.kb-t{all:unset;box-sizing:border-box;display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 14px 0 8px;border-radius:999px;background:#FFFFFF;border:1px solid var(--line-strong);font:700 14px 'Heebo',sans-serif;color:var(--text);cursor:pointer}
+.kb-t[hidden]{display:none}
+.kb-t:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.kb-sw{position:relative;flex:none;width:40px;height:24px;border-radius:12px;background:#8A94A6;transition:background .2s}
+.kb-sw::after{content:"";position:absolute;top:3px;right:3px;width:18px;height:18px;border-radius:50%;background:#FFFFFF;transition:transform .2s}
+.kb-t[aria-pressed="true"] .kb-sw{background:var(--accent)}
+.kb-t[aria-pressed="true"] .kb-sw::after{transform:translateX(-16px)}
+.kb-demo{position:relative;display:grid;gap:12px;padding:18px 16px;font-family:'Heebo',sans-serif}
+.kb-nav{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.kb-logo{margin-inline-end:auto;font-size:15px;font-weight:800}
+.kb-f{display:inline-flex;align-items:center;min-height:34px;padding:0 12px;border-radius:8px;font-size:13.5px;color:var(--text);outline:3px solid transparent;outline-offset:6px;transition:outline-color .2s,outline-offset .2s}
+.kb-f.on{outline-color:#C2410C;outline-offset:2px}
+.kb-h{font-size:19px;font-weight:800;line-height:1.3}
+.kb-p{font-size:14px;line-height:1.6;color:var(--muted)}
+.kb-row{display:flex;flex-wrap:wrap;gap:10px}
+.kb-btn{background:var(--accent);color:#FFFFFF;font-weight:700}
+.kb-in{min-width:150px;border:1px solid var(--line-strong);color:var(--muted)}
+.kb-key{position:absolute;top:14px;left:14px;display:none;align-items:center;gap:6px;padding:4px 10px;border-radius:7px;border:1px solid var(--line-strong);border-bottom-width:3px;background:#FFFFFF;font:700 12px var(--mono);color:var(--text);direction:ltr}
+.kb.is-on .kb-key{display:inline-flex}
+.kb-key.press{animation:kb-press .3s ease}
+@keyframes kb-press{40%{transform:translateY(2px);border-bottom-width:1px}}
+.kb-now{margin:0!important;padding:12px 16px;border-top:1px solid var(--line);font-size:14px;line-height:1.6;color:var(--muted)}
+.kb-now strong{color:var(--text)}
+
+/* ---------- 05: growth chart ---------- */
+.gr{margin:22px 0 10px;padding:18px 18px 16px;border:1px solid var(--line);border-radius:20px;background:#FFFFFF}
+.gr-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:6px 16px;margin-bottom:12px}
+.gr-head b{display:block;font-size:15.5px;line-height:1.4}
+.gr-head > div:first-child > span{font-size:13px;color:var(--muted)}
+.gr-tot{display:grid;justify-items:end;line-height:1.2}
+.gr-n{font-family:'Heebo',var(--display);font-weight:800;font-size:clamp(30px,5vw,40px);line-height:1;color:var(--accent);font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
+.gr-tot > span:last-child{font-size:12.5px;font-weight:700;color:var(--muted)}
+.gr-ch{direction:ltr}
+.gr-svg{display:block;width:100%;height:auto}
+.gr-grid{stroke:var(--line);stroke-width:1;vector-effect:non-scaling-stroke}
+.gr-line{fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.gr.is-js .gr-line{stroke-dasharray:1 1}
+.gr-x{display:flex;justify-content:space-between;margin-top:6px;font-size:12px;color:var(--muted)}
+.gr-m{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:14px}
+.gr-m div{padding:10px 12px;border-radius:12px;background:var(--card)}
+.gr-m span{display:block;font-size:12px;line-height:1.4;color:var(--muted)}
+.gr-m b{display:block;font-size:18px;font-weight:800;direction:ltr;text-align:end;unicode-bidi:isolate}
+.gr figcaption{margin-top:12px;font-size:14px;line-height:1.65;color:var(--muted)}
+@media (max-width:560px){.gr-m{grid-template-columns:1fr 1fr}}
+
+/* ---------- 06: site check and packages ---------- */
+.pz-card{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px;margin:20px 0 8px;padding:20px 22px;border-radius:18px;background:#0B1B33;color:#C9D6EA}
+.pz-card .k{display:block;font-size:13px;color:#A9B8D3}
+.pz-card b{display:block;font-family:'Heebo',var(--display);font-weight:800;font-size:clamp(32px,5vw,40px);line-height:1.1;color:#FFFFFF}
+.pz-card .s{display:block;font-size:13px;color:#FFC48A;font-weight:700}
+.pz-card p{flex:1 1 280px;margin:0!important;font-size:15.5px;line-height:1.7}
+.pz-card ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px;flex:1 1 100%;margin:0!important;padding:0!important}
+.pz-card li{margin:0!important;padding:4px 11px;border-radius:999px;background:rgba(255,255,255,.08);color:#FFFFFF;font-size:13px;font-weight:600}
+.pk{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0 10px}
+.pk > div{display:flex;flex-direction:column;gap:8px;padding:18px;border:1px solid var(--line);border-radius:16px;background:#FFFFFF}
+.post-body .pk h3{margin:0;font-size:17px;font-weight:800;line-height:1.3}
+.pk p{flex:1;margin:0!important;font-size:15px;line-height:1.65;color:var(--muted)}
+.pk-pz{font-family:'Heebo',var(--display);font-weight:800;font-size:20px;line-height:1.3;color:var(--text)}
+.pk-pz small{font-size:13px;font-weight:600;color:var(--muted)}
+@media (max-width:760px){.pk{grid-template-columns:1fr}}
+.cards h3{margin:0 0 2px;font-size:16px;font-weight:700;line-height:1.4}
+
+/* final call to action */
+.cta-acts{display:flex;flex-wrap:wrap;gap:10px}
+.btn-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 20px;border-radius:10px;border:1px solid rgba(255,255,255,.4);color:#FFFFFF;font-family:'Heebo',var(--body);font-weight:700;font-size:15px;text-decoration:none;transition:background .2s,border-color .2s}
+.btn-ghost .ico{width:18px;height:18px}
+.btn-ghost:focus-visible,.btn-wa:focus-visible{outline:2px solid #FFFFFF;outline-offset:2px}
+
+/* scroll reveal (content is fully visible without JS) */
+.pr-on .pr{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;transition-delay:var(--d,0s)}
+.pr-on .pr.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .pr-on .pr{opacity:1;transform:none;transition:none}
+  .toc-side,.fq .fq-it,.fq-n,.fq-pl,.fq-aw,.btn-wa,.hc-r,.hc-d,.hc-p,.hc-bar i,.bk-nav,.bk-hero,.bk-cards i,.bk-err,.bk-pr.run i,.kb-sw,.kb-sw::after,.kb-f{transition:none!important}
+  .hc-r.fix .hc-d,.kb-key.press{animation:none}
+}
+@media (max-width:620px){
+  .post{padding-top:28px}
+  .post-body{font-size:16px}
+  .ch-sec{margin-top:48px;padding-top:32px}
+  .tldr{padding:18px 16px}
+  .fq-q{padding:16px;gap:12px}
+  .fq-t{font-size:16px}
+  .fq-a{padding:0 16px 18px;font-size:15px}
+  .post-cta{padding:22px}
+  .btn-wa,.btn-ghost{width:100%}
+  .hc{padding:16px 14px}
+  .hc-r{gap:10px;padding:10px}
+  .bk{padding:16px 12px}
+  .bk-tl li{font-size:11px}
+  .gr{padding:16px 12px 14px}
+}
+</style>
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "משפרים את האתר שכבר יש לכם",
-  "serviceType": "Improve the site you already have",
-  "description": "כבר יש לכם אתר? מתקנים אתרים איטיים ושבורים, מתחזקים מ־₪150 לחודש ומקדמים בגוגל המקומי — בלי לבנות מאפס.",
-  "url": "https://n1ace.github.io/portfolio/services/existing-site.html",
-  "areaServed": {
-    "@type": "Country",
-    "name": "Israel"
-  },
-  "provider": {
-    "@type": "Organization",
-    "name": "בונים דיגיטל",
-    "url": "https://n1ace.github.io/portfolio/"
-  }
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Service",
+      "name":"תחזוקת אתרים",
+      "serviceType":"Website maintenance",
+      "description":"אנחנו מתחזקים את האתר שלכם אחרי ההקמה: עדכונים וגיבויים, תיקונים ותוספות, הנגשה, מדיניות פרטיות, קידום אורגני וכתיבת תוכן. לאתרי וורדפרס ואתרים בקוד.",
+      "url":"https://n1ace.github.io/portfolio/services/existing-site.html",
+      "inLanguage":"he-IL",
+      "areaServed":{"@type":"Country","name":"Israel"},
+      "provider":{"@type":"Organization","name":"בונים דיגיטל","url":"https://n1ace.github.io/portfolio/","logo":"https://n1ace.github.io/portfolio/assets/logo/bonim-digital-512.png"},
+      "offers":{"@type":"Offer","name":"תחזוקה חודשית, חבילת בסיס","priceSpecification":{"@type":"UnitPriceSpecification","minPrice":"150","priceCurrency":"ILS","unitText":"חודש","valueAddedTaxIncluded":false}},
+      "hasOfferCatalog":{
+        "@type":"OfferCatalog",
+        "name":"שירותי תחזוקת אתרים",
+        "itemListElement":[
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"עדכונים, גיבויים ואבטחת אתר"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"תיקון תקלות ותוספות לאתר קיים"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"הנגשת אתרים לפי ת״י 5568"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"מדיניות פרטיות ותנאי שימוש לאתר"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"קידום אורגני בגוגל"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"כתיבת תוכן והקמת בלוג"}}
+        ]
+      }
+    },
+    {
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"אתם מתחזקים גם אתר שלא אתם בניתם?","acceptedAnswer":{"@type":"Answer","text":"כן. אנחנו עובדים עם אתרי וורדפרס ואתרים בקוד. מתחילים בבדיקת אתר כדי להבין מה יש שם."}},
+        {"@type":"Question","name":"מה כוללת תחזוקת אתר וורדפרס?","acceptedAnswer":{"@type":"Answer","text":"עדכוני וורדפרס, תבנית ותוספים, גיבויים קבועים, ניטור ואבטחה. בחבילות המורחבות גם עדכוני תוכן, תיקונים וקידום."}},
+        {"@type":"Question","name":"האתר שלי חייב להיות נגיש?","acceptedAnswer":{"@type":"Answer","text":"ברוב המקרים כן. אתר של עסק שנותן שירות לציבור צריך לעמוד בתקן ת״י 5568 ולכלול הצהרת נגישות. בבדיקת האתר נגיד לכם בדיוק מה חסר."}},
+        {"@type":"Question","name":"תוסף נגישות לא מספיק?","acceptedAnswer":{"@type":"Answer","text":"לא. התוסף מוסיף כפתור עם אפשרויות תצוגה, אבל התקן דורש שהאתר עצמו יהיה נגיש: מבנה, ניווט במקלדת, טפסים ותמונות."}},
+        {"@type":"Question","name":"אתם כותבים מדיניות פרטיות ותנאי שימוש?","acceptedAnswer":{"@type":"Answer","text":"כן, מותאמים למה שהאתר שלכם באמת עושה ואוסף, ומעלים אותם לאתר. במקרים מורכבים, כמו מידע רפואי או פיננסי, מומלץ לעבור על הנוסח גם עם עורך דין."}},
+        {"@type":"Question","name":"תוך כמה זמן רואים תוצאות מקידום אורגני?","acceptedAnswer":{"@type":"Answer","text":"קידום אורגני הוא עבודה לטווח ארוך, והקצב תלוי בתחרות בתחום. בדרך כלל רואים שיפור אחרי כמה חודשים, ואנחנו מראים לכם את ההתקדמות בדוח החודשי."}},
+        {"@type":"Question","name":"אפשר להפסיק את התחזוקה החודשית?","acceptedAnswer":{"@type":"Answer","text":"כן. התחזוקה החודשית היא בלי התחייבות: מודיעים לנו, והחודש הבא כבר לא מחויב. לפני שמסיימים אנחנו מעבירים לכם גיבוי מלא של האתר ואת כל הגישות."}}
+      ]
+    },
+    {
+      "@type":"BreadcrumbList",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"בית","item":"https://n1ace.github.io/portfolio/"},
+        {"@type":"ListItem","position":2,"name":"שירותים","item":"https://n1ace.github.io/portfolio/#services"},
+        {"@type":"ListItem","position":3,"name":"תחזוקת אתרים"}
+      ]
+    }
+  ]
 }
 </script>
 </head>
@@ -60,6 +510,7 @@
     <div class="menu" id="site-menu">
       <a href="../index.html#home">Home</a>
       <a href="../index.html#services" aria-current="page">Services</a>
+      <a href="../index.html#testimonials">Testimonials</a>
       <a href="../projects.html">Work</a>
       <a href="../index.html#results">Results</a>
       <a href="../index.html#process">How it works</a>
@@ -75,107 +526,334 @@
   </div>
 </nav>
 
-<main id="main">
-  <header class="sp-hero">
-    <div class="wrap sp-hero-in">
-      <div class="sp-hero-text">
-        <nav class="crumbs rv" aria-label="Breadcrumb">
-          <a href="../index.html">Home</a>
-          <span>/</span>
-          <a href="../index.html#services">Services</a>
-          <span>/</span>
-          <span>Already have a site?</span>
-        </nav>
-        <div class="sec-eyebrow rv">// service</div>
-        <h1 class="rv">Improve the site you already have</h1>
-        <p class="sec-sub rv">Fixes, speed, Google and monthly care, without building from scratch.</p>
-        <div class="page-actions rv">
-          <a class="btn solid cta" href="../booking.html?s=review"><span class="cta-txt">Book a free call</span><svg class="cta-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a class="btn sp-wa" href="https://wa.me/972527905122?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%91%D7%95%D7%A0%D7%99%D7%9D%20%D7%93%D7%99%D7%92%D7%99%D7%98%D7%9C%2C%20%D7%99%D7%A9%20%D7%9C%D7%99%20%D7%A2%D7%A1%D7%A7%20%D7%95%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.55L2.3 21.7l5.28-1.38A9.7 9.7 0 1 0 12 2Zm0 17.65a7.94 7.94 0 0 1-4.05-1.1l-.29-.17-3.13.82.84-3.05-.19-.31A7.94 7.94 0 1 1 12 19.65Zm4.36-5.95c-.24-.12-1.41-.7-1.630-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18a7.2 7.2 0 0 1-1.33-1.66c-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.690 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg><span>Ask on WhatsApp</span></a>
+<div class="rd-progress" aria-hidden="true"><span></span></div>
+
+<main id="main" class="post" lang="he" dir="rtl" data-i18n-skip>
+  <div class="wrap">
+    <nav class="crumbs rv" aria-label="פירורי לחם"><a href="../index.html">בית</a> / <a href="../index.html#services">שירותים</a> / <span aria-current="page">תחזוקת אתרים</span></nav>
+
+    <nav class="toc-side" aria-label="ניווט מהיר בעמוד"><p class="toc-side-k">בעמוד</p><ol></ol></nav>
+
+    <article class="post-body">
+      <header class="post-head cc-hero">
+        <div class="cc-hero-txt">
+        <div class="sec-eyebrow rv">אחרי ההקמה</div>
+        <h1 class="rv">תחזוקת אתרים: האתר שלכם מתעדכן, מגובה ומביא לקוחות</h1>
+        <p class="cc-promise rv">אתר הוא לא פרויקט שנגמר ביום ההעלאה. צריך לעדכן אותו, לגבות אותו, להתאים אותו לחוק ולהמשיך להביא אליו אנשים. את כל זה אנחנו לוקחים עלינו, כדי שאתם תתעסקו בעסק.</p>
+        <p class="cc-promise rv">עובדים עם אתרי וורדפרס ואתרים בקוד, גם כאלה שלא אנחנו בנינו.</p>
+        <div class="cc-acts rv">
+          <a class="btn-wa" href="https://wa.me/972527905122?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%99%D7%A7%D7%AA%20%D7%90%D7%AA%D7%A8.%20%D7%94%D7%A7%D7%99%D7%A9%D7%95%D7%A8%3A%20" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.55L2.3 21.7l5.28-1.38A9.7 9.7 0 1 0 12 2Zm0 17.65a7.94 7.94 0 0 1-4.05-1.1l-.29-.17-3.13.82.84-3.05-.19-.31A7.94 7.94 0 1 1 12 19.65Zm4.36-5.95c-.24-.12-1.41-.7-1.63-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18a7.2 7.2 0 0 1-1.33-1.66c-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>בדיקת אתר לאתר שלי</a>
+          <a class="btn" href="https://wa.me/972527905122?text=%D7%94%D7%99%D7%99%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%94%D7%A2%D7%9E%D7%95%D7%93%20%D7%A2%D7%9C%20%D7%AA%D7%97%D7%96%D7%95%D7%A7%D7%AA%20%D7%90%D7%AA%D7%A8%D7%99%D7%9D%20%D7%95%D7%99%D7%A9%20%D7%9C%D7%99%20%D7%A9%D7%90%D7%9C%D7%94" target="_blank" rel="noopener noreferrer">דברו איתנו בווטסאפ</a>
         </div>
-        <div class="sp-trust rv">
-          <span><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>15 minutes</span></span>
-          <span><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Free of charge</span></span>
-          <span><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>No commitment</span></span>
+        <div class="sp-trust cc-trust rv">
+          <span><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>עדכונים וגיבויים</span></span>
+          <span><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>תיקונים ותוספות</span></span>
+          <span><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>נגישות ופרטיות</span></span>
+          <span><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>קידום אורגני ותוכן</span></span>
         </div>
-      </div>
-      <aside class="sp-glance rv" aria-label="Improve the site you already have">
-        <div class="sp-glance-top"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10h3V7L6.5 3.5a6 6 0 0 1 8 8l6 6a2 2 0 0 1-3 3l-6-6a6 6 0 0 1-8-8L7 10"/></svg></span><span class="sp-glance-name">Improve the site you already have</span></div>
-        <div class="sp-price"><b class="sp-quote">From ₪150</b><small>a month for maintenance</small></div>
-        <dl class="sp-facts"><div><dt>Best for</dt><dd>Businesses whose site is not working for them</dd></div><div><dt>First step</dt><dd>A 30-min site review</dd></div></dl>
-        <a class="btn solid cta" href="../booking.html?s=review"><span class="cta-txt">Book a free call</span><svg class="cta-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <p class="sp-glance-note">Fixed price, agreed before we start</p>
+        </div>
+        <div class="cc-show rv">
+          <figure class="hc" id="hc" aria-labelledby="hc-t">
+            <div class="hc-top"><b id="hc-t">דו״ח בריאות אתר, לדוגמה</b><span class="hc-url">your-site.co.il</span></div>
+            <div class="hc-sum"><span class="hc-n">6/6</span><span class="hc-bar" aria-hidden="true"><i></i></span><span>בדיקות תקינות</span></div>
+            <ul class="hc-list">
+              <li class="hc-r" style="--bad:#FFB65C"><span class="hc-d" aria-hidden="true"></span><span><span class="hc-k">עדכונים</span><span class="hc-s"><span class="a">וורדפרס, תבנית ותוספים מעודכנים</span><span class="b">12 עדכונים ממתינים</span></span></span><span class="hc-p"><span class="a">תקין</span><span class="b">לטפל</span></span></li>
+              <li class="hc-r" style="--bad:#FF8A7A"><span class="hc-d" aria-hidden="true"></span><span><span class="hc-k">גיבוי</span><span class="hc-s"><span class="a">גיבוי מהלילה, שמור מחוץ לאחסון</span><span class="b">אין גיבוי מחוץ לאחסון</span></span></span><span class="hc-p"><span class="a">תקין</span><span class="b">דחוף</span></span></li>
+              <li class="hc-r" style="--bad:#FF8A7A"><span class="hc-d" aria-hidden="true"></span><span><span class="hc-k">אבטחה</span><span class="hc-s"><span class="a">SSL תקין, ספאם חסום, ניטור פעיל</span><span class="b">תעודת SSL פגה</span></span></span><span class="hc-p"><span class="a">תקין</span><span class="b">דחוף</span></span></li>
+              <li class="hc-r" style="--bad:#FFB65C"><span class="hc-d" aria-hidden="true"></span><span><span class="hc-k">מהירות</span><span class="hc-s"><span class="a">תמונות מכווצות, טעינה מהירה בטלפון</span><span class="b">טעינה איטית בטלפון</span></span></span><span class="hc-p"><span class="a">תקין</span><span class="b">לטפל</span></span></li>
+              <li class="hc-r" style="--bad:#FFB65C"><span class="hc-d" aria-hidden="true"></span><span><span class="hc-k">נגישות</span><span class="hc-s"><span class="a">מונגש, עם הצהרת נגישות</span><span class="b">אין הצהרת נגישות</span></span></span><span class="hc-p"><span class="a">תקין</span><span class="b">לטפל</span></span></li>
+              <li class="hc-r" style="--bad:#FF8A7A"><span class="hc-d" aria-hidden="true"></span><span><span class="hc-k">פרטיות</span><span class="hc-s"><span class="a">מדיניות פרטיות ובאנר עוגיות</span><span class="b">פיקסלים נטענים בלי הסכמה</span></span></span><span class="hc-p"><span class="a">תקין</span><span class="b">דחוף</span></span></li>
+            </ul>
+            <figcaption class="hc-foot"><span>ככה נראה אתר אחרי תחזוקה.</span><button class="rp" type="button" hidden><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4h4"/></svg>להריץ שוב</button></figcaption>
+          </figure>
+        </div>
+      </header>
+
+      <p class="post-lead"><strong>תחזוקת אתרים</strong> היא כל מה שקורה לאתר אחרי שהוא עולה לאוויר: עדכונים, גיבויים, תיקונים, התאמה לחוק ועבודה שמביאה אליו לקוחות מגוגל. ב<a href="../index.html">בונים דיגיטל</a> אנחנו לוקחים את ניהול האתר השוטף עלינו.</p>
+      <p>תחזוקת אתר טובה היא כזו שלא שמים לב אליה: האתר פשוט עובד, מהיר ומעודכן. ואם משהו כן נשבר, יש גיבוי ויש למי לפנות.</p>
+
+      <aside class="tldr pr" aria-label="בקצרה">
+        <p class="tldr-k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg>בקצרה, אם אין לכם זמן</p>
+        <ul>
+          <li><strong>עדכונים, גיבויים ואבטחה</strong> לאתרי וורדפרס ואתרים בקוד, גם כאלה שלא אנחנו בנינו.</li>
+          <li><strong>תיקונים ותוספות</strong>: טופס שלא שולח, אתר פרוץ, עמודים חדשים או מעבר אחסון.</li>
+          <li><strong>נגישות ופרטיות</strong>: הנגשה לפי ת״י 5568, הצהרת נגישות, מדיניות פרטיות ותנאי שימוש.</li>
+          <li><strong>קידום אורגני ותוכן</strong>: SEO, כתיבת תוכן ובלוג. אצל ריטייל אור זה הביא 2,870 כניסות מגוגל.</li>
+          <li>מתחילים ב<strong>בדיקת אתר בחינם</strong>. תחזוקה חודשית <strong>מ־₪150 לחודש</strong>, בלי התחייבות.</li>
+        </ul>
       </aside>
-    </div>
-  </header>
 
-  <section class="sp-sec" aria-labelledby="sp-pains-h">
-    <div class="wrap">
-      <div class="sec-eyebrow rv">// sound familiar?</div>
-      <h2 class="rv" id="sp-pains-h">Sound familiar?</h2>
-      <div class="sp-pains"><div class="sp-pain rv"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16v.01"/></svg><span>The site is slow and people leave before it loads.</span></div><div class="sp-pain rv"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16v.01"/></svg><span>Something is broken and nobody answers the phone.</span></div><div class="sp-pain rv"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16v.01"/></svg><span>You're not showing up on Google in your area.</span></div></div>
-      <p class="sp-answer rv"><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg><span>Here is how we fix that.</span></p>
-    </div>
-  </section>
+      <nav class="toc pr" aria-label="תוכן העמוד">
+        <p class="toc-k">מה בעמוד</p>
+        <ol>
+          <li><a href="#who"><span>01</span>למי זה מתאים</a></li>
+          <li><a href="#maintenance"><span>02</span>עדכונים, גיבויים ותפעול שוטף</a></li>
+          <li><a href="#fixes"><span>03</span>תיקונים ותוספות לאתר קיים</a></li>
+          <li><a href="#a11y"><span>04</span>נגישות, פרטיות ותנאי שימוש</a></li>
+          <li><a href="#seo"><span>05</span>קידום אורגני, תוכן ובלוג</a></li>
+          <li><a href="#start"><span>06</span>בדיקת אתר וחבילות תחזוקה</a></li>
+          <li><a href="#how"><span>07</span>איך זה עובד</a></li>
+          <li><a href="#faq"><span>08</span>שאלות נפוצות</a></li>
+          <li><a href="#more"><span>09</span>שירותים נוספים</a></li>
+        </ol>
+      </nav>
 
-  <section class="sp-sec" aria-labelledby="sp-gets-h">
-    <div class="wrap">
-      <div class="sec-eyebrow rv">// what you get</div>
-      <h2 class="rv" id="sp-gets-h">What you get</h2>
-      <div class="sp-blocks"><article class="sp-block rv" id="fixes"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10h3V7L6.5 3.5a6 6 0 0 1 8 8l6 6a2 2 0 0 1-3 3l-6-6a6 6 0 0 1-8-8L7 10"/></svg></span><h3>Fixes &amp; improvements</h3><p>Slow, broken or not on Google</p><ul><li><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Speed up slow pages</span></li><li><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Fix broken forms, links and layouts</span></li><li><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Fix how the site looks on phones</span></li></ul></article><article class="sp-block rv" id="maintenance"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.46 20.85A12 12 0 0 1 3.5 6 12 12 0 0 0 12 3a12 12 0 0 0 8.5 3 12 12 0 0 1-.09 7.06"/><path d="M15 19l2 2 4-4"/></svg></span><h3>Monthly maintenance</h3><p>Backups, updates, security · from ₪150</p><ul><li><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Regular backups</span></li><li><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>WordPress and plugin updates</span></li><li><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Security checks and help with hosting</span></li></ul></article><article class="sp-block rv" id="seo"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="M21 21l-6-6"/></svg></span><h3>Google SEO</h3><p>So people find you when they search in your area</p><ul><li><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Google Business Profile setup</span></li><li><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Pages for your area and your services</span></li><li><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Tracking and reports from Search Console</span></li></ul></article></div>
-      <div class="sp-inline-cta rv"><a class="btn solid cta" href="../booking.html?s=review"><span class="cta-txt">Book a free call</span><svg class="cta-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><p>Want to see if it fits your business?</p></div>
-    </div>
-  </section>
+      <!-- ===== 01 ===== -->
+      <section class="ch-sec" aria-labelledby="who">
+        <div class="ch-head pr"><span class="ch-n">01</span><span class="ch-k">למי</span></div>
+        <h2 id="who">למי מתאים שירות תחזוקת אתרים</h2>
+        <ul class="cards">
+          <li class="pr"><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span><span><b>לקוחות שבנינו להם אתר</b><span class="d">בסוף חודש האחריות אנחנו ממשיכים לשמור על האתר בשבילכם, בלי להתחיל מהתחלה עם מישהו חדש.</span></span></li>
+          <li class="pr"><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16v.01"/></svg></span><span><b>עסקים עם אתר קיים שאף אחד לא מטפל בו</b><span class="d">המפתח נעלם, התוספים לא מעודכנים, משהו נשבר ואין למי לפנות.</span></span></li>
+          <li class="pr"><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3.5 3.5 0 0 0 6 0zM19 7l-3 7a3.5 3.5 0 0 0 6 0zM8 21h8"/></svg></span><span><b>עסקים שצריכים להתאים את האתר לחוק</b><span class="d">נגישות, מדיניות פרטיות ותנאי שימוש.</span></span></li>
+          <li class="pr"><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg></span><span><b>עסקים שהאתר שלהם לא מביא פניות</b><span class="d">שם נכנסים קידום אורגני, תוכן ובלוג.</span></span></li>
+        </ul>
+      </section>
 
-  <section class="sp-sec" aria-labelledby="sp-steps-h">
-    <div class="wrap">
-      <div class="sec-eyebrow rv">// how it works</div>
-      <h2 class="rv" id="sp-steps-h">How it works</h2>
-      <div class="sp-steps"><div class="sp-step rv"><span class="sp-step-n">01</span><h3>Site review</h3><p>We check speed, Google and what is broken.</p></div><div class="sp-step rv"><span class="sp-step-n">02</span><h3>Fixed-price quote</h3><p>A clear number and scope in writing. No hourly surprises.</p></div><div class="sp-step rv"><span class="sp-step-n">03</span><h3>Fixes</h3><p>We fix in order of impact, biggest problems first.</p></div><div class="sp-step rv"><span class="sp-step-n">04</span><h3>Ongoing care</h3><p>Optional monthly maintenance keeps it that way.</p></div></div>
-    </div>
-  </section>
+      <!-- ===== 02 ===== -->
+      <section class="ch-sec" aria-labelledby="maintenance">
+        <div class="ch-head pr"><span class="ch-n">02</span><span class="ch-k">תפעול שוטף</span></div>
+        <h2 id="maintenance">תחזוקת אתר שוטפת: עדכונים, גיבויים ואבטחה</h2>
+        <p>רוב התקלות שאני רואה באתרים קיימים מתחילות מאותו דבר: אף אחד לא עדכן אותם חודשים. בתחזוקת אתר שוטפת אנחנו דואגים שזה לא יקרה.</p>
+        <ul class="cards soft">
+          <li class="pr"><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 0 1-14.3 4.9M4 12a8 8 0 0 1 14.3-4.9M18 3v4h-4M6 21v-4h4"/></svg></span><span><b>עדכון אתר וורדפרס</b><span class="d">גרסת וורדפרס, תבנית ותוספים, ובדיקה אחרי כל עדכון שלא נשבר כלום.</span></span></li>
+          <li class="pr"><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8l-4 4 4 4M17 8l4 4-4 4M14 4l-4 16"/></svg></span><span><b>תחזוקת אתרים בקוד</b><span class="d">עדכון ספריות, בדיקת תאימות לדפדפנים ולמובייל.</span></span></li>
+          <li class="pr"><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></span><span><b>גיבוי אתר</b><span class="d">גיבויים קבועים, שמורים מחוץ לאחסון, כך שאפשר להחזיר את האתר אם משהו קורה.</span></span></li>
+          <li class="pr"><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span><span><b>אבטחת אתר</b><span class="d">חסימת ספאם, סיסמאות חזקות, תעודת SSL תקינה וניטור שהאתר באוויר.</span></span></li>
+          <li class="pr"><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 18a8 8 0 1 1 14 0M12 14l4-5"/><circle cx="12" cy="14" r="1.2"/></svg></span><span><b>שיפור מהירות אתר</b><span class="d">כיווץ תמונות, ניקוי תוספים מיותרים וטעינה מהירה במובייל.</span></span></li>
+          <li class="pr"><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></svg></span><span><b>עדכוני תוכן</b><span class="d">מחירים, שעות פעילות, תמונות, מוצרים חדשים ובאנרים למבצעים. שולחים לנו הודעה, וזה מתעדכן.</span></span></li>
+        </ul>
 
-  <section class="sp-sec">
-    <div class="wrap">
-      <div class="sec-eyebrow rv">// real example</div>
-      <div class="sp-proof rv">
-        <div class="sp-proof-text"><b>Retail AVR: from Google, almost no visits to 2,870 clicks</b><span>After the site and local SEO work, people searching in the area started clicking through.</span></div>
-        <a class="btn" href="../index.html#results">See the results</a>
-      </div>
-    </div>
-  </section>
+        <div class="bk pr" id="bk">
+          <div class="bk-head"><h3>ככה גיבוי מציל אתר</h3><span>דוגמה, לא אתר של לקוח</span></div>
+          <ol class="bk-tl" aria-label="גיבויים מהשבוע האחרון">
+            <li>א׳</li><li>ב׳</li><li>ג׳</li><li>ד׳</li><li>ה׳</li><li>אתמול</li><li class="now">הלילה<br>03:00</li>
+          </ol>
+          <div class="bk-site" aria-hidden="true">
+            <div class="sk-bar"><i></i><i></i><i></i><span>your-site.co.il</span></div>
+            <div class="bk-pr"><i></i></div>
+            <div class="bk-pg">
+              <div class="bk-nav"><span class="bk-logo"></span><span class="bk-links"><i></i><i></i><i></i></span></div>
+              <div class="bk-hero"><i></i><i></i><b></b></div>
+              <div class="bk-cards"><i></i><i></i><i></i></div>
+              <div class="bk-err"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3l9.5 17h-19z"/><path d="M12 10v4M12 17v.01"/></svg><span>שגיאה: האתר הפסיק לעבוד אחרי עדכון תוסף</span></div>
+            </div>
+          </div>
+          <div class="bk-ctl">
+            <button class="bk-go" type="button" hidden>שחזור מהגיבוי של הלילה</button>
+            <p class="bk-st" aria-live="polite">כל לילה נשמר גיבוי מחוץ לאחסון. אם עדכון שובר משהו, מחזירים את האתר לגיבוי האחרון תוך דקות, ושום דבר לא אבד.</p>
+          </div>
+        </div>
+      </section>
 
-  <section class="sp-sec" aria-labelledby="sp-faq-h">
-    <div class="wrap">
-      <div class="sec-eyebrow rv">// questions</div>
-      <h2 class="rv" id="sp-faq-h">Questions before you book</h2>
-      <div class="sp-faq"><details class="rv" open><summary>Someone else built my site. Can you work on it?</summary><p>Yes. We work on WordPress and custom sites built by others.</p></details><details class="rv"><summary>Do I have to sign up for maintenance?</summary><p>No. Fixes and SEO work can be one-time. Maintenance is optional.</p></details><details class="rv"><summary>How fast will I see results on Google?</summary><p>Local SEO usually takes a few weeks to show. We track it in Search Console so you can see it too.</p></details></div>
-    </div>
-  </section>
+      <!-- ===== 03 ===== -->
+      <section class="ch-sec" aria-labelledby="fixes">
+        <div class="ch-head pr"><span class="ch-n">03</span><span class="ch-k">תיקונים ותוספות</span></div>
+        <h2 id="fixes">תיקון תקלות באתר ותוספות לאתר קיים</h2>
+        <p>לפני שהקמנו את בונים דיגיטל עבדתי כמעט 3 שנים בחברת דיגיטל, וחלק גדול מהעבודה שם היה בדיוק זה: להיכנס לאתר שמישהו אחר בנה, להבין מה שבור ולתקן.</p>
 
-  <section class="sp-final">
-    <div class="wrap">
-      <div class="sp-final-box rv">
+        <div class="ba pr" id="ba">
+          <div class="ba-ph">
+            <div class="ba-vp">
+              <div class="ba-s ba-a" aria-hidden="true">
+                <div class="m-nav"><b>קפה לוטה</b><i class="m-burger"></i></div>
+                <div class="m-img"></div>
+                <b class="m-h">קפה שנקלה הבוקר, עד הבית</b>
+                <span class="m-p">משלוחים בכל המרכז, תוך יום עסקים.</span>
+                <span class="m-btn">להזמנה</span>
+                <span class="m-in">שם מלא</span>
+                <span class="m-in">טלפון</span>
+              </div>
+              <div class="ba-s ba-b" aria-hidden="true">
+                <div class="m-nav"><b>קפה לוטה</b><span class="m-menu">ראשי · תפריט · משלוחים · אודות · צור קשר</span></div>
+                <div class="m-img"></div>
+                <b class="m-h">קפה שנקלה הבוקר, עד הבית</b>
+                <span class="m-p">משלוחים בכל המרכז, תוך יום עסקים.</span>
+                <span class="m-btn">להזמנה</span>
+                <span class="m-in">שם מלא</span>
+                <span class="m-pop">אנחנו משתמשים בעוגיות כדי לשפר את חוויית הגלישה<span>✕</span></span>
+              </div>
+              <span class="ba-tag t-b" aria-hidden="true">לפני</span>
+              <span class="ba-tag t-a" aria-hidden="true">אחרי</span>
+              <input class="ba-in" type="range" min="0" max="100" value="50" dir="ltr" aria-label="השוואה בין המסך השבור למסך המתוקן" hidden>
+              <span class="ba-line" aria-hidden="true"><span class="ba-h"><svg class="ico" viewBox="0 0 24 24"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5"/></svg></span></span>
+            </div>
+          </div>
+          <p class="ba-cap">מימין, אתר שנשבר בטלפון: תפריט שבורח מהמסך, טקסט ענק, כפתור חתוך ובאנר שמסתיר הכל. משמאל, אותו אתר אחרי תיקון. גוררים את הקו כדי להשוות. זו דוגמה שהכנו, לא אתר של לקוח.</p>
+        </div>
+
+        <ul class="cards">
+          <li class="pr"><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8V6a4 4 0 0 1 8 0v2M5 9h14v4a7 7 0 0 1-14 0zM12 13v8M3 13h2M19 13h2M4 19l2.5-2M20 19l-2.5-2"/></svg></span><span><b>תיקון תקלות באתר</b><span class="d">טופס שלא שולח, עמוד שבור, תצוגה לא תקינה במובייל, שגיאות אחרי עדכון.</span></span></li>
+          <li class="pr"><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M12 8v4M12 15v.01"/></svg></span><span><b>תיקון אתר פרוץ</b><span class="d">ניקוי קוד זדוני, סגירת הפרצה והחזרת האתר לעבודה.</span></span></li>
+          <li class="pr"><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M12 8v8M8 12h8"/></svg></span><span><b>תוספות לאתר</b><span class="d">עמודים חדשים, טפסים, גלריה, כפתור ווטסאפ, חיבור למערכת תורים או ל-CRM.</span></span></li>
+          <li class="pr"><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 4.6L18 9.4l-4.2 1.8L12 16l-1.8-4.8L6 9.4l4.2-1.8zM19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></span><span><b>שדרוג אתר קיים</b><span class="d">רענון עיצוב, אנימציות והתאמה למובייל, בלי לבנות מההתחלה.</span></span></li>
+          <li class="pr"><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></span><span><b>מעבר אחסון או דומיין</b><span class="d">בלי השבתה ובלי לאבד מיילים או נתונים.</span></span></li>
+        </ul>
+        <p>ואם האתר כבר ישן מדי בשביל שדרוג, אפשר לבנות חדש: <a href="custom-code-website.html">בניית אתר בקוד</a> או <a href="wordpress-website.html">בניית אתר וורדפרס</a>.</p>
+      </section>
+
+      <!-- ===== 04 ===== -->
+      <section class="ch-sec" aria-labelledby="a11y">
+        <div class="ch-head pr"><span class="ch-n">04</span><span class="ch-k">נגישות ופרטיות</span></div>
+        <h2 id="a11y">הנגשת אתרים, מדיניות פרטיות ותנאי שימוש</h2>
+        <p>אתר של עסק בישראל צריך לעמוד בכמה דרישות חוק, ורוב בעלי העסקים שאני פוגש לא יודעים שהאתר שלהם לא עומד בהן. אנחנו בודקים, מתקנים ומסבירים לכם מה נעשה.</p>
+
+        <div class="kb pr" id="kb">
+          <div class="kb-bar">
+            <p>ככה משתמש מקלדת רואה אתר</p>
+            <button class="kb-t" type="button" aria-pressed="false" hidden><span class="kb-sw" aria-hidden="true"></span>מצב מקלדת</button>
+          </div>
+          <div class="kb-demo" aria-hidden="true">
+            <span class="kb-key">Tab ⇥</span>
+            <div class="kb-nav"><span class="kb-logo">סטודיו נועה</span><span class="kb-f" data-n="הקישור ״ראשי״">ראשי</span><span class="kb-f" data-n="הקישור ״שירותים״">שירותים</span><span class="kb-f" data-n="הקישור ״צור קשר״">צור קשר</span></div>
+            <div class="kb-h">טיפולי פנים ועור</div>
+            <div class="kb-p">קובעים תור אונליין, ומקבלים תזכורת יום לפני.</div>
+            <div class="kb-row"><span class="kb-f kb-btn on" data-n="הכפתור ״קביעת תור״">קביעת תור</span><span class="kb-f kb-in" data-n="שדה הטלפון">טלפון</span><span class="kb-f" data-n="הכפתור ״שליחה״">שליחה</span></div>
+          </div>
+          <p class="kb-now" aria-live="off">מי שגולש רק עם מקלדת עובר בין הכפתורים במקש <strong>Tab</strong>, ורואה איפה הוא נמצא לפי מסגרת בולטת, כמו זו שמסביב לכפתור ״קביעת תור״. בלי המסגרת הזאת, הוא לא יודע על מה הוא עומד.</p>
+        </div>
+
+        <ul class="cards">
+          <li class="pr"><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="4.5" r="1.8"/><path d="M5 8l7 1.5L19 8M12 9.5V14M12 14l-3 7M12 14l3 7"/></svg></span><span><h3>הנגשת אתרים</h3><span class="d">התאמת האתר לתקן הישראלי ת״י 5568: ניווט במקלדת, ניגודיות צבעים, טקסט חלופי לתמונות, כותרות מסודרות וטפסים שקוראי מסך מבינים. בסוף ההנגשה אנחנו כותבים ומעלים את הצהרת הנגישות.</span></span></li>
+          <li class="pr"><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><rect x="9" y="11" width="6" height="5" rx="1"/><path d="M10 11V9.5a2 2 0 0 1 4 0V11"/></svg></span><span><h3>מדיניות פרטיות לאתר</h3><span class="d">מדיניות שמתאימה למה שהאתר שלכם באמת אוסף, לפי חוק הגנת הפרטיות ותיקון 13 שנכנס לתוקף באוגוסט 2025. כולל באנר עוגיות, ופיקסלים שנטענים רק אחרי הסכמה.</span></span></li>
+          <li class="pr"><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></span><span><h3>תנאי שימוש לאתר</h3><span class="d">תנאים שמתאימים לסוג האתר: אתר תדמית, חנות עם מדיניות משלוחים והחזרות, או מערכת שלקוחות נרשמים אליה.</span></span></li>
+          <li class="pr"><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 10h10M7 14h5M16 14l1.5 1.5L20 13"/></svg></span><span><h3>טפסים מאובטחים</h3><span class="d">טפסי יצירת קשר ששואלים רק מה שצריך, שולחים את המידע בחיבור מוצפן, וכוללים תיבות הסכמה נפרדות לדיוור שיווקי.</span></span></li>
+        </ul>
+        <div class="callout pr">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16v.01"/></svg>
+          <p>חשוב לדעת: תוסף נגישות לבד לא מספיק. ההתאמה צריכה להיות בתוך האתר עצמו.</p>
+        </div>
+        <p>רוצים לראות איך זה נראה אצלנו? הנה <a href="../accessibility.html">הצהרת הנגישות</a> ו<a href="../privacy.html">מדיניות הפרטיות</a> של האתר הזה.</p>
+      </section>
+
+      <!-- ===== 05 ===== -->
+      <section class="ch-sec" aria-labelledby="seo">
+        <div class="ch-head pr"><span class="ch-n">05</span><span class="ch-k">קידום ותוכן</span></div>
+        <h2 id="seo">קידום אורגני בגוגל, כתיבת תוכן ובלוג</h2>
+        <p>אתר יפה שאף אחד לא מוצא לא מביא פניות. קידום אורגני הוא העבודה שגורמת לגוגל להציג את האתר שלכם למי שמחפש בדיוק את מה שאתם מוכרים, בלי לשלם על כל קליק.</p>
+        <ul class="cards soft">
+          <li class="pr"><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.3 4.3a2 2 0 0 1 3.4 0l.5.9a2 2 0 0 0 2.1 1l1-.2a2 2 0 0 1 2.4 2.4l-.2 1a2 2 0 0 0 1 2.1l.9.5a2 2 0 0 1 0 3.4l-.9.5a2 2 0 0 0-1 2.1l.2 1a2 2 0 0 1-2.4 2.4l-1-.2a2 2 0 0 0-2.1 1l-.5.9a2 2 0 0 1-3.4 0l-.5-.9a2 2 0 0 0-2.1-1l-1 .2a2 2 0 0 1-2.4-2.4l.2-1a2 2 0 0 0-1-2.1l-.9-.5a2 2 0 0 1 0-3.4l.9-.5a2 2 0 0 0 1-2.1l-.2-1a2 2 0 0 1 2.4-2.4l1 .2a2 2 0 0 0 2.1-1z"/><circle cx="12" cy="12" r="3"/></svg></span><span><b>SEO טכני</b><span class="d">ביצועים ומהירות טעינה, אבטחת מידע, נגישות, מבנה כותרות, קישורים פנימיים וחיבור ל-Google Search Console, כך שכל המדדים עומדים בדרישות של גוגל.</span></span></li>
+          <li class="pr"><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="M21 21l-6-6"/></svg></span><span><b>מחקר מילות מפתח</b><span class="d">מה הלקוחות שלכם באמת מחפשים, ואיזה עמוד עונה על כל חיפוש.</span></span></li>
+          <li class="pr"><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></svg></span><span><b>כתיבת תוכן לאתר</b><span class="d">עמודי שירות ומוצר שכתובים בשפה של הלקוחות שלכם.</span></span></li>
+          <li class="pr"><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg></span><span><b>הקמת בלוג וניהולו</b><span class="d">מאמרים קבועים שעונים על שאלות שהלקוחות שואלים, ומביאים תנועה לאורך זמן.</span></span></li>
+        </ul>
+        <p>הדוגמה שלנו: ב<a href="https://retailavr.co.il/" target="_blank" rel="noopener noreferrer">ריטייל אור</a> ניהלנו את ה-SEO ואת כתיבת התכנים, והאתר הגיע ל-2,870 כניסות מגוגל, ובין 3 ל-7 לידים חדשים בכל יום, שנכנסים דרך הטפסים באתר.</p>
+
+        <figure class="gr pr" id="gr">
+          <div class="gr-head">
+            <div><b>כמה אנשים הגיעו לריטייל אור מגוגל</b><span>אוקטובר 2025 – יולי 2026</span></div>
+            <div class="gr-tot"><span class="gr-n" aria-hidden="true">2,870</span><span><span class="sr-only">2,870 </span>כניסות מגוגל</span></div>
+          </div>
+          <div class="gr-ch" aria-hidden="true">
+            <svg class="gr-svg" viewBox="0 0 600 200" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="gr-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0038B8" stop-opacity=".22"/><stop offset="1" stop-color="#0038B8" stop-opacity="0"/></linearGradient>
+                <clipPath id="gr-c"><rect x="0" y="0" width="600" height="200"/></clipPath>
+              </defs>
+              <path class="gr-grid" d="M0 50H600M0 100H600M0 150H600M0 199.5H600"/>
+              <path d="M0 196.1C2.6 195.7 10.5 194.3 15.8 193.7C21.1 193.0 26.3 193.1 31.6 192.2C36.9 191.3 42.1 189.6 47.4 188.3C52.7 187.0 58.0 183.7 63.2 184.3C68.5 185.0 73.7 190.2 78.9 192.2C84.2 194.2 89.4 195.4 94.7 196.1C100.0 196.8 105.2 196.1 110.5 196.1C115.8 196.1 121.0 199.4 126.3 196.1C131.6 192.8 136.8 181.1 142.1 176.5C147.4 171.9 152.6 171.3 157.9 168.7C163.2 166.1 168.4 164.7 173.7 160.8C179.0 156.9 184.2 149.1 189.5 145.2C194.8 141.3 200.0 141.2 205.3 137.3C210.6 133.4 215.8 125.6 221.1 121.7C226.3 117.8 231.6 116.4 236.8 113.8C242.1 111.2 247.3 111.2 252.6 106C257.9 100.8 263.1 83.8 268.4 82.5C273.7 81.2 278.9 98.2 284.2 98.2C289.5 98.2 294.7 87.7 300 82.5C305.3 77.3 310.5 68.1 315.8 66.8C321.1 65.5 326.3 72.1 331.6 74.7C336.9 77.3 342.1 83.8 347.4 82.5C352.7 81.2 357.9 70.7 363.2 66.8C368.4 62.9 373.6 59.0 378.9 59C384.1 59.0 389.4 66.8 394.7 66.8C400.0 66.8 405.2 61.6 410.5 59C415.8 56.4 421.0 53.8 426.3 51.2C431.6 48.6 436.8 43.3 442.1 43.3C447.4 43.3 452.6 48.6 457.9 51.2C463.2 53.8 468.4 61.6 473.7 59C479.0 56.4 484.2 38.1 489.5 35.5C494.8 32.9 500.0 40.7 505.3 43.3C510.6 45.9 515.9 46.0 521.1 51.2C526.4 56.4 531.5 57.7 536.8 74.7C542.0 91.7 547.3 154.3 552.6 153C557.9 151.7 563.1 83.8 568.4 66.8C573.7 49.8 578.9 48.6 584.2 51.2C589.5 53.8 597.4 77.3 600 82.5L600 200L0 200Z" fill="url(#gr-g)" clip-path="url(#gr-c)"/>
+              <path class="gr-line" pathLength="1" d="M0 196.1C2.6 195.7 10.5 194.3 15.8 193.7C21.1 193.0 26.3 193.1 31.6 192.2C36.9 191.3 42.1 189.6 47.4 188.3C52.7 187.0 58.0 183.7 63.2 184.3C68.5 185.0 73.7 190.2 78.9 192.2C84.2 194.2 89.4 195.4 94.7 196.1C100.0 196.8 105.2 196.1 110.5 196.1C115.8 196.1 121.0 199.4 126.3 196.1C131.6 192.8 136.8 181.1 142.1 176.5C147.4 171.9 152.6 171.3 157.9 168.7C163.2 166.1 168.4 164.7 173.7 160.8C179.0 156.9 184.2 149.1 189.5 145.2C194.8 141.3 200.0 141.2 205.3 137.3C210.6 133.4 215.8 125.6 221.1 121.7C226.3 117.8 231.6 116.4 236.8 113.8C242.1 111.2 247.3 111.2 252.6 106C257.9 100.8 263.1 83.8 268.4 82.5C273.7 81.2 278.9 98.2 284.2 98.2C289.5 98.2 294.7 87.7 300 82.5C305.3 77.3 310.5 68.1 315.8 66.8C321.1 65.5 326.3 72.1 331.6 74.7C336.9 77.3 342.1 83.8 347.4 82.5C352.7 81.2 357.9 70.7 363.2 66.8C368.4 62.9 373.6 59.0 378.9 59C384.1 59.0 389.4 66.8 394.7 66.8C400.0 66.8 405.2 61.6 410.5 59C415.8 56.4 421.0 53.8 426.3 51.2C431.6 48.6 436.8 43.3 442.1 43.3C447.4 43.3 452.6 48.6 457.9 51.2C463.2 53.8 468.4 61.6 473.7 59C479.0 56.4 484.2 38.1 489.5 35.5C494.8 32.9 500.0 40.7 505.3 43.3C510.6 45.9 515.9 46.0 521.1 51.2C526.4 56.4 531.5 57.7 536.8 74.7C542.0 91.7 547.3 154.3 552.6 153C557.9 151.7 563.1 83.8 568.4 66.8C573.7 49.8 578.9 48.6 584.2 51.2C589.5 53.8 597.4 77.3 600 82.5"/>
+            </svg>
+            <div class="gr-x"><span>Oct 2025</span><span>Jan 2026</span><span>Apr 2026</span><span>Jul 2026</span></div>
+          </div>
+          <div class="gr-m">
+            <div><span>כניסות מגוגל</span><b>2,870</b></div>
+            <div><span>הופעות בגוגל</span><b>58,700</b></div>
+            <div><span>אחוז ההקלקות</span><b>4.9%</b></div>
+            <div><span>מיקום ממוצע</span><b>8.4</b></div>
+          </div>
+          <figcaption>הקו הוא צורת הגרף של הכניסות היומיות מגוגל, מתוך Google Search Console של <bdi dir="ltr">retailavr.co.il</bdi>. המספרים הם אותם מספרים שמוצגים ב<a href="../index.html#results">עמוד הבית</a>, וכתבנו על התהליך <a href="../blog/how-to-get-leads-to-your-website.html#seo">בבלוג</a>.</figcaption>
+        </figure>
+      </section>
+
+      <!-- ===== 06 ===== -->
+      <section class="ch-sec" aria-labelledby="start">
+        <div class="ch-head pr"><span class="ch-n">06</span><span class="ch-k">מחירים</span></div>
+        <h2 id="start">איך מתחילים: בדיקת אתר וחבילות תחזוקה</h2>
+        <div class="pz-card pr">
+          <div><span class="k">בדיקת אתר</span><b>בחינם</b><span class="s">בלי התחייבות</span></div>
+          <p>עוברים על האתר שלכם ומחזירים לכם רשימה ברורה: מה תקין, מה דחוף, ומה יכול לחכות.</p>
+          <ul aria-label="מה בודקים">
+            <li>מהירות</li><li>אבטחה</li><li>עדכונים</li><li>נגישות</li><li>פרטיות</li><li>SEO בסיסי</li>
+          </ul>
+        </div>
+        <p><strong>עבודה חד-פעמית.</strong> תיקון, תוספת, הנגשה או מדיניות פרטיות מתומחרים לפי העבודה, ואתם מקבלים מחיר לפני שמתחילים.</p>
+        <p class="lead-in">תחזוקה חודשית</p>
+        <div class="pk">
+          <div class="pr"><h3>בסיס</h3><p>עדכונים, גיבויים, ניטור ואבטחה.</p><span class="pk-pz">מ־₪150 <small>לחודש</small></span></div>
+          <div class="pr"><h3>מורחבת</h3><p>כל הבסיס, ועוד שעות עבודה קבועות לעדכוני תוכן ותיקונים.</p><span class="pk-pz">לפי היקף</span></div>
+          <div class="pr"><h3>צמיחה</h3><p>כל המורחבת, ועוד קידום אורגני, מאמרים קבועים בבלוג ודוח חודשי.</p><span class="pk-pz">לפי היקף</span></div>
+        </div>
+        <p class="tbl-note" style="margin-top:0!important">המחירים לא כוללים מע״מ. לקוחות שבנינו להם אתר מקבלים את ההצעה בסוף חודש האחריות.</p>
+      </section>
+
+      <!-- ===== 07 ===== -->
+      <section class="ch-sec" aria-labelledby="how">
+        <div class="ch-head pr"><span class="ch-n">07</span><span class="ch-k">התהליך</span></div>
+        <h2 id="how">איך זה עובד</h2>
+        <ol class="sys">
+          <li class="pr"><div><b>שולחים לנו קישור לאתר.</b><p>מספיק הודעת ווטסאפ עם הקישור ומה מפריע לכם.</p></div></li>
+          <li class="pr"><div><b>בודקים ומחזירים לכם תמונה ברורה.</b><p>מה מצב האתר, מה צריך לעשות, כמה זה עולה וכמה זמן זה לוקח.</p></div></li>
+          <li class="pr"><div><b>מקבלים גישה ומתחילים.</b><p>אחרי האישור שלכם מקבלים גישה לאתר, מגבים אותו, ורק אז נוגעים.</p></div></li>
+          <li class="pr"><div><b>מעדכנים אתכם.</b><p>אחרי כל עבודה מקבלים סיכום קצר של מה שנעשה. בתחזוקה חודשית, סיכום פעם בחודש.</p></div></li>
+        </ol>
+      </section>
+
+      <!-- ===== 08 ===== -->
+      <section class="ch-sec" id="post-faq" aria-labelledby="faq">
+        <div class="ch-head pr"><span class="ch-n">08</span><span class="ch-k">שאלות ותשובות</span></div>
+        <h2 id="faq">שאלות נפוצות על תחזוקת אתרים</h2>
+        <div class="fq" data-faq>
+          <div class="fq-it open">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q1" aria-expanded="true" aria-controls="fq-a1"><span class="fq-n">01</span><span class="fq-t">אתם מתחזקים גם אתר שלא אתם בניתם?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a1" role="region" aria-labelledby="fq-q1"><div class="fq-ai"><p class="fq-a">כן. אנחנו עובדים עם אתרי וורדפרס ואתרים בקוד. מתחילים בבדיקת אתר כדי להבין מה יש שם.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q2" aria-expanded="false" aria-controls="fq-a2"><span class="fq-n">02</span><span class="fq-t">מה כוללת תחזוקת אתר וורדפרס?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a2" role="region" aria-labelledby="fq-q2"><div class="fq-ai"><p class="fq-a">עדכוני וורדפרס, תבנית ותוספים, גיבויים קבועים, ניטור ואבטחה. בחבילות המורחבות גם עדכוני תוכן, תיקונים וקידום.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q3" aria-expanded="false" aria-controls="fq-a3"><span class="fq-n">03</span><span class="fq-t">האתר שלי חייב להיות נגיש?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a3" role="region" aria-labelledby="fq-q3"><div class="fq-ai"><p class="fq-a">ברוב המקרים כן. אתר של עסק שנותן שירות לציבור צריך לעמוד בתקן ת״י 5568 ולכלול הצהרת נגישות. בבדיקת האתר נגיד לכם בדיוק מה חסר.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q4" aria-expanded="false" aria-controls="fq-a4"><span class="fq-n">04</span><span class="fq-t">תוסף נגישות לא מספיק?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a4" role="region" aria-labelledby="fq-q4"><div class="fq-ai"><p class="fq-a">לא. התוסף מוסיף כפתור עם אפשרויות תצוגה, אבל התקן דורש שהאתר עצמו יהיה נגיש: מבנה, ניווט במקלדת, טפסים ותמונות.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q5" aria-expanded="false" aria-controls="fq-a5"><span class="fq-n">05</span><span class="fq-t">אתם כותבים מדיניות פרטיות ותנאי שימוש?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a5" role="region" aria-labelledby="fq-q5"><div class="fq-ai"><p class="fq-a">כן, מותאמים למה שהאתר שלכם באמת עושה ואוסף, ומעלים אותם לאתר. במקרים מורכבים, כמו מידע רפואי או פיננסי, מומלץ לעבור על הנוסח גם עם עורך דין.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q6" aria-expanded="false" aria-controls="fq-a6"><span class="fq-n">06</span><span class="fq-t">תוך כמה זמן רואים תוצאות מקידום אורגני?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a6" role="region" aria-labelledby="fq-q6"><div class="fq-ai"><p class="fq-a">קידום אורגני הוא עבודה לטווח ארוך, והקצב תלוי בתחרות בתחום. בדרך כלל רואים שיפור אחרי כמה חודשים, ואנחנו מראים לכם את ההתקדמות בדוח החודשי.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q7" aria-expanded="false" aria-controls="fq-a7"><span class="fq-n">07</span><span class="fq-t">אפשר להפסיק את התחזוקה החודשית?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a7" role="region" aria-labelledby="fq-q7"><div class="fq-ai"><p class="fq-a">כן. התחזוקה החודשית היא בלי התחייבות: מודיעים לנו, והחודש הבא כבר לא מחויב. לפני שמסיימים אנחנו מעבירים לכם גיבוי מלא של האתר ואת כל הגישות.</p></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 09 ===== -->
+      <section class="ch-sec" aria-labelledby="more">
+        <div class="ch-head pr"><span class="ch-n">09</span><span class="ch-k">עוד שירותים</span></div>
+        <h2 id="more">שירותים נוספים</h2>
+        <div class="sp-others cc-others"><a class="sp-other pr" href="booking-system.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M16 3v4M8 3v4M4 11h16M8 15h2v2H8z"/></svg></span><b>אפליקציה לקביעת תורים</b><span>₪800</span></a><a class="sp-other pr" href="wordpress-website.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9h3M4 9h2.5M11 9l3 11 4-9M5.5 9l3.5 11 3-7M18 11c.18-.53 1-1.36 1-2.5C19 6.72 18.22 6 17.13 6 16.23 6 16 6.81 16 7.43 16 9.26 18 9.49 18 11"/></svg></span><b>אתר וורדפרס</b><span>מ־₪400</span></a><a class="sp-other pr" href="custom-code-website.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8l-4 4 4 4M17 8l4 4-4 4M14 4l-4 16"/></svg></span><b>אתר בקוד מותאם אישית</b><span>מ־₪300</span></a><a class="sp-other pr" href="online-store.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.33 8h11.34a2 2 0 0 1 1.98 2.3l-1.26 8.16A3 3 0 0 1 15.43 21H8.57a3 3 0 0 1-2.96-2.54l-1.26-8.16A2 2 0 0 1 6.33 8z"/><path d="M9 11V6a3 3 0 0 1 6 0v5"/></svg></span><b>חנות אונליין</b><span>₪2,000</span></a><a class="sp-other pr" href="app-development.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M11 4h2M12 17v.01"/></svg></span><b>פיתוח אפליקציה</b><span>לפי אפיון</span></a></div>
+      </section>
+
+      <aside class="post-cta pr" aria-label="יצירת קשר">
         <div>
-          <h2>Let's talk about your business</h2>
-          <p>A free 15-minute call. We'll understand what you need and tell you exactly what it costs. No commitment.</p>
+          <p class="post-cta-h">רוצים לדעת מה מצב האתר שלכם?</p>
+          <p>שלחו לנו קישור. נבדוק אותו ונחזור אליכם עם רשימה ברורה של מה תקין, מה דחוף ומה יכול לחכות.</p>
         </div>
-        <div class="sp-final-actions">
-          <a class="btn solid cta" href="../booking.html?s=review"><span class="cta-txt">Book a free call</span><svg class="cta-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a class="btn sp-wa" href="https://wa.me/972527905122?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%91%D7%95%D7%A0%D7%99%D7%9D%20%D7%93%D7%99%D7%92%D7%99%D7%98%D7%9C%2C%20%D7%99%D7%A9%20%D7%9C%D7%99%20%D7%A2%D7%A1%D7%A7%20%D7%95%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.55L2.3 21.7l5.28-1.38A9.7 9.7 0 1 0 12 2Zm0 17.65a7.94 7.94 0 0 1-4.05-1.1l-.29-.17-3.13.82.84-3.05-.19-.31A7.94 7.94 0 1 1 12 19.65Zm4.36-5.95c-.24-.12-1.41-.7-1.630-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18a7.2 7.2 0 0 1-1.33-1.66c-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.690 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg><span>Ask on WhatsApp</span></a>
-          <small>Pick a time that suits you, online</small>
+        <div class="cta-acts">
+          <a class="btn-wa" href="https://wa.me/972527905122?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%99%D7%A7%D7%AA%20%D7%90%D7%AA%D7%A8.%20%D7%94%D7%A7%D7%99%D7%A9%D7%95%D7%A8%3A%20" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.55L2.3 21.7l5.28-1.38A9.7 9.7 0 1 0 12 2Zm0 17.65a7.94 7.94 0 0 1-4.05-1.1l-.29-.17-3.13.82.84-3.05-.19-.31A7.94 7.94 0 1 1 12 19.65Zm4.36-5.95c-.24-.12-1.41-.7-1.63-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18a7.2 7.2 0 0 1-1.33-1.66c-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>שליחת קישור בווטסאפ</a>
+          <a class="btn-ghost" href="../booking.html?s=review"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M16 3v4M8 3v4M4 11h16"/></svg>קבעו שיחה</a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sp-sec" aria-labelledby="sp-others-h">
-    <div class="wrap">
-      <div class="sec-eyebrow rv">// more services</div>
-      <h2 class="rv" id="sp-others-h">Other services</h2>
-      <div class="sp-others"><a class="sp-other rv" href="booking-system.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M16 3v4M8 3v4M4 11h16M8 15h2v2H8z"/></svg></span><b>Booking system + SMS reminders</b><span>₪800</span></a><a class="sp-other rv" href="wordpress-website.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9h3M4 9h2.5M11 9l3 11 4-9M5.5 9l3.5 11 3-7M18 11c.18-.53 1-1.36 1-2.5C19 6.72 18.22 6 17.13 6 16.23 6 16 6.81 16 7.43 16 9.26 18 9.49 18 11"/></svg></span><b>WordPress website</b><span>From ₪400</span></a><a class="sp-other rv" href="custom-code-website.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8l-4 4 4 4M17 8l4 4-4 4M14 4l-4 16"/></svg></span><b>Custom-coded website</b><span>From ₪300</span></a><a class="sp-other rv" href="online-store.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.33 8h11.34a2 2 0 0 1 1.98 2.3l-1.26 8.16A3 3 0 0 1 15.43 21H8.57a3 3 0 0 1-2.96-2.54l-1.26-8.16A2 2 0 0 1 6.33 8z"/><path d="M9 11V6a3 3 0 0 1 6 0v5"/></svg></span><b>Online store</b><span>₪2,000</span></a><a class="sp-other rv" href="app-development.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M11 4h2M12 17v.01"/></svg></span><b>App development</b><span>Custom quote</span></a></div>
-    </div>
-  </section>
+      </aside>
+    </article>
+  </div>
 </main>
 
 <footer>
@@ -183,7 +861,7 @@
     <span>© <span id="yr"></span> Bonim Digital · <a href="https://github.com/N1ace" target="_blank" rel="noopener noreferrer">GitHub</a></span>
     <nav class="social-links" aria-label="Social">
       <a href="https://www.instagram.com/bonimdigital/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4zm0 2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7zm5 2.6A4.4 4.4 0 1 1 7.6 12 4.4 4.4 0 0 1 12 7.6zm0 2A2.4 2.4 0 1 0 14.4 12 2.4 2.4 0 0 0 12 9.6zm5.25-3.350a1.05 1.05 0 1 1-1.05 1.05 1.05 1.05 0 0 1 1.05-1.05z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4zm0 2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7zm5 2.6A4.4 4.4 0 1 1 7.6 12 4.4 4.4 0 0 1 12 7.6zm0 2A2.4 2.4 0 1 0 14.4 12 2.4 2.4 0 0 0 12 9.6zm5.25-3.35a1.05 1.05 0 1 1-1.05 1.05 1.05 1.05 0 0 1 1.05-1.05z"/></svg>
       </a>
       <a href="https://www.facebook.com/profile.php?id=61594940790647" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.07A10 10 0 1 0 10.4 21.9v-6.94H7.9v-2.89h2.5V9.8c0-2.47 1.47-3.84 3.72-3.84 1.08 0 2.2.2 2.2.2v2.42h-1.24c-1.22 0-1.6.76-1.6 1.54v1.85h2.72l-.43 2.89h-2.29v6.94A10 10 0 0 0 22 12.07z"/></svg>
@@ -203,7 +881,7 @@
 
 <aside class="float-actions" aria-label="Quick contact">
   <a class="whatsapp-float" href="https://wa.me/972527905122" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.55L2.3 21.7l5.28-1.38A9.7 9.7 0 1 0 12 2Zm0 17.65a7.94 7.94 0 0 1-4.05-1.1l-.29-.17-3.13.82.84-3.05-.19-.31A7.94 7.94 0 1 1 12 19.65Zm4.36-5.95c-.24-.12-1.41-.7-1.630-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18a7.2 7.2 0 0 1-1.33-1.66c-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.690 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.55L2.3 21.7l5.28-1.38A9.7 9.7 0 1 0 12 2Zm0 17.65a7.94 7.94 0 0 1-4.05-1.1l-.29-.17-3.13.82.84-3.05-.19-.31A7.94 7.94 0 1 1 12 19.65Zm4.36-5.95c-.24-.12-1.41-.7-1.63-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18a7.2 7.2 0 0 1-1.33-1.66c-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>
     <span>WhatsApp</span>
   </a>
   <a class="booking-float" href="../booking.html?s=review" aria-label="Book a call" title="Book a call">
@@ -213,6 +891,142 @@
 </aside>
 
 <script src="../assets/site-pages.js?v=3"></script>
-<script src="../assets/journey.js?v=1"></script>
+<script>
+// FAQ accordion: one answer open at a time (without JS every answer stays open)
+document.querySelectorAll('#post-faq [data-faq]').forEach(function(list){
+  list.classList.add('is-js');
+  list.addEventListener('click',function(e){
+    var q=e.target.closest('.fq-q'); if(!q) return;
+    var it=q.closest('.fq-it'), was=it.classList.contains('open');
+    list.querySelectorAll('.fq-it').forEach(function(x){x.classList.remove('open');x.querySelector('.fq-q').setAttribute('aria-expanded','false')});
+    if(!was){it.classList.add('open');q.setAttribute('aria-expanded','true')}
+  });
+});
+
+// reading flow: scroll reveal, progress bar, side navigation (page works fully without JS)
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches, hasIO='IntersectionObserver' in window;
+  if(hasIO&&!reduce){
+    document.documentElement.classList.add('pr-on');
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.post .pr').forEach(function(el){io.observe(el)});
+  }
+  var art=document.querySelector('.post-body'), bar=document.querySelector('.rd-progress span');
+  var toc=document.querySelector('.toc'), side=document.querySelector('.toc-side'), end=document.querySelector('.post-cta');
+  var links=[], heads=[];
+  if(toc&&side){
+    side.querySelector('ol').innerHTML=toc.querySelector('ol').innerHTML;
+    links=[].slice.call(side.querySelectorAll('a'));
+    heads=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1))});
+  }
+  var queued=false;
+  function update(){
+    queued=false;
+    if(art&&bar){var r=art.getBoundingClientRect(),h=r.height-innerHeight;bar.style.transform='scaleX('+(h>0?Math.min(1,Math.max(0,-r.top/h)):1)+')'}
+    if(links.length&&getComputedStyle(side).display!=='none'){
+      var cur=-1,y=innerHeight*.35;
+      heads.forEach(function(h,i){if(h&&h.getBoundingClientRect().top<y)cur=i});
+      links.forEach(function(a,i){a.classList.toggle('on',i===cur);if(i===cur)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')});
+      var past=toc.getBoundingClientRect().bottom<0, before=!end||end.getBoundingClientRect().top>innerHeight*.6;
+      side.classList.toggle('show',past&&before);
+    }
+  }
+  function onScroll(){if(!queued){queued=true;requestAnimationFrame(update)}}
+  addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);update();
+})();
+
+// hero: the health report fixes its rows one by one (without JS every row is already green)
+(function(){
+  var root=document.getElementById('hc'); if(!root) return;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window)) return;
+  var rows=[].slice.call(root.querySelectorAll('.hc-r')), n=root.querySelector('.hc-n'), sum=root.querySelector('.hc-sum'), rp=root.querySelector('.rp'), t=[];
+  function set(k){n.textContent=k+'/'+rows.length;sum.style.setProperty('--n',k)}
+  function reset(){t.forEach(clearTimeout);t=[];rows.forEach(function(r){r.classList.add('off');r.classList.remove('fix')});set(0)}
+  function run(){
+    reset();rp.hidden=true;
+    rows.forEach(function(r,i){
+      t.push(setTimeout(function(){r.classList.add('fix')},500+i*700));
+      t.push(setTimeout(function(){r.classList.remove('fix','off');set(i+1);if(i===rows.length-1){rp.hidden=false}},950+i*700));
+    });
+  }
+  reset();
+  var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){io.disconnect();run()}},{threshold:.35});
+  io.observe(root);
+  rp.addEventListener('click',run);
+})();
+
+// backups: the demo site starts broken and the button restores it from last night's backup
+(function(){
+  var root=document.getElementById('bk'); if(!root) return;
+  var go=root.querySelector('.bk-go'), st=root.querySelector('.bk-st'), pr=root.querySelector('.bk-pr'), busy=false;
+  var wait=matchMedia('(prefers-reduced-motion: reduce)').matches?150:1300;
+  function breakIt(){
+    root.classList.add('broken');go.dataset.m='restore';go.textContent='שחזור מהגיבוי של הלילה';
+    st.textContent='עדכון תוסף שבר את האתר. אבל יש גיבוי מהלילה, 03:00, שמור מחוץ לאחסון.';
+  }
+  go.hidden=false;breakIt();
+  go.addEventListener('click',function(){
+    if(busy) return;
+    if(go.dataset.m==='again'){breakIt();return}
+    busy=true;go.setAttribute('aria-disabled','true');st.textContent='משחזרים את האתר מהגיבוי...';pr.classList.add('run');
+    setTimeout(function(){
+      root.classList.remove('broken');pr.classList.remove('run');
+      st.textContent='האתר חזר לגיבוי של הלילה ועובד. שום דבר לא אבד, ועכשיו אפשר לבדוק מה שבר אותו בלי לחץ.';
+      go.dataset.m='again';go.textContent='לשבור שוב, לדוגמה';go.removeAttribute('aria-disabled');busy=false;
+    },wait);
+  });
+})();
+
+// before and after: the range moves the line (without JS the screen stays split in half)
+(function(){
+  var root=document.getElementById('ba'); if(!root) return;
+  var vp=root.querySelector('.ba-vp'), inp=root.querySelector('.ba-in');
+  inp.hidden=false;
+  function upd(){vp.style.setProperty('--x',inp.value+'%');inp.setAttribute('aria-valuetext',inp.value+'% מהמסך אחרי התיקון')}
+  inp.addEventListener('input',upd);upd();
+})();
+
+// keyboard view: the switch walks a focus frame through the demo, like pressing Tab
+(function(){
+  var root=document.getElementById('kb'); if(!root) return;
+  var tg=root.querySelector('.kb-t'), fs=[].slice.call(root.querySelectorAll('.kb-f')), now=root.querySelector('.kb-now'), key=root.querySelector('.kb-key'), i=-1, timer=null, seen=true;
+  var idle='מצב רגיל, כמו שרואים עם עכבר. הפעילו את מצב מקלדת כדי לראות איך מי שגולש רק עם מקלדת עובר בין הכפתורים.';
+  function clear(){fs.forEach(function(f){f.classList.remove('on')})}
+  function step(){
+    i=(i+1)%fs.length;clear();fs[i].classList.add('on');
+    now.innerHTML='לחיצה '+(i+1)+' על <strong>Tab</strong>: המסגרת עכשיו על '+fs[i].dataset.n+'. ככה המשתמש יודע איפה הוא נמצא.';
+    key.classList.remove('press');void key.offsetWidth;key.classList.add('press');
+  }
+  function start(){if(!timer&&seen){step();timer=setInterval(step,1300)}}
+  function stop(){clearInterval(timer);timer=null}
+  function set(on){
+    tg.setAttribute('aria-pressed',on?'true':'false');root.classList.toggle('is-on',on);
+    if(on){i=-1;start()}else{stop();clear();now.textContent=idle}
+  }
+  tg.hidden=false;set(false);
+  tg.addEventListener('click',function(){set(tg.getAttribute('aria-pressed')!=='true')});
+  if('IntersectionObserver' in window) new IntersectionObserver(function(es){seen=es[0].isIntersecting;if(!seen)stop();else if(root.classList.contains('is-on'))start()}).observe(root);
+})();
+
+// growth chart: the line draws with the scroll and the total counts up (without JS the full chart shows)
+(function(){
+  var root=document.getElementById('gr'); if(!root) return;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var line=root.querySelector('.gr-line'), clip=root.querySelector('#gr-c rect'), n=root.querySelector('.gr-n'), queued=false;
+  var cum=[0.001,0.003,0.005,0.009,0.013,0.016,0.017,0.018,0.019,0.026,0.035,0.046,0.062,0.081,0.103,0.128,0.156,0.19,0.22,0.254,0.293,0.329,0.363,0.402,0.443,0.482,0.523,0.567,0.612,0.655,0.697,0.744,0.79,0.833,0.87,0.884,0.922,0.966,1], total=2870;
+  root.classList.add('is-js');
+  function upd(){
+    queued=false;
+    var r=root.getBoundingClientRect(), vh=innerHeight, p=Math.max(0,Math.min(1,(vh*.9-r.top)/(vh*.6)));
+    var f=p*(cum.length-1), k=Math.floor(f), v=k>=cum.length-1?1:cum[k]+(cum[k+1]-cum[k])*(f-k);
+    line.style.strokeDashoffset=(1-p).toFixed(4);
+    clip.setAttribute('width',(600*p).toFixed(1));
+    n.textContent=Math.round(total*(p===0?0:v)).toLocaleString('en-US');
+  }
+  addEventListener('scroll',function(){if(!queued){queued=true;requestAnimationFrame(upd)}},{passive:true});
+  addEventListener('resize',upd);
+  upd();
+})();
+</script>
 </body>
 </html>

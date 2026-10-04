@@ -344,19 +344,16 @@ html[dir="ltr"] .blog-all svg,html[dir="ltr"] .blog-c-go svg{transform:scaleX(-1
 .blog-c-desc{color:var(--muted);font-size:14.5px;line-height:1.6}
 .blog-c-go{display:inline-flex;align-items:center;gap:6px;color:var(--accent);font-weight:700;font-size:14.5px;margin-top:auto;padding-top:6px;transition:gap .2s}
 .blog-c:hover .blog-c-go{gap:10px}
-.blog-c-feat .blog-c-img{aspect-ratio:1024/537;background:#0B1B33}
-.blog-c-feat .blog-c-img img{object-position:center}
+.blog-c-img.og{aspect-ratio:1024/537;background:#0B1B33}
+.blog-c-img.og img{object-position:center}
 .blog-c[lang="he"] .blog-c-body{font-family:'Heebo',var(--body)}
 .blog-c[lang="he"] b{font-family:'Heebo',var(--display);font-weight:800}
 html[dir="ltr"] .blog-c[dir="rtl"] .blog-c-go svg{transform:none}
 @media(min-width:901px){
-  .blog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .blog-c:not(.blog-c-feat) .blog-c-img{aspect-ratio:2/1}
-  .blog-c-feat{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}
-  .blog-c-feat .blog-c-img{border-bottom:0;border-inline-end:1px solid var(--line)}
-  .blog-c-feat .blog-c-body{justify-content:center;gap:12px;padding:28px 32px}
-  .blog-c-feat b{font-size:clamp(22px,2.2vw,26px)}
-  .blog-c-feat .blog-c-go{margin-top:6px}
+  .blog-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+  .blog-c-img:not(.og){aspect-ratio:2/1}
+  .blog-c-body{padding:24px 28px 26px}
+  .blog-c b{font-size:clamp(20px,1.9vw,23px)}
 }
 .contact-actions .btn svg{width:18px;height:18px;flex:none;fill:currentColor}
 .contact-actions .btn-wa{background:#25D366;border-color:#25D366;color:#071A0E}
@@ -1164,31 +1161,22 @@ html[lang="he"] .svc-card h3,html[lang="he"] .svc-band-hd b{font-family:'Heebo',
       <a class="blog-all rv" href="blog/index.html">All articles <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></a>
     </div>
     <div class="blog-grid">
-      <a class="blog-c blog-c-feat rv" href="blog/booking-app-for-barbers.html" lang="he" dir="rtl" data-i18n-skip>
-        <span class="blog-c-img"><img src="assets/blog/booking-app-for-barbers-og.jpg" alt="יומן תורים של מספרה על מסך טלפון" width="1024" height="537" loading="lazy"></span>
+      <a class="blog-c rv" href="blog/how-to-get-leads-to-your-website.html" lang="he" dir="rtl" data-i18n-skip>
+        <span class="blog-c-img og"><img src="assets/blog/how-to-get-leads-og.jpg" alt="משפך של תנועה, לידים ולקוחות לצד הכותרת: איך מביאים לידים לאתר ב-2026" width="1024" height="537" loading="lazy"></span>
         <span class="blog-c-body">
-          <span class="blog-c-meta"><span class="blog-c-tag">חדש</span><span>ספרים · 8 דקות קריאה</span></span>
-          <b>אפליקציה לקביעת תורים לספרים: מוכנה או מערכת משלך?</b>
-          <span class="blog-c-desc">השוואת מחירים אמיתית, יתרונות וחסרונות, ומחשבון שמראה כמה תחסוך בשנה.</span>
+          <span class="blog-c-meta"><span class="blog-c-tag">חדש</span><span>שיווק · 7 דקות קריאה</span></span>
+          <b>איך מביאים לידים לאתר ב-2026</b>
+          <span class="blog-c-desc">קידום ממומן, אורגני או סושיאל: כמה זה עולה, כמה זמן זה לוקח ומה מתאים לעסק שלכם. כולל מחשבון עלות ליד.</span>
           <span class="blog-c-go">לקריאת המאמר <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></span>
         </span>
       </a>
-      <a class="blog-c rv" href="blog/show-up-on-google.html">
-        <span class="blog-c-img fit"><img src="assets/results/gsc-search-console.png" alt="Google Search Console performance chart for retailavr.co.il — clicks and impressions growth" width="1024" height="311" loading="lazy"></span>
+      <a class="blog-c rv" href="blog/booking-app-for-barbers.html" lang="he" dir="rtl" data-i18n-skip>
+        <span class="blog-c-img og"><img src="assets/blog/booking-app-for-barbers-og.jpg" alt="יומן תורים של מספרה על מסך טלפון" width="1024" height="537" loading="lazy"></span>
         <span class="blog-c-body">
-          <span class="blog-c-meta"><span class="blog-c-tag">Google</span><span>3 min read</span></span>
-          <b>Why your business is not showing up on Google</b>
-          <span class="blog-c-desc">Most small business sites never show up for the service plus the area. Why it happens, and what changed for a real client.</span>
-          <span class="blog-c-go">Read the article <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></span>
-        </span>
-      </a>
-      <a class="blog-c rv" href="blog/slow-website.html">
-        <span class="blog-c-img"><img src="assets/results/lighthouse-mobile.png" alt="Google Lighthouse mobile report for retailavr.co.il: performance 98" width="915" height="693" loading="lazy" style="object-position:center 28%"></span>
-        <span class="blog-c-body">
-          <span class="blog-c-meta"><span class="blog-c-tag">Speed</span><span>2 min read</span></span>
-          <b>Why a slow website loses customers</b>
-          <span class="blog-c-desc">Most visitors are on a phone. If the page is still loading after a few seconds, they go back to Google.</span>
-          <span class="blog-c-go">Read the article <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></span>
+          <span class="blog-c-meta"><span class="blog-c-tag">ספרים</span><span>8 דקות קריאה</span></span>
+          <b>אפליקציה לקביעת תורים לספרים: מוכנה או מערכת משלך?</b>
+          <span class="blog-c-desc">השוואת מחירים אמיתית, יתרונות וחסרונות, ומחשבון שמראה כמה תחסוך בשנה.</span>
+          <span class="blog-c-go">לקריאת המאמר <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></span>
         </span>
       </a>
     </div>

@@ -223,7 +223,7 @@
     o3:'WordPress website',
     o3p:'From ₪400',
     o4:'Online store',
-    o5:'Already have a website?',
+    o5:'Website maintenance',
     o5p:'From ₪150 a month',
     c1:'Have an idea for an app?',
     c2:'Tell us about it on WhatsApp, or book an intro call. We\'ll come back with a first picture of the way there.',
