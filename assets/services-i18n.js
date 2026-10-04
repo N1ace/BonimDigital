@@ -182,7 +182,9 @@ window.PORTFOLIO_I18N_EXTRA={
     "How fast will I see results on Google?": "תוך כמה זמן רואים תוצאות בגוגל?",
     "Local SEO usually takes a few weeks to show. We track it in Search Console so you can see it too.": "קידום מקומי לוקח בדרך כלל כמה שבועות. אנחנו עוקבים ב־Search Console כדי שגם אתם תראו.",
     "From ₪150 a month": "מ־₪150 לחודש",
-    "From ₪500": "מ־₪500"
+    "From ₪300": "מ־₪300",
+    "From ₪400": "מ־₪400",
+    "WordPress website": "אתר וורדפרס"
 },
   titles:{
     "Booking System with SMS Reminders | Bonim Digital": "מערכת תורים עם תזכורות SMS | בונים דיגיטל",

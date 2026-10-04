@@ -4,13 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#FFFFFF">
-<title>Online Store for Small Businesses | Bonim Digital</title>
-<meta name="description" content="An online store with a catalog, cart and card payments. Up to 10 products, ready to sell. For bakeries, boutiques and makers. From ₪2,000.">
+<title>בניית חנות אונליין לעסקים | Shopify, WooCommerce וקוד | בונים דיגיטל</title>
+<meta name="description" content="אנחנו בונים חנויות אונליין ממותגות מ-0: אפיון, לוגו, עיצוב עם אנימציות, סליקה ומנויים. בקוד, ב-Shopify או ב-WooCommerce, כולל חנויות דרופ שיפינג.">
 <link rel="canonical" href="https://n1ace.github.io/portfolio/services/online-store.html">
+<meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="בניית חנות אונליין ממותגת לעסק שלכם | בונים דיגיטל">
+<meta property="og:description" content="חנות אונליין מ-0: אפיון, לוגו, עיצוב עם אנימציות, סליקה חד-פעמית או מנוי. בקוד, ב-Shopify או ב-WooCommerce, כולל דרופ שיפינג.">
 <meta property="og:url" content="https://n1ace.github.io/portfolio/services/online-store.html">
-<meta property="og:title" content="חנות אונליין לעסקים קטנים | בונים דיגיטל">
-<meta property="og:description" content="חנות אונליין עם קטלוג, סל ותשלום באשראי. עד 10 מוצרים, מוכנה למכירה. למאפיות, בוטיקים ויוצרים. מ־₪2,000.">
 <meta property="og:image" content="https://n1ace.github.io/portfolio/assets/logo/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <script>try{if(localStorage.getItem('portfolio-language')!=='en'){document.documentElement.lang='he';document.documentElement.dir='rtl'}}catch(e){}</script>
@@ -26,30 +28,581 @@
 <link rel="stylesheet" href="../assets/cta.css?v=1">
 <script src="../assets/cta.js?v=1"></script>
 <link rel="stylesheet" href="../assets/service-page.css?v=5">
-<script src="../assets/services-i18n.js?v=4" defer></script>
-<script src="../assets/portfolio-i18n.js?v=35" defer></script>
+<script src="../assets/portfolio-i18n.js?v=37" defer></script>
+<style>
+/* ---------- article ---------- */
+.post{padding:40px 0 8px}
+.post .wrap{max-width:808px}
+.post-body{font-family:'Heebo',var(--body);color:var(--text);font-size:17px;line-height:1.8}
+.post .crumbs{font-family:'Heebo',var(--body);font-size:13px;margin-bottom:14px}
+.post .crumbs a{color:var(--muted)}
+.post .sec-eyebrow{font-family:'Heebo',var(--body);font-size:14.5px;font-weight:700;letter-spacing:0}
+.post-head h1{font-family:'Heebo',var(--display);font-weight:800;font-size:clamp(28px,4.4vw,42px);line-height:1.2;letter-spacing:0;margin:0 0 10px}
+.post-meta{color:var(--muted);font-size:14px;margin:0 0 28px}
+.post-body :where(h2){font-family:'Heebo',var(--display);font-weight:800;font-size:clamp(22px,3vw,28px);line-height:1.3;letter-spacing:0;margin:48px 0 14px;scroll-margin-top:calc(var(--nav-h) + 16px)}
+.post-body :where(p){margin:0 0 16px}
+.post-body :where(ul,ol){padding-inline-start:22px;margin:0 0 18px}
+.post-body :where(li){margin-bottom:8px}
+.post-body :where(a:not([class])){color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.post-body :where(a:not([class])):hover{color:var(--accent-hover)}
+.post-body :where(strong){font-weight:700}
+.post-body :where(a:focus-visible,button:focus-visible){outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.ico{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* tables */
+.tbl{overflow-x:auto;margin:20px 0 28px;border:1px solid var(--line);border-radius:12px}
+.tbl table{width:100%;border-collapse:collapse;font-size:15px;min-width:480px}
+.tbl th,.tbl td{padding:12px 14px;text-align:start;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl thead th{background:var(--card);font-weight:700}
+.tbl tbody th{font-weight:600}
+.tbl tbody tr:last-child td,.tbl tbody tr:last-child th{border-bottom:0}
+.tbl td{font-variant-numeric:tabular-nums}
+.tbl tr.hl th,.tbl tr.hl td{background:var(--gold-soft)}
+.tbl .pz{font-weight:800;white-space:nowrap}
+.tbl-note{font-size:14px;color:var(--muted);margin:-18px 0 24px!important}
+.tbl code{font-family:var(--mono);font-size:14px;font-weight:600;color:var(--accent);background:var(--accent-soft);border-radius:6px;padding:2px 7px;direction:ltr;display:inline-block}
+/* on phones, tables marked .stack become one card per row */
+@media (max-width:560px){
+  .tbl.stack{border:0;overflow:visible}
+  .tbl.stack table{min-width:0}
+  .tbl.stack thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+  .tbl.stack tbody,.tbl.stack tr,.tbl.stack th,.tbl.stack td{display:block}
+  .tbl.stack tr{border:1px solid var(--line);border-radius:12px;margin-bottom:10px;overflow:hidden}
+  .tbl.stack tbody th{background:var(--card);padding:10px 14px;border-bottom:1px solid var(--line)}
+  .tbl.stack tr.hl th{background:var(--gold-soft)}
+  .tbl.stack td{display:grid;grid-template-columns:84px minmax(0,1fr);gap:10px;padding:10px 14px}
+  .tbl.stack td::before{content:attr(data-l);font-size:12.5px;font-weight:700;color:var(--muted)}
+  .tbl.stack tbody tr:last-child td{border-bottom:1px solid var(--line)}
+  .tbl.stack tbody tr td:last-child{border-bottom:0}
+}
+
+/* lead, summary, table of contents */
+.rd-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:1200;pointer-events:none}
+.rd-progress span{display:block;height:100%;background:var(--accent);transform:scaleX(0);transform-origin:100% 50%}
+.post-lead{font-size:clamp(18px,2.2vw,20px);line-height:1.75;color:var(--text)}
+.tldr{background:var(--accent-soft);border-radius:16px;padding:20px 22px;margin:26px 0 16px}
+.tldr-k{display:flex;align-items:center;gap:8px;margin:0 0 12px!important;font-weight:800;font-size:15px;color:var(--accent)}
+.tldr ul{list-style:none;padding:0!important;margin:0!important;display:grid;gap:10px}
+.tldr li{position:relative;margin:0!important;padding-inline-start:30px;font-size:16px;line-height:1.65}
+.tldr li::before{content:"";position:absolute;inset-inline-start:0;top:4px;width:20px;height:20px;border-radius:50%;background:var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/12px no-repeat}
+.toc{border:1px solid var(--line);border-radius:16px;padding:16px 20px 10px;margin:0}
+.toc-k{margin:0 0 6px!important;font-size:13px;font-weight:800;color:var(--muted)}
+.toc ol{list-style:none;padding:0!important;margin:0!important;display:grid;grid-template-columns:1fr 1fr;column-gap:24px}
+.toc li{margin:0!important}
+.toc a{display:flex;align-items:baseline;gap:10px;padding:8px 0;border-top:1px solid var(--line);color:var(--text);text-decoration:none;font-size:15px;font-weight:500;line-height:1.4;transition:color .2s}
+.toc li:nth-child(-n+2) a{border-top:0}
+.toc a span,.toc-side a span{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--accent);min-width:20px}
+@media (hover:hover) and (pointer:fine){.toc a:hover{color:var(--accent)}}
+@media (max-width:620px){.toc ol{grid-template-columns:1fr}.toc li:nth-child(2) a{border-top:1px solid var(--line)}}
+.toc-side{display:none}
+@media (min-width:1400px){
+  .toc-side{display:block;position:fixed;top:calc(var(--nav-h,64px) + 40px);left:calc(50% + 510px);width:170px;z-index:5;font-family:'Heebo',var(--body);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .3s,transform .3s,visibility 0s .3s}
+  .toc-side.show{opacity:1;visibility:visible;transform:none;transition:opacity .3s,transform .3s}
+  .toc-side-k{margin:0 0 8px;font-size:12px;font-weight:800;color:var(--muted)}
+  .toc-side ol{list-style:none;margin:0;padding:0}
+  .toc-side a{display:flex;gap:8px;padding:7px 12px;border-inline-start:2px solid var(--line);color:var(--muted);text-decoration:none;font-size:13.5px;line-height:1.4;transition:color .2s,border-color .2s}
+  .toc-side a span{color:inherit}
+  .toc-side a.on{color:var(--accent);border-color:var(--accent);font-weight:700}
+  .toc-side a:hover{color:var(--text)}
+}
+
+/* chapters */
+.ch-sec{margin-top:64px;padding-top:44px;border-top:1px solid var(--line)}
+.ch-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.ch-n{font-family:var(--mono);font-weight:600;font-size:13px;line-height:1;color:var(--accent);background:var(--accent-soft);border-radius:8px;padding:6px 9px}
+.ch-k{font-size:13.5px;font-weight:700;color:var(--muted)}
+.post-body .ch-sec h2{margin-top:0;margin-bottom:16px}
+.lead-in{margin-top:28px!important;font-weight:700}
+.lead-in::before{content:"";display:inline-block;width:18px;height:2px;background:var(--accent);vertical-align:middle;margin-inline-end:10px}
+.callout{display:flex;gap:14px;align-items:flex-start;background:var(--accent-soft);border-inline-start:4px solid var(--accent);border-radius:12px;padding:16px 18px;margin:22px 0}
+.callout .ico{width:24px;height:24px;color:var(--accent);margin-top:4px}
+.callout p{margin:0!important;font-size:clamp(18px,2.4vw,21px);font-weight:800;line-height:1.5}
+
+/* icon cards */
+.cards{list-style:none;padding:0!important;margin:14px 0 24px!important;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.cards > li{margin:0!important;border:1px solid var(--line);border-radius:14px;padding:16px;background:#FFFFFF;display:flex;gap:12px;align-items:flex-start;transition:border-color .2s,box-shadow .2s}
+.cards.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.cards.c3 > li{flex-direction:column;gap:10px}
+.cards.soft > li{background:var(--card);border-color:transparent}
+.cards b{display:block;font-size:16px;line-height:1.4;margin-bottom:2px}
+.cards .d{display:block;font-size:15px;line-height:1.6;color:var(--muted)}
+.cards .d a{color:var(--accent)}
+.ci{flex:none;width:40px;height:40px;border-radius:11px;display:grid;place-items:center;color:var(--accent);background:var(--accent-soft)}
+.cards.soft .ci{background:#FFFFFF}
+@media (hover:hover) and (pointer:fine){.cards:not(.soft) > li:hover{border-color:var(--line-strong);box-shadow:0 6px 18px rgba(11,27,51,.06)}}
+@media (max-width:700px){.cards.c3{grid-template-columns:1fr}.cards.c3 > li{flex-direction:row}}
+@media (max-width:560px){.cards{grid-template-columns:1fr}}
+
+/* eight-step process */
+.sys{list-style:none;padding:0!important;margin:14px 0 24px!important;position:relative;display:grid;gap:12px;counter-reset:sys}
+.sys::before{content:"";position:absolute;inset-inline-start:17px;top:20px;bottom:20px;width:2px;background:var(--accent-soft)}
+.sys li{position:relative;display:flex;gap:16px;margin:0!important;counter-increment:sys}
+.sys li::before{content:counter(sys);flex:none;width:36px;height:36px;border-radius:50%;background:var(--accent);color:#FFFFFF;display:grid;place-items:center;font-family:var(--mono);font-weight:600;font-size:15px;box-shadow:0 0 0 5px #FFFFFF;position:relative}
+.sys li > div{flex:1;min-width:0;background:var(--card);border-radius:14px;padding:12px 16px}
+.sys b{display:block;font-size:16px;margin-bottom:2px}
+.sys p{margin:0!important;font-size:15.5px;line-height:1.7;color:var(--muted)}
+
+/* what you get, two cards */
+.inc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:18px 0 8px}
+.inc-card{border:1px solid var(--line);border-radius:16px;padding:18px 20px;background:#FFFFFF}
+.inc-card.store{background:var(--card);border-color:transparent}
+.post-body .inc-card h3{display:flex;align-items:center;gap:10px;margin:0 0 12px;font-size:17px;font-weight:800;line-height:1.3}
+.inc-card ul{list-style:none;padding:0!important;margin:0!important;display:grid;gap:10px}
+.inc-card li{position:relative;margin:0!important;padding-inline-start:28px;font-size:15.5px;line-height:1.6}
+.inc-card li::before{content:"";position:absolute;inset-inline-start:0;top:3px;width:18px;height:18px;border-radius:50%;background:var(--accent-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230038B8' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/11px no-repeat}
+@media (max-width:700px){.inc{grid-template-columns:1fr}}
+
+/* support timeline */
+.sup{list-style:none;padding:0!important;margin:16px 0 20px!important;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.sup li{margin:0!important;position:relative;border:1px solid var(--line);border-radius:14px;padding:16px;padding-top:20px;background:#FFFFFF}
+.sup li::before{content:"";position:absolute;top:-1px;inset-inline:16px;height:3px;border-radius:0 0 3px 3px;background:var(--accent)}
+.sup li:nth-child(2)::before{background:#3B6FE0}
+.sup li:nth-child(3)::before{background:var(--gold)}
+.sup .when{display:block;font-family:var(--mono);font-size:12.5px;font-weight:600;color:var(--accent);margin-bottom:6px}
+.sup b{display:block;font-size:16px;line-height:1.4;margin-bottom:4px}
+.sup p{margin:0!important;font-size:15px;line-height:1.6;color:var(--muted)}
+@media (max-width:700px){.sup{grid-template-columns:1fr}}
+
+/* final call to action and WhatsApp button */
+.btn-wa{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 20px;border-radius:10px;background:#25D366;border:1px solid #25D366;color:#071A0E;font-family:'Heebo',var(--body);font-weight:800;font-size:15px;text-decoration:none;transition:background .2s}
+.btn-wa svg{width:20px;height:20px;fill:currentColor;flex:none}
+@media (hover:hover) and (pointer:fine){.btn-wa:hover{background:#2EE06F;border-color:#2EE06F}}
+.post-cta{margin:56px 0 0;padding:28px;border-radius:20px;background:#0B1B33;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.post-cta p{margin:0;max-width:440px;color:#C9D6EA}
+.post-cta .post-cta-h{color:#FFFFFF;font-size:clamp(20px,2.6vw,24px);font-weight:800;line-height:1.3;margin-bottom:6px}
+
+/* faq: same accordion as the home page */
+.fq{margin-top:22px;display:grid;gap:10px}
+.fq .fq-it{border:1px solid var(--line);background:var(--card);border-radius:14px;transition:background .25s,border-color .25s,box-shadow .25s}
+.fq .fq-it.open{background:#FFFFFF;border-color:var(--accent);box-shadow:0 8px 24px rgba(0,56,184,.09)}
+.fq-h{margin:0;font:inherit}
+.fq-q{all:unset;box-sizing:border-box;width:100%;display:flex;align-items:center;gap:14px;padding:18px 20px;cursor:pointer;border-radius:14px}
+.fq-q:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.fq-n{flex:none;min-width:24px;font-family:var(--display);font-weight:800;font-size:14px;color:#657189;transition:color .25s}
+.fq-it.open .fq-n{color:var(--accent)}
+.fq-t{flex:1;font-family:'Heebo',var(--display);font-weight:700;font-size:17px;line-height:1.4;color:var(--text)}
+.fq-pl{flex:none;width:34px;height:34px;border-radius:50%;background:#FFFFFF;border:1px solid var(--line);color:var(--text);display:grid;place-items:center;transition:transform .3s,background .25s,color .25s,border-color .25s}
+.fq-pl svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round}
+.fq-it.open .fq-pl{transform:rotate(45deg);background:var(--accent);border-color:var(--accent);color:#FFFFFF}
+.fq-aw{display:grid;grid-template-rows:1fr;transition:grid-template-rows .35s ease}
+.fq.is-js .fq-it:not(.open) .fq-aw{grid-template-rows:0fr}
+.fq-ai{overflow:hidden;min-height:0}
+.fq.is-js .fq-it:not(.open) .fq-ai{visibility:hidden;transition:visibility 0s .35s}
+.fq-a{margin:0;padding:0 20px 20px;padding-inline-start:58px;font-size:15.5px;line-height:1.75;color:var(--muted)}
+@media (hover:hover) and (pointer:fine){.fq-q:hover .fq-pl{border-color:var(--accent);color:var(--accent)}}
+
+/* ---------- service page parts ---------- */
+.cc-acts{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0}
+.cc-acts .btn{min-height:48px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:'Heebo',var(--body)}
+.cc-trust{margin:14px 0 28px;font-family:'Heebo',var(--body)}
+.cc-promise{margin:0 0 4px!important;max-width:560px;font-size:clamp(17px,2vw,19px);line-height:1.65;color:var(--muted)}
+.cc-show{max-width:560px;margin:0 0 28px}
+.cc-more{margin:0 0 32px;font-family:'Heebo',var(--body)}
+.cc-more-k{margin:0 0 10px!important;font-size:14px;font-weight:700;color:var(--muted)}
+.cc-more ul{list-style:none;padding:0!important;margin:0!important;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.cc-more li{margin:0!important}
+.cc-more li a{display:flex;flex-direction:column;height:100%;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#FFFFFF;color:var(--text);text-decoration:none;transition:border-color .2s,transform .2s}
+.cc-more li a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.cc-more img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;object-position:top;border-bottom:1px solid var(--line)}
+.cc-more li a > span{display:flex;flex-direction:column;padding:8px 12px 10px;line-height:1.35}
+.cc-more b{font-size:14px;font-weight:700}
+.cc-more li a > span span{font-size:12.5px;color:var(--muted)}
+@media (hover:hover) and (pointer:fine){.cc-more li a:hover{border-color:var(--accent);transform:translateY(-2px)}}
+@media (min-width:1100px){
+  .post .crumbs{margin-inline:-150px}
+  .cc-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,460px);column-gap:48px;align-items:center;margin-inline:-150px}
+  .cc-hero-txt{grid-column:1}
+  .cc-show{grid-column:2;grid-row:1;max-width:none;margin:0}
+  .cc-hero .cc-trust{margin-bottom:0}
+  .cc-more{grid-column:1 / -1;margin-top:32px}
+}
+@media (max-width:700px){.cc-more ul{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.cc-excl{display:flex;gap:14px;align-items:flex-start;margin:18px 0 0;padding:16px 18px;border:1px dashed var(--line-strong);border-radius:14px;background:#FFFFFF}
+.cc-excl .ci{background:var(--gold-soft);color:var(--gold-ink,#8A6A00)}
+.cc-excl p{margin:0!important;font-size:15.5px;line-height:1.7;color:var(--muted)}
+.cc-excl strong{color:var(--text)}
+.cc-time{list-style:none;padding:0!important;margin:16px 0 20px!important;display:grid;gap:10px}
+.cc-time li{margin:0!important;display:grid;grid-template-columns:120px auto minmax(0,1fr);grid-template-areas:"k n u" "bar bar bar";align-items:baseline;column-gap:10px;row-gap:8px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:#FFFFFF}
+.cc-time-k{grid-area:k;font-weight:700;font-size:16px}
+.cc-time b{grid-area:n;font-family:'Heebo',var(--display);font-weight:800;font-size:24px;line-height:1;font-variant-numeric:tabular-nums;direction:ltr}
+.cc-time-u{grid-area:u;font-size:14px;color:var(--muted)}
+.cc-time i{grid-area:bar;display:block;height:6px;border-radius:3px;background:var(--accent-soft);position:relative;overflow:hidden}
+.cc-time i::after{content:"";position:absolute;inset-block:0;inset-inline-start:0;width:var(--w);border-radius:3px;background:var(--accent)}
+@media (max-width:480px){.cc-time li{grid-template-columns:auto auto minmax(0,1fr)}.cc-acts .btn{flex:1 1 100%}}
+.post-body .cc-others{margin-top:18px}
+.cc-others .sp-other{text-decoration:none;color:var(--text)}
+.cc-acts .btn-wa{min-height:48px}
+.wp-tag{direction:ltr;unicode-bidi:isolate}
+@media (max-width:380px){.post .sec-eyebrow.wp-eb{white-space:normal;font-size:13px}}
+.chk{border:1px solid var(--line);border-radius:16px;padding:18px 20px;background:#FFFFFF;margin:18px 0 8px}
+.post-body .chk h3{margin:0 0 12px;font-size:17px;font-weight:800;line-height:1.3}
+.chk ul{list-style:none;padding:0!important;margin:0!important;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 18px}
+.chk li{position:relative;margin:0!important;padding-inline-start:28px;font-size:15.5px;line-height:1.6}
+.chk li::before{content:"";position:absolute;inset-inline-start:0;top:3px;width:18px;height:18px;border-radius:50%;background:var(--accent-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230038B8' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/11px no-repeat}
+@media (max-width:620px){.chk ul{grid-template-columns:1fr}}
+.dm-cap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;margin-top:10px;font-size:14px;color:var(--muted)}
+.rp{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 14px;font:600 13px 'Heebo',sans-serif;color:var(--accent);background:#FFFFFF;border:1px solid var(--line);border-radius:10px;cursor:pointer}
+.rp[hidden]{display:none}
+@media (hover:hover) and (pointer:fine){.rp:hover{border-color:var(--accent)}}
+.sk-bar{display:flex;align-items:center;gap:5px;height:30px;padding:0 10px;background:var(--card);border-bottom:1px solid var(--line);direction:ltr}
+.sk-bar i{width:8px;height:8px;border-radius:50%;background:var(--line-strong)}
+.sk-bar span{margin-left:8px;font-family:var(--mono);font-size:11px;color:var(--muted)}
+
+/* ---------- hero: the store changes with what you sell ---------- */
+.sw{display:grid;justify-items:center;gap:14px}
+.sw-tabs{display:inline-grid;grid-template-columns:repeat(3,auto);gap:4px;padding:4px;border-radius:12px;background:var(--card)}
+.sw-tabs[hidden]{display:none}
+.sw-b,.oj-b,.pj-b{all:unset;box-sizing:border-box;display:grid;place-items:center;min-height:40px;padding:0 14px;border-radius:9px;font:700 14px/1.2 'Heebo',sans-serif;color:var(--muted);cursor:pointer;text-align:center;transition:background .2s,color .2s,box-shadow .2s}
+.sw-b[aria-pressed="true"],.oj-b[aria-pressed="true"]{background:#FFFFFF;color:var(--text);box-shadow:0 2px 8px rgba(11,27,51,.08)}
+.sw-b:focus-visible,.oj-b:focus-visible,.pj-b:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.sw-ph{position:relative;display:grid;width:262px;max-width:100%;border:9px solid #0B1B33;border-radius:38px;background:#0B1B33;box-shadow:0 40px 70px -40px rgba(11,27,51,.6)}
+.sw-ph::before{content:"";position:absolute;top:6px;left:50%;z-index:3;width:70px;height:18px;margin-left:-35px;border-radius:10px;background:#0B1B33}
+.sw-scr{grid-area:1/1;display:grid;gap:10px;align-content:start;padding:34px 12px 12px;border-radius:29px;overflow:hidden;background:var(--bg);color:var(--ink);font-family:'Heebo',sans-serif;transition:opacity .4s,transform .4s}
+.sw-scr[data-v="wear"]{--bg:#F6F1EA;--ink:#2B2522;--ac:#9C4F35;--tile:#ECE1D3;--sub:#6F6259}
+.sw-scr[data-v="tech"]{--bg:#0F1828;--ink:#F2F6FB;--ac:#3DD6C4;--tile:#1B2638;--sub:#A3B1C4}
+.sw-scr[data-v="serv"]{--bg:#EEF4F0;--ink:#1F3B2E;--ac:#25694B;--tile:#DAE9DF;--sub:#4F665A}
+.sw:not([data-v="wear"]) .sw-scr[data-v="wear"],.sw:not([data-v="tech"]) .sw-scr[data-v="tech"],.sw:not([data-v="serv"]) .sw-scr[data-v="serv"]{opacity:0;visibility:hidden;transform:scale(.96);transition:opacity .3s,transform .3s,visibility 0s .3s}
+.sw-top{display:flex;align-items:center;justify-content:space-between;direction:ltr}
+.sw-logo{font-weight:800;font-size:16px;line-height:1;letter-spacing:.14em}
+.sw-logo i{font-style:normal;color:var(--ac)}
+.sw-bag{position:relative;display:grid;place-items:center;width:24px;height:24px}
+.sw-bag .ico{width:20px;height:20px}
+.sw-bag b{position:absolute;top:-4px;right:-6px;min-width:15px;height:15px;padding:0 3px;border-radius:8px;background:var(--ac);color:var(--bg);font-size:9.5px;line-height:15px;text-align:center}
+.sw-hero{display:grid;gap:3px;justify-items:start;padding:14px;border-radius:16px;background:var(--ac);color:#FFFFFF}
+.sw-scr[data-v="tech"] .sw-hero{color:#0F1828}
+.sw-hero small{font-size:11px;font-weight:600;opacity:.9}
+.sw-hero b{font-size:17px;font-weight:800;line-height:1.25}
+.sw-hero span{margin-top:6px;padding:5px 12px;border-radius:999px;background:#FFFFFF;color:var(--ac);font-size:11.5px;font-weight:700}
+.sw-scr[data-v="tech"] .sw-hero span{background:#0F1828}
+.sw-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.sw-p{display:grid;gap:2px;font-size:11.5px;line-height:1.3}
+.sw-img{display:grid;place-items:center;aspect-ratio:1;margin-bottom:3px;border-radius:12px;background:var(--tile);color:var(--ac)}
+.sw-img .ico{width:44%;height:44%;stroke-width:1.5}
+.sw-p b{font-weight:700}
+.sw-p > span:last-child{color:var(--sub);font-weight:700;font-variant-numeric:tabular-nums}
+.sw-cap{margin:0!important;max-width:340px;text-align:center;font-size:13.5px;line-height:1.6;color:var(--muted)}
+
+/* ---------- 02: clothing rack, garments turn to face you ---------- */
+.rk{position:relative;margin:22px 0 10px;border-radius:20px;overflow:hidden;background:#ECEBE7 radial-gradient(circle,rgba(11,27,51,.09) 1.6px,transparent 2.2px) 0 0/22px 22px;box-shadow:inset 0 0 0 1px var(--line)}
+.rk-defs{position:absolute;width:0;height:0;overflow:hidden}
+.rk-in{display:grid;justify-items:center;padding:34px 18px 20px}
+.rk-rail{position:relative;z-index:3;width:min(100%,760px);height:10px;border-radius:5px;background:linear-gradient(#FDFDFD,#BAC0C8 45%,#8D939C 55%,#E3E6EA);box-shadow:0 3px 6px rgba(11,27,51,.18)}
+.rk-rail::before,.rk-rail::after{content:"";position:absolute;top:-6px;width:12px;height:22px;border-radius:3px;background:linear-gradient(90deg,#9AA0A8,#E9ECEF,#9AA0A8)}
+.rk-rail::before{left:-4px}
+.rk-rail::after{right:-4px}
+.rk-list{--gw:140px;list-style:none;display:flex;width:min(100%,720px);height:calc(var(--gw)*1.333 + 40px);margin:-8px 0 0!important;padding:0!important;perspective:700px}
+.rk-i{position:relative;flex:1 1 0;min-width:0;margin:0!important;transition:flex-grow .55s cubic-bezier(.2,.8,.2,1)}
+.rk-b{all:unset;position:absolute;top:0;left:0;right:0;height:calc(var(--gw)*1.333);cursor:pointer;border-radius:12px}
+.rk-b svg{position:absolute;top:0;left:50%;width:var(--gw);height:auto;margin-left:calc(var(--gw)/-2);pointer-events:none;transform:rotateY(70deg);filter:brightness(.93) drop-shadow(0 10px 8px rgba(11,27,51,.16));transition:transform .55s cubic-bezier(.2,.8,.2,1),filter .55s}
+.rk-cap{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%);white-space:nowrap;font-size:13px;font-weight:600;color:var(--text);opacity:0;transition:opacity .3s}
+.rk-b:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (hover:hover) and (pointer:fine){
+  .rk-i:hover{flex-grow:2.3;z-index:2}
+  .rk-i:hover svg{transform:rotateY(0) translateY(4px) scale(1.04);filter:brightness(1) drop-shadow(0 18px 14px rgba(11,27,51,.22))}
+  .rk-i:hover .rk-cap{opacity:1}
+}
+@media (hover:none){.rk-list{height:calc(var(--gw)*1.333 + 6px)}}
+.rk-i:focus-within{flex-grow:2.3;z-index:2}
+.rk-i:focus-within svg{transform:rotateY(0) translateY(4px) scale(1.04);filter:brightness(1) drop-shadow(0 18px 14px rgba(11,27,51,.22))}
+.rk-i:focus-within .rk-cap{opacity:1}
+.rk svg text,.rk-dlg svg text{font-family:'Heebo',sans-serif;font-weight:800;text-anchor:middle}
+.rk-base{stroke:rgba(11,27,51,.14);stroke-width:1}
+.rk-all{all:unset;box-sizing:border-box;display:inline-flex;align-items:center;min-height:40px;margin-top:10px;padding:0 18px;border:1px solid #3E4F78;border-radius:999px;color:#2C3A5C;font-size:13.5px;font-weight:700;cursor:pointer;transition:background .2s,color .2s}
+.rk-all[hidden]{display:none}
+.rk-all:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (hover:hover) and (pointer:fine){.rk-all:hover{background:#3E4F78;color:#FFFFFF}}
+.rk-mq{direction:ltr;overflow:hidden;padding:9px 0;background:#3E4F78;color:#FFFFFF;font-size:13px;font-weight:700;white-space:nowrap}
+.rk-mq-t{display:flex;width:max-content;direction:ltr}
+.rk-mq-g{display:flex;flex:none}
+.rk-mq-g span{flex:none;padding:0 16px}
+@media (prefers-reduced-motion:no-preference){.rk-mq.is-js .rk-mq-t{animation:rk-mq var(--mq,30s) linear infinite}}
+@keyframes rk-mq{to{transform:translateX(-50%)}}
+.rk-dlg{position:fixed;inset:0;margin:auto;height:fit-content;width:min(560px,calc(100vw - 24px));max-width:none;max-height:calc(100dvh - 24px);padding:0;border:0;border-radius:22px;background:#F3F2EF;color:var(--text);box-shadow:0 40px 80px -30px rgba(11,27,51,.5);font-family:'Heebo',var(--body)}
+.rk-dlg::backdrop{background:rgba(236,235,231,.6);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.rk-dlg-in{position:relative;display:grid;justify-items:center;gap:4px;padding:22px 18px;text-align:center}
+.rk-x{all:unset;position:absolute;top:12px;inset-inline-end:12px;min-height:36px;padding:0 12px;border-radius:999px;font-size:13px;font-weight:700;color:var(--muted);cursor:pointer}
+.rk-x:focus-visible,.rk-nav:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.rk-stage{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;margin-top:18px}
+.rk-big{flex:0 1 250px;min-width:0;perspective:700px}
+.rk-big svg{display:block;width:100%;height:auto;filter:drop-shadow(0 18px 16px rgba(11,27,51,.2))}
+.rk-nav{all:unset;box-sizing:border-box;flex:none;display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--line-strong);border-radius:50%;background:#FFFFFF;color:var(--text);cursor:pointer}
+.rk-nav .ico{width:18px;height:18px}
+.rk-cnt{margin:8px 0 0!important;font:600 12.5px var(--mono);color:var(--muted)}
+.post-body .rk-dlg h3{margin:0;font-size:22px;font-weight:800;line-height:1.3}
+.rk-meta{margin:0!important;font-size:15px;font-weight:700}
+.rk-note{margin:6px 0 0!important;max-width:380px;font-size:13.5px;line-height:1.6;color:var(--muted)}
+@media (prefers-reduced-motion:no-preference){
+  .rk-dlg[open]{animation:rk-pop .35s ease}
+  .rk-big.swap svg{animation:rk-in .5s cubic-bezier(.2,.8,.2,1)}
+  .rk-big.swap[data-dir="prev"] svg{animation-name:rk-in-p}
+}
+@keyframes rk-pop{from{opacity:0;transform:translateY(14px) scale(.97)}}
+@keyframes rk-in{from{opacity:.2;transform:rotateY(-70deg) translateX(-30px)}}
+@keyframes rk-in-p{from{opacity:.2;transform:rotateY(70deg) translateX(30px)}}
+@media (max-width:620px){
+  .rk-in{padding:28px 10px 16px}
+  .rk-list{--gw:96px}
+  .rk-dlg-in{padding:20px 12px}
+  .rk-stage{gap:8px}
+}
+
+/* ---------- 04: product card that tilts in 3D ---------- */
+.br{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:28px;align-items:center;margin:20px 0 24px}
+.post-body .br .cards{grid-template-columns:1fr;margin:0!important}
+.tc{margin:0;display:grid;justify-items:center;gap:10px}
+.tc-stage{width:100%;max-width:300px;perspective:900px}
+.tc-card{--rx:0deg;--ry:0deg;--gx:50%;--gy:30%;--pc:#D8C3A5;--pb:#F4EEE6;position:relative;border:1px solid var(--line);border-radius:22px;background:#FFFFFF;box-shadow:0 30px 50px -30px rgba(11,27,51,.45);transform:rotateX(var(--rx)) rotateY(var(--ry));transform-style:preserve-3d;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.tc-card.live{transition:transform .1s linear}
+.tc-img{position:relative;display:grid;place-items:center;aspect-ratio:10/9;margin:10px;border-radius:16px;background:var(--pb);transform-style:preserve-3d;transition:background .4s}
+.tc-img svg{width:64%;height:auto;transform:translateZ(46px);filter:drop-shadow(0 18px 14px rgba(11,27,51,.22))}
+.tc-hood .b{fill:var(--pc);transition:fill .4s}
+.tc-hood .s{fill:rgba(0,0,0,.14)}
+.tc-hood .l{fill:none;stroke:rgba(0,0,0,.24);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.tc-badge{position:absolute;top:20px;inset-inline-start:20px;z-index:2;padding:3px 10px;border-radius:999px;background:#0B1B33;color:#FFFFFF;font-size:12px;font-weight:700;transform:translateZ(30px)}
+.tc-info{display:grid;gap:10px;padding:4px 18px 18px;transform:translateZ(24px)}
+.tc-row{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.tc-row b{font-size:17px;line-height:1.35}
+.tc-pr{font:800 19px 'Heebo',sans-serif;font-variant-numeric:tabular-nums}
+.tc-sw{display:flex;align-items:center;gap:10px}
+.tc-sw[hidden]{display:none}
+.tc-s{all:unset;box-sizing:border-box;position:relative;width:30px;height:30px;border-radius:50%;background:var(--sc);box-shadow:inset 0 0 0 1px rgba(0,0,0,.14);cursor:pointer}
+.tc-s[aria-pressed="true"]::after{content:"";position:absolute;inset:-5px;border:2px solid var(--accent);border-radius:50%}
+.tc-s:focus-visible{outline:2px solid var(--accent);outline-offset:6px}
+.tc-cn{font-size:13.5px;color:var(--muted)}
+.tc-add{display:block;padding:11px;border-radius:12px;background:#0B1B33;color:#FFFFFF;text-align:center;font-size:14.5px;font-weight:700}
+.tc-glare{position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(circle at var(--gx) var(--gy),rgba(255,255,255,.5),transparent 55%);opacity:0;transition:opacity .3s}
+.tc-card.live .tc-glare{opacity:1}
+.tc .dm-cap{justify-content:center;text-align:center;margin-top:4px}
+@media (max-width:760px){.br{grid-template-columns:1fr}}
+
+/* ---------- 05: the journey of an order ---------- */
+.oj{margin:22px 0 10px;padding:18px;border:1px solid var(--line);border-radius:20px;background:#FFFFFF;box-shadow:0 30px 60px -44px rgba(11,27,51,.35)}
+.oj-mode{display:inline-grid;grid-template-columns:auto auto;gap:4px;margin-bottom:18px;padding:4px;border-radius:12px;background:var(--card)}
+.oj-mode[hidden]{display:none}
+.oj-steps{list-style:none;position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:0!important;padding:0!important}
+.oj-steps::before,.oj-steps::after{content:"";position:absolute;top:13px;height:2px;inset-inline-start:16.67%}
+.oj-steps::before{width:66.67%;background:var(--line)}
+.oj-steps::after{width:calc(66.67% * var(--oj,1));background:var(--accent);transition:width .5s ease}
+.oj-s{display:grid;gap:12px;align-content:start;margin:0!important}
+.oj-k{display:grid;justify-items:center;gap:8px;text-align:center;font-size:14.5px;font-weight:700;line-height:1.35}
+.oj-n{position:relative;z-index:1;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--accent);color:#FFFFFF;font:600 13px var(--mono);box-shadow:0 0 0 5px #FFFFFF;transition:background .3s,color .3s}
+.oj-s:not(.on) .oj-n{background:#FFFFFF;color:var(--muted);box-shadow:0 0 0 5px #FFFFFF,inset 0 0 0 2px var(--line-strong)}
+.oj-ui{display:grid;gap:8px;align-content:start;min-height:176px;padding:12px;border:1px solid var(--line);border-radius:14px;background:var(--card);font-size:13px;line-height:1.45;transition:opacity .4s,filter .4s}
+.oj-s:not(.on) .oj-ui{opacity:.45;filter:grayscale(1)}
+.oj-prod{display:flex;align-items:center;gap:10px;padding:8px;border-radius:10px;background:#FFFFFF}
+.oj-pi{flex:none;display:grid;place-items:center;width:46px;height:46px;border-radius:10px;background:#F1E6DA;color:#8A4B2A}
+.oj-pi .ico{width:24px;height:24px}
+.oj-prod b{display:block;font-size:13.5px}
+.oj-prod span{color:var(--muted);font-variant-numeric:tabular-nums}
+.oj-btn{display:flex;align-items:center;justify-content:center;gap:6px;min-height:34px;border-radius:9px;background:#0B1B33;color:#FFFFFF;font-weight:700;transition:background .3s}
+.oj-btn .ico{width:15px;height:15px}
+.oj-s.on .oj-btn.ok{background:#0B7A3E}
+.oj-s.on .x-off,.oj-s:not(.on) .x-on{display:none}
+.oj-lock{display:flex;align-items:center;gap:6px;font-weight:700;color:#0B7A3E}
+.oj-lock .ico{width:15px;height:15px}
+.oj-f{display:flex;justify-content:space-between;gap:8px;padding:8px 10px;border:1px solid var(--line-strong);border-radius:8px;background:#FFFFFF;color:var(--muted)}
+.oj-f bdi{color:var(--text);font-family:var(--mono);font-size:12.5px}
+.oj-tot{display:flex;justify-content:space-between;gap:8px;font-weight:700}
+.oj-tot b{font-variant-numeric:tabular-nums}
+.oj-ah{display:flex;justify-content:space-between;align-items:center;font-weight:800;font-size:13.5px}
+.oj-ah small{font-weight:600;color:var(--muted);font-size:12px}
+.oj-row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:8px;align-items:center;padding:7px 9px;border-radius:8px;background:#FFFFFF;color:var(--muted)}
+.oj-row bdi{font-family:var(--mono);font-size:12px}
+.oj-row em{font-style:normal;font-size:11.5px;font-weight:700;padding:2px 7px;border-radius:999px;background:var(--card)}
+.oj-row.new{color:var(--text);box-shadow:inset 0 0 0 1.5px #0B7A3E}
+.oj-row.new em{background:#E3F6EA;color:#0B6A35}
+.oj-row small{grid-column:2 / -1;margin-top:-4px;font-size:11.5px;color:#0B6A35;font-weight:600}
+.oj-s:not(.on) .oj-row.new{display:none}
+.oj[data-mode="once"] .m-sub,.oj[data-mode="sub"] .m-once{display:none}
+@media (prefers-reduced-motion:no-preference){.oj.is-js .oj-s.on .oj-row.new{animation:oj-in .5s ease}}
+@keyframes oj-in{from{opacity:0;transform:translateY(-6px)}}
+@media (max-width:700px){
+  .oj{padding:14px}
+  .oj-steps{grid-template-columns:1fr}
+  .oj-steps::before,.oj-steps::after{display:none}
+  .oj-k{grid-auto-flow:column;justify-content:start;text-align:start}
+  .oj-ui{min-height:0}
+}
+.pay2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0 8px}
+.pay2 > div{border:1px solid var(--line);border-radius:16px;padding:16px 18px;background:#FFFFFF}
+.pay2 > div + div{background:var(--card);border-color:transparent}
+.post-body .pay2 h3{display:flex;align-items:center;gap:10px;margin:0 0 6px;font-size:17px;font-weight:800;line-height:1.3}
+.pay2 p{margin:0!important;font-size:15.5px;line-height:1.7;color:var(--muted)}
+@media (max-width:620px){.pay2{grid-template-columns:1fr}}
+
+/* ---------- 06: process line that fills while scrolling ---------- */
+.pt{margin:20px 0 14px}
+.pt-nav{display:none}
+.pt-steps{list-style:none;padding:0!important;margin:0!important;position:relative;display:grid;gap:14px}
+.pt-steps::before{content:"";position:absolute;inset-inline-start:21px;top:24px;bottom:24px;width:2px;background:var(--accent-soft)}
+.pt-js .pt-steps::after{content:"";position:absolute;inset-inline-start:21px;top:24px;width:2px;height:calc((100% - 48px) * var(--f,0));background:var(--accent);border-radius:1px}
+.pt-s{margin:0!important;position:relative;display:flex;gap:18px;scroll-margin-top:calc(var(--nav-h,64px) + 24px)}
+.pt-n{flex:none;position:relative;z-index:1;width:44px;height:44px;border-radius:50%;background:#FFFFFF;border:2px solid var(--accent);color:var(--accent);display:grid;place-items:center;font:600 15px var(--mono);box-shadow:0 0 0 6px #FFFFFF;transition:background .3s,color .3s}
+.pt-js .pt-s.cur .pt-n,.pt-js .pt-s.done .pt-n{background:var(--accent);color:#FFFFFF}
+.pt-b{flex:1;min-width:0;background:var(--card);border-radius:16px;padding:16px 18px}
+.pt-b > b{display:block;font-size:17px;margin-bottom:4px}
+.pt-b > p{margin:0!important;font-size:15.5px;line-height:1.7;color:var(--muted)}
+@media (min-width:900px){
+  .pt{display:grid;grid-template-columns:200px minmax(0,1fr);gap:36px;align-items:start}
+  .pt-nav{display:block;position:sticky;top:calc(var(--nav-h,64px) + 28px)}
+}
+@media (min-width:1100px){.wide{margin-inline:-150px}}
+@media (min-width:1400px){.wide{margin-inline:-70px}}
+.pt-nav-k{margin:0 0 8px!important;font-size:12.5px;font-weight:800;color:var(--muted)}
+.pt-nav ol{list-style:none;margin:0!important;padding:0!important;position:relative;border-inline-start:2px solid var(--line)}
+.pt-nav ol::before{content:"";position:absolute;inset-inline-start:-2px;top:0;width:2px;height:var(--p,0%);background:var(--accent);transition:height .4s ease}
+.pt-nav li{margin:0!important}
+.pt-nav a{display:flex;gap:10px;align-items:baseline;padding:10px 14px;color:var(--muted);text-decoration:none;font-size:14.5px;font-weight:600;line-height:1.4;transition:color .25s}
+.pt-nav a span{font-family:var(--mono);font-size:12px}
+.pt-nav a.done{color:var(--text)}
+.pt-nav a.cur{color:var(--accent)}
+@media (hover:hover) and (pointer:fine){.pt-nav a:hover{color:var(--text)}}
+.tk{margin-top:14px;background:#FFFFFF;border:1px solid var(--line);border-radius:14px;padding:14px 16px;box-shadow:0 10px 24px -18px rgba(11,27,51,.3)}
+.tk-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:6px 10px;margin-bottom:10px}
+.tk-top b{font-size:14.5px}
+.tk-top span{display:flex;align-items:center;gap:8px}
+.tk-code{font:600 12px var(--mono);color:var(--muted)}
+.tk-eg{font-size:11.5px;font-weight:700;color:var(--muted);background:var(--card);border-radius:999px;padding:2px 8px}
+.tk-st{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 10px;font-size:13.5px;margin-bottom:8px}
+.tk-st span{color:var(--muted)}
+.tk-bar{height:8px;border-radius:999px;background:#E9EDF4;overflow:hidden}
+.tk-bar i{display:block;width:65%;height:100%;border-radius:inherit;background:linear-gradient(270deg,var(--accent),#3B6FE0)}
+.tk-log{list-style:none;padding:0!important;margin:12px 0 10px!important;display:grid;gap:8px}
+.tk-log li{margin:0!important;display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;align-items:start;font-size:13.5px;line-height:1.5}
+.tk-log time{font:600 12px var(--mono);color:var(--accent);background:var(--accent-soft);border-radius:6px;padding:2px 7px}
+.tk > a{font-size:14px;font-weight:700}
+.tst{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0!important;padding:0!important}
+.tst li{display:inline-flex;align-items:center;gap:5px;margin:0!important;padding:5px 10px;border:1px solid var(--line);border-radius:999px;background:#FFFFFF;font-size:13px;font-weight:600}
+.tst .ico{width:15px;height:15px;color:#0B7A3E}
+
+/* ---------- 07: checklist the visitor can tick ---------- */
+.nd{margin:20px 0 10px;padding:18px 20px;border:1px solid var(--line);border-radius:18px;background:#FFFFFF}
+.nd-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 12px;margin-bottom:10px}
+.post-body .nd h3{margin:0;font-size:17px;font-weight:800;line-height:1.3}
+.nd-c{font-size:13.5px;font-weight:700;color:var(--accent)}
+.nd-c[hidden],.nd-bar[hidden]{display:none}
+.nd-bar{height:6px;margin-bottom:12px;border-radius:3px;background:var(--accent-soft);overflow:hidden}
+.nd-bar i{display:block;width:var(--p,0%);height:100%;border-radius:inherit;background:var(--accent);transition:width .35s ease}
+.nd-list{list-style:none;display:grid;gap:8px;margin:0!important;padding:0!important}
+.nd-list li{margin:0!important}
+.nd-list label{position:relative;display:flex;align-items:flex-start;gap:12px;padding:12px 14px;border-radius:12px;background:var(--card);font-size:15.5px;line-height:1.55;cursor:pointer;transition:background .2s}
+.nd-list label:has(input:checked){background:var(--accent-soft)}
+.nd-list input{position:absolute;top:12px;inset-inline-start:13px;width:24px;height:24px;margin:0;opacity:0;cursor:pointer}
+.nd-box{flex:none;display:grid;place-items:center;width:22px;height:22px;margin-top:1px;border:2px solid var(--line-strong);border-radius:7px;background:#FFFFFF;transition:background .2s,border-color .2s}
+.nd-box::after{content:"";width:12px;height:12px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/contain no-repeat;opacity:0;transform:scale(.5);transition:opacity .2s,transform .2s}
+.nd-list input:checked + .nd-box{background:var(--accent);border-color:var(--accent)}
+.nd-list input:checked + .nd-box::after{opacity:1;transform:none}
+.nd-list input:focus-visible + .nd-box{outline:2px solid var(--accent);outline-offset:2px}
+.nd-go{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px;margin-top:14px;padding:14px 16px;border-radius:14px;background:#E9F9EF}
+.nd-go p{margin:0!important;font-size:15.5px;font-weight:700}
+.nd.is-js:not(.all) .nd-go{display:none}
+@media (prefers-reduced-motion:no-preference){.nd.all .nd-go{animation:nd-in .45s ease}}
+@keyframes nd-in{from{opacity:0;transform:translateY(8px)}}
+
+/* ---------- 08: project picker ---------- */
+.pj-tabs{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 4px}
+.pj-tabs[hidden]{display:none}
+.pj-b{border:1px solid var(--line);background:#FFFFFF}
+.pj-b[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft);color:var(--accent)}
+
+/* ---------- price card ---------- */
+.pz-card{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px;margin:20px 0 8px;padding:20px 22px;border-radius:18px;background:#0B1B33;color:#C9D6EA}
+.pz-card .k{display:block;font-size:13px;color:#A9B8D3}
+.pz-card b{display:block;font-family:'Heebo',var(--display);font-weight:800;font-size:clamp(32px,5vw,40px);line-height:1.1;color:#FFFFFF}
+.pz-card .s{display:block;font-size:13px;color:#FFC48A;font-weight:700}
+.pz-card p{flex:1 1 280px;margin:0!important;font-size:15.5px;line-height:1.7}
+
+/* ---------- Retail AVR: laptop and phone ---------- */
+.rt{position:relative;margin:26px 0 8px;padding-bottom:26px}
+.rt-lap{margin-inline-end:64px}
+.rt-scr{border:8px solid #0B1B33;border-bottom-width:12px;border-radius:16px 16px 0 0;background:#0B1B33;overflow:hidden;box-shadow:0 30px 60px -36px rgba(11,27,51,.55)}
+.rt-scr .sk-bar{border-radius:6px 6px 0 0}
+.rt-vp{position:relative;overflow:hidden;background:#FFFFFF}
+.rt-lap .rt-vp{aspect-ratio:16/10}
+.rt-vp img{position:absolute;top:0;left:0;display:block;width:100%;height:auto}
+.rt-base{position:relative;height:14px;margin:0 -5%;border-radius:0 0 14px 14px;background:linear-gradient(#D5DBE5,#B3BDCC)}
+.rt-base::before{content:"";position:absolute;top:0;left:41%;width:18%;height:5px;border-radius:0 0 6px 6px;background:#9AA5B6}
+.rt-ph{position:absolute;inset-inline-end:0;bottom:0;width:23%;min-width:96px;max-width:160px;border:5px solid #0B1B33;border-radius:24px;background:#0B1B33;overflow:hidden;box-shadow:0 24px 44px -18px rgba(11,27,51,.6)}
+.rt-ph .rt-vp{aspect-ratio:9/19.5;border-radius:19px}
+@media (prefers-reduced-motion:no-preference){
+  .rt-lap img{animation:rt-d 28s ease-in-out infinite paused}
+  .rt-ph img{animation:rt-m 28s ease-in-out infinite paused}
+  .rt.play img{animation-play-state:running}
+  .rt.play:hover img,.rt.play:focus-within img{animation-play-state:paused}
+}
+@keyframes rt-d{0%,8%{transform:translateY(0)}46%,56%{transform:translateY(var(--sd,-77.5%))}94%,100%{transform:translateY(0)}}
+@keyframes rt-m{0%,8%{transform:translateY(0)}46%,56%{transform:translateY(var(--sm,-73.3%))}94%,100%{transform:translateY(0)}}
+.rt-cap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;margin:4px 0 22px;font-size:14px;color:var(--muted)}
+.rt-cap a{font-weight:700}
+.rt-list{list-style:none;padding:0!important;margin:16px 0 8px!important;display:grid;gap:10px}
+.rt-list li{margin:0!important;padding:12px 16px;border-radius:12px;background:var(--card);font-size:15.5px;line-height:1.65}
+.rt-list strong{color:var(--text)}
+
+/* final call to action */
+.cta-acts{display:flex;flex-wrap:wrap;gap:10px}
+.btn-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 20px;border-radius:10px;border:1px solid rgba(255,255,255,.4);color:#FFFFFF;font-family:'Heebo',var(--body);font-weight:700;font-size:15px;text-decoration:none;transition:background .2s,border-color .2s}
+.btn-ghost .ico{width:18px;height:18px}
+.btn-ghost:focus-visible,.btn-wa:focus-visible{outline:2px solid #FFFFFF;outline-offset:2px}
+
+/* scroll reveal (content is fully visible without JS) */
+.pr-on .pr{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;transition-delay:var(--d,0s)}
+.pr-on .pr.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .pr-on .pr{opacity:1;transform:none;transition:none}
+  .toc-side,.fq .fq-it,.fq-n,.fq-pl,.fq-aw,.btn-wa,.sw-scr,.sw-b,.tc-card,.tc-img,.tc-hood .b,.oj-ui,.oj-n,.oj-steps::after,.pt-n,.nd-bar i,.nd-box,.nd-box::after,.rk-i,.rk-b svg,.rk-cap{transition:none!important}
+}
+@media (max-width:620px){
+  .post{padding-top:28px}
+  .post-body{font-size:16px}
+  .ch-sec{margin-top:48px;padding-top:32px}
+  .tldr{padding:18px 16px}
+  .fq-q{padding:16px;gap:12px}
+  .fq-t{font-size:16px}
+  .fq-a{padding:0 16px 18px;font-size:15px}
+  .post-cta{padding:22px}
+  .btn-wa,.btn-ghost{width:100%}
+  .rt-lap{margin-inline-end:40px}
+  .nd{padding:16px 14px}
+}
+</style>
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Online store",
-  "serviceType": "Online store",
-  "description": "חנות אונליין עם קטלוג, סל ותשלום באשראי. עד 10 מוצרים, מוכנה למכירה. למאפיות, בוטיקים ויוצרים. מ־₪2,000.",
-  "url": "https://n1ace.github.io/portfolio/services/online-store.html",
-  "areaServed": {
-    "@type": "Country",
-    "name": "Israel"
-  },
-  "provider": {
-    "@type": "Organization",
-    "name": "בונים דיגיטל",
-    "url": "https://n1ace.github.io/portfolio/"
-  },
-  "offers": {
-    "@type": "Offer",
-    "price": "2000",
-    "priceCurrency": "ILS"
-  }
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Service",
+      "name":"בניית חנות אונליין",
+      "serviceType":"Online store development",
+      "description":"אנחנו בונים חנויות אונליין ממותגות מ-0: אפיון, לוגו, עיצוב עם אנימציות, סליקה ומנויים. בקוד, ב-Shopify או ב-WooCommerce, כולל חנויות דרופ שיפינג.",
+      "url":"https://n1ace.github.io/portfolio/services/online-store.html",
+      "inLanguage":"he-IL",
+      "areaServed":{"@type":"Country","name":"Israel"},
+      "provider":{"@type":"Organization","name":"בונים דיגיטל","url":"https://n1ace.github.io/portfolio/","logo":"https://n1ace.github.io/portfolio/assets/logo/bonim-digital-512.png"},
+      "offers":{"@type":"Offer","name":"חנות אונליין","priceSpecification":{"@type":"PriceSpecification","minPrice":"2000","priceCurrency":"ILS","valueAddedTaxIncluded":false}}
+    },
+    {
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"איך מקימים חנות באינטרנט?","acceptedAnswer":{"@type":"Answer","text":"מתחילים בשיחת היכרות ואפיון, עוברים לסקיצה שאתם מאשרים, ומשם לעיצוב, פיתוח ובדיקה מלאה. אתם מביאים את המוצרים והתמונות, ואת כל השאר אנחנו עושים."}},
+        {"@type":"Question","name":"כמה זמן לוקח לבנות חנות אונליין?","acceptedAnswer":{"@type":"Answer","text":"זה תלוי בעיקר בכמות המוצרים ובמה שהחנות צריכה לעשות. את הלוח המדויק נקבע יחד בשלב האפיון, ותמונות מוכנות מקצרות אותו מאוד."}},
+        {"@type":"Question","name":"אתם בונים חנות דרופ שיפינג?","acceptedAnswer":{"@type":"Answer","text":"כן. אנחנו בונים חנויות דרופ שיפינג ב-Shopify וב-WooCommerce, ממותגות ומחוברות לספק."}},
+        {"@type":"Question","name":"Shopify או WooCommerce, מה מתאים לי?","acceptedAnswer":{"@type":"Answer","text":"את זה אנחנו בודקים יחד בשיחה הראשונה, לפי המוצרים, התקציב ואיך אתם רוצים לנהל את החנות."}},
+        {"@type":"Question","name":"אני אוכל לנהל את החנות לבד?","acceptedAnswer":{"@type":"Answer","text":"כן. הוספת מוצרים, שינוי מחירים, מלאי וטיפול בהזמנות נעשים מלוח הניהול, ואנחנו מראים לכם איך במסירת החנות."}},
+        {"@type":"Question","name":"אפשר למכור מנויים בחנות?","acceptedAnswer":{"@type":"Answer","text":"כן. אנחנו מגדירים חיוב חודשי אוטומטי דרך חברת הסליקה, לצד תשלומים חד-פעמיים."}},
+        {"@type":"Question","name":"החנות מאובטחת?","acceptedAnswer":{"@type":"Answer","text":"כן. האתר מוצפן, פרטי האשראי נשמרים אצל חברת הסליקה ולא אצלנו, והחנות עומדת בדרישות הפרטיות והנגישות."}},
+        {"@type":"Question","name":"החנות שלי?","acceptedAnswer":{"@type":"Answer","text":"כן. הדומיין, האחסון וחשבון החנות רשומים על שמכם."}}
+      ]
+    },
+    {
+      "@type":"BreadcrumbList",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"בית","item":"https://n1ace.github.io/portfolio/"},
+        {"@type":"ListItem","position":2,"name":"שירותים","item":"https://n1ace.github.io/portfolio/#services"},
+        {"@type":"ListItem","position":3,"name":"חנות אונליין"}
+      ]
+    }
+  ]
 }
 </script>
 </head>
@@ -65,6 +618,7 @@
     <div class="menu" id="site-menu">
       <a href="../index.html#home">Home</a>
       <a href="../index.html#services" aria-current="page">Services</a>
+      <a href="../index.html#testimonials">Testimonials</a>
       <a href="../projects.html">Work</a>
       <a href="../index.html#results">Results</a>
       <a href="../index.html#process">How it works</a>
@@ -80,107 +634,469 @@
   </div>
 </nav>
 
-<main id="main">
-  <header class="sp-hero">
-    <div class="wrap sp-hero-in">
-      <div class="sp-hero-text">
-        <nav class="crumbs rv" aria-label="Breadcrumb">
-          <a href="../index.html">Home</a>
-          <span>/</span>
-          <a href="../index.html#services">Services</a>
-          <span>/</span>
-          <span>Online store</span>
-        </nav>
-        <div class="sec-eyebrow rv">// service</div>
-        <h1 class="rv">Online store</h1>
-        <p class="sec-sub rv">Catalog, cart and payments. Up to 10 products, ready to sell.</p>
-        <div class="page-actions rv">
-          <a class="btn solid cta" href="../booking.html?s=store"><span class="cta-txt">Book a free call</span><svg class="cta-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a class="btn sp-wa" href="https://wa.me/972527905122?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%91%D7%95%D7%A0%D7%99%D7%9D%20%D7%93%D7%99%D7%92%D7%99%D7%98%D7%9C%2C%20%D7%99%D7%A9%20%D7%9C%D7%99%20%D7%A2%D7%A1%D7%A7%20%D7%95%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.55L2.3 21.7l5.28-1.38A9.7 9.7 0 1 0 12 2Zm0 17.65a7.94 7.94 0 0 1-4.05-1.1l-.29-.17-3.13.82.84-3.05-.19-.31A7.94 7.94 0 1 1 12 19.65Zm4.36-5.95c-.24-.12-1.41-.7-1.630-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18a7.2 7.2 0 0 1-1.33-1.66c-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.690 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg><span>Ask on WhatsApp</span></a>
+<div class="rd-progress" aria-hidden="true"><span></span></div>
+
+<main id="main" class="post" lang="he" dir="rtl" data-i18n-skip>
+  <div class="wrap">
+    <nav class="crumbs rv" aria-label="פירורי לחם"><a href="../index.html">בית</a> / <a href="../index.html#services">שירותים</a> / <span aria-current="page">חנות אונליין</span></nav>
+
+    <nav class="toc-side" aria-label="ניווט מהיר בעמוד"><p class="toc-side-k">בעמוד</p><ol></ol></nav>
+
+    <article class="post-body">
+      <header class="post-head cc-hero">
+        <div class="cc-hero-txt">
+        <div class="sec-eyebrow rv"><span class="wp-tag">קוד · <span dir="ltr">Shopify</span> · <span dir="ltr">WooCommerce</span></span></div>
+        <h1 class="rv">בניית חנות אונליין ממותגת לעסק שלכם</h1>
+        <p class="cc-promise rv">יש לכם מוצרים ואתם רוצים למכור אותם באינטרנט? אנחנו בונים לכם חנות אונליין מ-0: מהאפיון והלוגו, דרך עיצוב עם אנימציות, ועד סליקה שמוכנה לקבל הזמנה ראשונה.</p>
+        <div class="cc-acts rv">
+          <a class="btn-wa" href="https://wa.me/972527905122?text=%D7%94%D7%99%D7%99%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%94%D7%A2%D7%9E%D7%95%D7%93%20%D7%A2%D7%9C%20%D7%91%D7%A0%D7%99%D7%99%D7%AA%20%D7%97%D7%A0%D7%95%D7%AA%20%D7%90%D7%95%D7%A0%D7%9C%D7%99%D7%99%D7%9F%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.55L2.3 21.7l5.28-1.38A9.7 9.7 0 1 0 12 2Zm0 17.65a7.94 7.94 0 0 1-4.05-1.1l-.29-.17-3.13.82.84-3.05-.19-.31A7.94 7.94 0 1 1 12 19.65Zm4.36-5.95c-.24-.12-1.41-.7-1.63-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18a7.2 7.2 0 0 1-1.33-1.66c-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>דברו איתנו בווטסאפ</a>
+          <a class="btn" href="#project">לראות חנות שבנינו</a>
         </div>
-        <div class="sp-trust rv">
-          <span><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>15 minutes</span></span>
-          <span><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Free of charge</span></span>
-          <span><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>No commitment</span></span>
+        <div class="sp-trust cc-trust rv">
+          <span><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>מיתוג ולוגו</span></span>
+          <span><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>עיצוב עם אנימציות ו-3D</span></span>
+          <span><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>סליקה חד-פעמית או מנוי</span></span>
+          <span><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>עמידה בדרישות אבטחת מידע</span></span>
         </div>
-      </div>
-      <aside class="sp-glance rv" aria-label="Online store">
-        <div class="sp-glance-top"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.33 8h11.34a2 2 0 0 1 1.98 2.3l-1.26 8.16A3 3 0 0 1 15.43 21H8.57a3 3 0 0 1-2.96-2.54l-1.26-8.16A2 2 0 0 1 6.33 8z"/><path d="M9 11V6a3 3 0 0 1 6 0v5"/></svg></span><span class="sp-glance-name">Online store</span></div>
-        <div class="sp-price"><b>₪2,000</b></div>
-        <dl class="sp-facts"><div><dt>Ready in</dt><dd>7–14 days</dd></div><div><dt>Best for</dt><dd>Bakeries, boutiques, makers</dd></div><div><dt>First step</dt><dd>A free 15-min call</dd></div></dl>
-        <a class="btn solid cta" href="../booking.html?s=store"><span class="cta-txt">Book a free call</span><svg class="cta-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <p class="sp-glance-note">Fixed price, agreed before we start</p>
+        </div>
+        <div class="cc-show rv">
+          <div class="sw" id="sw" data-v="wear">
+            <div class="sw-tabs" role="group" aria-label="סוג החנות בדוגמה" hidden>
+              <button class="sw-b" type="button" data-v="wear" aria-pressed="true">בגדים</button>
+              <button class="sw-b" type="button" data-v="tech" aria-pressed="false">מוצרי חשמל</button>
+              <button class="sw-b" type="button" data-v="serv" aria-pressed="false">שירותים</button>
+            </div>
+            <div class="sw-ph" aria-hidden="true">
+              <div class="sw-scr" data-v="wear">
+                <div class="sw-top"><span class="sw-logo">LIN<i>A</i></span><span class="sw-bag"><svg class="ico" viewBox="0 0 24 24"><path d="M6.33 8h11.34a2 2 0 0 1 1.98 2.3l-1.26 8.16A3 3 0 0 1 15.43 21H8.57a3 3 0 0 1-2.96-2.54l-1.26-8.16A2 2 0 0 1 6.33 8z"/><path d="M9 11V6a3 3 0 0 1 6 0v5"/></svg><b>2</b></span></div>
+                <div class="sw-hero"><small>קולקציית סתיו</small><b>בדים טבעיים, גזרות נקיות</b><span>לקולקציה</span></div>
+                <div class="sw-grid">
+                  <div class="sw-p"><span class="sw-img"><svg class="ico" viewBox="0 0 24 24"><path d="M9 3h6l-1 5 4 13H6l4-13zM10 8h4"/></svg></span><b>שמלת פשתן</b><span>₪289</span></div>
+                  <div class="sw-p"><span class="sw-img"><svg class="ico" viewBox="0 0 24 24"><path d="M8 4L3 7l2 4 3-1v10h8V10l3 1 2-4-5-3a4 4 0 0 1-8 0z"/></svg></span><b>חולצת כותנה</b><span>₪129</span></div>
+                  <div class="sw-p"><span class="sw-img"><svg class="ico" viewBox="0 0 24 24"><path d="M8 4L4 7v13h5V9M16 4l4 3v13h-5V9M8 4l4 5 4-5M12 9v11"/></svg></span><b>ז׳קט צמר</b><span>₪349</span></div>
+                  <div class="sw-p"><span class="sw-img"><svg class="ico" viewBox="0 0 24 24"><path d="M7 3h10l1 18h-4l-2-11-2 11H6z"/></svg></span><b>מכנסי פשתן</b><span>₪199</span></div>
+                </div>
+              </div>
+              <div class="sw-scr" data-v="tech">
+                <div class="sw-top"><span class="sw-logo">VOL<i>T</i></span><span class="sw-bag"><svg class="ico" viewBox="0 0 24 24"><path d="M6.33 8h11.34a2 2 0 0 1 1.98 2.3l-1.26 8.16A3 3 0 0 1 15.43 21H8.57a3 3 0 0 1-2.96-2.54l-1.26-8.16A2 2 0 0 1 6.33 8z"/><path d="M9 11V6a3 3 0 0 1 6 0v5"/></svg><b>1</b></span></div>
+                <div class="sw-hero"><small>מבצע השבוע</small><b>אוזניות עם ביטול רעשים</b><span>לקנייה</span></div>
+                <div class="sw-grid">
+                  <div class="sw-p"><span class="sw-img"><svg class="ico" viewBox="0 0 24 24"><path d="M4 15v-3a8 8 0 0 1 16 0v3"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/></svg></span><b>אוזניות אלחוטיות</b><span>₪399</span></div>
+                  <div class="sw-p"><span class="sw-img"><svg class="ico" viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="2.5"/><circle cx="12" cy="14" r="3"/><circle cx="12" cy="7.5" r="1"/></svg></span><b>רמקול נייד</b><span>₪249</span></div>
+                  <div class="sw-p"><span class="sw-img"><svg class="ico" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2.5"/><path d="M9 7l1-4h4l1 4M9 17l1 4h4l1-4M12 10v2.5l1.5 1"/></svg></span><b>שעון חכם</b><span>₪699</span></div>
+                  <div class="sw-p"><span class="sw-img"><svg class="ico" viewBox="0 0 24 24"><path d="M9 3v5M15 3v5M7 8h10v3a5 5 0 0 1-10 0zM12 16v5"/></svg></span><b>מטען מהיר</b><span>₪99</span></div>
+                </div>
+              </div>
+              <div class="sw-scr" data-v="serv">
+                <div class="sw-top"><span class="sw-logo">MI<i>A</i></span><span class="sw-bag"><svg class="ico" viewBox="0 0 24 24"><path d="M6.33 8h11.34a2 2 0 0 1 1.98 2.3l-1.26 8.16A3 3 0 0 1 15.43 21H8.57a3 3 0 0 1-2.96-2.54l-1.26-8.16A2 2 0 0 1 6.33 8z"/><path d="M9 11V6a3 3 0 0 1 6 0v5"/></svg><b>1</b></span></div>
+                <div class="sw-hero"><small>סטודיו לפילאטיס</small><b>חבילות, מנויים ושוברי מתנה</b><span>לרכישה</span></div>
+                <div class="sw-grid">
+                  <div class="sw-p"><span class="sw-img"><svg class="ico" viewBox="0 0 24 24"><path d="M4 6h16v4a2 2 0 0 0 0 4v4H4v-4a2 2 0 0 0 0-4zM10 6v12"/></svg></span><b>כרטיסייה, 10 שיעורים</b><span>₪450</span></div>
+                  <div class="sw-p"><span class="sw-img"><svg class="ico" viewBox="0 0 24 24"><path d="M17 2l3 3-3 3M4 11V9a4 4 0 0 1 4-4h12M7 22l-3-3 3-3M20 13v2a4 4 0 0 1-4 4H4"/></svg></span><b>מנוי חודשי</b><span>₪149 לחודש</span></div>
+                  <div class="sw-p"><span class="sw-img"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M5 12v9h14v-9M12 8v13M12 8C10 4 6.5 4 7 6.5S10 8 12 8zM12 8c2-4 5.5-4 5-1.5S14 8 12 8z"/></svg></span><b>שובר מתנה</b><span>₪200</span></div>
+                  <div class="sw-p"><span class="sw-img"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.4l-5.3 3 1.2-6-4.5-4.1 6-.7z"/></svg></span><b>סדנת סוף שבוע</b><span>₪320</span></div>
+                </div>
+              </div>
+            </div>
+            <p class="sw-cap">חנות לדוגמה: בגדים, מוצרי חשמל או שירותים. המוצרים, הצבעים והלוגו משתנים לפי מה שמוכרים.</p>
+          </div>
+        </div>
+      </header>
+
+      <p class="post-lead">ב<a href="../index.html">בונים דיגיטל</a>, בניית חנות אונליין מתחילה מהמותג שלכם ולא מתבנית. בגדים, מוצרי חשמל, שירותים או דרופ שיפינג: אנחנו מתאימים את החנות למה שאתם מוכרים, ולא הפוך.</p>
+      <p>התוצאה היא חנות ממותגת באינטרנט, שנראית כמו העסק שלכם ומוכנה למכור מהיום הראשון: בקוד, ב-Shopify או ב-WooCommerce.</p>
+
+      <aside class="tldr pr" aria-label="בקצרה">
+        <p class="tldr-k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg>בקצרה, אם אין לכם זמן</p>
+        <ul>
+          <li>אנחנו בונים <strong>חנות אונליין ממותגת מ-0</strong>: אפיון, לוגו, עיצוב עם אנימציות ו-3D, וסליקה.</li>
+          <li><strong>בקוד, ב-Shopify או ב-WooCommerce</strong>, כולל חנויות דרופ שיפינג. את הפלטפורמה בוחרים יחד באפיון.</li>
+          <li><strong>תשלום חד-פעמי או מנוי חודשי</strong>, ופרטי האשראי נשמרים אצל חברת הסליקה ולא בחנות.</li>
+          <li>לפני שעולים לאוויר אנחנו מריצים <strong>הזמנת ניסיון מההתחלה עד הסוף</strong>, ויש <strong>אחריות לחודש הראשון</strong>.</li>
+          <li><strong>החל מ-₪2,000</strong> לפני מע״מ. עמלות הסליקה משולמות ישירות לחברת הסליקה.</li>
+        </ul>
       </aside>
-    </div>
-  </header>
 
-  <section class="sp-sec" aria-labelledby="sp-pains-h">
-    <div class="wrap">
-      <div class="sec-eyebrow rv">// sound familiar?</div>
-      <h2 class="rv" id="sp-pains-h">Sound familiar?</h2>
-      <div class="sp-pains"><div class="sp-pain rv"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16v.01"/></svg><span>Orders come in through Instagram messages and get lost.</span></div><div class="sp-pain rv"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16v.01"/></svg><span>You collect payments by bank transfer and chase people.</span></div><div class="sp-pain rv"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16v.01"/></svg><span>Customers ask the same questions about price and stock.</span></div></div>
-      <p class="sp-answer rv"><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg><span>Here is how we fix that.</span></p>
-    </div>
-  </section>
+      <nav class="toc pr" aria-label="תוכן העמוד">
+        <p class="toc-k">מה בעמוד</p>
+        <ol>
+          <li><a href="#who"><span>01</span>למי אנחנו בונים חנויות</a></li>
+          <li><a href="#types"><span>02</span>איזה חנויות אנחנו בונים</a></li>
+          <li><a href="#platforms"><span>03</span>על מה אנחנו בונים את החנות</a></li>
+          <li><a href="#brand"><span>04</span>מיתוג, עיצוב ואנימציות</a></li>
+          <li><a href="#pay"><span>05</span>סליקה ואבטחת מידע</a></li>
+          <li><a href="#process"><span>06</span>איך מקימים חנות באינטרנט</a></li>
+          <li><a href="#need"><span>07</span>מה אנחנו צריכים מכם</a></li>
+          <li><a href="#project"><span>08</span>פרויקט: חנות בגדים אונליין</a></li>
+          <li><a href="#faq"><span>09</span>שאלות נפוצות</a></li>
+          <li><a href="#more"><span>10</span>שירותים נוספים</a></li>
+        </ol>
+      </nav>
 
-  <section class="sp-sec" aria-labelledby="sp-gets-h">
-    <div class="wrap">
-      <div class="sec-eyebrow rv">// what you get</div>
-      <h2 class="rv" id="sp-gets-h">What you get</h2>
-      <ul class="sp-gets rv"><li><span class="sp-check"><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span>Up to 10 products with photos, prices and options</span></li><li><span class="sp-check"><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span>A cart and checkout that work well on a phone</span></li><li><span class="sp-check"><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span>Online card payments</span></li><li><span class="sp-check"><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span>Shipping and pickup options</span></li><li><span class="sp-check"><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span>An email for every new order</span></li><li><span class="sp-check"><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span>You add products and update stock yourself</span></li><li><span class="sp-check"><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span>Pages for terms, shipping and returns</span></li><li><span class="sp-check"><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span>A short training on managing orders</span></li></ul>
-      <div class="sp-inline-cta rv"><a class="btn solid cta" href="../booking.html?s=store"><span class="cta-txt">Book a free call</span><svg class="cta-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><p>Want to see if it fits your business?</p></div>
-    </div>
-  </section>
+      <!-- ===== 01 ===== -->
+      <section class="ch-sec" aria-labelledby="who">
+        <div class="ch-head pr"><span class="ch-n">01</span><span class="ch-k">למי</span></div>
+        <h2 id="who">למי אנחנו בונים חנויות</h2>
+        <p>חנות למכירת מוצרים באינטרנט מתאימה לשני סוגים של עסקים:</p>
+        <ul class="cards soft pr">
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15l-3-3a12 12 0 0 1 9-9c1 0 3 2 3 3a12 12 0 0 1-9 9zM9 12H5l2-4h4M12 15v4l4-2v-4M6 17c-1.5 1-2 4-2 4s3-.5 4-2"/></svg></span><span><b>יזמים צעירים שרוצים לפתוח חנות באינטרנט</b><span class="d">יש לכם מוצר, רעיון למותג או ספק לדרופ שיפינג, ואתם רוצים להתחיל למכור נכון מהיום הראשון. אנחנו בונים איתכם גם את המותג וגם את החנות.</span></span></li>
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10h16l-1.5-5h-13zM5 10v10h14V10M9 20v-5h6v5"/></svg></span><span><b>עסקים קיימים שכבר יש להם סחורה</b><span class="d">חנות פיזית, יבואן או מוכר שעובד היום דרך ווטסאפ ואינסטגרם. החנות נותנת לכם מקום אחד שמוכר 24/7, גם כשאתם לא עונים להודעות.</span></span></li>
+        </ul>
+        <p>בשני המקרים המטרה זהה: מכירת מוצרים באינטרנט, בחנות שנראית כמו המותג שלכם ועובדת בלי תקלות.</p>
+      </section>
 
-  <section class="sp-sec" aria-labelledby="sp-steps-h">
-    <div class="wrap">
-      <div class="sec-eyebrow rv">// how it works</div>
-      <h2 class="rv" id="sp-steps-h">How it works</h2>
-      <div class="sp-steps"><div class="sp-step rv"><span class="sp-step-n">01</span><h3>Free intro call</h3><p>15 minutes. We learn the business and what it needs.</p></div><div class="sp-step rv"><span class="sp-step-n">02</span><h3>Fixed-price quote</h3><p>A clear number and scope in writing. No hourly surprises.</p></div><div class="sp-step rv"><span class="sp-step-n">03</span><h3>Build the store</h3><p>We set up the design, products, payments and shipping.</p></div><div class="sp-step rv"><span class="sp-step-n">04</span><h3>Test order and launch</h3><p>We place a real test order together, then open the store.</p></div></div>
-    </div>
-  </section>
+      <!-- ===== 02 ===== -->
+      <section class="ch-sec" aria-labelledby="types">
+        <div class="ch-head pr"><span class="ch-n">02</span><span class="ch-k">סוגי חנויות</span></div>
+        <h2 id="types">איזה חנויות אנחנו בונים</h2>
+        <p>כל סוג מוצר צריך חנות קצת אחרת, וזה מה שאנחנו מתאימים:</p>
+        <ul class="cards pr">
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4L3 7l2 4 3-1v10h8V10l3 1 2-4-5-3a4 4 0 0 1-8 0z"/></svg></span><span><b>חנות בגדים באינטרנט</b><span class="d">מידות וצבעים לכל פריט, טבלת מידות, קולקציות ותמונות שמראות את הבגד מקרוב.</span></span></li>
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15v-3a8 8 0 0 1 16 0v3"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/></svg></span><span><b>חנות מוצרי חשמל</b><span class="d">מפרט טכני מסודר, סינון לפי מותג ומחיר, ומלאי שמתעדכן.</span></span></li>
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v4a2 2 0 0 0 0 4v4H4v-4a2 2 0 0 0 0-4zM10 6v12"/></svg></span><span><b>חנות לשירותים</b><span class="d">חבילות, כרטיסיות, שוברי מתנה או מנויים, שהלקוח קונה ומשלם ישר מהאתר.</span></span></li>
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg></span><span><b>חנות דרופ שיפינג</b><span class="d">חנות שמוכרת מוצרים שהספק שולח ישירות ללקוח, ב-Shopify או ב-WooCommerce, עם חיבור לספק.</span></span></li>
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 4.7 4.7 1.8-4.7 1.8L12 16l-1.8-4.7-4.7-1.8 4.7-1.8z"/></svg></span><span><b>חנות ממותגת</b><span class="d">מותג עם סיפור, שהחנות שלו נראית ומרגישה בדיוק כמו המותג.</span></span></li>
+        </ul>
 
-  <section class="sp-sec">
-    <div class="wrap">
-      <div class="sec-eyebrow rv">// real example</div>
-      <div class="sp-proof rv">
-        <div class="sp-proof-text"><b>ÉCRU Store, a demo shop we built</b><span>Shop, product pages and a cart</span></div>
-        <a class="btn" href="https://n1ace.github.io/ecommerce/" target="_blank" rel="noopener noreferrer">Open the demo</a>
-      </div>
-    </div>
-  </section>
+        <p>ככה, למשל, יכולה להיראות קולקציה בחנות בגדים שאנחנו בונים בקוד: הבגדים תלויים על המתלה, בגד שמצביעים עליו מסתובב אליכם, ולחיצה פותחת אותו בגדול.</p>
+        <figure class="rk wide pr" id="rk">
+          <svg class="rk-defs" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="rk-grad" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".22"/><stop offset=".45" stop-color="#FFFFFF" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity=".18"/></linearGradient>
+              <g id="rk-hg" fill="none" stroke-linecap="round"><path d="M60 24v-9c0-4 5-4 5-8.5S62 1 59 1s-5 2-5 4" stroke="#A3A9B2" stroke-width="2.4"/><path d="M22 35Q60 19 98 35" stroke="#8B5A3C" stroke-width="5"/></g>
+              <path id="rk-tee" d="M40 30L20 40 8 66l16 7 8-13v92h56V60l8 13 16-7-12-26-20-10c-6 7-13 10-20 10s-14-3-20-10z"/>
+              <path id="rk-ls" d="M40 30L22 40 12 80l-2 68 14 1 6-63 2-10v76h56V76l2 10 6 63 14-1-2-68-10-40-18-10c-6 7-13 10-20 10s-14-3-20-10z"/>
+              <path id="rk-hood" d="M42 32c1-14 9-20 18-20s17 6 18 20c-6 8-12 10-18 10s-12-2-18-10z"/>
+              <path id="rk-tl" d="M42 31c6 8 30 8 36 0M24 73l8-13M96 73l-8-13" fill="none" stroke="rgba(0,0,0,.18)" stroke-width="1.4"/>
+              <path id="rk-ll" d="M42 31c6 8 30 8 36 0M10 141h14M96 142h14M32 146h56" fill="none" stroke="rgba(0,0,0,.18)" stroke-width="1.4"/>
+            </defs>
+          </svg>
+          <div class="rk-in">
+            <div class="rk-rail" aria-hidden="true"></div>
+            <ul class="rk-list" aria-label="קולקציה לדוגמה">
+              <li class="rk-i"><button class="rk-b" type="button" aria-haspopup="dialog" data-name="חולצת כותנה לבנה" data-price="₪129" data-sizes="S–XL"><svg viewBox="0 0 120 160" aria-hidden="true"><use href="#rk-hg"/><use class="rk-base" href="#rk-tee" fill="#F4F2EE"/><use href="#rk-tee" fill="url(#rk-grad)"/><use href="#rk-tl"/><text x="60" y="68" font-size="8" letter-spacing="2" fill="#2B2522">LINA</text></svg><span class="rk-cap">חולצת כותנה לבנה<span class="sr-only">, ₪129</span></span></button></li>
+              <li class="rk-i"><button class="rk-b" type="button" aria-haspopup="dialog" data-name="סווטשירט ירוק יער" data-price="₪229" data-sizes="S–XXL"><svg viewBox="0 0 120 160" aria-hidden="true"><use href="#rk-hg"/><use class="rk-base" href="#rk-ls" fill="#2F5D4E"/><use href="#rk-ls" fill="url(#rk-grad)"/><use href="#rk-ll"/><text x="60" y="86" font-size="16" fill="#F3EFE6">LINA</text><text x="60" y="99" font-size="7" letter-spacing="1.5" fill="#F3EFE6">STUDIO · 2026</text></svg><span class="rk-cap">סווטשירט ירוק יער<span class="sr-only">, ₪229</span></span></button></li>
+              <li class="rk-i"><button class="rk-b" type="button" aria-haspopup="dialog" data-name="טי שחורה ״שקיעה״" data-price="₪139" data-sizes="S–XL"><svg viewBox="0 0 120 160" aria-hidden="true"><use href="#rk-hg"/><use class="rk-base" href="#rk-tee" fill="#1F1F22"/><use href="#rk-tee" fill="url(#rk-grad)"/><use href="#rk-tl"/><circle cx="60" cy="82" r="14" fill="#E8833A"/><path d="M40 100h40M45 106h30M50 112h20" stroke="#E8833A" stroke-width="2.6" stroke-linecap="round"/></svg><span class="rk-cap">טי שחורה ״שקיעה״<span class="sr-only">, ₪139</span></span></button></li>
+              <li class="rk-i"><button class="rk-b" type="button" aria-haspopup="dialog" data-name="קפוצ׳ון אפור" data-price="₪259" data-sizes="M–XXL"><svg viewBox="0 0 120 160" aria-hidden="true"><use href="#rk-hg"/><use class="rk-base" href="#rk-hood" fill="#7D828A"/><use class="rk-base" href="#rk-ls" fill="#8C9096"/><use href="#rk-ls" fill="url(#rk-grad)"/><use href="#rk-ll"/><path d="M42 114h36l5 22H37z" fill="rgba(0,0,0,.12)"/><path d="M55 42l-1 18M65 42l1 18" stroke="rgba(0,0,0,.28)" stroke-width="1.6" stroke-linecap="round"/></svg><span class="rk-cap">קפוצ׳ון אפור<span class="sr-only">, ₪259</span></span></button></li>
+              <li class="rk-i"><button class="rk-b" type="button" aria-haspopup="dialog" data-name="חולצה ארוכה בפסים" data-price="₪169" data-sizes="S–XL"><svg viewBox="0 0 120 160" aria-hidden="true"><use href="#rk-hg"/><use class="rk-base" href="#rk-ls" fill="#DCCBB3"/><path d="M32 66h56M32 80h56M32 94h56M32 108h56M32 122h56" stroke="#7A5C3E" stroke-width="4" opacity=".5"/><use href="#rk-ls" fill="url(#rk-grad)"/><use href="#rk-ll"/></svg><span class="rk-cap">חולצה ארוכה בפסים<span class="sr-only">, ₪169</span></span></button></li>
+              <li class="rk-i"><button class="rk-b" type="button" aria-haspopup="dialog" data-name="טי כחולה ״גלים״" data-price="₪139" data-sizes="S–XL"><svg viewBox="0 0 120 160" aria-hidden="true"><use href="#rk-hg"/><use class="rk-base" href="#rk-tee" fill="#3E5C9A"/><use href="#rk-tee" fill="url(#rk-grad)"/><use href="#rk-tl"/><path d="M42 82q4.5-6 9 0t9 0 9 0 9 0M42 93q4.5-6 9 0t9 0 9 0 9 0M42 104q4.5-6 9 0t9 0 9 0 9 0" stroke="#F3EFE6" stroke-width="2.6" fill="none" stroke-linecap="round"/></svg><span class="rk-cap">טי כחולה ״גלים״<span class="sr-only">, ₪139</span></span></button></li>
+              <li class="rk-i"><button class="rk-b" type="button" aria-haspopup="dialog" data-name="קפוצ׳ון בצבע חול" data-price="₪259" data-sizes="M–XXL"><svg viewBox="0 0 120 160" aria-hidden="true"><use href="#rk-hg"/><use class="rk-base" href="#rk-hood" fill="#C2AD8F"/><use class="rk-base" href="#rk-ls" fill="#CDB89A"/><use href="#rk-ls" fill="url(#rk-grad)"/><use href="#rk-ll"/><text x="60" y="80" font-size="9" letter-spacing="2" fill="#4A3B2A">LINA</text><path d="M42 114h36l5 22H37z" fill="rgba(0,0,0,.1)"/></svg><span class="rk-cap">קפוצ׳ון בצבע חול<span class="sr-only">, ₪259</span></span></button></li>
+              <li class="rk-i"><button class="rk-b" type="button" aria-haspopup="dialog" data-name="טי לבנה ״פרחים״" data-price="₪149" data-sizes="S–XL"><svg viewBox="0 0 120 160" aria-hidden="true"><use href="#rk-hg"/><use class="rk-base" href="#rk-tee" fill="#FAFAF8"/><use href="#rk-tee" fill="url(#rk-grad)"/><use href="#rk-tl"/><circle cx="52" cy="78" r="6.5" fill="#E85D75"/><circle cx="67" cy="73" r="5.5" fill="#F2B33D"/><circle cx="63" cy="88" r="6.5" fill="#4C8FD9"/><circle cx="49" cy="93" r="4.5" fill="#5DBB8A"/><circle cx="74" cy="90" r="4.5" fill="#B57EDC"/><text x="60" y="114" font-size="8" letter-spacing="1.5" fill="#2B2522">BLOOM</text></svg><span class="rk-cap">טי לבנה ״פרחים״<span class="sr-only">, ₪149</span></span></button></li>
+            </ul>
+            <button class="rk-all" type="button" aria-haspopup="dialog" hidden>לצפייה בקולקציה</button>
+          </div>
+          <div class="rk-mq" aria-hidden="true"><div class="rk-mq-t"><div class="rk-mq-g"><span>LINA · קולקציית סתיו</span><span>•</span><span>משלוח חינם מעל ₪300</span><span>•</span><span>החלפה תוך 14 יום</span><span>•</span><span>חדש כל שבוע</span><span>•</span></div></div></div>
+          <dialog class="rk-dlg" id="rk-dlg" aria-labelledby="rk-dn">
+            <div class="rk-dlg-in">
+              <button class="rk-x" type="button" data-close>סגירה</button>
+              <div class="rk-stage">
+                <button class="rk-nav" type="button" data-go="-1" aria-label="הבגד הקודם"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+                <div class="rk-big" aria-hidden="true"></div>
+                <button class="rk-nav" type="button" data-go="1" aria-label="הבגד הבא"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+              </div>
+              <p class="rk-cnt"><bdi dir="ltr"></bdi></p>
+              <h3 id="rk-dn"></h3>
+              <p class="rk-meta"></p>
+              <p class="rk-note">חנות לדוגמה. בחנות אמיתית כאן מופיעים גם בחירת מידה, מלאי וכפתור הוספה לסל.</p>
+            </div>
+          </dialog>
+        </figure>
+        <p class="rt-cap"><span>חנות לדוגמה, LINA. בטלפון, לחיצה על בגד פותחת אותו בגדול.</span></p>
 
-  <section class="sp-sec" aria-labelledby="sp-faq-h">
-    <div class="wrap">
-      <div class="sec-eyebrow rv">// questions</div>
-      <h2 class="rv" id="sp-faq-h">Questions before you book</h2>
-      <div class="sp-faq"><details class="rv" open><summary>What if I have more than 10 products?</summary><p>No problem. We will price the extra work on the call.</p></details><details class="rv"><summary>Are there fees on payments?</summary><p>The payment provider charges a small fee per sale. We help you pick one.</p></details><details class="rv"><summary>Can I update products myself?</summary><p>Yes. Adding products and changing prices and stock is part of the training.</p></details></div>
-    </div>
-  </section>
+        <p>מוכרים משהו אחר? ספרו לנו מה, ונתאים את החנות גם לזה.</p>
+      </section>
 
-  <section class="sp-final">
-    <div class="wrap">
-      <div class="sp-final-box rv">
+      <!-- ===== 03 ===== -->
+      <section class="ch-sec" aria-labelledby="platforms">
+        <div class="ch-head pr"><span class="ch-n">03</span><span class="ch-k">פלטפורמות</span></div>
+        <h2 id="platforms">על מה אנחנו בונים את החנות</h2>
+        <p>אנחנו בונים חנויות אונליין בשלוש דרכים. את הדרך המתאימה לכם אנחנו בוחרים יחד בשלב האפיון, לפי מה שאתם מוכרים ואיך אתם רוצים לנהל את החנות.</p>
+        <ul class="cards c3 pr">
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8l-4 4 4 4M17 8l4 4-4 4M14 4l-4 16"/></svg></span><span><b><a href="custom-code-website.html">חנות בקוד</a></b><span class="d">חנות שאנחנו כותבים מ-0, עם עיצוב והתנהגות מותאמים בדיוק למה שצריך.</span></span></li>
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.33 8h11.34a2 2 0 0 1 1.98 2.3l-1.26 8.16A3 3 0 0 1 15.43 21H8.57a3 3 0 0 1-2.96-2.54l-1.26-8.16A2 2 0 0 1 6.33 8z"/><path d="M9 11V6a3 3 0 0 1 6 0v5"/></svg></span><span><b>חנות Shopify</b><span class="d">חנות אונליין על פלטפורמת Shopify, עם עיצוב ממותג וחיבור לאפליקציות שלה, כולל דרופ שיפינג ב-Shopify.</span></span></li>
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="20" r="1.5"/><circle cx="17" cy="20" r="1.5"/><path d="M3 4h2l2.4 11h10.2L20 8H6.2"/></svg></span><span><b><a href="wordpress-website.html">חנות WooCommerce</a></b><span class="d">חנות בוורדפרס, שאתם מנהלים מלוח ניהול פשוט: מוצרים, מחירים, מלאי והזמנות. גם דרופ שיפינג ב-WooCommerce.</span></span></li>
+        </ul>
+        <p>בכל אחת מהן תקבלו את אותו תהליך, אותה רמת עיצוב ואותה תשומת לב.</p>
+      </section>
+
+      <!-- ===== 04 ===== -->
+      <section class="ch-sec" aria-labelledby="brand">
+        <div class="ch-head pr"><span class="ch-n">04</span><span class="ch-k">עיצוב</span></div>
+        <h2 id="brand">מיתוג, עיצוב ואנימציות</h2>
+        <p>חנות שנראית כמו כל חנות אחרת קשה לזכור. לכן כל חנות שלנו מתחילה מהמותג שלכם, לא מתבנית.</p>
+        <div class="br">
+          <ul class="cards soft pr">
+            <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 4.7 4.7 1.8-4.7 1.8L12 16l-1.8-4.7-4.7-1.8 4.7-1.8z"/></svg></span><span><b>לוגו ושפה ויזואלית</b><span class="d">אם עוד אין לכם, אנחנו בונים אותם איתכם.</span></span></li>
+            <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21a9 9 0 1 1 9-9c0 2-1.5 3-3 3h-2a2 2 0 0 0-1.5 3.3A1.6 1.6 0 0 1 12 21z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7.5" r="1"/></svg></span><span><b>צבעים שמתאימים למותג</b><span class="d">מהכפתורים ועד דף התשלום, הכל מדבר באותה שפה.</span></span></li>
+            <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9zM12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg></span><span><b>אנימציות ועיצוב 3D לפי הצורך</b><span class="d">מוצר שמסתובב בדף הבית, כרטיסי מוצר שמגיבים לתנועה, מעברים עדינים בין עמודים. אנחנו מוסיפים אותם במקום שהם עוזרים למכור, לא במקום שהם מאטים את האתר.</span></span></li>
+            <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/></svg></span><span><b>מובייל קודם</b><span class="d">הרבה מהלקוחות שלכם יקנו מהטלפון, אז את העגלה והתשלום אנחנו מעצבים קודם למסך הקטן.</span></span></li>
+          </ul>
+          <figure class="tc pr" id="tc">
+            <div class="tc-stage">
+              <div class="tc-card">
+                <span class="tc-badge">חדש</span>
+                <div class="tc-img" aria-hidden="true">
+                  <svg class="tc-hood" viewBox="0 0 120 120"><path class="b" d="M40 32L27 39 14 70l11 5 8-15v44h54V60l8 15 11-5-13-31-13-7c-4 7-12 10-20 10s-16-3-20-10z"/><path class="b" d="M42 31c2-9 9-15 18-15s16 6 18 15c-4 6-11 9-18 9s-14-3-18-9z"/><path class="s" d="M49 32c2-5 6-8 11-8s9 3 11 8c-3 3-7 4-11 4s-8-1-11-4z"/><path class="l" d="M46 80h28l4 14H42zM55 40l-1 15M65 40l1 15M33 98h54"/></svg>
+                </div>
+                <div class="tc-info">
+                  <div class="tc-row"><b>קפוצ׳ון אוברסייז</b><span class="tc-pr">₪239</span></div>
+                  <div class="tc-sw" role="group" aria-label="צבע הקפוצ׳ון" hidden>
+                    <button class="tc-s" type="button" aria-label="חול" aria-pressed="true" data-pc="#D8C3A5" data-pb="#F4EEE6" style="--sc:#D8C3A5"></button>
+                    <button class="tc-s" type="button" aria-label="זית" aria-pressed="false" data-pc="#6B7A4B" data-pb="#EEF0E6" style="--sc:#6B7A4B"></button>
+                    <button class="tc-s" type="button" aria-label="כחול" aria-pressed="false" data-pc="#3E5C9A" data-pb="#E9EEF8" style="--sc:#3E5C9A"></button>
+                    <button class="tc-s" type="button" aria-label="שחור" aria-pressed="false" data-pc="#2A2B30" data-pb="#ECEDF0" style="--sc:#2A2B30"></button>
+                  </div>
+                  <span class="tc-cn">צבע: <span>חול</span></span>
+                  <span class="tc-add" aria-hidden="true">הוספה לסל</span>
+                </div>
+                <span class="tc-glare" aria-hidden="true"></span>
+              </div>
+            </div>
+            <figcaption class="dm-cap"><span>כרטיס מוצר שמגיב לתנועה: הזיזו את העכבר מעליו, או גללו בטלפון. בחירת צבע מחליפה את המוצר.</span></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- ===== 05 ===== -->
+      <section class="ch-sec" aria-labelledby="pay">
+        <div class="ch-head pr"><span class="ch-n">05</span><span class="ch-k">סליקה ואבטחה</span></div>
+        <h2 id="pay">סליקה ואבטחת מידע</h2>
+        <p>אנחנו מחברים לחנות את חברת הסליקה שלכם, ומגדירים את אופן התשלום לפי מה שאתם מוכרים. ככה נראה המסע של הזמנה אחת, מהעגלה ועד לוח הניהול שלכם:</p>
+
+        <figure class="oj pr" id="oj" data-mode="once">
+          <div class="oj-mode" role="group" aria-label="אופן התשלום בדוגמה" hidden>
+            <button class="oj-b" type="button" data-mode="once" aria-pressed="true">חד-פעמי</button>
+            <button class="oj-b" type="button" data-mode="sub" aria-pressed="false">מנוי</button>
+          </div>
+          <ol class="oj-steps">
+            <li class="oj-s on">
+              <span class="oj-k"><span class="oj-n" aria-hidden="true">1</span>הלקוח מוסיף לעגלה</span>
+              <div class="oj-ui" aria-hidden="true">
+                <div class="oj-prod"><span class="oj-pi"><svg class="ico" viewBox="0 0 24 24"><path d="M7 3h10l1 4H6zM6 7h12l-1 14H7z"/><path d="M10 12c1.5 1 2.5 3 2 5M14 12c-1.5 1-2.5 3-2 5"/></svg></span><span><b>פולי קפה, 1 ק״ג</b><span class="m-once">₪119</span><span class="m-sub">₪99 לחודש</span></span></div>
+                <span class="oj-btn x-off">הוספה לעגלה</span>
+                <span class="oj-btn ok x-on"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>נוסף לעגלה</span>
+              </div>
+            </li>
+            <li class="oj-s on">
+              <span class="oj-k"><span class="oj-n" aria-hidden="true">2</span>משלם בעמוד סליקה מאובטח</span>
+              <div class="oj-ui" aria-hidden="true">
+                <span class="oj-lock"><svg class="ico" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>תשלום מאובטח</span>
+                <span class="oj-f"><span>כרטיס</span><bdi dir="ltr">•••• 4410</bdi></span>
+                <span class="oj-tot"><span class="m-once">סה״כ לתשלום</span><span class="m-sub">חיוב חודשי</span><b class="m-once">₪119</b><b class="m-sub">₪99</b></span>
+                <span class="oj-btn"><span class="m-once">לתשלום</span><span class="m-sub">להתחלת המנוי</span></span>
+              </div>
+            </li>
+            <li class="oj-s on">
+              <span class="oj-k"><span class="oj-n" aria-hidden="true">3</span>ההזמנה מופיעה אצלכם בניהול</span>
+              <div class="oj-ui" aria-hidden="true">
+                <span class="oj-ah">הזמנות<small>היום</small></span>
+                <span class="oj-row new"><bdi dir="ltr">#1043</bdi><span>דנה כ.</span><em class="m-once">שולם</em><em class="m-sub">מנוי פעיל</em><small class="m-sub">החיוב הבא: 04.11</small></span>
+                <span class="oj-row"><bdi dir="ltr">#1042</bdi><span>יוסי ל.</span><em>נשלח</em></span>
+                <span class="oj-row"><bdi dir="ltr">#1041</bdi><span>מיכל ר.</span><em>נשלח</em></span>
+              </div>
+            </li>
+          </ol>
+          <figcaption class="dm-cap"><span>בתשלום חד-פעמי הלקוח משלם פעם אחת. במנוי, חברת הסליקה מחייבת אותו כל חודש אוטומטית, וההזמנה מסומנת אצלכם כמנוי פעיל.</span></figcaption>
+        </figure>
+
+        <div class="pay2 pr">
+          <div>
+            <h3><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></svg></span>תשלום חד-פעמי</h3>
+            <p>הלקוח קונה, משלם ומקבל אישור הזמנה.</p>
+          </div>
+          <div>
+            <h3><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 2l3 3-3 3M4 11V9a4 4 0 0 1 4-4h12M7 22l-3-3 3-3M20 13v2a4 4 0 0 1-4 4H4"/></svg></span>מנויים</h3>
+            <p>חיוב חודשי אוטומטי, למשל למנוי על מוצר או שירות. צריכים מערכת מנויים מלאה, עם אזור אישי וניהול מנויים? את זה אנחנו בונים ב<a href="app-development.html">פיתוח אפליקציה</a>.</p>
+          </div>
+        </div>
+
+        <p class="lead-in">אבטחת מידע</p>
+        <p>החנות עומדת בדרישות אבטחת המידע:</p>
+        <ul class="cards c3 pr">
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><span><b>האתר מוצפן</b><span class="d">תעודת SSL, כך שכל מה שהלקוח שולח עובר מוצפן.</span></span></li>
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></svg></span><span><b>האשראי לא נשמר בחנות</b><span class="d">פרטי האשראי נשמרים אצל חברת הסליקה, ולא בחנות.</span></span></li>
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span><span><b>פרטיות ונגישות</b><span class="d">החנות עומדת בדרישות הפרטיות והנגישות בישראל.</span></span></li>
+        </ul>
+        <div class="cc-excl pr">
+          <span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg></span>
+          <p><strong>עמלות סליקה:</strong> עמלות הסליקה משולמות ישירות לחברת הסליקה.</p>
+        </div>
+      </section>
+
+      <!-- ===== 06 ===== -->
+      <section class="ch-sec" aria-labelledby="process">
+        <div class="ch-head pr"><span class="ch-n">06</span><span class="ch-k">התהליך</span></div>
+        <h2 id="process">איך מקימים חנות באינטרנט איתנו</h2>
+        <p>תהליך פיתוח חנות אצלנו עובר ארבעה שלבים, ואתם רואים איפה הוא נמצא בכל רגע.</p>
+        <div class="pt wide">
+          <nav class="pt-nav" aria-label="שלבי העבודה">
+            <p class="pt-nav-k">ארבעה שלבים</p>
+            <ol>
+              <li><a href="#st1"><span>01</span>היכרות ואפיון</a></li>
+              <li><a href="#st2"><span>02</span>סקיצה ואישור</a></li>
+              <li><a href="#st3"><span>03</span>עיצוב ופיתוח</a></li>
+              <li><a href="#st4"><span>04</span>הגשה ובדיקה</a></li>
+            </ol>
+          </nav>
+          <ol class="pt-steps">
+            <li class="pt-s pr" id="st1"><span class="pt-n" aria-hidden="true">1</span><div class="pt-b"><b>היכרות ואפיון.</b><p>שיחה ראשונה שבה אנחנו מכירים את העסק, המוצרים והלקוחות, ומגדירים יחד מה החנות צריכה לעשות ועל איזו פלטפורמה.</p></div></li>
+            <li class="pt-s pr" id="st2"><span class="pt-n" aria-hidden="true">2</span><div class="pt-b"><b>סקיצה ואישור.</b><p>מציגים לכם איך החנות והמותג ייראו, עם הסבר מלא על כל חלק. מתחילים לעבוד רק אחרי שאישרתם.</p></div></li>
+            <li class="pt-s pr" id="st3"><span class="pt-n" aria-hidden="true">3</span><div class="pt-b"><b>עיצוב ופיתוח.</b><p>בונים את החנות, מעלים מוצרים, מחברים סליקה ומשלוחים. אתם מעודכנים במעקב על הפרויקט לאורך כל הדרך.</p>
+              <div class="tk">
+                <div class="tk-top"><b>מעקב פרויקט</b><span><span class="tk-eg">דוגמה</span><bdi class="tk-code" dir="ltr">BD-SHOP-1026</bdi></span></div>
+                <div class="tk-st"><span>שלב 3 מתוך 4</span><b>עיצוב ופיתוח</b></div>
+                <div class="tk-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="65" aria-label="התקדמות הפרויקט"><i></i></div>
+                <ul class="tk-log">
+                  <li><time>14.10</time><span>חיבור הסליקה והמשלוחים הושלם</span></li>
+                  <li><time>12.10</time><span>42 מוצרים הועלו לחנות</span></li>
+                  <li><time>08.10</time><span>הסקיצה והמותג אושרו</span></li>
+                </ul>
+                <a href="../track.html">לעמוד מעקב הפרויקט</a>
+              </div>
+            </div></li>
+            <li class="pt-s pr" id="st4"><span class="pt-n" aria-hidden="true">4</span><div class="pt-b"><b>הגשה, תיקונים ובדיקה מלאה.</b><p>מציגים לכם את החנות, עושים סבבי תיקונים, ומריצים הזמנת ניסיון מההתחלה עד הסוף לפני שעולים לאוויר.</p>
+              <ul class="tst" aria-label="מה בודקים בהזמנת הניסיון">
+                <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>הוספה לעגלה</li>
+                <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>תשלום</li>
+                <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>אישור הזמנה ללקוח</li>
+                <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>ההזמנה בלוח הניהול</li>
+              </ul>
+            </div></li>
+          </ol>
+        </div>
+        <div class="cc-excl pr">
+          <span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+          <p><strong>אחריות לחודש הראשון.</strong> כל תיקון שצריך בחודש הראשון של מכירות עלינו.</p>
+        </div>
+        <div class="pz-card pr">
+          <div><span class="k">חנות אונליין אצלנו מתחילה מ-</span><b>₪2,000</b><span class="s">לא כולל מע״מ</span></div>
+          <p>את המחיר הסופי אנחנו נותנים אחרי האפיון, לפי כמות המוצרים, הפלטפורמה ומה שהחנות צריכה לעשות, ולפני שמתחילים לעבוד.</p>
+        </div>
+      </section>
+
+      <!-- ===== 07 ===== -->
+      <section class="ch-sec" aria-labelledby="need">
+        <div class="ch-head pr"><span class="ch-n">07</span><span class="ch-k">הכנה</span></div>
+        <h2 id="need">מה אנחנו צריכים מכם</h2>
+        <p>הדבר שהכי מזרז חנות הוא תמונות מוצרים מוכנות. את התמונות אתם מספקים, ואנחנו דואגים שייראו אחיד ומסודר בחנות.</p>
+        <div class="nd pr" id="nd">
+          <div class="nd-head"><h3>מה להכין לפני שמתחילים</h3><span class="nd-c" aria-live="polite" hidden></span></div>
+          <div class="nd-bar" aria-hidden="true" hidden><i></i></div>
+          <ul class="nd-list">
+            <li><label><input type="checkbox" name="nd1"><span class="nd-box" aria-hidden="true"></span><span>תמונות של כל מוצר, באיכות טובה ועל רקע אחיד</span></label></li>
+            <li><label><input type="checkbox" name="nd2"><span class="nd-box" aria-hidden="true"></span><span>שם, מחיר ותיאור קצר לכל מוצר (מספיק קובץ אקסל)</span></label></li>
+            <li><label><input type="checkbox" name="nd3"><span class="nd-box" aria-hidden="true"></span><span>מידות, צבעים או דגמים, אם יש</span></label></li>
+            <li><label><input type="checkbox" name="nd4"><span class="nd-box" aria-hidden="true"></span><span>פרטי חברת הסליקה, או שנעזור לכם לפתוח חשבון</span></label></li>
+            <li><label><input type="checkbox" name="nd5"><span class="nd-box" aria-hidden="true"></span><span>מדיניות משלוחים והחזרות</span></label></li>
+          </ul>
+          <div class="nd-go">
+            <p>יש לכם הכל? שלחו לנו הודעה ונתחיל.</p>
+            <a class="btn-wa" href="https://wa.me/972527905122?text=%D7%94%D7%99%D7%99%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%94%D7%A2%D7%9E%D7%95%D7%93%20%D7%A2%D7%9C%20%D7%91%D7%A0%D7%99%D7%99%D7%AA%20%D7%97%D7%A0%D7%95%D7%AA%20%D7%90%D7%95%D7%A0%D7%9C%D7%99%D7%99%D7%9F.%20%D7%99%D7%A9%20%D7%9C%D7%99%20%D7%94%D7%9B%D7%9C%2C%20%D7%91%D7%95%D7%90%D7%95%20%D7%A0%D7%AA%D7%97%D7%99%D7%9C!" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.55L2.3 21.7l5.28-1.38A9.7 9.7 0 1 0 12 2Zm0 17.65a7.94 7.94 0 0 1-4.05-1.1l-.29-.17-3.13.82.84-3.05-.19-.31A7.94 7.94 0 1 1 12 19.65Zm4.36-5.95c-.24-.12-1.41-.7-1.63-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18a7.2 7.2 0 0 1-1.33-1.66c-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>יש לי הכל, בואו נתחיל</a>
+          </div>
+        </div>
+        <p>אין לכם עדיין חלק מזה? זה בסדר, נעבור על זה יחד בשיחה הראשונה.</p>
+      </section>
+
+      <!-- ===== 08 ===== -->
+      <section class="ch-sec" aria-labelledby="project">
+        <div class="ch-head pr"><span class="ch-n">08</span><span class="ch-k">פרויקט</span></div>
+        <h2 id="project">פרויקט: חנות בגדים אונליין</h2>
+        <div class="pj" id="pj">
+          <div class="pj-tabs" role="group" aria-label="בחירת חנות" hidden></div>
+          <p data-k="intro">ÉCRU היא חנות בגדים אונליין שבנינו בקוד כחנות דמו, כדי להראות איך חנות בגדים שלנו נראית ומרגישה: קטלוג עם מידות, עגלת קניות ועיצוב שמתאים למותג.</p>
+          <figure class="rt pr" id="rt" style="--sd:-77.8%;--sm:-75.1%">
+            <div class="rt-lap">
+              <div class="rt-scr">
+                <div class="sk-bar" aria-hidden="true"><i></i><i></i><i></i><span data-k="bar">n1ace.github.io/ecommerce</span></div>
+                <div class="rt-vp"><img data-k="desk" src="../assets/projects/ecommerce/desktop-long.jpg" alt="חנות הבגדים ÉCRU, עמוד הבית במחשב" width="960" height="2700" loading="lazy"></div>
+              </div>
+              <div class="rt-base" aria-hidden="true"></div>
+            </div>
+            <div class="rt-ph"><div class="rt-vp"><img data-k="mob" src="../assets/projects/ecommerce/mobile-long.jpg" alt="חנות הבגדים ÉCRU בטלפון" width="390" height="3400" loading="lazy"></div></div>
+          </figure>
+          <p class="rt-cap"><span>החנות במחשב ובטלפון. העמוד נגלל לבד, ועוצר כשמעבירים עליו את העכבר.</span><a data-k="link" href="https://n1ace.github.io/ecommerce/" target="_blank" rel="noopener noreferrer">לביקור בחנות <bdi dir="ltr" data-k="host">n1ace.github.io/ecommerce</bdi></a></p>
+          <ul class="rt-list pr">
+            <li><strong>פלטפורמה:</strong> <span data-k="platform">קוד, שכתבנו מ-0.</span></li>
+            <li><strong>מה בנינו:</strong> <span data-k="built">קטלוג עם סינון לפי קטגוריה, עמוד מוצר עם בחירת מידה, ועגלת קניות שנשמרת גם כשסוגרים את הדפדפן.</span></li>
+            <li><strong>לנסות בעצמכם:</strong> <span data-k="note">זו חנות דמו בלי סליקה אמיתית, אז אפשר להוסיף מוצרים לעגלה ולשחק איתה בחופשיות.</span></li>
+          </ul>
+        </div>
+        <script type="application/json" id="pj-data">
+        [
+          {
+            "label":"ÉCRU · חנות בגדים",
+            "intro":"ÉCRU היא חנות בגדים אונליין שבנינו בקוד כחנות דמו, כדי להראות איך חנות בגדים שלנו נראית ומרגישה: קטלוג עם מידות, עגלת קניות ועיצוב שמתאים למותג.",
+            "url":"https://n1ace.github.io/ecommerce/",
+            "host":"n1ace.github.io/ecommerce",
+            "platform":"קוד, שכתבנו מ-0.",
+            "built":"קטלוג עם סינון לפי קטגוריה, עמוד מוצר עם בחירת מידה, ועגלת קניות שנשמרת גם כשסוגרים את הדפדפן.",
+            "note":"זו חנות דמו בלי סליקה אמיתית, אז אפשר להוסיף מוצרים לעגלה ולשחק איתה בחופשיות.",
+            "desktop":{"src":"../assets/projects/ecommerce/desktop-long.jpg","w":960,"h":2700,"alt":"חנות הבגדים ÉCRU, עמוד הבית במחשב"},
+            "mobile":{"src":"../assets/projects/ecommerce/mobile-long.jpg","w":390,"h":3400,"alt":"חנות הבגדים ÉCRU בטלפון"}
+          }
+        ]
+        </script>
+      </section>
+
+      <!-- ===== 09 ===== -->
+      <section class="ch-sec" id="post-faq" aria-labelledby="faq">
+        <div class="ch-head pr"><span class="ch-n">09</span><span class="ch-k">שאלות ותשובות</span></div>
+        <h2 id="faq">שאלות נפוצות על בניית חנות אונליין</h2>
+        <div class="fq" data-faq>
+          <div class="fq-it open">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q1" aria-expanded="true" aria-controls="fq-a1"><span class="fq-n">01</span><span class="fq-t">איך מקימים חנות באינטרנט?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a1" role="region" aria-labelledby="fq-q1"><div class="fq-ai"><p class="fq-a">מתחילים בשיחת היכרות ואפיון, עוברים לסקיצה שאתם מאשרים, ומשם לעיצוב, פיתוח ובדיקה מלאה. אתם מביאים את המוצרים והתמונות, ואת כל השאר אנחנו עושים.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q2" aria-expanded="false" aria-controls="fq-a2"><span class="fq-n">02</span><span class="fq-t">כמה זמן לוקח לבנות חנות אונליין?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a2" role="region" aria-labelledby="fq-q2"><div class="fq-ai"><p class="fq-a">זה תלוי בעיקר בכמות המוצרים ובמה שהחנות צריכה לעשות. את הלוח המדויק נקבע יחד בשלב האפיון, ותמונות מוכנות מקצרות אותו מאוד.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q3" aria-expanded="false" aria-controls="fq-a3"><span class="fq-n">03</span><span class="fq-t">אתם בונים חנות דרופ שיפינג?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a3" role="region" aria-labelledby="fq-q3"><div class="fq-ai"><p class="fq-a">כן. אנחנו בונים חנויות דרופ שיפינג ב-Shopify וב-WooCommerce, ממותגות ומחוברות לספק.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q4" aria-expanded="false" aria-controls="fq-a4"><span class="fq-n">04</span><span class="fq-t">Shopify או WooCommerce, מה מתאים לי?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a4" role="region" aria-labelledby="fq-q4"><div class="fq-ai"><p class="fq-a">את זה אנחנו בודקים יחד בשיחה הראשונה, לפי המוצרים, התקציב ואיך אתם רוצים לנהל את החנות.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q5" aria-expanded="false" aria-controls="fq-a5"><span class="fq-n">05</span><span class="fq-t">אני אוכל לנהל את החנות לבד?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a5" role="region" aria-labelledby="fq-q5"><div class="fq-ai"><p class="fq-a">כן. הוספת מוצרים, שינוי מחירים, מלאי וטיפול בהזמנות נעשים מלוח הניהול, ואנחנו מראים לכם איך במסירת החנות.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q6" aria-expanded="false" aria-controls="fq-a6"><span class="fq-n">06</span><span class="fq-t">אפשר למכור מנויים בחנות?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a6" role="region" aria-labelledby="fq-q6"><div class="fq-ai"><p class="fq-a">כן. אנחנו מגדירים חיוב חודשי אוטומטי דרך חברת הסליקה, לצד תשלומים חד-פעמיים.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q7" aria-expanded="false" aria-controls="fq-a7"><span class="fq-n">07</span><span class="fq-t">החנות מאובטחת?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a7" role="region" aria-labelledby="fq-q7"><div class="fq-ai"><p class="fq-a">כן. האתר מוצפן, פרטי האשראי נשמרים אצל חברת הסליקה ולא אצלנו, והחנות עומדת בדרישות הפרטיות והנגישות.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q8" aria-expanded="false" aria-controls="fq-a8"><span class="fq-n">08</span><span class="fq-t">החנות שלי?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a8" role="region" aria-labelledby="fq-q8"><div class="fq-ai"><p class="fq-a">כן. הדומיין, האחסון וחשבון החנות רשומים על שמכם.</p></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 10 ===== -->
+      <section class="ch-sec" aria-labelledby="more">
+        <div class="ch-head pr"><span class="ch-n">10</span><span class="ch-k">עוד שירותים</span></div>
+        <h2 id="more">שירותים נוספים</h2>
+        <div class="sp-others cc-others"><a class="sp-other pr" href="booking-system.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M16 3v4M8 3v4M4 11h16M8 15h2v2H8z"/></svg></span><b>אפליקציה לקביעת תורים</b><span>₪800</span></a><a class="sp-other pr" href="wordpress-website.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9h3M4 9h2.5M11 9l3 11 4-9M5.5 9l3.5 11 3-7M18 11c.18-.53 1-1.36 1-2.5C19 6.72 18.22 6 17.13 6 16.23 6 16 6.81 16 7.43 16 9.26 18 9.49 18 11"/></svg></span><b>אתר וורדפרס</b><span>מ־₪400</span></a><a class="sp-other pr" href="custom-code-website.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8l-4 4 4 4M17 8l4 4-4 4M14 4l-4 16"/></svg></span><b>אתר בקוד מותאם אישית</b><span>מ־₪300</span></a><a class="sp-other pr" href="app-development.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M11 4h2M12 17v.01"/></svg></span><b>פיתוח אפליקציה</b><span>לפי אפיון</span></a><a class="sp-other pr" href="existing-site.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10h3V7L6.5 3.5a6 6 0 0 1 8 8l6 6a2 2 0 0 1-3 3l-6-6a6 6 0 0 1-8-8L7 10"/></svg></span><b>כבר יש לך אתר?</b><span>מ־₪150 לחודש</span></a></div>
+      </section>
+
+      <aside class="post-cta pr" aria-label="יצירת קשר">
         <div>
-          <h2>Let's talk about your business</h2>
-          <p>A free 15-minute call. We'll understand what you need and tell you exactly what it costs. No commitment.</p>
+          <p class="post-cta-h">מוכנים להתחיל למכור באינטרנט?</p>
+          <p>ספרו לנו מה אתם מוכרים וכמה מוצרים יש לכם. נחזור אליכם עם כיוון ברור לחנות שלכם.</p>
         </div>
-        <div class="sp-final-actions">
-          <a class="btn solid cta" href="../booking.html?s=store"><span class="cta-txt">Book a free call</span><svg class="cta-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a class="btn sp-wa" href="https://wa.me/972527905122?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%91%D7%95%D7%A0%D7%99%D7%9D%20%D7%93%D7%99%D7%92%D7%99%D7%98%D7%9C%2C%20%D7%99%D7%A9%20%D7%9C%D7%99%20%D7%A2%D7%A1%D7%A7%20%D7%95%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.55L2.3 21.7l5.28-1.38A9.7 9.7 0 1 0 12 2Zm0 17.65a7.94 7.94 0 0 1-4.05-1.1l-.29-.17-3.13.82.84-3.05-.19-.31A7.94 7.94 0 1 1 12 19.65Zm4.36-5.95c-.24-.12-1.41-.7-1.630-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18a7.2 7.2 0 0 1-1.33-1.66c-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.690 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg><span>Ask on WhatsApp</span></a>
-          <small>Pick a time that suits you, online</small>
+        <div class="cta-acts">
+          <a class="btn-wa" href="https://wa.me/972527905122?text=%D7%94%D7%99%D7%99%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%94%D7%A2%D7%9E%D7%95%D7%93%20%D7%A2%D7%9C%20%D7%91%D7%A0%D7%99%D7%99%D7%AA%20%D7%97%D7%A0%D7%95%D7%AA%20%D7%90%D7%95%D7%A0%D7%9C%D7%99%D7%99%D7%9F%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.55L2.3 21.7l5.28-1.38A9.7 9.7 0 1 0 12 2Zm0 17.65a7.94 7.94 0 0 1-4.05-1.1l-.29-.17-3.13.82.84-3.05-.19-.31A7.94 7.94 0 1 1 12 19.65Zm4.36-5.95c-.24-.12-1.41-.7-1.63-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18a7.2 7.2 0 0 1-1.33-1.66c-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>דברו איתנו בווטסאפ</a>
+          <a class="btn-ghost" href="../booking.html?s=store"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M16 3v4M8 3v4M4 11h16"/></svg>קבעו שיחת ייעוץ</a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sp-sec" aria-labelledby="sp-others-h">
-    <div class="wrap">
-      <div class="sec-eyebrow rv">// more services</div>
-      <h2 class="rv" id="sp-others-h">Other services</h2>
-      <div class="sp-others"><a class="sp-other rv" href="booking-system.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M16 3v4M8 3v4M4 11h16M8 15h2v2H8z"/></svg></span><b>Booking system + SMS reminders</b><span>₪800</span></a><a class="sp-other rv" href="wordpress-website.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9h3M4 9h2.5M11 9l3 11 4-9M5.5 9l3.5 11 3-7M18 11c.18-.53 1-1.36 1-2.5C19 6.72 18.22 6 17.13 6 16.23 6 16 6.81 16 7.43 16 9.26 18 9.49 18 11"/></svg></span><b>WordPress business website</b><span>₪1,000</span></a><a class="sp-other rv" href="custom-code-website.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8l-4 4 4 4M17 8l4 4-4 4M14 4l-4 16"/></svg></span><b>Custom-coded website</b><span>From ₪500</span></a><a class="sp-other rv" href="app-development.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M11 4h2M12 17v.01"/></svg></span><b>App development</b><span>Custom quote</span></a><a class="sp-other rv" href="existing-site.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10h3V7L6.5 3.5a6 6 0 0 1 8 8l6 6a2 2 0 0 1-3 3l-6-6a6 6 0 0 1-8-8L7 10"/></svg></span><b>Already have a site?</b><span>From ₪150 a month</span></a></div>
-    </div>
-  </section>
+      </aside>
+    </article>
+  </div>
 </main>
 
 <footer>
@@ -188,7 +1104,7 @@
     <span>© <span id="yr"></span> Bonim Digital · <a href="https://github.com/N1ace" target="_blank" rel="noopener noreferrer">GitHub</a></span>
     <nav class="social-links" aria-label="Social">
       <a href="https://www.instagram.com/bonimdigital/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4zm0 2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7zm5 2.6A4.4 4.4 0 1 1 7.6 12 4.4 4.4 0 0 1 12 7.6zm0 2A2.4 2.4 0 1 0 14.4 12 2.4 2.4 0 0 0 12 9.6zm5.25-3.350a1.05 1.05 0 1 1-1.05 1.05 1.05 1.05 0 0 1 1.05-1.05z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4zm0 2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7zm5 2.6A4.4 4.4 0 1 1 7.6 12 4.4 4.4 0 0 1 12 7.6zm0 2A2.4 2.4 0 1 0 14.4 12 2.4 2.4 0 0 0 12 9.6zm5.25-3.35a1.05 1.05 0 1 1-1.05 1.05 1.05 1.05 0 0 1 1.05-1.05z"/></svg>
       </a>
       <a href="https://www.facebook.com/profile.php?id=61594940790647" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.07A10 10 0 1 0 10.4 21.9v-6.94H7.9v-2.89h2.5V9.8c0-2.47 1.47-3.84 3.72-3.84 1.08 0 2.2.2 2.2.2v2.42h-1.24c-1.22 0-1.6.76-1.6 1.54v1.85h2.72l-.43 2.89h-2.29v6.94A10 10 0 0 0 22 12.07z"/></svg>
@@ -208,7 +1124,7 @@
 
 <aside class="float-actions" aria-label="Quick contact">
   <a class="whatsapp-float" href="https://wa.me/972527905122" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.55L2.3 21.7l5.28-1.38A9.7 9.7 0 1 0 12 2Zm0 17.65a7.94 7.94 0 0 1-4.05-1.1l-.29-.17-3.13.82.84-3.05-.19-.31A7.94 7.94 0 1 1 12 19.65Zm4.36-5.95c-.24-.12-1.41-.7-1.630-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18a7.2 7.2 0 0 1-1.33-1.66c-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.690 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.55L2.3 21.7l5.28-1.38A9.7 9.7 0 1 0 12 2Zm0 17.65a7.94 7.94 0 0 1-4.05-1.1l-.29-.17-3.13.82.84-3.05-.19-.31A7.94 7.94 0 1 1 12 19.65Zm4.36-5.95c-.24-.12-1.41-.7-1.63-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18a7.2 7.2 0 0 1-1.33-1.66c-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>
     <span>WhatsApp</span>
   </a>
   <a class="booking-float" href="../booking.html?s=store" aria-label="Book a call" title="Book a call">
@@ -218,6 +1134,224 @@
 </aside>
 
 <script src="../assets/site-pages.js?v=3"></script>
-<script src="../assets/journey.js?v=1"></script>
+<script>
+// FAQ accordion: one answer open at a time (without JS every answer stays open)
+document.querySelectorAll('#post-faq [data-faq]').forEach(function(list){
+  list.classList.add('is-js');
+  list.addEventListener('click',function(e){
+    var q=e.target.closest('.fq-q'); if(!q) return;
+    var it=q.closest('.fq-it'), was=it.classList.contains('open');
+    list.querySelectorAll('.fq-it').forEach(function(x){x.classList.remove('open');x.querySelector('.fq-q').setAttribute('aria-expanded','false')});
+    if(!was){it.classList.add('open');q.setAttribute('aria-expanded','true')}
+  });
+});
+
+// reading flow: scroll reveal, progress bar, side navigation (page works fully without JS)
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches, hasIO='IntersectionObserver' in window;
+  if(hasIO&&!reduce){
+    document.documentElement.classList.add('pr-on');
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.post .pr').forEach(function(el){io.observe(el)});
+  }
+  var art=document.querySelector('.post-body'), bar=document.querySelector('.rd-progress span');
+  var toc=document.querySelector('.toc'), side=document.querySelector('.toc-side'), end=document.querySelector('.post-cta');
+  var links=[], heads=[];
+  if(toc&&side){
+    side.querySelector('ol').innerHTML=toc.querySelector('ol').innerHTML;
+    links=[].slice.call(side.querySelectorAll('a'));
+    heads=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1))});
+  }
+  var queued=false;
+  function update(){
+    queued=false;
+    if(art&&bar){var r=art.getBoundingClientRect(),h=r.height-innerHeight;bar.style.transform='scaleX('+(h>0?Math.min(1,Math.max(0,-r.top/h)):1)+')'}
+    if(links.length&&getComputedStyle(side).display!=='none'){
+      var cur=-1,y=innerHeight*.35;
+      heads.forEach(function(h,i){if(h&&h.getBoundingClientRect().top<y)cur=i});
+      links.forEach(function(a,i){a.classList.toggle('on',i===cur);if(i===cur)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')});
+      var past=toc.getBoundingClientRect().bottom<0, before=!end||end.getBoundingClientRect().top>innerHeight*.6;
+      side.classList.toggle('show',past&&before);
+    }
+  }
+  function onScroll(){if(!queued){queued=true;requestAnimationFrame(update)}}
+  addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);update();
+})();
+
+// hero: each button swaps the demo store (without JS the clothing store is shown)
+(function(){
+  var root=document.getElementById('sw'); if(!root) return;
+  var tabs=root.querySelector('.sw-tabs'), bs=[].slice.call(tabs.querySelectorAll('.sw-b'));
+  tabs.hidden=false;
+  bs.forEach(function(b){b.addEventListener('click',function(){
+    root.dataset.v=b.dataset.v;
+    bs.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+  })});
+})();
+
+// rack strip: repeat the text until each half is wider than the strip, so the loop never shows an edge
+(function(){
+  var mq=document.querySelector('.rk-mq'); if(!mq) return;
+  var track=mq.querySelector('.rk-mq-t'), group=track.querySelector('.rk-mq-g'), unit=group.innerHTML;
+  function build(){
+    group.innerHTML=unit;
+    var w=group.offsetWidth; if(!w) return;
+    group.innerHTML=new Array(Math.ceil(mq.offsetWidth/w)+2).join(unit);
+    while(track.children.length>1) track.removeChild(track.lastChild);
+    track.appendChild(group.cloneNode(true));
+    mq.style.setProperty('--mq',(group.offsetWidth/60).toFixed(1)+'s');
+    mq.classList.add('is-js');
+  }
+  build();
+  var t; addEventListener('resize',function(){clearTimeout(t);t=setTimeout(build,200)});
+})();
+
+// clothing rack: a click opens the garment in a viewer with previous / next
+(function(){
+  var root=document.getElementById('rk'), dlg=document.getElementById('rk-dlg');
+  if(!root||!dlg||typeof dlg.showModal!=='function') return;
+  var items=[].slice.call(root.querySelectorAll('.rk-b')), big=dlg.querySelector('.rk-big'), cnt=dlg.querySelector('.rk-cnt bdi'), nm=dlg.querySelector('#rk-dn'), meta=dlg.querySelector('.rk-meta'), all=root.querySelector('.rk-all'), cur=0, back=null;
+  function pad(n){return (n<10?'0':'')+n}
+  function show(i,dir){
+    cur=(i+items.length)%items.length;
+    var b=items[cur];
+    big.replaceChildren(b.querySelector('svg').cloneNode(true));
+    nm.textContent=b.dataset.name;
+    meta.textContent=b.dataset.price+' · מידות '+b.dataset.sizes;
+    cnt.textContent=pad(cur+1)+' / '+pad(items.length);
+    big.classList.remove('swap');
+    if(dir){big.dataset.dir=dir;void big.offsetWidth;big.classList.add('swap')}
+  }
+  function open(i,from){back=from;show(i);dlg.showModal()}
+  items.forEach(function(b,i){b.addEventListener('click',function(){open(i,b)})});
+  all.hidden=false;
+  all.addEventListener('click',function(){open(0,all)});
+  dlg.querySelectorAll('[data-go]').forEach(function(n){n.addEventListener('click',function(){var d=+n.dataset.go;show(cur+d,d<0?'prev':'next')})});
+  dlg.querySelector('[data-close]').addEventListener('click',function(){dlg.close()});
+  dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()});
+  dlg.addEventListener('keydown',function(e){
+    if(e.key==='ArrowLeft'){e.preventDefault();show(cur+1,'next')}
+    else if(e.key==='ArrowRight'){e.preventDefault();show(cur-1,'prev')}
+  });
+  dlg.addEventListener('close',function(){if(back)back.focus()});
+})();
+
+// product card: colour swatches, and a 3D tilt that follows the mouse (or the scroll on touch screens)
+(function(){
+  var root=document.getElementById('tc'); if(!root) return;
+  var card=root.querySelector('.tc-card'), sw=root.querySelector('.tc-sw'), cn=root.querySelector('.tc-cn span'), bs=[].slice.call(sw.querySelectorAll('.tc-s'));
+  sw.hidden=false;
+  bs.forEach(function(b){b.addEventListener('click',function(){
+    card.style.setProperty('--pc',b.dataset.pc);card.style.setProperty('--pb',b.dataset.pb);cn.textContent=b.getAttribute('aria-label');
+    bs.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+  })});
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  function tilt(rx,ry,gx,gy){var s=card.style;s.setProperty('--rx',rx.toFixed(2)+'deg');s.setProperty('--ry',ry.toFixed(2)+'deg');s.setProperty('--gx',gx.toFixed(1)+'%');s.setProperty('--gy',gy.toFixed(1)+'%')}
+  if(matchMedia('(hover: hover) and (pointer: fine)').matches){
+    var stage=root.querySelector('.tc-stage');
+    stage.addEventListener('pointermove',function(e){
+      var r=stage.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+      card.classList.add('live');tilt((.5-y)*16,(x-.5)*20,x*100,y*100);
+    });
+    stage.addEventListener('pointerleave',function(){card.classList.remove('live');tilt(0,0,50,30)});
+  }else{
+    var queued=false;
+    card.classList.add('live');
+    function upd(){
+      queued=false;
+      var r=card.getBoundingClientRect(),t=(r.top+r.height/2-innerHeight/2)/(innerHeight/2);
+      t=Math.max(-1,Math.min(1,t));tilt(t*12,t*-10,50-t*30,30+t*30);
+    }
+    addEventListener('scroll',function(){if(!queued){queued=true;requestAnimationFrame(upd)}},{passive:true});
+    upd();
+  }
+})();
+
+// order journey: the three steps light up while scrolling; the toggle swaps one-time and subscription
+(function(){
+  var root=document.getElementById('oj'); if(!root) return;
+  var mode=root.querySelector('.oj-mode'), bs=[].slice.call(mode.querySelectorAll('.oj-b'));
+  mode.hidden=false;
+  bs.forEach(function(b){b.addEventListener('click',function(){
+    root.dataset.mode=b.dataset.mode;
+    bs.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+  })});
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var steps=[].slice.call(root.querySelectorAll('.oj-s')), list=root.querySelector('.oj-steps'), th=[.1,.45,.8], queued=false;
+  root.classList.add('is-js');
+  function upd(){
+    queued=false;
+    var vh=innerHeight, p=(vh*.85-root.getBoundingClientRect().top)/(vh*.55), n=0;
+    steps.forEach(function(s,i){var on=p>=th[i]&&s.getBoundingClientRect().top<vh*.8;s.classList.toggle('on',on);if(on)n=i+1});
+    list.style.setProperty('--oj',n<2?0:(n-1)/(steps.length-1));
+  }
+  addEventListener('scroll',function(){if(!queued){queued=true;requestAnimationFrame(upd)}},{passive:true});
+  addEventListener('resize',upd);
+  upd();
+})();
+
+// process: the line fills and the side indicator follows the step in view
+(function(){
+  var pt=document.querySelector('.pt'); if(!pt) return;
+  var steps=[].slice.call(pt.querySelectorAll('.pt-s')), links=[].slice.call(pt.querySelectorAll('.pt-nav a')), ol=pt.querySelector('.pt-nav ol'), line=pt.querySelector('.pt-steps'), queued=false;
+  pt.classList.add('pt-js');
+  function update(){
+    queued=false;
+    var cur=-1,y=innerHeight*.55,r=line.getBoundingClientRect();
+    steps.forEach(function(s,i){if(s.getBoundingClientRect().top<y)cur=i});
+    steps.forEach(function(s,i){s.classList.toggle('cur',i===cur);s.classList.toggle('done',i<cur)});
+    links.forEach(function(a,i){a.classList.toggle('cur',i===cur);a.classList.toggle('done',i<cur);if(i===cur)a.setAttribute('aria-current','step');else a.removeAttribute('aria-current')});
+    if(ol) ol.style.setProperty('--p',(cur<0?0:(cur+1)/steps.length*100)+'%');
+    line.style.setProperty('--f',Math.max(0,Math.min(1,(y-r.top-24)/(r.height-48))).toFixed(3));
+  }
+  addEventListener('scroll',function(){if(!queued){queued=true;requestAnimationFrame(update)}},{passive:true});
+  addEventListener('resize',update);
+  update();
+})();
+
+// checklist: the WhatsApp button appears once every item is ticked (without JS it is always shown)
+(function(){
+  var root=document.getElementById('nd'); if(!root) return;
+  var boxes=[].slice.call(root.querySelectorAll('input[type="checkbox"]')), c=root.querySelector('.nd-c'), bar=root.querySelector('.nd-bar');
+  root.classList.add('is-js'); c.hidden=false; bar.hidden=false;
+  function upd(){
+    var n=boxes.filter(function(b){return b.checked}).length, all=n===boxes.length;
+    root.classList.toggle('all',all);
+    bar.style.setProperty('--p',(n/boxes.length*100)+'%');
+    c.textContent=all?'יש לכם הכל, אפשר להתחיל':'סימנתם '+n+' מתוך '+boxes.length;
+  }
+  boxes.forEach(function(b){b.addEventListener('change',upd)});
+  upd();
+})();
+
+// project: rendered from the data list above; with more than one store a picker appears
+(function(){
+  var root=document.getElementById('pj'), el=document.getElementById('pj-data'), data; if(!root||!el) return;
+  try{data=JSON.parse(el.textContent)}catch(e){return}
+  if(!data.length) return;
+  var rt=root.querySelector('.rt'), tabs=root.querySelector('.pj-tabs');
+  function q(k){return root.querySelector('[data-k="'+k+'"]')}
+  function img(node,o){node.src=o.src;node.width=o.w;node.height=o.h;node.alt=o.alt}
+  function render(i){
+    var d=data[i];
+    ['intro','platform','built','note','host','bar'].forEach(function(k){var n=q(k);if(n)n.textContent=k==='bar'?d.host:d[k]});
+    q('link').href=d.url;
+    img(q('desk'),d.desktop);img(q('mob'),d.mobile);
+    rt.style.setProperty('--sd',(-(1-.625*d.desktop.w/d.desktop.h)*100).toFixed(1)+'%');
+    rt.style.setProperty('--sm',(-(1-19.5/9*d.mobile.w/d.mobile.h)*100).toFixed(1)+'%');
+  }
+  if(data.length>1){
+    data.forEach(function(d,i){
+      var b=document.createElement('button');
+      b.type='button';b.className='pj-b';b.textContent=d.label;b.setAttribute('aria-pressed',i===0?'true':'false');
+      b.addEventListener('click',function(){render(i);[].forEach.call(tabs.children,function(x){x.setAttribute('aria-pressed',x===b?'true':'false')})});
+      tabs.appendChild(b);
+    });
+    tabs.hidden=false;
+  }
+  render(0);
+  if('IntersectionObserver' in window) new IntersectionObserver(function(es){rt.classList.toggle('play',es[0].isIntersecting)},{threshold:.25}).observe(rt);
+})();
+</script>
 </body>
 </html>

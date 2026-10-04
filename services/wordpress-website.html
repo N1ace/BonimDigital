@@ -4,13 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#FFFFFF">
-<title>WordPress Business Website | Bonim Digital</title>
-<meta name="description" content="A WordPress site for lawyers, accountants, contractors and service providers. You update it yourself, it is ready for Google, and it has a WhatsApp button. From ₪1,000.">
+<title>בניית אתר וורדפרס לעסקים | דפי נחיתה, אתרי תדמית וחנויות | בונים דיגיטל</title>
+<meta name="description" content="אנחנו בונים אתרי וורדפרס מ-0: דף נחיתה, אתר תדמית וחנות WooCommerce, עם עיצוב ומיתוג משלכם, חיבור סליקה, אחסון ואחריות לחודש הראשון. החל מ-₪400, ניהול קל בלי ידע בקוד.">
 <link rel="canonical" href="https://n1ace.github.io/portfolio/services/wordpress-website.html">
+<meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="בניית אתר וורדפרס שאתם מנהלים בעצמכם | בונים דיגיטל">
+<meta property="og:description" content="דף נחיתה, אתר תדמית וחנות WooCommerce, מעוצבים מ-0 ומנוהלים בלי קוד. החל מ-₪400, עם אחריות לחודש הראשון.">
 <meta property="og:url" content="https://n1ace.github.io/portfolio/services/wordpress-website.html">
-<meta property="og:title" content="אתר עסקי בוורדפרס | בונים דיגיטל">
-<meta property="og:description" content="אתר וורדפרס לעורכי דין, רואי חשבון, קבלנים ונותני שירות. מעדכנים לבד, מוכן לגוגל, עם כפתור וואטסאפ. מ־₪1,000.">
 <meta property="og:image" content="https://n1ace.github.io/portfolio/assets/logo/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <script>try{if(localStorage.getItem('portfolio-language')!=='en'){document.documentElement.lang='he';document.documentElement.dir='rtl'}}catch(e){}</script>
@@ -26,30 +28,521 @@
 <link rel="stylesheet" href="../assets/cta.css?v=1">
 <script src="../assets/cta.js?v=1"></script>
 <link rel="stylesheet" href="../assets/service-page.css?v=5">
-<script src="../assets/services-i18n.js?v=4" defer></script>
-<script src="../assets/portfolio-i18n.js?v=35" defer></script>
+<script src="../assets/portfolio-i18n.js?v=37" defer></script>
+<style>
+/* ---------- article ---------- */
+.post{padding:40px 0 8px}
+.post .wrap{max-width:808px}
+.post-body{font-family:'Heebo',var(--body);color:var(--text);font-size:17px;line-height:1.8}
+.post .crumbs{font-family:'Heebo',var(--body);font-size:13px;margin-bottom:14px}
+.post .crumbs a{color:var(--muted)}
+.post .sec-eyebrow{font-family:'Heebo',var(--body);font-size:14.5px;font-weight:700;letter-spacing:0}
+.post-head h1{font-family:'Heebo',var(--display);font-weight:800;font-size:clamp(28px,4.4vw,42px);line-height:1.2;letter-spacing:0;margin:0 0 10px}
+.post-meta{color:var(--muted);font-size:14px;margin:0 0 28px}
+.post-body :where(h2){font-family:'Heebo',var(--display);font-weight:800;font-size:clamp(22px,3vw,28px);line-height:1.3;letter-spacing:0;margin:48px 0 14px;scroll-margin-top:calc(var(--nav-h) + 16px)}
+.post-body :where(p){margin:0 0 16px}
+.post-body :where(ul,ol){padding-inline-start:22px;margin:0 0 18px}
+.post-body :where(li){margin-bottom:8px}
+.post-body :where(a:not([class])){color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.post-body :where(a:not([class])):hover{color:var(--accent-hover)}
+.post-body :where(strong){font-weight:700}
+.post-body :where(a:focus-visible,button:focus-visible){outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.ico{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* tables */
+.tbl{overflow-x:auto;margin:20px 0 28px;border:1px solid var(--line);border-radius:12px}
+.tbl table{width:100%;border-collapse:collapse;font-size:15px;min-width:480px}
+.tbl th,.tbl td{padding:12px 14px;text-align:start;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl thead th{background:var(--card);font-weight:700}
+.tbl tbody th{font-weight:600}
+.tbl tbody tr:last-child td,.tbl tbody tr:last-child th{border-bottom:0}
+.tbl td{font-variant-numeric:tabular-nums}
+.tbl tr.hl th,.tbl tr.hl td{background:var(--gold-soft)}
+.tbl .pz{font-weight:800;white-space:nowrap}
+.tbl-note{font-size:14px;color:var(--muted);margin:-18px 0 24px!important}
+.tbl code{font-family:var(--mono);font-size:14px;font-weight:600;color:var(--accent);background:var(--accent-soft);border-radius:6px;padding:2px 7px;direction:ltr;display:inline-block}
+/* on phones, tables marked .stack become one card per row */
+@media (max-width:560px){
+  .tbl.stack{border:0;overflow:visible}
+  .tbl.stack table{min-width:0}
+  .tbl.stack thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+  .tbl.stack tbody,.tbl.stack tr,.tbl.stack th,.tbl.stack td{display:block}
+  .tbl.stack tr{border:1px solid var(--line);border-radius:12px;margin-bottom:10px;overflow:hidden}
+  .tbl.stack tbody th{background:var(--card);padding:10px 14px;border-bottom:1px solid var(--line)}
+  .tbl.stack tr.hl th{background:var(--gold-soft)}
+  .tbl.stack td{display:grid;grid-template-columns:84px minmax(0,1fr);gap:10px;padding:10px 14px}
+  .tbl.stack td::before{content:attr(data-l);font-size:12.5px;font-weight:700;color:var(--muted)}
+  .tbl.stack tbody tr:last-child td{border-bottom:1px solid var(--line)}
+  .tbl.stack tbody tr td:last-child{border-bottom:0}
+}
+
+/* lead, summary, table of contents */
+.rd-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:1200;pointer-events:none}
+.rd-progress span{display:block;height:100%;background:var(--accent);transform:scaleX(0);transform-origin:100% 50%}
+.post-lead{font-size:clamp(18px,2.2vw,20px);line-height:1.75;color:var(--text)}
+.tldr{background:var(--accent-soft);border-radius:16px;padding:20px 22px;margin:26px 0 16px}
+.tldr-k{display:flex;align-items:center;gap:8px;margin:0 0 12px!important;font-weight:800;font-size:15px;color:var(--accent)}
+.tldr ul{list-style:none;padding:0!important;margin:0!important;display:grid;gap:10px}
+.tldr li{position:relative;margin:0!important;padding-inline-start:30px;font-size:16px;line-height:1.65}
+.tldr li::before{content:"";position:absolute;inset-inline-start:0;top:4px;width:20px;height:20px;border-radius:50%;background:var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/12px no-repeat}
+.toc{border:1px solid var(--line);border-radius:16px;padding:16px 20px 10px;margin:0}
+.toc-k{margin:0 0 6px!important;font-size:13px;font-weight:800;color:var(--muted)}
+.toc ol{list-style:none;padding:0!important;margin:0!important;display:grid;grid-template-columns:1fr 1fr;column-gap:24px}
+.toc li{margin:0!important}
+.toc a{display:flex;align-items:baseline;gap:10px;padding:8px 0;border-top:1px solid var(--line);color:var(--text);text-decoration:none;font-size:15px;font-weight:500;line-height:1.4;transition:color .2s}
+.toc li:nth-child(-n+2) a{border-top:0}
+.toc a span,.toc-side a span{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--accent);min-width:20px}
+@media (hover:hover) and (pointer:fine){.toc a:hover{color:var(--accent)}}
+@media (max-width:620px){.toc ol{grid-template-columns:1fr}.toc li:nth-child(2) a{border-top:1px solid var(--line)}}
+.toc-side{display:none}
+@media (min-width:1400px){
+  .toc-side{display:block;position:fixed;top:calc(var(--nav-h,64px) + 40px);left:calc(50% + 510px);width:170px;z-index:5;font-family:'Heebo',var(--body);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .3s,transform .3s,visibility 0s .3s}
+  .toc-side.show{opacity:1;visibility:visible;transform:none;transition:opacity .3s,transform .3s}
+  .toc-side-k{margin:0 0 8px;font-size:12px;font-weight:800;color:var(--muted)}
+  .toc-side ol{list-style:none;margin:0;padding:0}
+  .toc-side a{display:flex;gap:8px;padding:7px 12px;border-inline-start:2px solid var(--line);color:var(--muted);text-decoration:none;font-size:13.5px;line-height:1.4;transition:color .2s,border-color .2s}
+  .toc-side a span{color:inherit}
+  .toc-side a.on{color:var(--accent);border-color:var(--accent);font-weight:700}
+  .toc-side a:hover{color:var(--text)}
+}
+
+/* chapters */
+.ch-sec{margin-top:64px;padding-top:44px;border-top:1px solid var(--line)}
+.ch-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.ch-n{font-family:var(--mono);font-weight:600;font-size:13px;line-height:1;color:var(--accent);background:var(--accent-soft);border-radius:8px;padding:6px 9px}
+.ch-k{font-size:13.5px;font-weight:700;color:var(--muted)}
+.post-body .ch-sec h2{margin-top:0;margin-bottom:16px}
+.lead-in{margin-top:28px!important;font-weight:700}
+.lead-in::before{content:"";display:inline-block;width:18px;height:2px;background:var(--accent);vertical-align:middle;margin-inline-end:10px}
+.callout{display:flex;gap:14px;align-items:flex-start;background:var(--accent-soft);border-inline-start:4px solid var(--accent);border-radius:12px;padding:16px 18px;margin:22px 0}
+.callout .ico{width:24px;height:24px;color:var(--accent);margin-top:4px}
+.callout p{margin:0!important;font-size:clamp(18px,2.4vw,21px);font-weight:800;line-height:1.5}
+
+/* icon cards */
+.cards{list-style:none;padding:0!important;margin:14px 0 24px!important;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.cards > li{margin:0!important;border:1px solid var(--line);border-radius:14px;padding:16px;background:#FFFFFF;display:flex;gap:12px;align-items:flex-start;transition:border-color .2s,box-shadow .2s}
+.cards.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.cards.c3 > li{flex-direction:column;gap:10px}
+.cards.soft > li{background:var(--card);border-color:transparent}
+.cards b{display:block;font-size:16px;line-height:1.4;margin-bottom:2px}
+.cards .d{display:block;font-size:15px;line-height:1.6;color:var(--muted)}
+.cards .d a{color:var(--accent)}
+.ci{flex:none;width:40px;height:40px;border-radius:11px;display:grid;place-items:center;color:var(--accent);background:var(--accent-soft)}
+.cards.soft .ci{background:#FFFFFF}
+@media (hover:hover) and (pointer:fine){.cards:not(.soft) > li:hover{border-color:var(--line-strong);box-shadow:0 6px 18px rgba(11,27,51,.06)}}
+@media (max-width:700px){.cards.c3{grid-template-columns:1fr}.cards.c3 > li{flex-direction:row}}
+@media (max-width:560px){.cards{grid-template-columns:1fr}}
+
+/* eight-step process */
+.sys{list-style:none;padding:0!important;margin:14px 0 24px!important;position:relative;display:grid;gap:12px;counter-reset:sys}
+.sys::before{content:"";position:absolute;inset-inline-start:17px;top:20px;bottom:20px;width:2px;background:var(--accent-soft)}
+.sys li{position:relative;display:flex;gap:16px;margin:0!important;counter-increment:sys}
+.sys li::before{content:counter(sys);flex:none;width:36px;height:36px;border-radius:50%;background:var(--accent);color:#FFFFFF;display:grid;place-items:center;font-family:var(--mono);font-weight:600;font-size:15px;box-shadow:0 0 0 5px #FFFFFF;position:relative}
+.sys li > div{flex:1;min-width:0;background:var(--card);border-radius:14px;padding:12px 16px}
+.sys b{display:block;font-size:16px;margin-bottom:2px}
+.sys p{margin:0!important;font-size:15.5px;line-height:1.7;color:var(--muted)}
+
+/* what you get, two cards */
+.inc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:18px 0 8px}
+.inc-card{border:1px solid var(--line);border-radius:16px;padding:18px 20px;background:#FFFFFF}
+.inc-card.store{background:var(--card);border-color:transparent}
+.post-body .inc-card h3{display:flex;align-items:center;gap:10px;margin:0 0 12px;font-size:17px;font-weight:800;line-height:1.3}
+.inc-card ul{list-style:none;padding:0!important;margin:0!important;display:grid;gap:10px}
+.inc-card li{position:relative;margin:0!important;padding-inline-start:28px;font-size:15.5px;line-height:1.6}
+.inc-card li::before{content:"";position:absolute;inset-inline-start:0;top:3px;width:18px;height:18px;border-radius:50%;background:var(--accent-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230038B8' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/11px no-repeat}
+@media (max-width:700px){.inc{grid-template-columns:1fr}}
+
+/* support timeline */
+.sup{list-style:none;padding:0!important;margin:16px 0 20px!important;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.sup li{margin:0!important;position:relative;border:1px solid var(--line);border-radius:14px;padding:16px;padding-top:20px;background:#FFFFFF}
+.sup li::before{content:"";position:absolute;top:-1px;inset-inline:16px;height:3px;border-radius:0 0 3px 3px;background:var(--accent)}
+.sup li:nth-child(2)::before{background:#3B6FE0}
+.sup li:nth-child(3)::before{background:var(--gold)}
+.sup .when{display:block;font-family:var(--mono);font-size:12.5px;font-weight:600;color:var(--accent);margin-bottom:6px}
+.sup b{display:block;font-size:16px;line-height:1.4;margin-bottom:4px}
+.sup p{margin:0!important;font-size:15px;line-height:1.6;color:var(--muted)}
+@media (max-width:700px){.sup{grid-template-columns:1fr}}
+
+/* final call to action and WhatsApp button */
+.btn-wa{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 20px;border-radius:10px;background:#25D366;border:1px solid #25D366;color:#071A0E;font-family:'Heebo',var(--body);font-weight:800;font-size:15px;text-decoration:none;transition:background .2s}
+.btn-wa svg{width:20px;height:20px;fill:currentColor;flex:none}
+@media (hover:hover) and (pointer:fine){.btn-wa:hover{background:#2EE06F;border-color:#2EE06F}}
+.post-cta{margin:56px 0 0;padding:28px;border-radius:20px;background:#0B1B33;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.post-cta p{margin:0;max-width:440px;color:#C9D6EA}
+.post-cta .post-cta-h{color:#FFFFFF;font-size:clamp(20px,2.6vw,24px);font-weight:800;line-height:1.3;margin-bottom:6px}
+
+/* faq: same accordion as the home page */
+.fq{margin-top:22px;display:grid;gap:10px}
+.fq .fq-it{border:1px solid var(--line);background:var(--card);border-radius:14px;transition:background .25s,border-color .25s,box-shadow .25s}
+.fq .fq-it.open{background:#FFFFFF;border-color:var(--accent);box-shadow:0 8px 24px rgba(0,56,184,.09)}
+.fq-h{margin:0;font:inherit}
+.fq-q{all:unset;box-sizing:border-box;width:100%;display:flex;align-items:center;gap:14px;padding:18px 20px;cursor:pointer;border-radius:14px}
+.fq-q:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.fq-n{flex:none;min-width:24px;font-family:var(--display);font-weight:800;font-size:14px;color:#657189;transition:color .25s}
+.fq-it.open .fq-n{color:var(--accent)}
+.fq-t{flex:1;font-family:'Heebo',var(--display);font-weight:700;font-size:17px;line-height:1.4;color:var(--text)}
+.fq-pl{flex:none;width:34px;height:34px;border-radius:50%;background:#FFFFFF;border:1px solid var(--line);color:var(--text);display:grid;place-items:center;transition:transform .3s,background .25s,color .25s,border-color .25s}
+.fq-pl svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round}
+.fq-it.open .fq-pl{transform:rotate(45deg);background:var(--accent);border-color:var(--accent);color:#FFFFFF}
+.fq-aw{display:grid;grid-template-rows:1fr;transition:grid-template-rows .35s ease}
+.fq.is-js .fq-it:not(.open) .fq-aw{grid-template-rows:0fr}
+.fq-ai{overflow:hidden;min-height:0}
+.fq.is-js .fq-it:not(.open) .fq-ai{visibility:hidden;transition:visibility 0s .35s}
+.fq-a{margin:0;padding:0 20px 20px;padding-inline-start:58px;font-size:15.5px;line-height:1.75;color:var(--muted)}
+@media (hover:hover) and (pointer:fine){.fq-q:hover .fq-pl{border-color:var(--accent);color:var(--accent)}}
+
+/* ---------- service page parts ---------- */
+.cc-acts{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0}
+.cc-acts .btn{min-height:48px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:'Heebo',var(--body)}
+.cc-trust{margin:14px 0 28px;font-family:'Heebo',var(--body)}
+.cc-promise{margin:0 0 4px!important;max-width:560px;font-size:clamp(17px,2vw,19px);line-height:1.65;color:var(--muted)}
+.cc-show{max-width:560px;margin:0 0 28px}
+.cc-more{margin:0 0 32px;font-family:'Heebo',var(--body)}
+.cc-more-k{margin:0 0 10px!important;font-size:14px;font-weight:700;color:var(--muted)}
+.cc-more ul{list-style:none;padding:0!important;margin:0!important;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.cc-more li{margin:0!important}
+.cc-more li a{display:flex;flex-direction:column;height:100%;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#FFFFFF;color:var(--text);text-decoration:none;transition:border-color .2s,transform .2s}
+.cc-more li a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.cc-more img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;object-position:top;border-bottom:1px solid var(--line)}
+.cc-more li a > span{display:flex;flex-direction:column;padding:8px 12px 10px;line-height:1.35}
+.cc-more b{font-size:14px;font-weight:700}
+.cc-more li a > span span{font-size:12.5px;color:var(--muted)}
+@media (hover:hover) and (pointer:fine){.cc-more li a:hover{border-color:var(--accent);transform:translateY(-2px)}}
+@media (min-width:1100px){
+  .post .crumbs{margin-inline:-150px}
+  .cc-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,460px);column-gap:48px;align-items:center;margin-inline:-150px}
+  .cc-hero-txt{grid-column:1}
+  .cc-show{grid-column:2;grid-row:1;max-width:none;margin:0}
+  .cc-hero .cc-trust{margin-bottom:0}
+  .cc-more{grid-column:1 / -1;margin-top:32px}
+}
+@media (max-width:700px){.cc-more ul{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.cc-excl{display:flex;gap:14px;align-items:flex-start;margin:18px 0 0;padding:16px 18px;border:1px dashed var(--line-strong);border-radius:14px;background:#FFFFFF}
+.cc-excl .ci{background:var(--gold-soft);color:var(--gold-ink,#8A6A00)}
+.cc-excl p{margin:0!important;font-size:15.5px;line-height:1.7;color:var(--muted)}
+.cc-excl strong{color:var(--text)}
+.cc-time{list-style:none;padding:0!important;margin:16px 0 20px!important;display:grid;gap:10px}
+.cc-time li{margin:0!important;display:grid;grid-template-columns:120px auto minmax(0,1fr);grid-template-areas:"k n u" "bar bar bar";align-items:baseline;column-gap:10px;row-gap:8px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:#FFFFFF}
+.cc-time-k{grid-area:k;font-weight:700;font-size:16px}
+.cc-time b{grid-area:n;font-family:'Heebo',var(--display);font-weight:800;font-size:24px;line-height:1;font-variant-numeric:tabular-nums;direction:ltr}
+.cc-time-u{grid-area:u;font-size:14px;color:var(--muted)}
+.cc-time i{grid-area:bar;display:block;height:6px;border-radius:3px;background:var(--accent-soft);position:relative;overflow:hidden}
+.cc-time i::after{content:"";position:absolute;inset-block:0;inset-inline-start:0;width:var(--w);border-radius:3px;background:var(--accent)}
+@media (max-width:480px){.cc-time li{grid-template-columns:auto auto minmax(0,1fr)}.cc-acts .btn{flex:1 1 100%}}
+.post-body .cc-others{margin-top:18px}
+.cc-others .sp-other{text-decoration:none;color:var(--text)}
+.cc-acts .btn-wa{min-height:48px}
+.wp-tag{direction:ltr;unicode-bidi:isolate}
+@media (max-width:380px){.post .sec-eyebrow.wp-eb{white-space:normal;font-size:13px}}
+.chk{border:1px solid var(--line);border-radius:16px;padding:18px 20px;background:#FFFFFF;margin:18px 0 8px}
+.post-body .chk h3{margin:0 0 12px;font-size:17px;font-weight:800;line-height:1.3}
+.chk ul{list-style:none;padding:0!important;margin:0!important;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 18px}
+.chk li{position:relative;margin:0!important;padding-inline-start:28px;font-size:15.5px;line-height:1.6}
+.chk li::before{content:"";position:absolute;inset-inline-start:0;top:3px;width:18px;height:18px;border-radius:50%;background:var(--accent-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230038B8' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/11px no-repeat}
+@media (max-width:620px){.chk ul{grid-template-columns:1fr}}
+.dm-cap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;margin-top:10px;font-size:14px;color:var(--muted)}
+.rp{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 14px;font:600 13px 'Heebo',sans-serif;color:var(--accent);background:#FFFFFF;border:1px solid var(--line);border-radius:10px;cursor:pointer}
+.rp[hidden]{display:none}
+@media (hover:hover) and (pointer:fine){.rp:hover{border-color:var(--accent)}}
+.sk-bar{display:flex;align-items:center;gap:5px;height:30px;padding:0 10px;background:var(--card);border-bottom:1px solid var(--line);direction:ltr}
+.sk-bar i{width:8px;height:8px;border-radius:50%;background:var(--line-strong)}
+.sk-bar span{margin-left:8px;font-family:var(--mono);font-size:11px;color:var(--muted)}
+
+/* ---------- demo: the admin panel updates the site ---------- */
+.wa{margin:22px 0 26px}
+.wa-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:12px;align-items:stretch}
+.wa-admin{border:1px solid #1D2327;border-radius:16px;overflow:hidden;background:#F0F0F1;display:flex;flex-direction:column;min-width:0}
+.wa-top{display:flex;align-items:center;gap:8px;height:34px;padding:0 12px;background:#1D2327;color:#F0F0F1;font-size:12.5px;font-weight:600}
+.wa-logo{flex:none;width:18px;height:18px;border-radius:50%;border:1.5px solid #F0F0F1;display:grid;place-items:center;font:700 10px/1 Georgia,serif}
+.wa-top .u{margin-inline-start:auto;color:#C3C4C7;font-weight:500}
+.wa-body{flex:1;display:grid;grid-template-columns:104px minmax(0,1fr)}
+.wa-side{list-style:none;margin:0!important;padding:8px 0!important;background:#2C3338;color:#F0F0F1}
+.wa-side li{margin:0!important;padding:7px 12px;font-size:12.5px;line-height:1.35}
+.wa-side li.on{background:#2271B1;color:#FFFFFF;font-weight:700}
+.wa-main{padding:14px;display:grid;gap:10px;align-content:start}
+.wa-h{font-weight:800;font-size:15px;color:#1D2327}
+.wa-f{display:grid;gap:4px}
+.wa-l{font-size:12px;font-weight:700;color:#3C434A}
+.wa-in{display:flex;align-items:center;min-height:34px;padding:0 10px;background:#FFFFFF;border:1px solid #8C8F94;border-radius:4px;color:#1D2327;font-size:13.5px;transition:border-color .25s,box-shadow .25s}
+.wa-pr b{font-weight:700;font-variant-numeric:tabular-nums}
+.wa[data-step="1"] .wa-pr,.wa[data-step="2"] .wa-pr{border-color:#2271B1;box-shadow:0 0 0 1px #2271B1}
+.wa[data-step="1"] .wa-pr b.on::after,.wa[data-step="2"] .wa-pr b.on::after{content:"";display:inline-block;width:1.5px;height:15px;margin-inline-start:2px;vertical-align:-3px;background:#1D2327;animation:cw-blink 1s steps(1) infinite}
+@keyframes cw-blink{50%{opacity:0}}
+.wa-btn{justify-self:start;padding:8px 14px;border-radius:4px;background:#2271B1;color:#FFFFFF;font-weight:700;font-size:13px}
+.wa-ok{display:flex;align-items:center;gap:6px;padding:8px 10px;border-inline-start:4px solid #00A32A;background:#FFFFFF;color:#1D2327;font-size:12.5px;font-weight:600;transition:opacity .3s,transform .3s}
+.wa-ok .ico{width:16px;height:16px;color:#00A32A}
+.wa-ok:not(.on),.wa-sync:not(.on){opacity:0;visibility:hidden;transform:translateY(4px)}
+.wa .sw:not(.on){display:none}
+.wa-site{background:#FFFFFF;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.wa-shop{flex:1;padding:14px;display:grid;gap:10px;align-content:start}
+.wa-card{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.wa-img{aspect-ratio:16/10;background:linear-gradient(135deg,#E6EDFB,#F4F6FA);display:grid;place-items:center}
+.wa-img i{width:30px;height:56px;border-radius:8px 8px 6px 6px;background:#FFFFFF;border:2px solid #BFD0F2;position:relative}
+.wa-img i::before{content:"";position:absolute;top:-10px;left:50%;width:14px;height:10px;margin-left:-7px;border-radius:3px 3px 0 0;background:var(--accent)}
+.wa-ci{padding:10px 12px 12px;display:grid;gap:4px}
+.wa-ci > b{font-size:14px;line-height:1.4}
+.wa-cp b{font:800 20px/1.2 'Heebo',sans-serif;color:var(--text);font-variant-numeric:tabular-nums;display:inline-block}
+.wa-cart{margin-top:4px;text-align:center;padding:8px;border-radius:8px;background:var(--text);color:#FFFFFF;font-size:12.5px;font-weight:700}
+.wa-sync{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:#0B7A3E;transition:opacity .3s,transform .3s}
+.wa-sync .ico{width:16px;height:16px}
+@media (prefers-reduced-motion:no-preference){.wa[data-step="3"] .wa-btn{animation:wa-pop .6s ease}.wa[data-step="4"] .wa-cp b.on{animation:wa-flash 1s ease}}
+@keyframes wa-pop{30%{transform:scale(.92)}60%{transform:scale(1.05)}}
+@keyframes wa-flash{0%{color:#0B7A3E;transform:scale(1.15)}100%{color:var(--text);transform:none}}
+@media (max-width:620px){.wa-grid{grid-template-columns:1fr}.wa-body{grid-template-columns:88px minmax(0,1fr)}}
+
+/* ---------- site type picker ---------- */
+.ts{margin:22px 0 26px;border:1px solid var(--line);border-radius:20px;padding:18px;background:#FFFFFF;box-shadow:0 30px 60px -44px rgba(11,27,51,.35)}
+.ts-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;background:var(--card);border-radius:12px;padding:4px;margin-bottom:18px}
+.ts-tabs[hidden]{display:none}
+.ts-tab{all:unset;box-sizing:border-box;display:grid;place-items:center;text-align:center;min-height:44px;padding:6px 8px;border-radius:9px;font:700 14.5px/1.3 'Heebo',sans-serif;color:var(--muted);cursor:pointer;transition:background .2s,color .2s}
+.ts-tab[aria-selected="true"]{background:#FFFFFF;color:var(--text);box-shadow:0 2px 8px rgba(11,27,51,.08)}
+.ts-tab:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.ts-p{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:20px;align-items:center}
+.ts-p + .ts-p{margin-top:22px;padding-top:22px;border-top:1px solid var(--line)}
+.ts.is-js .ts-p + .ts-p{margin-top:0;padding-top:0;border-top:0}
+.ts-p[hidden]{display:none}
+.ts-p:focus-visible{outline:2px solid var(--accent);outline-offset:6px;border-radius:12px}
+.post-body .ts-p h3{margin:0 0 6px;font-size:18px;font-weight:800;line-height:1.35}
+.ts-p h3 small{display:inline-block;font:600 12.5px var(--mono);color:var(--accent)}
+.ts-p p{margin:0 0 14px!important;font-size:15.5px;line-height:1.7;color:var(--muted)}
+.ts-map{background:var(--card);border-radius:14px;padding:18px 14px;min-height:210px;display:grid;place-items:center;align-content:center;gap:10px}
+.ts-map > small{font-size:12.5px;font-weight:700;color:var(--muted)}
+.sk-page{width:124px;background:#FFFFFF;border:1px solid var(--line);border-radius:10px;padding:8px;display:grid;gap:6px;box-shadow:0 10px 24px -14px rgba(11,27,51,.3)}
+.sk-page > i,.sk-row i{display:block;border-radius:4px;background:var(--line)}
+.sk-page .h{height:7px;width:60%}
+.sk-page .hero{height:40px;background:var(--accent-soft)}
+.sk-row{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.sk-row i{height:16px}
+.sk-page .form{height:30px;background:#FFFFFF;border:1.5px solid var(--accent)}
+.sk-page .f{height:5px}
+.sk-n{display:inline-block;padding:4px 8px;border-radius:8px;background:#FFFFFF;border:1px solid var(--line);font-size:11.5px;font-weight:700;line-height:1.3;white-space:nowrap}
+.sk-n.top{background:var(--accent);border-color:var(--accent);color:#FFFFFF}
+.sk-tree{display:grid;justify-items:center;width:100%}
+.sk-tree ul{list-style:none;position:relative;margin:16px 0 0!important;padding:14px 0 0!important;display:flex;flex-wrap:wrap;justify-content:center;gap:12px 6px;border-top:2px solid var(--line-strong)}
+.sk-tree ul::before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:16px;margin-left:-1px;background:var(--line-strong)}
+.sk-tree li{position:relative;margin:0!important}
+.sk-tree li::before{content:"";position:absolute;top:-14px;left:50%;width:2px;height:13px;margin-left:-1px;background:var(--line-strong)}
+.sk-flow{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px}
+.sk-flow b{color:var(--muted);font-weight:400}
+.sk-adm{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:8px;background:#0B1B33;color:#FFFFFF;font-size:12px;font-weight:700}
+.sk-adm .ico{width:15px;height:15px}
+.ts-time{display:grid;gap:6px}
+.ts-tk{display:flex;align-items:baseline;gap:8px;font-size:13.5px;color:var(--muted)}
+.ts-tk b{font-family:'Heebo',var(--display);font-weight:800;font-size:22px;line-height:1;color:var(--text);font-variant-numeric:tabular-nums}
+.ts-tk b.txt{font-size:16px}
+.ts-axis{position:relative;height:8px;border-radius:4px;background:var(--accent-soft);overflow:hidden}
+.ts-axis i{position:absolute;inset-block:0;inset-inline-start:var(--a);width:var(--w);border-radius:4px;background:var(--accent);transform-origin:100% 50%}
+.ts-axis i.open{background:repeating-linear-gradient(90deg,var(--accent) 0 10px,transparent 10px 15px)}
+.ts-sc{display:flex;justify-content:space-between;font:600 11.5px var(--mono);color:var(--muted)}
+@media (prefers-reduced-motion:no-preference){.ts.is-js .ts-p:not([hidden]) .ts-axis i{animation:ts-grow .7s ease both}}
+@keyframes ts-grow{from{transform:scaleX(0)}}
+@media (max-width:620px){.ts{padding:12px}.ts-p{grid-template-columns:1fr;gap:14px}.ts-tab{font-size:13.5px}}
+
+/* ---------- brand palettes ---------- */
+.pl{margin:22px 0 26px;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:18px;align-items:center}
+.pl-opts{display:grid;gap:8px}
+.pl-opts[hidden]{display:none}
+.pl-k{margin:0 0 2px!important;font-size:14px;font-weight:800}
+.pl-b{all:unset;box-sizing:border-box;display:flex;align-items:center;gap:12px;min-height:56px;padding:10px 12px;border:1.5px solid var(--line);border-radius:12px;background:#FFFFFF;cursor:pointer;font:700 14.5px/1.3 'Heebo',sans-serif;color:var(--text);transition:border-color .2s,background .2s}
+.pl-b small{display:block;font-size:12.5px;font-weight:500;color:var(--muted)}
+.pl-b[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.pl-b:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.pl-sw{flex:none;display:flex}
+.pl-sw i{width:24px;height:24px;border-radius:50%;border:2px solid #FFFFFF;box-shadow:0 0 0 1px var(--line)}
+.pl-sw i + i{margin-inline-start:-8px}
+.pl-view{--c1:#0F5C55;--c2:#E3F2EF;--c3:#E39A4F;--r:14px;--f:800;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#FFFFFF;box-shadow:0 26px 50px -32px rgba(11,27,51,.4)}
+.pl-view[data-p="law"]{--c1:#14213D;--c2:#F1ECE2;--c3:#B08D57;--r:3px;--f:700}
+.pl-view[data-p="barber"]{--c1:#1A1A1A;--c2:#F3EEE9;--c3:#D9480F;--r:999px;--f:900}
+.pl-page{padding:14px;display:grid;gap:10px}
+.pl-nav{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:800;color:var(--c1);transition:color .3s}
+.pl-logo{width:18px;height:18px;border-radius:min(var(--r),6px);background:var(--c1);transition:background .3s,border-radius .3s}
+.pl-links{margin-inline-start:auto;display:flex;gap:6px}
+.pl-links i{width:26px;height:6px;border-radius:3px;background:var(--line)}
+.pl-hero{display:grid;gap:8px;justify-items:start;padding:18px 16px;border-radius:12px;background:var(--c2);transition:background .3s}
+.pl-hero b{font:var(--f) clamp(18px,2.4vw,22px)/1.25 'Heebo',sans-serif;color:var(--c1);transition:color .3s}
+.pl-hero > span:not(.pl-btn){font-size:13px;line-height:1.5;color:#3A4250}
+.pl-btn{padding:8px 16px;border-radius:var(--r);background:var(--c1);color:#FFFFFF;font-size:12.5px;font-weight:700;transition:background .3s,border-radius .3s}
+.pl-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.pl-cards i{height:50px;border-radius:min(var(--r),12px);border:1px solid var(--line);border-top:3px solid var(--c3);transition:border-color .3s,border-radius .3s}
+.pl-view:not([data-p="clinic"]) [data-p="clinic"],.pl-view:not([data-p="law"]) [data-p="law"],.pl-view:not([data-p="barber"]) [data-p="barber"]{display:none}
+@media (max-width:700px){.pl{grid-template-columns:1fr}}
+
+/* ---------- plugin wall ---------- */
+.pw{margin:22px 0 26px}
+.pw-frame{border:2px dashed var(--line-strong);border-radius:20px;background:var(--card);overflow:hidden}
+.pw-bar{display:flex;align-items:center;gap:5px;height:34px;padding:0 12px;background:#FFFFFF;border-bottom:1px solid var(--line)}
+.pw-bar i{width:8px;height:8px;border-radius:50%;background:var(--line-strong)}
+.pw-bar span{margin-inline-start:8px;font-size:13px;font-weight:800;color:var(--muted)}
+.pw-grid{list-style:none;margin:0!important;padding:16px!important;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.pw-grid li{margin:0!important;display:grid;gap:6px;align-content:start;padding:14px;border:1px solid var(--line);border-radius:14px;background:#FFFFFF;box-shadow:0 8px 20px -14px rgba(11,27,51,.3);transition:transform .8s cubic-bezier(.2,.8,.2,1),opacity .5s;transition-delay:calc(var(--i)*90ms + .15s)}
+.pw-grid .ci{width:36px;height:36px}
+.pw-grid b{font-size:15.5px;line-height:1.35}
+.pw-grid li > span:last-child{font-size:13.5px;line-height:1.5;color:var(--muted)}
+.pr-on .pw:not(.in) .pw-grid li{opacity:0;transform:translate(var(--x,0),var(--y,-60px)) rotate(var(--r,0deg)) scale(.9)}
+@media (max-width:820px){.pw-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:420px){.pw-grid{grid-template-columns:1fr}}
+
+/* ---------- speed, responsive, CDN ---------- */
+.lh{display:grid;grid-template-columns:auto minmax(0,1fr);gap:28px;align-items:center;margin:22px 0 14px;padding:22px;border:1px solid var(--line);border-radius:20px;background:#FFFFFF;box-shadow:0 30px 60px -44px rgba(11,27,51,.35)}
+.lh-score{display:grid;justify-items:center;gap:4px;text-align:center;min-width:170px}
+.lh-ring{position:relative;width:124px;height:124px;margin-bottom:4px}
+.lh-ring svg{display:block;width:100%;height:100%;transform:rotate(-90deg)}
+.lh-ring circle{fill:none;stroke-width:10}
+.lh-ring .bg{stroke:#E7F8EE}
+.lh-ring .fg{stroke:#0B9F4A;stroke-linecap:round;stroke-dasharray:98 100;transition:stroke-dasharray 1.2s ease .2s}
+.lh-ring b{position:absolute;inset:0;display:grid;place-items:center;font:800 38px/1 'Heebo',sans-serif;color:#0B7A3E}
+.lh-score .k{font-size:15px;font-weight:800}
+.lh-score .s{font-size:13.5px;color:var(--muted)}
+.lh-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:8px}
+.lh-pills span{padding:4px 10px;border-radius:999px;background:#E7F8EE;color:#0B6A35;font-size:12.5px;font-weight:700;white-space:nowrap}
+.lh-facts{display:grid;gap:18px;min-width:0}
+.lh-f b{display:block;font-size:16px;line-height:1.4}
+.lh-f .d{display:block;font-size:14px;color:var(--muted)}
+.lh-bar{position:relative;height:8px;margin-top:10px;border-radius:4px;background:var(--card)}
+.lh-bar i{position:absolute;inset-block:0;inset-inline-start:0;width:var(--w);border-radius:4px;background:#0B9F4A;transform-origin:100% 50%;transition:transform 1s ease .3s}
+.lh-bar em{position:absolute;top:-5px;bottom:-5px;inset-inline-start:var(--l);width:2px;border-radius:1px;background:var(--text)}
+.lh-bl{display:flex;justify-content:space-between;gap:10px;margin-top:6px;font-size:12.5px;color:var(--muted)}
+.lh-bl strong{color:#0B7A3E}
+.pr-on .lh:not(.in) .lh-ring .fg{stroke-dasharray:0 100}
+.pr-on .lh:not(.in) .lh-bar i{transform:scaleX(0)}
+.lh-shot{margin:0 0 8px;max-width:560px}
+.lh-shot img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:12px}
+.lh-shot figcaption{margin-top:8px;font-size:13.5px;line-height:1.6;color:var(--muted)}
+@media (max-width:620px){.lh{grid-template-columns:1fr;gap:20px;padding:18px}}
+.dv{list-style:none;padding:0!important;margin:14px 0 24px!important;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.dv li{margin:0!important;display:grid;justify-items:center;gap:4px;text-align:center;padding:16px 10px;border:1px solid var(--line);border-radius:14px;background:#FFFFFF}
+.dv .ico{width:30px;height:30px;color:var(--accent);margin-bottom:4px}
+.dv b{font-size:15.5px}
+.dv li span{font-size:13px;line-height:1.45;color:var(--muted)}
+@media (max-width:620px){.dv{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.cdn{display:flex;align-items:center;gap:8px;margin:16px 0 18px;padding:16px;border-radius:16px;background:var(--card)}
+.cdn-n{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;padding:12px 10px;border-radius:12px;background:#FFFFFF;border:1px solid var(--line);font-size:14px;font-weight:700;line-height:1.4}
+.cdn-n .ico{width:26px;height:26px;color:var(--accent)}
+.cdn-n.hl{background:var(--accent);border-color:var(--accent);color:#FFFFFF}
+.cdn-n.hl .ico{color:#FFFFFF}
+.cdn > i{flex:none;width:22px;height:2px;background:var(--line-strong);position:relative}
+.cdn > i::after{content:"";position:absolute;top:-4px;left:-1px;border:5px solid transparent;border-right-color:var(--line-strong);border-left:0}
+@media (max-width:560px){.cdn{flex-direction:column;align-items:stretch}.cdn > i{width:2px;height:16px;align-self:center}.cdn > i::after{top:auto;bottom:-6px;left:-4px;border:5px solid transparent;border-top-color:var(--line-strong);border-bottom:0}}
+
+/* ---------- price card ---------- */
+.pz-card{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px;margin:20px 0 8px;padding:20px 22px;border-radius:18px;background:#0B1B33;color:#C9D6EA}
+.pz-card .k{display:block;font-size:13px;color:#A9B8D3}
+.pz-card b{display:block;font-family:'Heebo',var(--display);font-weight:800;font-size:clamp(32px,5vw,40px);line-height:1.1;color:#FFFFFF}
+.pz-card .s{display:block;font-size:13px;color:#FFC48A;font-weight:700}
+.pz-card p{flex:1 1 280px;margin:0!important;font-size:15.5px;line-height:1.7}
+
+/* ---------- Retail AVR: laptop and phone ---------- */
+.rt{position:relative;margin:26px 0 8px;padding-bottom:26px}
+.rt-lap{margin-inline-end:64px}
+.rt-scr{border:8px solid #0B1B33;border-bottom-width:12px;border-radius:16px 16px 0 0;background:#0B1B33;overflow:hidden;box-shadow:0 30px 60px -36px rgba(11,27,51,.55)}
+.rt-scr .sk-bar{border-radius:6px 6px 0 0}
+.rt-vp{position:relative;overflow:hidden;background:#FFFFFF}
+.rt-lap .rt-vp{aspect-ratio:16/10}
+.rt-vp img{position:absolute;top:0;left:0;display:block;width:100%;height:auto}
+.rt-base{position:relative;height:14px;margin:0 -5%;border-radius:0 0 14px 14px;background:linear-gradient(#D5DBE5,#B3BDCC)}
+.rt-base::before{content:"";position:absolute;top:0;left:41%;width:18%;height:5px;border-radius:0 0 6px 6px;background:#9AA5B6}
+.rt-ph{position:absolute;inset-inline-end:0;bottom:0;width:23%;min-width:96px;max-width:160px;border:5px solid #0B1B33;border-radius:24px;background:#0B1B33;overflow:hidden;box-shadow:0 24px 44px -18px rgba(11,27,51,.6)}
+.rt-ph .rt-vp{aspect-ratio:9/19.5;border-radius:19px}
+@media (prefers-reduced-motion:no-preference){
+  .rt-lap img{animation:rt-d 28s ease-in-out infinite paused}
+  .rt-ph img{animation:rt-m 28s ease-in-out infinite paused}
+  .rt.play img{animation-play-state:running}
+  .rt.play:hover img,.rt.play:focus-within img{animation-play-state:paused}
+}
+@keyframes rt-d{0%,8%{transform:translateY(0)}46%,56%{transform:translateY(-77.5%)}94%,100%{transform:translateY(0)}}
+@keyframes rt-m{0%,8%{transform:translateY(0)}46%,56%{transform:translateY(-73.3%)}94%,100%{transform:translateY(0)}}
+.rt-cap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;margin:4px 0 22px;font-size:14px;color:var(--muted)}
+.rt-cap a{font-weight:700}
+.rt-list{list-style:none;padding:0!important;margin:16px 0 8px!important;display:grid;gap:10px}
+.rt-list li{margin:0!important;padding:12px 16px;border-radius:12px;background:var(--card);font-size:15.5px;line-height:1.65}
+.rt-list strong{color:var(--text)}
+
+/* Search Console card */
+.gs{margin:18px 0 8px;border:1px solid var(--line);border-radius:18px;padding:18px;background:#FFFFFF}
+.gs-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 12px;margin-bottom:12px}
+.gs-head b{font-size:16.5px;font-weight:800}
+.gs-head span{font-size:13px;color:var(--muted)}
+.gs-m{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:14px}
+.gs-m div{padding:10px 12px;border-radius:12px;background:var(--card)}
+.gs-m span{display:block;font-size:12.5px;line-height:1.35;color:var(--muted)}
+.gs-m b{display:block;font-family:'Heebo',var(--display);font-weight:800;font-size:clamp(20px,2.6vw,24px);line-height:1.3;font-variant-numeric:tabular-nums}
+.gs-m .c{background:var(--accent);color:#FFFFFF}
+.gs-m .c span{color:#DCE6FB}
+.gs-m .i{background:#5E35B1;color:#FFFFFF}
+.gs-m .i span{color:#E6DDF6}
+.gs img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px}
+.gs figcaption{margin-top:10px;font-size:14px;line-height:1.65;color:var(--muted)}
+@media (max-width:620px){.gs{padding:14px}.gs-m{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* final call to action */
+.cta-acts{display:flex;flex-wrap:wrap;gap:10px}
+.btn-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 20px;border-radius:10px;border:1px solid rgba(255,255,255,.4);color:#FFFFFF;font-family:'Heebo',var(--body);font-weight:700;font-size:15px;text-decoration:none;transition:background .2s,border-color .2s}
+.btn-ghost .ico{width:18px;height:18px}
+.btn-ghost:focus-visible,.btn-wa:focus-visible{outline:2px solid #FFFFFF;outline-offset:2px}
+@media (hover:hover) and (pointer:fine){.btn-ghost:hover{background:rgba(255,255,255,.08);border-color:#FFFFFF}}
+
+/* scroll reveal (content is fully visible without JS) */
+.pr-on .pr{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;transition-delay:var(--d,0s)}
+.pr-on .pr.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .pr-on .pr{opacity:1;transform:none;transition:none}
+  .toc-side,.fq .fq-it,.fq-n,.fq-pl,.fq-aw,.btn-wa,.wa-in,.wa-ok,.wa-sync,.pl-b,.pl-view *,.pw-grid li{transition:none!important}
+  .wa-pr b::after{animation:none!important}
+}
+@media (max-width:620px){
+  .post{padding-top:28px}
+  .post-body{font-size:16px}
+  .ch-sec{margin-top:48px;padding-top:32px}
+  .tldr{padding:18px 16px}
+  .fq-q{padding:16px;gap:12px}
+  .fq-t{font-size:16px}
+  .fq-a{padding:0 16px 18px;font-size:15px}
+  .post-cta{padding:22px}
+  .btn-wa,.btn-ghost{width:100%}
+  .rt-lap{margin-inline-end:40px}
+}
+</style>
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "WordPress business website",
-  "serviceType": "WordPress business website",
-  "description": "אתר וורדפרס לעורכי דין, רואי חשבון, קבלנים ונותני שירות. מעדכנים לבד, מוכן לגוגל, עם כפתור וואטסאפ. מ־₪1,000.",
-  "url": "https://n1ace.github.io/portfolio/services/wordpress-website.html",
-  "areaServed": {
-    "@type": "Country",
-    "name": "Israel"
-  },
-  "provider": {
-    "@type": "Organization",
-    "name": "בונים דיגיטל",
-    "url": "https://n1ace.github.io/portfolio/"
-  },
-  "offers": {
-    "@type": "Offer",
-    "price": "1000",
-    "priceCurrency": "ILS"
-  }
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Service",
+      "name":"בניית אתר וורדפרס",
+      "serviceType":"WordPress website development",
+      "description":"אנחנו בונים אתרי וורדפרס מ-0: דף נחיתה, אתר תדמית וחנות WooCommerce, עם עיצוב ומיתוג משלכם, חיבור סליקה, אחסון ואחריות לחודש הראשון. החל מ-₪400, ניהול קל בלי ידע בקוד.",
+      "url":"https://n1ace.github.io/portfolio/services/wordpress-website.html",
+      "inLanguage":"he-IL",
+      "areaServed":{"@type":"Country","name":"Israel"},
+      "provider":{"@type":"Organization","name":"בונים דיגיטל","url":"https://n1ace.github.io/portfolio/","logo":"https://n1ace.github.io/portfolio/assets/logo/bonim-digital-512.png"},
+      "offers":{"@type":"Offer","name":"אתר וורדפרס","priceSpecification":{"@type":"PriceSpecification","minPrice":"400","priceCurrency":"ILS","valueAddedTaxIncluded":false}}
+    },
+    {
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"אני באמת אוכל לנהל את אתר הוורדפרס לבד?","acceptedAnswer":{"@type":"Answer","text":"כן. פוסטים, מחירים, מוצרים, תמונות ופרטי קשר מעדכנים מלוח הניהול, בלי קוד. במסירת האתר אנחנו מראים לכם את כל הפעולות האלה."}},
+        {"@type":"Question","name":"כמה זמן לוקח לבנות אתר וורדפרס?","acceptedAnswer":{"@type":"Answer","text":"דף נחיתה 1–5 ימי עסקים, אתר תדמית של 5–10 עמודים 7–21 ימי עסקים. בחנות WooCommerce הזמן תלוי בכמות המוצרים, ואנחנו קובעים אותו יחד בבירור הצרכים."}},
+        {"@type":"Question","name":"כמה עולה אתר וורדפרס?","acceptedAnswer":{"@type":"Answer","text":"החל מ-₪400 (לא כולל מע״מ). המחיר תלוי בסוג האתר ובהיקף העבודה, ואנחנו נותנים לכם מחיר סופי לפני שמתחילים."}},
+        {"@type":"Question","name":"אפשר לחבר סליקה לאתר וורדפרס?","acceptedAnswer":{"@type":"Answer","text":"כן. אנחנו מחברים טרנזילה, PayPal וחברות סליקה נוספות, גם לדף תשלום פשוט וגם לחנות מלאה."}},
+        {"@type":"Question","name":"באיזה אחסון האתר יושב?","acceptedAnswer":{"@type":"Answer","text":"אנחנו עובדים עם Hostinger, Bluehost וחברות אחסון ישראליות, ומתאימים את החבילה לגודל האתר. אם יש לכם כבר אחסון, נבנה עליו."}},
+        {"@type":"Question","name":"מה זה WooCommerce?","acceptedAnswer":{"@type":"Answer","text":"זה התוסף שהופך אתר וורדפרס לחנות: מוצרים, מלאי, סל קניות, תשלום והזמנות. כל החנויות שאנחנו בונים בוורדפרס מבוססות עליו."}},
+        {"@type":"Question","name":"אפשר להתחיל מדף נחיתה ולהרחיב אחר כך?","acceptedAnswer":{"@type":"Answer","text":"כן, וזה אחד הדברים שאני הכי ממליץ עליו. מתחילים במה שמביא לקוחות עכשיו, ומוסיפים עמודים, בלוג או חנות על אותו אתר."}},
+        {"@type":"Question","name":"מה כוללת האחריות?","acceptedAnswer":{"@type":"Answer","text":"כל תיקון שצריך במהלך החודש הראשון של שימוש באתר."}},
+        {"@type":"Question","name":"האתר יהיה שלי אחרי שהוא מוכן?","acceptedAnswer":{"@type":"Answer","text":"כן. הדומיין והאחסון רשומים על שמכם, כך שהאתר שלכם."}},
+        {"@type":"Question","name":"האתר עומד בדרישות נגישות ופרטיות?","acceptedAnswer":{"@type":"Answer","text":"כן. אנחנו בונים לפי תקן הנגישות הישראלי ומוסיפים מדיניות פרטיות והסכמה לעוגיות."}},
+        {"@type":"Question","name":"האתר יהיה מהיר, מותאם לטלפון ומוכן לגוגל?","acceptedAnswer":{"@type":"Answer","text":"כן. כל אתר רספונסיבי לטלפון, לטאבלט ולמחשב, ונבדק בכל הדפדפנים הנפוצים. אנחנו מגדירים LiteSpeed Cache ו-CDN של QUIC.cloud או Cloudflare, ועושים SEO טכני ו-SEO בכתיבה. אצל ריטייל אור, למשל, האתר קיבל 98/100 במהירות במובייל בבדיקה של גוגל, ו-100/100 ב-SEO."}}
+      ]
+    },
+    {
+      "@type":"BreadcrumbList",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"בית","item":"https://n1ace.github.io/portfolio/"},
+        {"@type":"ListItem","position":2,"name":"שירותים","item":"https://n1ace.github.io/portfolio/#services"},
+        {"@type":"ListItem","position":3,"name":"אתר וורדפרס"}
+      ]
+    }
+  ]
 }
 </script>
 </head>
@@ -65,6 +558,7 @@
     <div class="menu" id="site-menu">
       <a href="../index.html#home">Home</a>
       <a href="../index.html#services" aria-current="page">Services</a>
+      <a href="../index.html#testimonials">Testimonials</a>
       <a href="../projects.html">Work</a>
       <a href="../index.html#results">Results</a>
       <a href="../index.html#process">How it works</a>
@@ -80,107 +574,516 @@
   </div>
 </nav>
 
-<main id="main">
-  <header class="sp-hero">
-    <div class="wrap sp-hero-in">
-      <div class="sp-hero-text">
-        <nav class="crumbs rv" aria-label="Breadcrumb">
-          <a href="../index.html">Home</a>
-          <span>/</span>
-          <a href="../index.html#services">Services</a>
-          <span>/</span>
-          <span>WordPress business website</span>
-        </nav>
-        <div class="sec-eyebrow rv">// service</div>
-        <h1 class="rv">WordPress business website</h1>
-        <p class="sec-sub rv">A site you can update yourself. Pages, a contact form and a WhatsApp button.</p>
-        <div class="page-actions rv">
-          <a class="btn solid cta" href="../booking.html?s=website"><span class="cta-txt">Book a free call</span><svg class="cta-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a class="btn sp-wa" href="https://wa.me/972527905122?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%91%D7%95%D7%A0%D7%99%D7%9D%20%D7%93%D7%99%D7%92%D7%99%D7%98%D7%9C%2C%20%D7%99%D7%A9%20%D7%9C%D7%99%20%D7%A2%D7%A1%D7%A7%20%D7%95%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.55L2.3 21.7l5.28-1.38A9.7 9.7 0 1 0 12 2Zm0 17.65a7.94 7.94 0 0 1-4.05-1.1l-.29-.17-3.13.82.84-3.05-.19-.31A7.94 7.94 0 1 1 12 19.65Zm4.36-5.95c-.24-.12-1.41-.7-1.630-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18a7.2 7.2 0 0 1-1.33-1.66c-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.690 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg><span>Ask on WhatsApp</span></a>
+<div class="rd-progress" aria-hidden="true"><span></span></div>
+
+<main id="main" class="post" lang="he" dir="rtl" data-i18n-skip>
+  <div class="wrap">
+    <nav class="crumbs rv" aria-label="פירורי לחם"><a href="../index.html">בית</a> / <a href="../index.html#services">שירותים</a> / <span aria-current="page">אתר וורדפרס</span></nav>
+
+    <nav class="toc-side" aria-label="ניווט מהיר בעמוד"><p class="toc-side-k">בעמוד</p><ol></ol></nav>
+
+    <article class="post-body">
+      <header class="post-head cc-hero">
+        <div class="cc-hero-txt">
+        <div class="sec-eyebrow wp-eb rv"><span class="wp-tag" dir="ltr">WordPress · WooCommerce · Elementor Pro</span></div>
+        <h1 class="rv">בניית אתר וורדפרס שאתם מנהלים בעצמכם</h1>
+        <p class="cc-promise rv">אתר וורדפרס שמעוצב מ-0 סביב העסק שלכם, ואחר כך נשאר בידיים שלכם: מעדכנים מחיר, מוצר או פוסט בכמה קליקים, בלי שורת קוד.</p>
+        <div class="cc-acts rv">
+          <a class="btn-wa" href="https://wa.me/972527905122?text=%D7%94%D7%99%D7%99%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%94%D7%A2%D7%9E%D7%95%D7%93%20%D7%A2%D7%9C%20%D7%90%D7%AA%D7%A8%20%D7%95%D7%95%D7%A8%D7%93%D7%A4%D7%A8%D7%A1%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.55L2.3 21.7l5.28-1.38A9.7 9.7 0 1 0 12 2Zm0 17.65a7.94 7.94 0 0 1-4.05-1.1l-.29-.17-3.13.82.84-3.05-.19-.31A7.94 7.94 0 1 1 12 19.65Zm4.36-5.95c-.24-.12-1.41-.7-1.63-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18a7.2 7.2 0 0 1-1.33-1.66c-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>דברו איתנו בווטסאפ</a>
+          <a class="btn" href="#retail">לראות את ריטייל אור</a>
         </div>
-        <div class="sp-trust rv">
-          <span><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>15 minutes</span></span>
-          <span><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Free of charge</span></span>
-          <span><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>No commitment</span></span>
+        <div class="sp-trust cc-trust rv">
+          <span><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>החל מ-₪400</span></span>
+          <span><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>דף נחיתה מ-1 יום עסקים</span></span>
+          <span><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>עיצוב מ-0</span></span>
+          <span><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>ניהול עצמי בלי קוד</span></span>
+          <span><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>אחריות לחודש הראשון</span></span>
         </div>
-      </div>
-      <aside class="sp-glance rv" aria-label="WordPress business website">
-        <div class="sp-glance-top"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9h3M4 9h2.5M11 9l3 11 4-9M5.5 9l3.5 11 3-7M18 11c.18-.53 1-1.36 1-2.5C19 6.72 18.22 6 17.13 6 16.23 6 16 6.81 16 7.43 16 9.26 18 9.49 18 11"/></svg></span><span class="sp-glance-name">WordPress business website</span></div>
-        <div class="sp-price"><b>₪1,000</b></div>
-        <dl class="sp-facts"><div><dt>Ready in</dt><dd>7–14 days</dd></div><div><dt>Best for</dt><dd>Lawyers, accountants, contractors, service providers</dd></div><div><dt>First step</dt><dd>A free 15-min call</dd></div></dl>
-        <a class="btn solid cta" href="../booking.html?s=website"><span class="cta-txt">Book a free call</span><svg class="cta-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <p class="sp-glance-note">Fixed price, agreed before we start</p>
+        </div>
+        <div class="cc-show rv">
+          <div class="mk mk-tagged">
+            <a class="mk-web" href="https://retailavr.co.il/" target="_blank" rel="noopener noreferrer">
+              <span class="mk-bar" aria-hidden="true"><i></i><i></i><i></i><span>retailavr.co.il</span></span>
+              <img src="../assets/projects/retailavr/preview.jpg?v=2" alt="אתר וורדפרס של ריטייל אור במחשב" width="1600" height="900" fetchpriority="high">
+            </a>
+            <a class="mk-phone" href="https://retailavr.co.il/" target="_blank" rel="noopener noreferrer">
+              <img src="../assets/projects/retailavr/mobile-long.jpg" alt="אתר וורדפרס של ריטייל אור בטלפון" width="420" height="3446">
+            </a>
+            <span class="mk-tag" aria-hidden="true"><span>WP</span>אתר וורדפרס שבנינו</span>
+          </div>
+          <p class="mk-cap">ריטייל אור, אתר תדמית בוורדפרס שבנינו. לחיצה פותחת את האתר החי.</p>
+        </div>
+      </header>
+
+      <p class="post-lead">ב<a href="../index.html">בונים דיגיטל</a> אנחנו בונים לכם אתר וורדפרס מ-0, מהעיצוב והמיתוג ועד העלייה לאוויר. אחרי זה האתר בידיים שלכם: מעלים פוסט, מעדכנים מחיר או מוסיפים מוצר בכמה קליקים, בלי שורת קוד אחת ובלי לחכות לאף אחד.</p>
+      <p>דף נחיתה, אתר תדמית או חנות אונליין: בניית אתר וורדפרס (<span dir="ltr">WordPress Website</span>) אצלנו כוללת הכל במקום אחד, עם אחריות לחודש הראשון.</p>
+
+      <aside class="tldr pr" aria-label="בקצרה">
+        <p class="tldr-k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg>בקצרה, אם אין לכם זמן</p>
+        <ul>
+          <li>אנחנו בונים <strong>דף נחיתה, אתר תדמית או חנות WooCommerce</strong>, בעיצוב ומיתוג משלכם, לא מתבנית מוכנה.</li>
+          <li>אחרי המסירה <strong>אתם מנהלים את האתר לבד</strong>: פוסטים, מחירים, מוצרים ולידים, בלי ידע בקוד.</li>
+          <li><strong>החל מ-₪400</strong> לפני מע״מ. דומיין, אחסון ועמלות סליקה משולמים ישירות לספקים, והדומיין והאחסון רשומים על שמכם.</li>
+          <li><strong>רספונסיבי בכל מסך ומהיר באמת</strong>: LiteSpeed Cache ו-CDN של QUIC.cloud או Cloudflare, ו-SEO טכני ובכתיבה. ריטייל אור, למשל, קיבל 98/100 במהירות במובייל בבדיקה של גוגל.</li>
+          <li>דף נחיתה תוך <strong>1–5 ימי עסקים</strong>, אתר תדמית תוך 7–21, ו<strong>אחריות לחודש הראשון</strong> על כל תיקון.</li>
+        </ul>
       </aside>
-    </div>
-  </header>
 
-  <section class="sp-sec" aria-labelledby="sp-pains-h">
-    <div class="wrap">
-      <div class="sec-eyebrow rv">// sound familiar?</div>
-      <h2 class="rv" id="sp-pains-h">Sound familiar?</h2>
-      <div class="sp-pains"><div class="sp-pain rv"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16v.01"/></svg><span>Clients search for you on Google and find a competitor.</span></div><div class="sp-pain rv"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16v.01"/></svg><span>Your only presence online is a Facebook page.</span></div><div class="sp-pain rv"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16v.01"/></svg><span>Every small text change means calling a developer.</span></div></div>
-      <p class="sp-answer rv"><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg><span>Here is how we fix that.</span></p>
-    </div>
-  </section>
+      <nav class="toc pr" aria-label="תוכן העמוד">
+        <p class="toc-k">מה בעמוד</p>
+        <ol>
+          <li><a href="#own"><span>01</span>אתר שנשאר בידיים שלכם</a></li>
+          <li><a href="#types"><span>02</span>מה אנחנו בונים בוורדפרס</a></li>
+          <li><a href="#who"><span>03</span>למי אנחנו בונים</a></li>
+          <li><a href="#brand"><span>04</span>עיצוב ומיתוג מ-0</a></li>
+          <li><a href="#stack"><span>05</span>תוספים, אחסון וסליקה</a></li>
+          <li><a href="#speed"><span>06</span>מהיר, רספונסיבי ומוכן לגוגל</a></li>
+          <li><a href="#process"><span>07</span>איך זה עובד אצלנו</a></li>
+          <li><a href="#prices"><span>08</span>כמה זמן וכמה זה עולה</a></li>
+          <li><a href="#retail"><span>09</span>פרויקט: ריטייל אור</a></li>
+          <li><a href="#faq"><span>10</span>שאלות נפוצות</a></li>
+          <li><a href="#more"><span>11</span>שירותים נוספים</a></li>
+        </ol>
+      </nav>
 
-  <section class="sp-sec" aria-labelledby="sp-gets-h">
-    <div class="wrap">
-      <div class="sec-eyebrow rv">// what you get</div>
-      <h2 class="rv" id="sp-gets-h">What you get</h2>
-      <ul class="sp-gets rv"><li><span class="sp-check"><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span>The pages you need: home, about, services and contact</span></li><li><span class="sp-check"><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span>Built on WordPress, so you edit texts and photos yourself</span></li><li><span class="sp-check"><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span>A contact form and a WhatsApp button on every page</span></li><li><span class="sp-check"><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span>Looks right on phones, tablets and computers</span></li><li><span class="sp-check"><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span>Basic Google setup: titles, descriptions and Search Console</span></li><li><span class="sp-check"><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span>Hebrew and right-to-left done properly</span></li><li><span class="sp-check"><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span>Domain, site and content registered to your business</span></li><li><span class="sp-check"><svg class="sp-i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span>A short training on how to update the site</span></li></ul>
-      <div class="sp-inline-cta rv"><a class="btn solid cta" href="../booking.html?s=website"><span class="cta-txt">Book a free call</span><svg class="cta-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><p>Want to see if it fits your business?</p></div>
-    </div>
-  </section>
+      <!-- ===== 01 ===== -->
+      <section class="ch-sec" aria-labelledby="own">
+        <div class="ch-head pr"><span class="ch-n">01</span><span class="ch-k">ניהול עצמי</span></div>
+        <h2 id="own">אתר שנשאר בידיים שלכם</h2>
+        <p>הדבר שאני הכי אוהב בוורדפרס הוא שאחרי שאנחנו מסיימים, אתם לא תלויים באף אחד. העבודה היומיומית על האתר קורית מלוח ניהול פשוט, בלי ידע בקוד ובלי רקע טכני.</p>
 
-  <section class="sp-sec" aria-labelledby="sp-steps-h">
-    <div class="wrap">
-      <div class="sec-eyebrow rv">// how it works</div>
-      <h2 class="rv" id="sp-steps-h">How it works</h2>
-      <div class="sp-steps"><div class="sp-step rv"><span class="sp-step-n">01</span><h3>Free intro call</h3><p>15 minutes. We learn the business and what it needs.</p></div><div class="sp-step rv"><span class="sp-step-n">02</span><h3>Fixed-price quote</h3><p>A clear number and scope in writing. No hourly surprises.</p></div><div class="sp-step rv"><span class="sp-step-n">03</span><h3>Design and build</h3><p>We plan the pages with you, design them and build the site.</p></div><div class="sp-step rv"><span class="sp-step-n">04</span><h3>Launch and training</h3><p>The site goes live on your domain and we show you how to update it.</p></div></div>
-    </div>
-  </section>
+        <div class="chk pr">
+          <h3>מהאתר שאנחנו בונים, אתם תוכלו לבד:</h3>
+          <ul>
+            <li>להעלות פוסטים ולנהל בלוג קבוע</li>
+            <li>לעדכן מחירים, מוצרים ומלאי</li>
+            <li>לשנות טקסטים, תמונות, שעות פעילות ופרטי קשר</li>
+            <li>לראות את הלידים שנכנסו מהטפסים ולנהל לקוחות</li>
+            <li>להוסיף עמוד חדש מתבנית שבנינו לכם מראש, כך שהעיצוב נשאר אחיד</li>
+          </ul>
+        </div>
 
-  <section class="sp-sec">
-    <div class="wrap">
-      <div class="sec-eyebrow rv">// real example</div>
-      <div class="sp-proof rv">
-        <div class="sp-proof-text"><b>Sites we built for businesses like yours</b><span>Law offices, clinics, shops and service providers.</span></div>
-        <a class="btn" href="../projects.html">See our work</a>
-      </div>
-    </div>
-  </section>
+        <p>ככה זה נראה בפועל: משנים מחיר בלוח הניהול, והאתר מתעדכן לידו.</p>
+        <figure class="wa pr" id="wa-demo" data-step="4">
+          <div class="wa-grid">
+            <div class="wa-admin" aria-hidden="true">
+              <div class="wa-top"><span class="wa-logo">W</span><span>הסטודיו של נועה</span><span class="u">שלום, נועה</span></div>
+              <div class="wa-body">
+                <ul class="wa-side"><li>לוח בקרה</li><li>פוסטים</li><li class="on">מוצרים</li><li>עמודים</li><li>לידים</li><li>הגדרות</li></ul>
+                <div class="wa-main">
+                  <div class="wa-h">עריכת מוצר</div>
+                  <div class="wa-f"><span class="wa-l">שם המוצר</span><span class="wa-in">סרום פנים 30 מ״ל</span></div>
+                  <div class="wa-f"><span class="wa-l">מחיר (₪)</span><span class="wa-in wa-pr"><b class="sw" data-s="0" data-e="2">249</b><b class="sw on" data-s="2">199</b></span></div>
+                  <span class="wa-btn">עדכון</span>
+                  <div class="wa-ok on" data-s="3"><svg class="ico" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>המוצר עודכן.</div>
+                </div>
+              </div>
+            </div>
+            <div class="wa-site" aria-hidden="true">
+              <div class="sk-bar"><i></i><i></i><i></i><span>studio-noa.co.il/shop</span></div>
+              <div class="wa-shop">
+                <div class="wa-card">
+                  <div class="wa-img"><i></i></div>
+                  <div class="wa-ci"><b>סרום פנים 30 מ״ל</b><span class="wa-cp"><b class="sw" data-s="0" data-e="4">₪249</b><b class="sw on" data-s="4">₪199</b></span><span class="wa-cart">הוספה לסל</span></div>
+                </div>
+                <div class="wa-sync on" data-s="4"><svg class="ico" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>המחיר באתר התעדכן לבד</div>
+              </div>
+            </div>
+          </div>
+          <figcaption class="dm-cap"><span>בלוח הניהול משנים מחיר מ-₪249 ל-₪199 ולוחצים ״עדכון״. המחיר באתר מתעדכן מיד.</span><button type="button" class="rp" data-replay hidden><span aria-hidden="true">↻</span>הפעל שוב</button></figcaption>
+        </figure>
 
-  <section class="sp-sec" aria-labelledby="sp-faq-h">
-    <div class="wrap">
-      <div class="sec-eyebrow rv">// questions</div>
-      <h2 class="rv" id="sp-faq-h">Questions before you book</h2>
-      <div class="sp-faq"><details class="rv" open><summary>Do I need to write the texts myself?</summary><p>You send the basics about the business and we help shape them into clear texts.</p></details><details class="rv"><summary>What about the domain and hosting?</summary><p>We help you buy them in the business name. Their yearly cost is separate from the build.</p></details><details class="rv"><summary>Will the site be mine?</summary><p>Yes. The domain, the site, and the content belong to the business. We do not lock you in.</p></details><details class="rv"><summary>How long does it take?</summary><p>Most sites are ready in 7–14 days after we agree on the quote and you send the texts and photos.</p></details></div>
-    </div>
-  </section>
+        <p>הכל באותו מקום ובאותו בית. כשאנחנו מעבירים לכם את האתר, אנחנו גם מראים לכם איך לעשות כל אחד מהדברים האלה. ואם משהו לא יוצא בחודש הראשון, אנחנו כאן.</p>
+      </section>
 
-  <section class="sp-final">
-    <div class="wrap">
-      <div class="sp-final-box rv">
+      <!-- ===== 02 ===== -->
+      <section class="ch-sec" aria-labelledby="types">
+        <div class="ch-head pr"><span class="ch-n">02</span><span class="ch-k">סוגי אתרים</span></div>
+        <h2 id="types">מה אנחנו בונים בוורדפרס</h2>
+        <p>אתר וורדפרס יכול להתחיל מדף נחיתה אחד ולהגיע עד חנות מלאה. אלה שלושת הסוגים שאנחנו בונים:</p>
+
+        <div class="ts pr" id="ts">
+          <div class="ts-tabs" role="tablist" aria-label="סוג האתר" hidden>
+            <button class="ts-tab" type="button" role="tab" id="ts-t1" aria-controls="ts-p1" aria-selected="true">דף נחיתה</button>
+            <button class="ts-tab" type="button" role="tab" id="ts-t2" aria-controls="ts-p2" aria-selected="false">אתר תדמית</button>
+            <button class="ts-tab" type="button" role="tab" id="ts-t3" aria-controls="ts-p3" aria-selected="false">חנות אונליין</button>
+          </div>
+          <div class="ts-p" id="ts-p1">
+            <div class="ts-map" aria-hidden="true">
+              <div class="sk-page"><i class="h"></i><i class="hero"></i><span class="sk-row"><i></i><i></i><i></i></span><i class="form"></i><i class="f"></i></div>
+              <small>עמוד אחד, מטרה אחת</small>
+            </div>
+            <div>
+              <h3>דף נחיתה בוורדפרס <small dir="ltr">WordPress Landing Page</small></h3>
+              <p>עמוד אחד עם מטרה אחת: שהגולש ישאיר פרטים או יפנה אליכם. מתאים לקמפיינים בגוגל ובמטא, לאיסוף לידים ולהשקת שירות חדש. הלידים נכנסים ישר למערכת באתר, ואפשר לקבל התראה במייל.</p>
+              <div class="ts-time">
+                <div class="ts-tk"><span>זמן בנייה</span><b dir="ltr">1–5</b><span>ימי עסקים</span></div>
+                <div class="ts-axis"><i style="--a:0%;--w:22%"></i></div>
+                <div class="ts-sc" aria-hidden="true"><span>1</span><span>7</span><span>14</span><span>21</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="ts-p" id="ts-p2">
+            <div class="ts-map" aria-hidden="true">
+              <div class="sk-tree"><span class="sk-n top">בית</span><ul><li><span class="sk-n">שירותים</span></li><li><span class="sk-n">עבודות</span></li><li><span class="sk-n">בלוג</span></li><li><span class="sk-n">אודות</span></li><li><span class="sk-n">צור קשר</span></li></ul></div>
+              <small>בדרך כלל 5–10 עמודים</small>
+            </div>
+            <div>
+              <h3>אתר תדמית בוורדפרס <small dir="ltr">WordPress Website</small></h3>
+              <p>הבית הדיגיטלי של העסק: עמוד בית, שירותים, גלריית עבודות, בלוג ויצירת קשר. בדרך כלל 5–10 עמודים, ואפשר להרחיב בכל שלב.</p>
+              <div class="ts-time">
+                <div class="ts-tk"><span>זמן בנייה</span><b dir="ltr">7–21</b><span>ימי עסקים</span></div>
+                <div class="ts-axis"><i style="--a:33.3%;--w:66.7%"></i></div>
+                <div class="ts-sc" aria-hidden="true"><span>1</span><span>7</span><span>14</span><span>21</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="ts-p" id="ts-p3">
+            <div class="ts-map" aria-hidden="true">
+              <div class="sk-flow"><span class="sk-n">קטלוג</span><b>←</b><span class="sk-n">מוצר</span><b>←</b><span class="sk-n">סל</span><b>←</b><span class="sk-n top">תשלום</span></div>
+              <span class="sk-adm"><svg class="ico" viewBox="0 0 24 24"><path d="M3 7l9-4 9 4v10l-9 4-9-4zM3 7l9 4 9-4M12 11v10"/></svg>ניהול הזמנות, מלאי ומשלוחים</span>
+              <small>על WooCommerce</small>
+            </div>
+            <div>
+              <h3>חנות אונליין בוורדפרס <small dir="ltr">WordPress Store</small></h3>
+              <p>חנות על WooCommerce, עם קטלוג, סל קניות, סליקה, משלוחים וניהול הזמנות. בין אם יש לכם חנות פיזית שרוצה למכור גם באינטרנט, ובין אם יש לכם מוצר מסוים שאתם רוצים להתחיל למכור, אנחנו בונים את החנות לפי כמות המוצרים והאופן שבו אתם מוכרים. כל הפרטים בעמוד <a href="online-store.html">בניית חנות אונליין</a>.</p>
+              <div class="ts-time">
+                <div class="ts-tk"><span>זמן בנייה</span><b class="txt">לפי כמות המוצרים</b></div>
+                <div class="ts-axis"><i class="open" style="--a:33.3%;--w:66.7%"></i></div>
+                <div class="ts-sc" aria-hidden="true"><span>1</span><span>7</span><span>14</span><span>21+</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 03 ===== -->
+      <section class="ch-sec" aria-labelledby="who">
+        <div class="ch-head pr"><span class="ch-n">03</span><span class="ch-k">למי</span></div>
+        <h2 id="who">למי אנחנו בונים אתרי וורדפרס</h2>
+        <p>רוב הלקוחות שלנו כאן הם עסקים קטנים ובינוניים שרוצים לנהל את האתר בעצמם.</p>
+        <ul class="cards soft pr">
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11v2a1 1 0 0 0 1 1h3l6 4V6L7 10H4a1 1 0 0 0-1 1zM17 8a5 5 0 0 1 0 8"/></svg></span><span><b>עסקים שמפרסמים בממומן</b><span class="d">צריכים דף נחיתה שאוסף לידים מגוגל ומטא ומחבר את הגולש ישר לבעל העסק.</span></span></li>
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10h3V7L6.5 3.5a6 6 0 0 1 8 8l6 6a2 2 0 0 1-3 3l-6-6a6 6 0 0 1-8-8L7 10"/></svg></span><span><b>נותני שירות</b><span class="d">חשמלאים, טכנאי תקשורת, עורכי דין, קוסמטיקאיות, ספרים ועוד. אתר תדמית שמציג את העבודות ומבסס אמון לפני שיחת הטלפון הראשונה. לספרים ולקוסמטיקאיות יש לנו גם <a href="booking-system.html">אפליקציה לקביעת תורים</a>.</span></span></li>
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10h16l-1.5-5h-13zM5 10v10h14V10M9 20v-5h6v5"/></svg></span><span><b>חנויות פיזיות</b><span class="d">שרוצות לפתוח עוד ערוץ מכירה באינטרנט.</span></span></li>
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7l9-4 9 4v10l-9 4-9-4zM3 7l9 4 9-4M12 11v10"/></svg></span><span><b>מי שיש לו מוצר</b><span class="d">ורוצה להתחיל למכור אותו בחנות אונליין משלו.</span></span></li>
+        </ul>
+        <p>אם אתם לא בטוחים שוורדפרס הוא מה שאתם צריכים, זה בדיוק מה שאנחנו בודקים בשיחה הראשונה.</p>
+      </section>
+
+      <!-- ===== 04 ===== -->
+      <section class="ch-sec" aria-labelledby="brand">
+        <div class="ch-head pr"><span class="ch-n">04</span><span class="ch-k">עיצוב</span></div>
+        <h2 id="brand">עיצוב ומיתוג מ-0</h2>
+        <p>אנחנו לא לוקחים תבנית מוכנה ומחליפים לוגו. כל אתר מתחיל מהעסק שלכם: מי הלקוחות, מה מבדיל אתכם, ואיך אתם רוצים שירגישו כשהם נכנסים.</p>
+
+        <div class="pl pr" id="pl">
+          <div class="pl-opts" hidden>
+            <p class="pl-k">אותו אתר, שלוש שפות עיצוב:</p>
+            <button class="pl-b" type="button" data-p="clinic" aria-pressed="true"><span class="pl-sw" aria-hidden="true"><i style="background:#0F5C55"></i><i style="background:#E3F2EF"></i><i style="background:#E39A4F"></i></span><span>קליניקה<small>רגוע, רך ומזמין</small></span></button>
+            <button class="pl-b" type="button" data-p="law" aria-pressed="false"><span class="pl-sw" aria-hidden="true"><i style="background:#14213D"></i><i style="background:#F1ECE2"></i><i style="background:#B08D57"></i></span><span>משרד עורכי דין<small>רציני, מסודר ואמין</small></span></button>
+            <button class="pl-b" type="button" data-p="barber" aria-pressed="false"><span class="pl-sw" aria-hidden="true"><i style="background:#1A1A1A"></i><i style="background:#F3EEE9"></i><i style="background:#D9480F"></i></span><span>מספרה<small>נועז, חד ואנרגטי</small></span></button>
+          </div>
+          <div class="pl-view" data-p="clinic" aria-hidden="true">
+            <div class="sk-bar"><i></i><i></i><i></i><span>your-business.co.il</span></div>
+            <div class="pl-page">
+              <div class="pl-nav"><span class="pl-logo"></span><span data-p="clinic">קליניקת נועה</span><span data-p="law">כהן ושות׳</span><span data-p="barber">ברבר אבי</span><span class="pl-links"><i></i><i></i><i></i></span></div>
+              <div class="pl-hero">
+                <b><span data-p="clinic">טיפול שמרגיש כמו בית</span><span data-p="law">ליווי משפטי, צעד אחר צעד</span><span data-p="barber">התספורת הבאה שלך מחכה</span></b>
+                <span>טקסט קצר שמסביר מה העסק עושה ולמי.</span>
+                <span class="pl-btn"><span data-p="clinic">לקביעת טיפול</span><span data-p="law">לשיחת ייעוץ</span><span data-p="barber">לקביעת תור</span></span>
+              </div>
+              <div class="pl-cards"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+        </div>
+
+        <ul class="cards pr">
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 4.7 4.7 1.8-4.7 1.8L12 16l-1.8-4.7-4.7-1.8 4.7-1.8z"/></svg></span><span><b>הקמת מותג</b><span class="d">אם עוד אין לכם שפה ויזואלית, אנחנו בונים אותה איתכם.</span></span></li>
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21a9 9 0 1 1 9-9c0 2-1.5 3-3 3h-2a2 2 0 0 0-1.5 3.3A1.6 1.6 0 0 1 12 21z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7.5" r="1"/></svg></span><span><b>צבעים וטיפוגרפיה</b><span class="d">בוחרים צבעים ופונטים שמציגים את העסק שלכם בדיגיטל, ושומרים עליהם בכל עמוד.</span></span></li>
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="8" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><path d="M17 14v6M14 17h6"/></svg></span><span><b>תבניות מותאמות</b><span class="d">העיצוב נשמר כתבניות בתוך האתר, כך שכל עמוד או פוסט חדש שתוסיפו נראה חלק מאותו מותג.</span></span></li>
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/></svg></span><span><b>מובייל קודם</b><span class="d">רוב הגולשים מגיעים מהטלפון, אז אנחנו מעצבים קודם את המסך הקטן.</span></span></li>
+        </ul>
+        <p>צריכים מערכת מותאמת יותר? אנחנו בונים גם <a href="custom-code-website.html">אתרים בקוד מותאם אישית</a>.</p>
+      </section>
+
+      <!-- ===== 05 ===== -->
+      <section class="ch-sec" aria-labelledby="stack">
+        <div class="ch-head pr"><span class="ch-n">05</span><span class="ch-k">כלים</span></div>
+        <h2 id="stack">תוספים, אחסון וסליקה</h2>
+        <p>היופי של וורדפרס הוא הקהילה שלו. אלפי מפתחים בונים תוספים שמוסיפים לאתר יכולות, וזה מה שמאפשר לנו לבנות מהר יותר בלי לוותר על איכות. אנחנו בוחרים רק תוספים מוכרים שמתעדכנים בקביעות.</p>
+
+        <div class="pw pr" id="pw" aria-hidden="true">
+          <div class="pw-frame">
+            <div class="pw-bar"><i></i><i></i><i></i><span>האתר שלכם</span></div>
+            <ul class="pw-grid">
+              <li style="--i:0;--x:-70px;--y:-50px;--r:-6deg"><span class="ci"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 8v8M12 8h4M12 12h4M12 16h4"/></svg></span><b>Elementor Pro</b><span>עיצוב ובניית עמודים</span></li>
+              <li style="--i:1;--x:0px;--y:-80px;--r:4deg"><span class="ci"><svg class="ico" viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.5"/><circle cx="17" cy="20" r="1.5"/><path d="M3 4h2l2.4 11h10.2L20 8H6.2"/></svg></span><b>WooCommerce</b><span>חנות אונליין</span></li>
+              <li style="--i:2;--x:70px;--y:-50px;--r:6deg"><span class="ci"><svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></span><b>Yoast SEO</b><span>קידום אורגני</span></li>
+              <li style="--i:3;--x:-70px;--y:60px;--r:5deg"><span class="ci"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span><b>אבטחה וגיבויים</b><span>תוספי אבטחה, גיבויים ועדכונים</span></li>
+              <li style="--i:4;--x:0px;--y:80px;--r:-4deg"><span class="ci"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></svg></span><b>סליקה</b><span>טרנזילה, PayPal ועוד</span></li>
+              <li style="--i:6;--x:-40px;--y:90px;--r:3deg"><span class="ci"><svg class="ico" viewBox="0 0 24 24"><path d="M13 3L5 13.5h6L10 21l8-10.5h-6z"/></svg></span><b>LiteSpeed Cache</b><span>מהירות, מטמון ודחיסת תמונות</span></li>
+              <li style="--i:7;--x:40px;--y:90px;--r:-3deg"><span class="ci"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span><b>CDN</b><span>QUIC.cloud או Cloudflare</span></li>
+              <li style="--i:5;--x:70px;--y:60px;--r:-6deg"><span class="ci"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></span><b>אחסון</b><span>Hostinger, Bluehost וישראליות</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tbl stack">
+          <table>
+            <caption class="sr-only">הכלים שאנחנו עובדים איתם באתרי וורדפרס</caption>
+            <thead><tr><th scope="col">מה צריך</th><th scope="col">עם מה אנחנו עובדים</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">עיצוב ובניית עמודים</th><td data-l="עובדים עם">Elementor Pro</td></tr>
+              <tr><th scope="row">חנות אונליין</th><td data-l="עובדים עם">WooCommerce</td></tr>
+              <tr><th scope="row">קידום אורגני</th><td data-l="עובדים עם">Yoast SEO</td></tr>
+              <tr><th scope="row">מהירות ומטמון</th><td data-l="עובדים עם">LiteSpeed Cache</td></tr>
+              <tr><th scope="row">CDN</th><td data-l="עובדים עם">QUIC.cloud CDN או Cloudflare CDN</td></tr>
+              <tr><th scope="row">אבטחת מידע</th><td data-l="עובדים עם">תוספי אבטחה, גיבויים ועדכונים</td></tr>
+              <tr><th scope="row">סליקה</th><td data-l="עובדים עם">טרנזילה, PayPal וחברות סליקה נוספות</td></tr>
+              <tr><th scope="row">אחסון</th><td data-l="עובדים עם">Hostinger, Bluehost וחברות אחסון ישראליות</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>את האחסון אנחנו מתאימים לאתר: דף נחיתה צריך משהו אחר מחנות עם מאות מוצרים. את הסליקה אנחנו מחברים לחברה שאתם כבר עובדים איתה, או עוזרים לכם לבחור אחת.</p>
+        <div class="cc-excl pr">
+          <span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg></span>
+          <p><strong>עלויות חיצוניות:</strong> אחסון, דומיין ועמלות סליקה משולמים ישירות לספקים, והדומיין והאחסון רשומים על שמכם.</p>
+        </div>
+      </section>
+
+      <!-- ===== 06 ===== -->
+      <section class="ch-sec" aria-labelledby="speed">
+        <div class="ch-head pr"><span class="ch-n">06</span><span class="ch-k">מהירות ו-SEO</span></div>
+        <h2 id="speed">מהיר, רספונסיבי ומוכן לגוגל</h2>
+        <p>כל אתר וורדפרס שאנחנו בונים מותאם לכל מסך ולכל פלטפורמה, ועובר אופטימיזציה מקסימלית לגוגל: גם ב-SEO הטכני, מאחורי הקלעים, וגם ב-SEO בכתיבה, בתוכן שהגולשים קוראים. ככה זה נראה אצל ריטייל אור, בבדיקה של גוגל עצמו:</p>
+
+        <div class="lh pr">
+          <div class="lh-score">
+            <div class="lh-ring"><svg viewBox="0 0 120 120" aria-hidden="true"><circle class="bg" cx="60" cy="60" r="50"/><circle class="fg" cx="60" cy="60" r="50" pathLength="100"/></svg><b>98</b></div>
+            <span class="k">ציון מהירות במובייל</span>
+            <span class="s">במחשב: 95 מתוך 100</span>
+            <span class="lh-pills"><span>SEO 100</span><span>Best Practices 100</span><span>נגישות 91</span></span>
+          </div>
+          <div class="lh-facts">
+            <div class="lh-f">
+              <b>התוכן המרכזי מופיע תוך 0.7 שניות</b>
+              <span class="d">גוגל מגדיר עד 2.5 שניות כ״טוב״</span>
+              <div class="lh-bar" aria-hidden="true"><i style="--w:23%"></i><em style="--l:83%"></em></div>
+              <div class="lh-bl"><span><strong>0.7 שנ׳</strong> אצל ריטייל אור</span><span>2.5 שנ׳ הגבול של גוגל</span></div>
+            </div>
+            <div class="lh-f">
+              <b>הטקסט הראשון מופיע תוך 0.4 שניות</b>
+              <span class="d">גוגל מגדיר עד 1.8 שניות כ״טוב״</span>
+              <div class="lh-bar" aria-hidden="true"><i style="--w:13%"></i><em style="--l:60%"></em></div>
+              <div class="lh-bl"><span><strong>0.4 שנ׳</strong> אצל ריטייל אור</span><span>1.8 שנ׳ הגבול של גוגל</span></div>
+            </div>
+            <div class="lh-f">
+              <b>שום דבר לא קופץ בזמן הטעינה</b>
+              <span class="d">0 תזוזות של העמוד (Layout Shift), וגוגל מאשר עד 0.1</span>
+            </div>
+          </div>
+        </div>
+        <figure class="lh-shot pr">
+          <img src="../assets/results/lighthouse-mobile.png" alt="דוח Google Lighthouse למובייל של retailavr.co.il: ביצועים 98, SEO 100, Best Practices 100, נגישות 91" width="915" height="693" loading="lazy">
+          <figcaption>הדוח המקורי של Google Lighthouse, בדיקת מובייל של <bdi dir="ltr">retailavr.co.il</bdi>. אלה אותם נתונים שמוצגים ב<a href="../index.html#results">עמוד הבית</a>.</figcaption>
+        </figure>
+
+        <p class="lead-in">רספונסיבי בכל מסך ובכל פלטפורמה</p>
+        <p>אנחנו מעצבים קודם לטלפון, ובודקים כל אתר לפני שהוא עולה בכל המסכים ובכל הדפדפנים הנפוצים: Chrome, Safari, Edge ו-Firefox.</p>
+        <ul class="dv pr">
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/></svg><b>טלפון</b><span>iPhone ו-Android</span></li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M11 18h2"/></svg><b>טאבלט</b><span>iPad וטאבלטים של Android</span></li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 19h20"/></svg><b>מחשב נייד</b><span>Windows ו-Mac</span></li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="13" rx="1.5"/><path d="M8 21h8M12 17v4"/></svg><b>מסך גדול</b><span>גם מסכים רחבים במיוחד</span></li>
+        </ul>
+
+        <p class="lead-in">SEO טכני ו-SEO בכתיבה</p>
+        <div class="inc pr">
+          <div class="inc-card">
+            <h3><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8l-4 4 4 4M17 8l4 4-4 4M14 4l-4 16"/></svg></span>SEO טכני, מאחורי הקלעים</h3>
+            <ul>
+              <li>מהירות טעינה ועמידה במדדי Core Web Vitals של גוגל.</li>
+              <li>מבנה כותרות נכון, כתובות נקיות ותגיות Title ו-Description לכל עמוד.</li>
+              <li>נתונים מובנים (Schema), מפת אתר וקובץ robots.</li>
+              <li>תמונות דחוסות בפורמט WebP, שנטענות רק כשצריך.</li>
+              <li>חיבור ל-Google Search Console, כדי לראות מה גוגל רואה.</li>
+            </ul>
+          </div>
+          <div class="inc-card store">
+            <h3><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16zM13 7l4 4"/></svg></span>SEO בכתיבה, בתוכן עצמו</h3>
+            <ul>
+              <li>מחקר מילות מפתח: איך הלקוחות שלכם מחפשים בגוגל.</li>
+              <li>כותרות וטקסטים שעונים בדיוק על מה שחיפשו.</li>
+              <li>קישורים פנימיים בין העמודים, וטקסט חלופי לכל תמונה.</li>
+              <li>בדיקה של כל עמוד עם Yoast SEO לפני שהוא עולה.</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="lead-in">CDN ותוספי אופטימיזציה</p>
+        <p>מהירות לא קורית במקרה. בכל אתר אנחנו מגדירים מטמון (Cache) ו-CDN: האתר נשמר בשרתים ברחבי העולם, וכל גולש מקבל אותו מהשרת הקרוב אליו.</p>
+        <div class="cdn pr">
+          <span class="cdn-n"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>השרת של האתר</span>
+          <i aria-hidden="true"></i>
+          <span class="cdn-n hl"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>CDN: עותקים בשרתים ברחבי העולם</span>
+          <i aria-hidden="true"></i>
+          <span class="cdn-n"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/></svg>הגולש מקבל את האתר מהשרת הקרוב</span>
+        </div>
+        <ul class="cards c3 pr">
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 3L5 13.5h6L10 21l8-10.5h-6z"/></svg></span><span><b>LiteSpeed Cache</b><span class="d">שומר עותק מוכן של כל עמוד, מכווץ את קוד ה-CSS וה-JavaScript, ממיר תמונות ל-WebP וטוען אותן רק כשצריך.</span></span></li>
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span><span><b>QUIC.cloud CDN</b><span class="d">ה-CDN של LiteSpeed. מגיש את האתר משרתים ברחבי העולם, ועובד יד ביד עם LiteSpeed Cache.</span></span></li>
+          <li><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.6-8A6 6 0 0 1 18 9a4.5 4.5 0 0 1-.5 9z"/></svg></span><span><b>Cloudflare CDN</b><span class="d">רשת שרתים עולמית שמאיצה את האתר, עם תעודת SSL והגנה מפני תקיפות.</span></span></li>
+        </ul>
+        <p>בין QUIC.cloud ל-Cloudflare אנחנו בוחרים לפי האחסון ולפי מה שהאתר צריך. ככה גם אתר עם הרבה תמונות ומוצרים נשאר מהיר.</p>
+      </section>
+
+      <!-- ===== 07 ===== -->
+      <section class="ch-sec" aria-labelledby="process">
+        <div class="ch-head pr"><span class="ch-n">07</span><span class="ch-k">התהליך</span></div>
+        <h2 id="process">איך זה עובד אצלנו</h2>
+        <ol class="sys pr">
+          <li><div><b>בירור צרכים</b><p>בשיחה הראשונה אנחנו מבינים מה האתר צריך לעשות בשבילכם, ובודקים ביחד שוורדפרס הוא באמת מה שאתם צריכים.</p></div></li>
+          <li><div><b>תיאום ציפיות</b><p>מסכמים על העמודים, התכנים, העיצוב, האחסון והלוח זמנים לפני שמתחילים, כדי שלא יהיו הפתעות בהמשך.</p></div></li>
+          <li><div><b>עיצוב ופיתוח</b><p>מעצבים את המותג, בונים את העמודים, מחברים טפסים, סליקה ותוספים.</p></div></li>
+          <li><div><b>הגשה וסבבי תיקונים</b><p>מציגים לכם את האתר המוכן, מתקנים לפי הצורך, מעלים לאוויר ומראים לכם איך לנהל אותו.</p></div></li>
+        </ol>
+        <div class="cc-excl pr">
+          <span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+          <p><strong>אחריות לחודש הראשון.</strong> בחודש הראשון אתם משתמשים באתר באמת, ושם מתגלים הדברים הקטנים. כל תיקון שצריך במהלך החודש הזה עלינו.</p>
+        </div>
+        <p>לאורך כל הפרויקט אתם רואים בדיוק באיזה שלב הוא נמצא, <a href="../track.html">כמו מעקב משלוח</a>.</p>
+      </section>
+
+      <!-- ===== 08 ===== -->
+      <section class="ch-sec" aria-labelledby="prices">
+        <div class="ch-head pr"><span class="ch-n">08</span><span class="ch-k">זמנים ומחיר</span></div>
+        <h2 id="prices">כמה זמן זה לוקח וכמה זה עולה</h2>
+        <p>הזמן תלוי בסוג האתר ובכמות התוכן. את הלוח המדויק שלכם אנחנו קובעים יחד בשלב תיאום הציפיות.</p>
+        <div class="tbl stack">
+          <table>
+            <caption class="sr-only">זמני בניית אתר וורדפרס בימי עסקים</caption>
+            <thead><tr><th scope="col">סוג אתר</th><th scope="col">זמן בנייה (ימי עסקים)</th><th scope="col">מה משפיע על הזמן</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">דף נחיתה בוורדפרס</th><td class="pz" data-l="ימי עסקים">1–5</td><td data-l="משפיע">כמות הסקשנים, חיבור טפסים</td></tr>
+              <tr><th scope="row">אתר תדמית בוורדפרס (5–10 עמודים)</th><td class="pz" data-l="ימי עסקים">7–21</td><td data-l="משפיע">מספר עמודים, מיתוג מ-0, בלוג</td></tr>
+              <tr><th scope="row">חנות אונליין ב-WooCommerce</th><td data-l="ימי עסקים">לפי כמות המוצרים</td><td data-l="משפיע">כמות מוצרים, סליקה, משלוחים</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pz-card pr">
+          <div><span class="k">אתר וורדפרס אצלנו מתחיל מ-</span><b>₪400</b><span class="s">לא כולל מע״מ</span></div>
+          <p>את המחיר הסופי אנחנו נותנים אחרי בירור הצרכים, לפי סוג האתר והיקף העבודה, ולפני שמתחילים לעבוד.</p>
+        </div>
+      </section>
+
+      <!-- ===== 09 ===== -->
+      <section class="ch-sec" aria-labelledby="retail">
+        <div class="ch-head pr"><span class="ch-n">09</span><span class="ch-k">פרויקט</span></div>
+        <h2 id="retail">פרויקט: ריטייל אור</h2>
+        <p>ריטייל אור הוא עסק בינוני שמייבא ומוכר מכונות אוטומטיות למשקאות ולחטיפים. בנינו להם אתר תדמית בוורדפרס שתפקידו אחד: להכניס לידים לעסק.</p>
+
+        <figure class="rt pr" id="rt">
+          <div class="rt-lap">
+            <div class="rt-scr">
+              <div class="sk-bar" aria-hidden="true"><i></i><i></i><i></i><span>retailavr.co.il</span></div>
+              <div class="rt-vp"><img src="../assets/projects/retailavr/desktop-long.jpg" alt="אתר וורדפרס של ריטייל אור, עמוד הבית במחשב" width="960" height="2700" loading="lazy"></div>
+            </div>
+            <div class="rt-base" aria-hidden="true"></div>
+          </div>
+          <div class="rt-ph"><div class="rt-vp"><img src="../assets/projects/retailavr/mobile-long.jpg" alt="אתר וורדפרס של ריטייל אור בטלפון" width="420" height="3446" loading="lazy"></div></div>
+        </figure>
+        <p class="rt-cap"><span>האתר של ריטייל אור במחשב ובטלפון. העמוד נגלל לבד, ועוצר כשמעבירים עליו את העכבר.</span><a href="https://retailavr.co.il/" target="_blank" rel="noopener noreferrer">לביקור באתר <bdi dir="ltr">retailavr.co.il</bdi></a></p>
+
+        <ul class="rt-list pr">
+          <li><strong>מה בנינו:</strong> אתר תדמית שמציג את המכונות, עם טפסי לידים לאורך כל האתר.</li>
+          <li><strong>מה עוד עשינו:</strong> ניהלנו עבורם את תהליך ה-SEO ואת כתיבת התכנים. זה שירות נפרד, ועל התוצאות שלו <a href="../blog/show-up-on-google.html">כתבנו כאן</a>.</li>
+          <li><strong>התוצאה:</strong> 2,870 כניסות מגוגל, וכמות גבוהה של לידים שנכנסים דרך הטפסים באתר.</li>
+        </ul>
+
+        <figure class="gs pr">
+          <div class="gs-head"><b>מה גוגל שלח לריטייל אור</b><span>אוקטובר 2025 – יולי 2026</span></div>
+          <div class="gs-m">
+            <div class="c"><span>כניסות מגוגל</span><b dir="ltr">2,870</b></div>
+            <div class="i"><span>הופעות בגוגל</span><b dir="ltr">58,700</b></div>
+            <div><span>אחוז ההקלקות</span><b dir="ltr">4.9%</b></div>
+            <div><span>מיקום ממוצע בגוגל</span><b dir="ltr">8.4</b></div>
+          </div>
+          <img src="../assets/results/gsc-search-console.png" alt="גרף Google Search Console של retailavr.co.il: עלייה בכניסות ובהופעות בגוגל" width="1024" height="311" loading="lazy">
+          <figcaption>הקו העולה הוא אנשים שמוצאים את העסק בגוגל ונכנסים לאתר. 4.9% הקלקות אומר שבערך 1 מכל 20 אנשים שראו את האתר בגוגל נכנס אליו, ומיקום 8.4 אומר שהוא מופיע בדרך כלל בעמוד הראשון.</figcaption>
+        </figure>
+      </section>
+
+      <!-- ===== 10 ===== -->
+      <section class="ch-sec" id="post-faq" aria-labelledby="faq">
+        <div class="ch-head pr"><span class="ch-n">10</span><span class="ch-k">שאלות ותשובות</span></div>
+        <h2 id="faq">שאלות נפוצות על בניית אתר וורדפרס</h2>
+        <div class="fq" data-faq>
+          <div class="fq-it open">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q1" aria-expanded="true" aria-controls="fq-a1"><span class="fq-n">01</span><span class="fq-t">אני באמת אוכל לנהל את אתר הוורדפרס לבד?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a1" role="region" aria-labelledby="fq-q1"><div class="fq-ai"><p class="fq-a">כן. פוסטים, מחירים, מוצרים, תמונות ופרטי קשר מעדכנים מלוח הניהול, בלי קוד. במסירת האתר אנחנו מראים לכם את כל הפעולות האלה.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q2" aria-expanded="false" aria-controls="fq-a2"><span class="fq-n">02</span><span class="fq-t">כמה זמן לוקח לבנות אתר וורדפרס?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a2" role="region" aria-labelledby="fq-q2"><div class="fq-ai"><p class="fq-a">דף נחיתה 1–5 ימי עסקים, אתר תדמית של 5–10 עמודים 7–21 ימי עסקים. בחנות WooCommerce הזמן תלוי בכמות המוצרים, ואנחנו קובעים אותו יחד בבירור הצרכים.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q3" aria-expanded="false" aria-controls="fq-a3"><span class="fq-n">03</span><span class="fq-t">כמה עולה אתר וורדפרס?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a3" role="region" aria-labelledby="fq-q3"><div class="fq-ai"><p class="fq-a">החל מ-₪400 (לא כולל מע״מ). המחיר תלוי בסוג האתר ובהיקף העבודה, ואנחנו נותנים לכם מחיר סופי לפני שמתחילים.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q4" aria-expanded="false" aria-controls="fq-a4"><span class="fq-n">04</span><span class="fq-t">אפשר לחבר סליקה לאתר וורדפרס?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a4" role="region" aria-labelledby="fq-q4"><div class="fq-ai"><p class="fq-a">כן. אנחנו מחברים טרנזילה, PayPal וחברות סליקה נוספות, גם לדף תשלום פשוט וגם לחנות מלאה.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q5" aria-expanded="false" aria-controls="fq-a5"><span class="fq-n">05</span><span class="fq-t">באיזה אחסון האתר יושב?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a5" role="region" aria-labelledby="fq-q5"><div class="fq-ai"><p class="fq-a">אנחנו עובדים עם Hostinger, Bluehost וחברות אחסון ישראליות, ומתאימים את החבילה לגודל האתר. אם יש לכם כבר אחסון, נבנה עליו.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q6" aria-expanded="false" aria-controls="fq-a6"><span class="fq-n">06</span><span class="fq-t">מה זה WooCommerce?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a6" role="region" aria-labelledby="fq-q6"><div class="fq-ai"><p class="fq-a">זה התוסף שהופך אתר וורדפרס לחנות: מוצרים, מלאי, סל קניות, תשלום והזמנות. כל החנויות שאנחנו בונים בוורדפרס מבוססות עליו.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q7" aria-expanded="false" aria-controls="fq-a7"><span class="fq-n">07</span><span class="fq-t">אפשר להתחיל מדף נחיתה ולהרחיב אחר כך?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a7" role="region" aria-labelledby="fq-q7"><div class="fq-ai"><p class="fq-a">כן, וזה אחד הדברים שאני הכי ממליץ עליו. מתחילים במה שמביא לקוחות עכשיו, ומוסיפים עמודים, בלוג או חנות על אותו אתר.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q8" aria-expanded="false" aria-controls="fq-a8"><span class="fq-n">08</span><span class="fq-t">מה כוללת האחריות?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a8" role="region" aria-labelledby="fq-q8"><div class="fq-ai"><p class="fq-a">כל תיקון שצריך במהלך החודש הראשון של שימוש באתר.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q9" aria-expanded="false" aria-controls="fq-a9"><span class="fq-n">09</span><span class="fq-t">האתר יהיה שלי אחרי שהוא מוכן?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a9" role="region" aria-labelledby="fq-q9"><div class="fq-ai"><p class="fq-a">כן. הדומיין והאחסון רשומים על שמכם, כך שהאתר שלכם.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q10" aria-expanded="false" aria-controls="fq-a10"><span class="fq-n">10</span><span class="fq-t">האתר עומד בדרישות נגישות ופרטיות?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a10" role="region" aria-labelledby="fq-q10"><div class="fq-ai"><p class="fq-a">כן. אנחנו בונים לפי תקן הנגישות הישראלי ומוסיפים מדיניות פרטיות והסכמה לעוגיות.</p></div></div>
+          </div>
+          <div class="fq-it">
+            <h3 class="fq-h"><button class="fq-q" type="button" id="fq-q11" aria-expanded="false" aria-controls="fq-a11"><span class="fq-n">11</span><span class="fq-t">האתר יהיה מהיר, מותאם לטלפון ומוכן לגוגל?</span><span class="fq-pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button></h3>
+            <div class="fq-aw" id="fq-a11" role="region" aria-labelledby="fq-q11"><div class="fq-ai"><p class="fq-a">כן. כל אתר רספונסיבי לטלפון, לטאבלט ולמחשב, ונבדק בכל הדפדפנים הנפוצים. אנחנו מגדירים LiteSpeed Cache ו-CDN של QUIC.cloud או Cloudflare, ועושים SEO טכני ו-SEO בכתיבה. אצל ריטייל אור, למשל, האתר קיבל 98/100 במהירות במובייל בבדיקה של גוגל, ו-100/100 ב-SEO.</p></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 11 ===== -->      <section class="ch-sec" aria-labelledby="more">
+        <div class="ch-head pr"><span class="ch-n">11</span><span class="ch-k">עוד שירותים</span></div>
+        <h2 id="more">שירותים נוספים</h2>
+        <div class="sp-others cc-others"><a class="sp-other pr" href="booking-system.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M16 3v4M8 3v4M4 11h16M8 15h2v2H8z"/></svg></span><b>אפליקציה לקביעת תורים</b><span>₪800</span></a><a class="sp-other pr" href="custom-code-website.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8l-4 4 4 4M17 8l4 4-4 4M14 4l-4 16"/></svg></span><b>אתר בקוד מותאם אישית</b><span>מ־₪300</span></a><a class="sp-other pr" href="online-store.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.33 8h11.34a2 2 0 0 1 1.98 2.3l-1.26 8.16A3 3 0 0 1 15.43 21H8.57a3 3 0 0 1-2.96-2.54l-1.26-8.16A2 2 0 0 1 6.33 8z"/><path d="M9 11V6a3 3 0 0 1 6 0v5"/></svg></span><b>חנות אונליין</b><span>₪2,000</span></a><a class="sp-other pr" href="app-development.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M11 4h2M12 17v.01"/></svg></span><b>פיתוח אפליקציה</b><span>לפי אפיון</span></a><a class="sp-other pr" href="existing-site.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10h3V7L6.5 3.5a6 6 0 0 1 8 8l6 6a2 2 0 0 1-3 3l-6-6a6 6 0 0 1-8-8L7 10"/></svg></span><b>כבר יש לך אתר?</b><span>מ־₪150 לחודש</span></a></div>
+      </section>
+
+      <aside class="post-cta pr" aria-label="יצירת קשר">
         <div>
-          <h2>Let's talk about your business</h2>
-          <p>A free 15-minute call. We'll understand what you need and tell you exactly what it costs. No commitment.</p>
+          <p class="post-cta-h">רוצים אתר שאתם מנהלים בעצמכם?</p>
+          <p>ספרו לנו על העסק בכמה משפטים. נחזור אליכם עם המלצה כנה: איזה סוג אתר מתאים לכם, כמה זמן זה ייקח, ואם וורדפרס בכלל הדרך הנכונה.</p>
         </div>
-        <div class="sp-final-actions">
-          <a class="btn solid cta" href="../booking.html?s=website"><span class="cta-txt">Book a free call</span><svg class="cta-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a class="btn sp-wa" href="https://wa.me/972527905122?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%91%D7%95%D7%A0%D7%99%D7%9D%20%D7%93%D7%99%D7%92%D7%99%D7%98%D7%9C%2C%20%D7%99%D7%A9%20%D7%9C%D7%99%20%D7%A2%D7%A1%D7%A7%20%D7%95%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.55L2.3 21.7l5.28-1.38A9.7 9.7 0 1 0 12 2Zm0 17.65a7.94 7.94 0 0 1-4.05-1.1l-.29-.17-3.13.82.84-3.05-.19-.31A7.94 7.94 0 1 1 12 19.65Zm4.36-5.95c-.24-.12-1.41-.7-1.630-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18a7.2 7.2 0 0 1-1.33-1.66c-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.690 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg><span>Ask on WhatsApp</span></a>
-          <small>Pick a time that suits you, online</small>
+        <div class="cta-acts">
+          <a class="btn-wa" href="https://wa.me/972527905122?text=%D7%94%D7%99%D7%99%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%94%D7%A2%D7%9E%D7%95%D7%93%20%D7%A2%D7%9C%20%D7%90%D7%AA%D7%A8%20%D7%95%D7%95%D7%A8%D7%93%D7%A4%D7%A8%D7%A1%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.55L2.3 21.7l5.28-1.38A9.7 9.7 0 1 0 12 2Zm0 17.65a7.94 7.94 0 0 1-4.05-1.1l-.29-.17-3.13.82.84-3.05-.19-.31A7.94 7.94 0 1 1 12 19.65Zm4.36-5.95c-.24-.12-1.41-.7-1.63-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18a7.2 7.2 0 0 1-1.33-1.66c-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>דברו איתנו בווטסאפ</a>
+          <a class="btn-ghost" href="../booking.html?s=website"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M16 3v4M8 3v4M4 11h16"/></svg>קבעו שיחת ייעוץ</a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sp-sec" aria-labelledby="sp-others-h">
-    <div class="wrap">
-      <div class="sec-eyebrow rv">// more services</div>
-      <h2 class="rv" id="sp-others-h">Other services</h2>
-      <div class="sp-others"><a class="sp-other rv" href="booking-system.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M16 3v4M8 3v4M4 11h16M8 15h2v2H8z"/></svg></span><b>Booking system + SMS reminders</b><span>₪800</span></a><a class="sp-other rv" href="custom-code-website.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8l-4 4 4 4M17 8l4 4-4 4M14 4l-4 16"/></svg></span><b>Custom-coded website</b><span>From ₪500</span></a><a class="sp-other rv" href="online-store.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.33 8h11.34a2 2 0 0 1 1.98 2.3l-1.26 8.16A3 3 0 0 1 15.43 21H8.57a3 3 0 0 1-2.96-2.54l-1.26-8.16A2 2 0 0 1 6.33 8z"/><path d="M9 11V6a3 3 0 0 1 6 0v5"/></svg></span><b>Online store</b><span>₪2,000</span></a><a class="sp-other rv" href="app-development.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M11 4h2M12 17v.01"/></svg></span><b>App development</b><span>Custom quote</span></a><a class="sp-other rv" href="existing-site.html"><span class="sp-ic"><svg class="sp-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10h3V7L6.5 3.5a6 6 0 0 1 8 8l6 6a2 2 0 0 1-3 3l-6-6a6 6 0 0 1-8-8L7 10"/></svg></span><b>Already have a site?</b><span>From ₪150 a month</span></a></div>
-    </div>
-  </section>
+      </aside>
+    </article>
+  </div>
 </main>
 
 <footer>
@@ -188,7 +1091,7 @@
     <span>© <span id="yr"></span> Bonim Digital · <a href="https://github.com/N1ace" target="_blank" rel="noopener noreferrer">GitHub</a></span>
     <nav class="social-links" aria-label="Social">
       <a href="https://www.instagram.com/bonimdigital/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4zm0 2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7zm5 2.6A4.4 4.4 0 1 1 7.6 12 4.4 4.4 0 0 1 12 7.6zm0 2A2.4 2.4 0 1 0 14.4 12 2.4 2.4 0 0 0 12 9.6zm5.25-3.350a1.05 1.05 0 1 1-1.05 1.05 1.05 1.05 0 0 1 1.05-1.05z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4zm0 2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7zm5 2.6A4.4 4.4 0 1 1 7.6 12 4.4 4.4 0 0 1 12 7.6zm0 2A2.4 2.4 0 1 0 14.4 12 2.4 2.4 0 0 0 12 9.6zm5.25-3.35a1.05 1.05 0 1 1-1.05 1.05 1.05 1.05 0 0 1 1.05-1.05z"/></svg>
       </a>
       <a href="https://www.facebook.com/profile.php?id=61594940790647" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.07A10 10 0 1 0 10.4 21.9v-6.94H7.9v-2.89h2.5V9.8c0-2.47 1.47-3.84 3.72-3.84 1.08 0 2.2.2 2.2.2v2.42h-1.24c-1.22 0-1.6.76-1.6 1.54v1.85h2.72l-.43 2.89h-2.29v6.94A10 10 0 0 0 22 12.07z"/></svg>
@@ -208,7 +1111,7 @@
 
 <aside class="float-actions" aria-label="Quick contact">
   <a class="whatsapp-float" href="https://wa.me/972527905122" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.55L2.3 21.7l5.28-1.38A9.7 9.7 0 1 0 12 2Zm0 17.65a7.94 7.94 0 0 1-4.05-1.1l-.29-.17-3.13.82.84-3.05-.19-.31A7.94 7.94 0 1 1 12 19.65Zm4.36-5.95c-.24-.12-1.41-.7-1.630-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18a7.2 7.2 0 0 1-1.33-1.66c-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.690 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.7 9.7 0 0 0-8.4 14.55L2.3 21.7l5.28-1.38A9.7 9.7 0 1 0 12 2Zm0 17.65a7.94 7.94 0 0 1-4.05-1.1l-.29-.17-3.13.82.84-3.05-.19-.31A7.94 7.94 0 1 1 12 19.65Zm4.36-5.95c-.24-.12-1.41-.7-1.63-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18a7.2 7.2 0 0 1-1.33-1.66c-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>
     <span>WhatsApp</span>
   </a>
   <a class="booking-float" href="../booking.html?s=website" aria-label="Book a call" title="Book a call">
@@ -218,6 +1121,103 @@
 </aside>
 
 <script src="../assets/site-pages.js?v=3"></script>
-<script src="../assets/journey.js?v=1"></script>
+<script>
+// FAQ accordion: one answer open at a time (without JS every answer stays open)
+document.querySelectorAll('#post-faq [data-faq]').forEach(function(list){
+  list.classList.add('is-js');
+  list.addEventListener('click',function(e){
+    var q=e.target.closest('.fq-q'); if(!q) return;
+    var it=q.closest('.fq-it'), was=it.classList.contains('open');
+    list.querySelectorAll('.fq-it').forEach(function(x){x.classList.remove('open');x.querySelector('.fq-q').setAttribute('aria-expanded','false')});
+    if(!was){it.classList.add('open');q.setAttribute('aria-expanded','true')}
+  });
+});
+
+// reading flow: scroll reveal, progress bar, side navigation (page works fully without JS)
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches, hasIO='IntersectionObserver' in window;
+  if(hasIO&&!reduce){
+    document.documentElement.classList.add('pr-on');
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.post .pr').forEach(function(el){io.observe(el)});
+  }
+  var art=document.querySelector('.post-body'), bar=document.querySelector('.rd-progress span');
+  var toc=document.querySelector('.toc'), side=document.querySelector('.toc-side'), end=document.querySelector('.post-cta');
+  var links=[], heads=[];
+  if(toc&&side){
+    side.querySelector('ol').innerHTML=toc.querySelector('ol').innerHTML;
+    links=[].slice.call(side.querySelectorAll('a'));
+    heads=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1))});
+  }
+  var queued=false;
+  function update(){
+    queued=false;
+    if(art&&bar){var r=art.getBoundingClientRect(),h=r.height-innerHeight;bar.style.transform='scaleX('+(h>0?Math.min(1,Math.max(0,-r.top/h)):1)+')'}
+    if(links.length&&getComputedStyle(side).display!=='none'){
+      var cur=-1,y=innerHeight*.35;
+      heads.forEach(function(h,i){if(h&&h.getBoundingClientRect().top<y)cur=i});
+      links.forEach(function(a,i){a.classList.toggle('on',i===cur);if(i===cur)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')});
+      var past=toc.getBoundingClientRect().bottom<0, before=!end||end.getBoundingClientRect().top>innerHeight*.6;
+      side.classList.toggle('show',past&&before);
+    }
+  }
+  function onScroll(){if(!queued){queued=true;requestAnimationFrame(update)}}
+  addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);update();
+})();
+
+// admin demo: plays once when visible; the final state is written in the HTML
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window)) return;
+  var root=document.getElementById('wa-demo'); if(!root) return;
+  var parts=[].slice.call(root.querySelectorAll('[data-s]')), rp=root.querySelector('[data-replay]'), timers=[];
+  function set(n){
+    root.dataset.step=n;
+    parts.forEach(function(el){var s=+el.dataset.s,e=+el.dataset.e||Infinity;el.classList.toggle('on',n>=s&&n<e)});
+  }
+  function play(){timers.forEach(clearTimeout);timers=[];set(0);[800,1700,2900,3900].forEach(function(t,i){timers.push(setTimeout(function(){set(i+1)},t))})}
+  set(0);
+  var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){io.disconnect();play()}},{threshold:.4});
+  io.observe(root);
+  if(rp){rp.hidden=false;rp.addEventListener('click',play)}
+})();
+
+// site type picker: without JS all three types are listed one under the other
+(function(){
+  var root=document.getElementById('ts'); if(!root) return;
+  var list=root.querySelector('[role="tablist"]'), tabs=[].slice.call(list.querySelectorAll('[role="tab"]'));
+  var panels=tabs.map(function(t){var p=document.getElementById(t.getAttribute('aria-controls'));p.setAttribute('role','tabpanel');p.setAttribute('aria-labelledby',t.id);p.tabIndex=0;return p});
+  list.hidden=false; root.classList.add('is-js');
+  function sel(i,focus){
+    tabs.forEach(function(t,j){var on=i===j;t.setAttribute('aria-selected',on?'true':'false');t.tabIndex=on?0:-1;panels[j].hidden=!on});
+    if(focus) tabs[i].focus();
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){sel(i)});
+    t.addEventListener('keydown',function(e){
+      var n=tabs.length, k=e.key, to=-1;
+      if(k==='ArrowLeft') to=(i+1)%n; else if(k==='ArrowRight') to=(i-1+n)%n; else if(k==='Home') to=0; else if(k==='End') to=n-1;
+      if(to>-1){e.preventDefault();sel(to,true)}
+    });
+  });
+  sel(0);
+})();
+
+// brand palettes: each button repaints the mini website
+(function(){
+  var root=document.getElementById('pl'); if(!root) return;
+  var view=root.querySelector('.pl-view'), opts=root.querySelector('.pl-opts'), bs=[].slice.call(opts.querySelectorAll('.pl-b'));
+  opts.hidden=false;
+  bs.forEach(function(b){b.addEventListener('click',function(){
+    view.dataset.p=b.dataset.p;
+    bs.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+  })});
+})();
+
+// Retail AVR screens scroll only while they are on screen
+(function(){
+  var rt=document.getElementById('rt'); if(!rt||!('IntersectionObserver' in window)) return;
+  new IntersectionObserver(function(es){rt.classList.toggle('play',es[0].isIntersecting)},{threshold:.25}).observe(rt);
+})();
+</script>
 </body>
 </html>
